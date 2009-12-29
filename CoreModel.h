@@ -7,19 +7,37 @@
 //
 
 #include "ASIHTTPRequest.h"
+#include "CoreResultsController.h"
 
 @interface CoreModel : NSManagedObject {
     ASIHTTPRequest* request;
 }
 
-+ (id) find:(NSString*)id;
-+ (id) find:(NSString*)id withConditions:(NSDictionary*)conditions;
-+ (id) all:(NSString*)id;
-+ (id) all:(NSString*)id withConditions:(NSDictionary*)conditions;
+
+#pragma mark -
+#pragma mark Create
 
 + (id) create: (id)parameters;
 
-+ (NSFetchedResultsController*) fetchedResultsController;
+#pragma mark -
+#pragma mark Read
++ (id) find:(NSString*)id;
++ (id) findAll:(id)options;
+
++ (id) findLocal:(NSString*)id;
++ (id) findAllLocal:(id)options;
+
++ (id) findRemote:(NSString*)id;
++ (id) findAllRemote:(id)options;
+
+
+#pragma mark -
+#pragma mark Results Management
+
++ (NSFetchRequest) fetchRequest;
++ (NSFetchRequest) fetchRequestWithSort:(NSString*)sorting andPredicate:(NSPredicate*)predicate;
++ (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey;
++ (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
 
 @end
 

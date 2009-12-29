@@ -22,12 +22,8 @@
 }
 
 
-
 #pragma mark -
-#pragma mark Creation
-
-#pragma mark -
-#pragma mark Add a new object
+#pragma mark Create
 
 + (id) create: (id)parameters {
 	
@@ -53,7 +49,20 @@
 
 
 #pragma mark -
-#pragma mark Fetched Results
+#pragma mark Read
+
++ (id) find:(NSString*)id {
+
+}
+
++ (id) findAll:(id)options {
+
+
+}
+
+
+#pragma mark -
+#pragma mark Results Management
 
 + (NSFetchRequest) fetchRequest {
     NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
@@ -68,16 +77,18 @@
     return fetchRequest;
 }
 
-+ (NSFetchedResultsController*) fetchedResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey {
++ (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey {
     NSFetchRequest *fetchRequest = [self fetchRequestWithSort:sorting andPredicate:nil];
-    return [self fetchedResultsControllerWithRequest:fetchRequest andSectionKey:sectionKey];
+    return [self coreResultsControllerWithRequest:fetchRequest andSectionKey:sectionKey];
 }
 
-+ (NSFetchedResultsController*) fetchedResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey {
-    return [[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
++ (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey {
+    CoreResultsController* coreResultsController = [[[CoreResultsController alloc] initWithFetchRequest:fetchRequest 
         managedObjectContext:managedObjectContext 
         sectionNameKeyPath:sectionKey 
         cacheName:@"Root"] autorelease];
+    coreResultsController.entityClass = self;
+    return coreResultsController;
 }
 
 

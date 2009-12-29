@@ -11,7 +11,7 @@
 
 @implementation CoreManager
 
-static NSString *_remoteSite;
+@synthesize remoteSiteURL;
 
 #pragma mark -
 #pragma mark Static access
@@ -31,16 +31,6 @@ static CoreManager* _main;
 #pragma mark -
 #pragma mark Configuration
 
-+ (NSString *)getRemoteSite {
-	return _remoteSite;
-}
-
-+ (void)setRemoteSite:(NSString *)siteURL {
-	if (_remoteSite != siteURL) {
-		[_remoteSite autorelease];
-		_remoteSite = [siteURL copy];
-	}
-}
 
 
 
@@ -148,12 +138,13 @@ static CoreManager* _main;
 #pragma mark Memory management
 
 - (void)dealloc {
-	
+    [remoteSiteURL release];
+
     [managedObjectContext release];
     [managedObjectModel release];
     [persistentStoreCoordinator release];
-    
-	[super dealloc];
+
+    [super dealloc];
 }
 
 

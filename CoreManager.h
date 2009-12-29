@@ -10,17 +10,21 @@
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    
+    NSString *remoteSiteURL;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (nonatomic, retain) NSString *remoteSiteURL;
+
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;
 
-+ (NSString *) getRemoteSite;
-+ (void) setRemoteSite: (NSString*)siteURL;
+- (NSString *) getRemoteSite;
+- (void) setRemoteSite: (NSString*)siteURL;
 
 - (NSString *)applicationDocumentsDirectory;
 
