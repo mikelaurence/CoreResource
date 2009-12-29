@@ -1,5 +1,5 @@
 //
-//  NSManagedObject+CoreResource.h
+//  CoreModel.h
 //  CoreResource
 //
 //  Created by Mike Laurence on 12/24/09.
@@ -8,7 +8,7 @@
 
 #include "ASIHTTPRequest.h"
 
-@interface NSManagedObject (CoreResource) {
+@interface CoreModel : NSManagedObject {
     ASIHTTPRequest* request;
 }
 
@@ -16,6 +16,10 @@
 + (id) find:(NSString*)id withConditions:(NSDictionary*)conditions;
 + (id) all:(NSString*)id;
 + (id) all:(NSString*)id withConditions:(NSDictionary*)conditions;
+
++ (id) create: (id)parameters;
+
++ (NSFetchedResultsController*) fetchedResultsController;
 
 @end
 

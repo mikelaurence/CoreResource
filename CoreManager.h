@@ -17,7 +17,10 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (CoreManager*) main;
-+ (void) setMain:(CoreManager*) newMain;
++ (void) setMain: (CoreManager*)newMain;
+
++ (NSString *) getRemoteSite;
++ (void) setRemoteSite: (NSString*)siteURL;
 
 - (NSString *)applicationDocumentsDirectory;
 

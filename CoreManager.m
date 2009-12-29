@@ -11,6 +11,7 @@
 
 @implementation CoreManager
 
+static NSString *_remoteSite;
 
 #pragma mark -
 #pragma mark Static access
@@ -24,6 +25,21 @@ static CoreManager* _main;
         [CoreManager setMain:self];
     }
     return self;
+}
+
+
+#pragma mark -
+#pragma mark Configuration
+
++ (NSString *)getRemoteSite {
+	return _remoteSite;
+}
+
++ (void)setRemoteSite:(NSString *)siteURL {
+	if (_remoteSite != siteURL) {
+		[_remoteSite autorelease];
+		_remoteSite = [siteURL copy];
+	}
 }
 
 

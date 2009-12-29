@@ -1,12 +1,14 @@
 //
-//  NSManagedObject+CoreResource.m
+//  CoreUtils.h
 //  CoreResource
 //
 //  Created by Mike Laurence on 12/24/09.
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
-@implementation NSManagedObject (CoreResource)
+@interface CoreUtils : NSObject {
+}
+
++ (NSArray*) sortDescriptorsFromString:(NSString*)string;
 
 @end
-
