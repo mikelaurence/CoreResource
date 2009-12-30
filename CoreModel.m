@@ -6,9 +6,21 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
+#import "CoreManager.h"
 #import "CoreUtils.h"
 
 @implementation CoreModel
+
+#pragma mark -
+#pragma mark Configuration
+
++ (CoreManager*) coreManager {
+    return [CoreManager main];
+}
+
++ (NSString*) remoteSiteURL {
+    return [[self coreManager] remoteSiteURL];
+}
 
 #pragma mark -
 #pragma mark Core Data Basics
@@ -18,7 +30,7 @@
 }
 
 + (NSEntityDescription*) entityDescription {
-    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:[CoreModel managedObjectContext]];
+    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:[[self coreManager] managedObjectContext]];
 }
 
 
@@ -28,7 +40,7 @@
 + (id) create: (id)parameters {
 	
 	// Create a new instance of the entity managed by the fetched results controller.
-	NSManagedObjectContext *context = [CoreModel managedObjectContext];
+	NSManagedObjectContext *context = [[self coreManager] managedObjectContext];
 	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[self entityName] inManagedObjectContext:context];
 	
 	// If appropriate, configure the new managed object.
@@ -55,9 +67,29 @@
 
 }
 
-+ (id) findAll:(id)options {
++ (id) findAll:(id)parameters {
 
 
+}
+
++ (id) findLocal:(NSString*)id {
+
+}
+
++ (id) findAllLocal:(id)parameters {
+
+}
+
++ (id) findRemote:(NSString*)id {
+
+}
+
++ (id) findAllRemote:(id)parameters {
+    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:
+        [CoreUtils URLFromSite:[self remoteSiteURL] andParameters:parameters];
+    request.delegate = self;
+    request.didFinishSelector = @selector(findRemoteDidFinish);
+    request.didFailSelector = @selector(findRemoteDidFail:);
 }
 
 

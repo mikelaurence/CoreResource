@@ -22,13 +22,13 @@
 #pragma mark -
 #pragma mark Read
 + (id) find:(NSString*)id;
-+ (id) findAll:(id)options;
++ (id) findAll:(id)parameters;
 
 + (id) findLocal:(NSString*)id;
-+ (id) findAllLocal:(id)options;
++ (id) findAllLocal:(id)parameters;
 
 + (id) findRemote:(NSString*)id;
-+ (id) findAllRemote:(id)options;
++ (id) findAllRemote:(id)parameters;
 
 
 #pragma mark -

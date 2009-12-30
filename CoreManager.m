@@ -11,6 +11,7 @@
 
 @implementation CoreManager
 
+@synthesize requestQueue;
 @synthesize remoteSiteURL;
 
 #pragma mark -
@@ -23,6 +24,7 @@ static CoreManager* _main;
 - (void) init {
     if (self = [super init]) {
         [CoreManager setMain:self];
+        self.requestQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }

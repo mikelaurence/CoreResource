@@ -11,12 +11,16 @@
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
     
+    NSOperationQueue *requestQueue;
+    
     NSString *remoteSiteURL;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (nonatomic, retain) NSOperationQueue *requestQueue;
 
 @property (nonatomic, retain) NSString *remoteSiteURL;
 

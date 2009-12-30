@@ -27,4 +27,25 @@
     return sortDescriptors;
 }
 
++ (NSURL*) URLFromSite:(NSString*)site andParameters:(id)parameters {
+    // Build query parameter string from supplied parameters
+    NSString *paramsString = nil;
+    if ([parameters isKindOfClass:NSString])
+        paramsString = parameters;
+    else if ([parameters isKindOfClass:NSDictionary]) {
+        BOOL first = YES;
+        NSMutableString *str = [[NSMutableString string] autorelease];
+        for (NSString *key in [(NSDictionary*)parameters allKeys]) {
+            if (!first) {
+                [str appendString:@"&"];
+                first = NO;
+            }
+            [str appendString:[NSString stringWithFormat:@"%@=%@", key, [(NSDictionary*)parameters objectForKey:key]];
+        }
+        paramsString = str;
+    }
+    
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", site, paramsString]]; 
+}
+
 @end
