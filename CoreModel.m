@@ -208,7 +208,7 @@
 }
 
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request {
-    id deserializedResources = [self deserializeFromString:[request responseString]];
+    [self deserializeFromString:[request responseString]];
 }
 
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request {

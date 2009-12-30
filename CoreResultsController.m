@@ -6,24 +6,26 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
+#include "CoreResultsController.h"
+
 @implementation CoreResultsController
 
 @synthesize entityClass;
 
-- (void) fetch {
-    [self fetchLocal];
-    [self fetchRemote];
+- (void) fetch:(id)parameters {
+    [self fetchLocal:parameters];
+    [self fetchRemote:parameters];
 }
 
-- (void) fetchLocal {
+- (void) fetchLocal:(id)parameters {
     NSError *error = nil;
-	if (![performFetch:&error]) {
+	if (![self performFetch:&error]) {
 		NSLog(@"[CoreResultsController#fetchLocal] Error on local core data fetch: %@", error);
 	}
 }
 
-- (void) fetchRemote {
-    [entityClass findAllRemote];
+- (void) fetchRemote:(id)parameters {
+    [entityClass performSelector:@selector(findAllRemote) withObject:parameters];
 }
 
 @end

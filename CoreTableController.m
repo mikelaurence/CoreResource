@@ -32,10 +32,14 @@
     return NO;
 }
 
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
+    return nil;
+}
+
 // NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
 	// In the simplest, most efficient, case, reload the table view.
-	[self.tableView reloadData];
+	[(UITableView*)self.view reloadData];
 }
 
 

@@ -10,11 +10,11 @@
     Class entityClass;
 }
 
-@property (nonatomic, retain) Class entityClass;
+@property (nonatomic) Class entityClass;
 
-- (void) fetch;
-- (void) fetchLocal;
-- (void) fetchRemote;
+- (void) fetch:(id)parameters;
+- (void) fetchLocal:(id)parameters;
+- (void) fetchRemote:(id)parameters;
 
 @end
 

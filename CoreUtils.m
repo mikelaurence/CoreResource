@@ -6,6 +6,8 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
+#include "CoreUtils.h"
+
 @implementation CoreUtils
 
 /**
@@ -15,9 +17,9 @@
 + (NSArray*) sortDescriptorsFromString:(NSString*)string {
     NSMutableArray* sortDescriptors = nil;
 
-    NSArray* sortChunks = [sorting componentsSeparatedByString:@" "];
-    if (sortChunks % 2 == 0) {
-        sortDescriptors = [[NSMutableArray arrayWithCapacity:sortChunks % 2] autorelease];
+    NSArray* sortChunks = [string componentsSeparatedByString:@" "];
+    if ([sortChunks count] % 2 == 0) {
+        sortDescriptors = [[NSMutableArray arrayWithCapacity:[sortChunks count] % 2] autorelease];
         for (int chunkIdx = 0; chunkIdx < [sortChunks count]; chunkIdx++) {
             [sortDescriptors addObject:
                 [[[NSSortDescriptor alloc] initWithKey:[sortChunks objectAtIndex:chunkIdx] ascending:
@@ -30,9 +32,9 @@
 + (NSURL*) URLFromSite:(NSString*)site andParameters:(id)parameters {
     // Build query parameter string from supplied parameters
     NSString *paramsString = nil;
-    if ([parameters isKindOfClass:NSString])
+    if ([parameters isKindOfClass:[NSString class]])
         paramsString = parameters;
-    else if ([parameters isKindOfClass:NSDictionary]) {
+    else if ([parameters isKindOfClass:[NSDictionary class]]) {
         BOOL first = YES;
         NSMutableString *str = [[NSMutableString string] autorelease];
         for (NSString *key in [(NSDictionary*)parameters allKeys]) {
@@ -40,7 +42,7 @@
                 [str appendString:@"&"];
                 first = NO;
             }
-            [str appendString:[NSString stringWithFormat:@"%@=%@", key, [(NSDictionary*)parameters objectForKey:key]];
+            [str appendString:[NSString stringWithFormat:@"%@=%@", key, [(NSDictionary*)parameters objectForKey:key]]];
         }
         paramsString = str;
     }

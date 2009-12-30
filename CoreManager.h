@@ -29,9 +29,6 @@
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;
 
-- (NSString *) getRemoteSite;
-- (void) setRemoteSite: (NSString*)siteURL;
-
 - (NSString *)applicationDocumentsDirectory;
 
 @end

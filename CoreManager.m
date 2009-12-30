@@ -24,7 +24,7 @@ static CoreManager* _main;
 #pragma mark -
 #pragma mark Configuration
 
-- (void) init {
+- (id) init {
     if (self = [super init]) {
         [CoreManager setMain:self];
         self.requestQueue = [[NSOperationQueue alloc] init];
@@ -41,7 +41,7 @@ static CoreManager* _main;
 /**
 
  */
-- (BOOL)save {
+- (void)save {
 	
     NSError *error = nil;
     if (managedObjectContext != nil) {
