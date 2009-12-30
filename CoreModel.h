@@ -22,13 +22,13 @@
 
 #pragma mark -
 #pragma mark Read
-+ (id) find:(NSString*)id;
++ (id) find:(NSString*)recordId;
 + (id) findAll:(id)parameters;
 
-+ (id) findLocal:(NSString*)id;
++ (id) findLocal:(NSString*)recordId;
 + (id) findAllLocal:(id)parameters;
 
-+ (id) findRemote:(NSString*)id;
++ (id) findRemote:(NSString*)recordId;
 + (id) findAllRemote:(id)parameters;
 
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request;

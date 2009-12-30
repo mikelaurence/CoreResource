@@ -21,6 +21,9 @@ static CoreManager* _main;
 + (CoreManager*) main { return _main; }
 + (void) setMain:(CoreManager*) newMain { _main = newMain; }
 
+#pragma mark -
+#pragma mark Configuration
+
 - (void) init {
     if (self = [super init]) {
         [CoreManager setMain:self];
@@ -28,11 +31,6 @@ static CoreManager* _main;
     }
     return self;
 }
-
-
-#pragma mark -
-#pragma mark Configuration
-
 
 
 

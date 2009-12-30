@@ -30,19 +30,36 @@
 + (NSArray*) deserializeFromString:(NSString*)serializedString {
     id deserialized = [serializedString JSONValue];
     if (deserialized != nil) {
-        else if ([deserialized isKindOfClass:NSDictionary])
-            return [NSArray arrayWithObject:[self createOrUpdateFromDictionary:deserialized]];
-        else if ([deserialized isKindOfClass:NSArray]) {
-            NSMutableArray *array = [NSMutableArray arrayWithCapacity:[(NSArray*)deserialized count]];
-            for (NSDictionary *dict in (NSArray*)deserialized) {
-                id obj = [self createOrUpdateFromDictionary:dict];
-                if (obj != nil)
-                    [array addObject:obj];
+        id data = [self dataCollectionFromDeserializedCollection:deserialized];
+        if (data != nil) {
+            else if ([deserialized isKindOfClass:NSDictionary])
+                return [NSArray arrayWithObject:[self createOrUpdateFromDictionary:deserialized]];
+            else if ([deserialized isKindOfClass:NSArray]) {
+                NSMutableArray *array = [NSMutableArray arrayWithCapacity:[(NSArray*)deserialized count]];
+                for (NSDictionary *dict in (NSArray*)deserialized) {
+                    id obj = [self createOrUpdateFromDictionary:dict];
+                    if (obj != nil)
+                        [array addObject:obj];
+                }
+                return array;
             }
-            return array;
         }
     }
     return nil;
+}
+
+/**
+    Retrieves the actual data collection from the initial deserialized collection.
+    This should be used if your response has its data objects nested, e.g.:
+    
+    { results: [{ name: 'Mike' }, { name: 'Mork' }] }
+    
+    Defaults to just returning the initial collection, which would work if you have no nested-ness, e.g.:
+    
+    [{ name: 'Mike' }, { name: 'Mork' }]
+*/
++ (id) dataCollectionFromDeserializedCollection:(id)deserializedCollection {
+    return deserializedCollection;
 }
 
 
@@ -93,7 +110,7 @@
 #pragma mark -
 #pragma mark Read
 
-+ (id) find:(NSString*)id {
++ (id) find:(NSString*)recordId {
 
 }
 
@@ -102,7 +119,7 @@
 
 }
 
-+ (id) findLocal:(NSString*)id {
++ (id) findLocal:(NSString*)recordId {
 
 }
 
@@ -110,7 +127,7 @@
 
 }
 
-+ (id) findRemote:(NSString*)id {
++ (id) findRemote:(NSString*)recordId {
 
 }
 
