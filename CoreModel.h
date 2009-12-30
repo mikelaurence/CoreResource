@@ -10,6 +10,13 @@
 #include "CoreManager.h"
 #include "CoreResultsController.h"
 
+typedef enum tagAction {
+    Create = 0,
+    Read = 1,
+    Update = 2,
+    Destroy = 3
+} Action;
+
 @interface CoreModel : NSManagedObject {
     ASIHTTPRequest* request;
 }
@@ -19,6 +26,9 @@
 
 + (CoreManager*) coreManager;
 + (NSString*) remoteSiteURL;
++ (NSString*) remoteCollectionName;
++ (NSString*) remoteCollectionURLForAction:(Action)action;
+- (NSString*) remoteResourceURLForAction:(Action)action;
 
 
 
@@ -30,7 +40,7 @@
 + (NSDateFormatter*) dateParser;
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
 + (NSArray*) deserializeFromString:(NSString*)serializedString;
-+ (id) dataCollectionFromDeserializedCollection:(id)deserializedCollection;
++ (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection;
 
 
 

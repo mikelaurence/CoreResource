@@ -10,6 +10,6 @@
 }
 
 + (NSArray*) sortDescriptorsFromString:(NSString*)string;
-+ (NSURL*) URLFromSite:(NSString*)site andParameters:(id)parameters;
++ (NSURL*) URLWithSite:(NSString*)site andParameters:(id)parameters;
 
 @end

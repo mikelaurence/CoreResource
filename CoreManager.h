@@ -31,5 +31,16 @@
 
 - (NSString *)applicationDocumentsDirectory;
 
+
+#pragma mark -
+#pragma mark Networking
++ (BOOL) checkReachability: (BOOL) showConnectionError;
+
+
+#pragma mark -
+#pragma mark Alerts
++ (void) alertWithError:(NSError*)error;
++ (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message;
+
 @end
 

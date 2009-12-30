@@ -23,6 +23,18 @@
     return [[self coreManager] remoteSiteURL];
 }
 
++ (NSString*) remoteCollectionName {
+    return [[NSStringFromClass(self) deCamelizeWith:@"_"] stringByAppendingString:@"s"];
+}
+
++ (NSString*) remoteCollectionURLForAction:(Action)action {
+    return [NSString stringWithFormat:@"%@/%@", [self remoteSiteURL], [self remoteCollectionName]];
+}
+
+- (NSString*) remoteResourceURLForAction:(Action)action {
+    return [NSString stringWithFormat:@"%@/%@/%@", [[self class] remoteSiteURL], [[self class] remoteCollectionName]]; 
+}
+
 
 #pragma mark -
 #pragma mark Serialization
@@ -46,19 +58,19 @@
 + (NSArray*) deserializeFromString:(NSString*)serializedString {
     id deserialized = [serializedString JSONValue];
     if (deserialized != nil) {
-        id data = [self dataCollectionFromDeserializedCollection:deserialized];
+        // Turn into array if not already one
+        if ([deserialized isKindOfClass:[NSDictionary class]])
+            deserialized = [NSArray arrayWithObject:deserialized];
+
+        NSArray* data = [self dataCollectionFromDeserializedCollection:deserialized];
         if (data != nil) {
-            if ([deserialized isKindOfClass:[NSDictionary class]])
-                return [NSArray arrayWithObject:[self createOrUpdateWithDictionary:deserialized]];
-            else if ([deserialized isKindOfClass:[NSArray class]]) {
-                NSMutableArray *array = [NSMutableArray arrayWithCapacity:[(NSArray*)deserialized count]];
-                for (NSDictionary *dict in (NSArray*)deserialized) {
-                    id obj = [self createOrUpdateWithDictionary:dict];
-                    if (obj != nil)
-                        [array addObject:obj];
-                }
-                return array;
+            NSMutableArray *objs = [NSMutableArray arrayWithCapacity:[(NSArray*)data count]];
+            for (NSDictionary *dict in (NSArray*)deserialized) {
+                id obj = [self createOrUpdateWithDictionary:dict];
+                if (obj != nil)
+                    [objs addObject:obj];
             }
+            return objs;
         }
     }
     return nil;
@@ -66,15 +78,17 @@
 
 /**
     Retrieves the actual data collection from the initial deserialized collection.
-    This should be used if your response has its data objects nested, e.g.:
+    This should be used, for example. if your response has its data objects nested, e.g.:
     
     { results: [{ name: 'Mike' }, { name: 'Mork' }] }
+    
+    It could also just be used to fine-tune the deserialized data before it's converted to model objects.
     
     Defaults to just returning the initial collection, which would work if you have no nested-ness, e.g.:
     
     [{ name: 'Mike' }, { name: 'Mork' }]
 */
-+ (id) dataCollectionFromDeserializedCollection:(id)deserializedCollection {
++ (NSArray*) dataCollectionFromDeserializedCollection:(id)deserializedCollection {
     return deserializedCollection;
 }
 
@@ -200,7 +214,7 @@
 
 + (void) findAllRemote:(id)parameters {
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:
-        [CoreUtils URLFromSite:[self remoteSiteURL] andParameters:parameters]];
+        [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andParameters:parameters]];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish);
     request.didFailSelector = @selector(findRemoteDidFail:);

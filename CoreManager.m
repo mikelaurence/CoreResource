@@ -7,7 +7,7 @@
 //
 
 #import "CoreManager.h"
-
+#import "Reachability.h"
 
 @implementation CoreManager
 
@@ -31,6 +31,42 @@ static CoreManager* _main;
     }
     return self;
 }
+
+
+#pragma mark -
+#pragma mark Networking
+
++ (BOOL) checkReachability: (BOOL) showConnectionError {
+    // Check if the remote server is available
+    Reachability *reachManager = [Reachability sharedReachability];
+    [reachManager setHostName: @"api.meetup.com"];
+    NetworkStatus remoteHostStatus = [reachManager remoteHostStatus];
+    if (remoteHostStatus == NotReachable) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        
+        if (showConnectionError)
+            [self alertWithTitle:@"Network Error" 
+                andMessage:@"Oops - cannot reach the server! Please ensure you have Internet connectivity and try again."];
+        
+        return NO;
+    }
+    return YES;
+}
+
+
+# pragma mark Alerts
+
++ (void) alertWithError:(NSError*)error {
+    [self alertWithTitle:@"Error" andMessage:[error localizedDescription]];
+}
+
++ (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+        message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
 
 
 

@@ -29,7 +29,7 @@
     return sortDescriptors;
 }
 
-+ (NSURL*) URLFromSite:(NSString*)site andParameters:(id)parameters {
++ (NSURL*) URLWithSite:(NSString*)site andParameters:(id)parameters {
     // Build query parameter string from supplied parameters
     NSString *paramsString = nil;
     if ([parameters isKindOfClass:[NSString class]])
