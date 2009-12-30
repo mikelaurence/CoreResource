@@ -49,11 +49,11 @@
         id data = [self dataCollectionFromDeserializedCollection:deserialized];
         if (data != nil) {
             else if ([deserialized isKindOfClass:NSDictionary])
-                return [NSArray arrayWithObject:[self createOrUpdateFromDictionary:deserialized]];
+                return [NSArray arrayWithObject:[self createOrUpdateWithDictionary:deserialized]];
             else if ([deserialized isKindOfClass:NSArray]) {
                 NSMutableArray *array = [NSMutableArray arrayWithCapacity:[(NSArray*)deserialized count]];
                 for (NSDictionary *dict in (NSArray*)deserialized) {
-                    id obj = [self createOrUpdateFromDictionary:dict];
+                    id obj = [self createOrUpdateWithDictionary:dict];
                     if (obj != nil)
                         [array addObject:obj];
                 }
@@ -105,7 +105,7 @@
 	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
 }
 
-+ (id) createOrUpdateFromDictionary:(NSDictionary*)dict {
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict {
     
     // Attempt to find existing record by using ById fetch template
     NSFetchRequest* fetch = [[[self coreManager] managedObjectModel] fetchRequestFromTemplateWithName:
@@ -122,22 +122,20 @@
         if ([fetchResults count] > 0) {
             RemoteModel* existingObject = [fetchResults objectAtIndex:0];
             if ([existingObject shouldUpdateWithData:dict]) {
-                
                 // Result is newer than fetched object, so update it
-                NSLog(@"%@ needs update [old: %@, new: %@]", [existingObject id], [existingObject updated_at], 
-                    [[MainDelegate dataDateParser] dateFromString:[result objectForKey:@"updated"]]);
+                NSLog(@"%@ needs update [old: %@, new: %@]", existingObject, dict);
             }
             else {
-                //NSLog(@"%@ up-to-date", [existingObject id]);
+                NSLog(@"%@ up-to-date", existingObject);
             }
-
         }
         
-        // Otherwise, just create a new object
+        // No existing record found, so create a new object
         else {
-            NSManagedObject* newObject = [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
-            [newObject performSelector: @selector(setAttributesFromJson:) withObject:result];
-            NSLog(@"Created new object (#%@)", resultId);
+            self* newObject = [[self alloc] initWithEntity:[self entityDescription] 
+                insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
+            [newObject updateWithDictionary:dict];
+            NSLog(@"Created new object (#%@)", newObject);
         }
     }
     else {
@@ -150,8 +148,23 @@
     (presumably retrieved from a remote source.) The most likely determinant would be if the new data is newer
     than the object.
 */
-- (BOOL) shouldUpdateWithData: (NSDictionary*) data { 
+- (BOOL) shouldUpdateWithData:(NSDictionary*)data { 
     return [(NSDate*)updated_at compare:[self dateParserForField:@"updated_at"]] == NSOrderedAscending;
+}
+
+- (void) updateWithDictionary:(NSDictionary*)dict {
+    // Loop through and apply fields in dictionary
+    for (NSString* field in [dict allKeys]) {
+        id value = [dict objectForKey:field];
+        
+        NSMethodSignature* fieldSignature = [self instanceMethodSignatureForSelector:NSSelectorFromString(field)];
+        if (fieldSignature != nil) {
+            NSString* returnType = [[NSString alloc] initWithCString:[fieldSignature methodReturnType]];
+            NSLog(@"Return type for %@ is %@", field, fieldSignature);
+            //if ([returnType isEqualToString:@"double"])
+            [self setValue:value forKey:field];
+        }
+    }
 }
 
 

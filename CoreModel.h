@@ -18,7 +18,8 @@
 #pragma mark Create
 
 + (id) create: (id)parameters;
-+ (id) createOrUpdateFromDictionary:(NSDictionary*)dict;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
+- (void) updateWithDictionary:(NSDictionary*)dict;
 
 #pragma mark -
 #pragma mark Read
