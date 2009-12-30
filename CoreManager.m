@@ -12,7 +12,7 @@
 @implementation CoreManager
 
 @synthesize requestQueue;
-@synthesize remoteSiteURL;
+@synthesize remoteSiteURL, defaultDateParser;
 
 #pragma mark -
 #pragma mark Static access

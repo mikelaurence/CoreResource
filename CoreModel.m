@@ -27,6 +27,22 @@
 #pragma mark -
 #pragma mark Serialization
 
++ (NSString*) localIdField {
+    return @"recordId";
+}
+
++ (NSString*) remoteIdField {
+    return @"id";
+}
+
++ (NSDateFormatter*) dateParser {
+    return [[self coreManager] defaultDateParser];
+}
+
++ (NSDateFormatter*) dateParserForField:(NSString*)field {
+    return [self dateParser];
+}
+
 + (NSArray*) deserializeFromString:(NSString*)serializedString {
     id deserialized = [serializedString JSONValue];
     if (deserialized != nil) {
@@ -87,23 +103,55 @@
 	
 	// If appropriate, configure the new managed object.
 	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-	
-	// Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 */
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-    }
 }
 
 + (id) createOrUpdateFromDictionary:(NSDictionary*)dict {
     
+    // Attempt to find existing record by using ById fetch template
+    NSFetchRequest* fetch = [[[self coreManager] managedObjectModel] fetchRequestFromTemplateWithName:
+        [NSString stringWithFormat:@"%@ById", self] substitutionVariables:
+        [NSDictionary dictionaryWithObject:[dict objectForKey:[self remoteIdField]] forKey:@"id"];
+    ];
+    [fetch setFetchLimit:1];
 
+    NSError* fetchError = nil;
+    NSMutableArray* fetchResults = [[[[self coreManager] managedObjectContext] executeFetchRequest:fetch error:&fetchError] mutableCopy];
+
+    if (fetchError == nil) {
+        // If there is a result, check to see whether we should update it or not
+        if ([fetchResults count] > 0) {
+            RemoteModel* existingObject = [fetchResults objectAtIndex:0];
+            if ([existingObject shouldUpdateWithData:dict]) {
+                
+                // Result is newer than fetched object, so update it
+                NSLog(@"%@ needs update [old: %@, new: %@]", [existingObject id], [existingObject updated_at], 
+                    [[MainDelegate dataDateParser] dateFromString:[result objectForKey:@"updated"]]);
+            }
+            else {
+                //NSLog(@"%@ up-to-date", [existingObject id]);
+            }
+
+        }
+        
+        // Otherwise, just create a new object
+        else {
+            NSManagedObject* newObject = [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
+            [newObject performSelector: @selector(setAttributesFromJson:) withObject:result];
+            NSLog(@"Created new object (#%@)", resultId);
+        }
+    }
+    else {
+        NSLog(@"Error in fetching %@ for update comparison. %@", [self modelName], [fetchError localizedDescription]);
+    }
+}
+
+/**
+    Determines whether or not an existing (local) record should be updated with data from the provided dictionary
+    (presumably retrieved from a remote source.) The most likely determinant would be if the new data is newer
+    than the object.
+*/
+- (BOOL) shouldUpdateWithData: (NSDictionary*) data { 
+    return [(NSDate*)updated_at compare:[self dateParserForField:@"updated_at"]] == NSOrderedAscending;
 }
 
 

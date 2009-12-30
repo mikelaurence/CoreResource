@@ -14,6 +14,7 @@
     NSOperationQueue *requestQueue;
     
     NSString *remoteSiteURL;
+    NSDateFormatter *defaultDateParser;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSOperationQueue *requestQueue;
 
 @property (nonatomic, retain) NSString *remoteSiteURL;
+@property (nonatomic, retain) NSDateFormatter *defaultDateParser;
 
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;
