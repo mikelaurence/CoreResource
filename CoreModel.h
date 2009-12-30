@@ -7,11 +7,31 @@
 //
 
 #include "ASIHTTPRequest.h"
+#include "CoreManager.h"
 #include "CoreResultsController.h"
 
 @interface CoreModel : NSManagedObject {
     ASIHTTPRequest* request;
 }
+
+#pragma mark -
+#pragma mark Configuration
+
++ (CoreManager*) coreManager;
++ (NSString*) remoteSiteURL;
+
+
+
+#pragma mark -
+#pragma mark Serialization
+
++ (NSString*) localIdField;
++ (NSString*) remoteIdField;
++ (NSDateFormatter*) dateParser;
++ (NSDateFormatter*) dateParserForField:(NSString*)field;
++ (NSArray*) deserializeFromString:(NSString*)serializedString;
++ (id) dataCollectionFromDeserializedCollection:(id)deserializedCollection;
+
 
 
 #pragma mark -
@@ -20,6 +40,8 @@
 + (id) create: (id)parameters;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
 - (void) updateWithDictionary:(NSDictionary*)dict;
+- (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
+
 
 #pragma mark -
 #pragma mark Read
@@ -29,17 +51,18 @@
 + (id) findLocal:(NSString*)recordId;
 + (id) findAllLocal:(id)parameters;
 
-+ (id) findRemote:(NSString*)recordId;
-+ (id) findAllRemote:(id)parameters;
-
++ (void) findRemote:(NSString*)recordId;
++ (void) findAllRemote:(id)parameters;
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request;
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request;
+
+
 
 #pragma mark -
 #pragma mark Results Management
 
-+ (NSFetchRequest) fetchRequest;
-+ (NSFetchRequest) fetchRequestWithSort:(NSString*)sorting andPredicate:(NSPredicate*)predicate;
++ (NSFetchRequest*) fetchRequest;
++ (NSFetchRequest*) fetchRequestWithSort:(NSString*)sorting andPredicate:(NSPredicate*)predicate;
 + (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey;
 + (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
 
