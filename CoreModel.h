@@ -18,6 +18,7 @@
 #pragma mark Create
 
 + (id) create: (id)parameters;
++ (id) createOrUpdateFromDictionary:(NSDictionary*)dict;
 
 #pragma mark -
 #pragma mark Read
@@ -30,6 +31,8 @@
 + (id) findRemote:(NSString*)id;
 + (id) findAllRemote:(id)parameters;
 
++ (void) findRemoteDidFinish:(ASIHTTPRequest*)request;
++ (void) findRemoteDidFail:(ASIHTTPRequest*)request;
 
 #pragma mark -
 #pragma mark Results Management

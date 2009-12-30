@@ -8,6 +8,7 @@
 
 #import "CoreManager.h"
 #import "CoreUtils.h"
+#import "JSON.h"
 
 @implementation CoreModel
 
@@ -21,6 +22,30 @@
 + (NSString*) remoteSiteURL {
     return [[self coreManager] remoteSiteURL];
 }
+
+
+#pragma mark -
+#pragma mark Serialization
+
++ (NSArray*) deserializeFromString:(NSString*)serializedString {
+    id deserialized = [serializedString JSONValue];
+    if (deserialized != nil) {
+        else if ([deserialized isKindOfClass:NSDictionary])
+            return [NSArray arrayWithObject:[self createOrUpdateFromDictionary:deserialized]];
+        else if ([deserialized isKindOfClass:NSArray]) {
+            NSMutableArray *array = [NSMutableArray arrayWithCapacity:[(NSArray*)deserialized count]];
+            for (NSDictionary *dict in (NSArray*)deserialized) {
+                id obj = [self createOrUpdateFromDictionary:dict];
+                if (obj != nil)
+                    [array addObject:obj];
+            }
+            return array;
+        }
+    }
+    return nil;
+}
+
+
 
 #pragma mark -
 #pragma mark Core Data Basics
@@ -59,6 +84,11 @@
     }
 }
 
++ (id) createOrUpdateFromDictionary:(NSDictionary*)dict {
+    
+
+}
+
 
 #pragma mark -
 #pragma mark Read
@@ -92,6 +122,13 @@
     request.didFailSelector = @selector(findRemoteDidFail:);
 }
 
++ (void) findRemoteDidFinish:(ASIHTTPRequest*)request {
+    id deserializedResources = [self deserializeFromString:[request responseString]];
+}
+
++ (void) findRemoteDidFail:(ASIHTTPRequest*)request {
+    NSLog(@"[%@#findRemoteDidFail] Find request failed: %@", self, request);
+}
 
 #pragma mark -
 #pragma mark Results Management
