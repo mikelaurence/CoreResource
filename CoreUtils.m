@@ -29,25 +29,37 @@
     return sortDescriptors;
 }
 
-+ (NSURL*) URLWithSite:(NSString*)site andParameters:(id)parameters {
++ (NSURL*) URLWithSite:(NSString*)site andFormat:(NSString*)format andParameters:(id)parameters {
     // Build query parameter string from supplied parameters
-    NSString *paramsString = nil;
-    if ([parameters isKindOfClass:[NSString class]])
-        paramsString = parameters;
-    else if ([parameters isKindOfClass:[NSDictionary class]]) {
-        BOOL first = YES;
-        NSMutableString *str = [[NSMutableString string] autorelease];
-        for (NSString *key in [(NSDictionary*)parameters allKeys]) {
-            if (!first) {
-                [str appendString:@"&"];
-                first = NO;
-            }
-            [str appendString:[NSString stringWithFormat:@"%@=%@", key, [(NSDictionary*)parameters objectForKey:key]]];
-        }
-        paramsString = str;
+    NSMutableString *str = [[NSMutableString stringWithString:site] autorelease];
+    
+    // Add in format if extant
+    if (format != nil) {
+        [str appendString:@"."];
+        [str appendString:format];
     }
     
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", site, paramsString]]; 
+    if (parameters != nil) {
+        [str appendString:@"?"];
+        
+        // If parameters are just a string, add in directly
+        if ([parameters isKindOfClass:[NSString class]])
+            [str appendString:parameters];
+            
+        // If parameters are a dictionary, iterate and add each pair
+        else if ([parameters isKindOfClass:[NSDictionary class]]) {
+            BOOL first = YES;
+            for (NSString *key in [(NSDictionary*)parameters allKeys]) {
+                if (!first) {
+                    [str appendString:@"&"];
+                    first = NO;
+                }
+                [str appendString:[NSString stringWithFormat:@"%@=%@", key, [(NSDictionary*)parameters objectForKey:key]]];
+            }
+        }
+    }
+    
+    return [NSURL URLWithString:str];
 }
 
 @end

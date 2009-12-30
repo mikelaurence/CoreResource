@@ -214,7 +214,7 @@
 
 + (void) findAllRemote:(id)parameters {
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:
-        [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andParameters:parameters]];
+        [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andFormat:@"json" andParameters:parameters]];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish);
     request.didFailSelector = @selector(findRemoteDidFail:);
