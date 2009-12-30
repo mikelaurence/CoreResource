@@ -19,8 +19,8 @@
 
     NSArray* sortChunks = [string componentsSeparatedByString:@" "];
     if ([sortChunks count] % 2 == 0) {
-        sortDescriptors = [[NSMutableArray arrayWithCapacity:[sortChunks count] % 2] autorelease];
-        for (int chunkIdx = 0; chunkIdx < [sortChunks count]; chunkIdx++) {
+        sortDescriptors = [[NSMutableArray arrayWithCapacity:[sortChunks count] / 2] autorelease];
+        for (int chunkIdx = 0; chunkIdx < [sortChunks count]; chunkIdx += 2) {
             [sortDescriptors addObject:
                 [[[NSSortDescriptor alloc] initWithKey:[sortChunks objectAtIndex:chunkIdx] ascending:
                     [[sortChunks objectAtIndex:chunkIdx + 1] caseInsensitiveCompare:@"asc"] == NSOrderedSame] autorelease]];
@@ -50,10 +50,8 @@
         else if ([parameters isKindOfClass:[NSDictionary class]]) {
             BOOL first = YES;
             for (NSString *key in [(NSDictionary*)parameters allKeys]) {
-                if (!first) {
-                    [str appendString:@"&"];
-                    first = NO;
-                }
+                if (first) first = NO;
+                else [str appendString:@"&"];
                 [str appendString:[NSString stringWithFormat:@"%@=%@", key, [(NSDictionary*)parameters objectForKey:key]]];
             }
         }

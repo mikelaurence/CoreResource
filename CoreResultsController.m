@@ -25,7 +25,7 @@
 }
 
 - (void) fetchRemote:(id)parameters {
-    [entityClass performSelector:@selector(findAllRemote) withObject:parameters];
+    [entityClass performSelector:@selector(findAllRemote:) withObject:parameters];
 }
 
 @end

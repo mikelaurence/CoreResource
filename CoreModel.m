@@ -24,7 +24,7 @@
 }
 
 + (NSString*) remoteCollectionName {
-    return [[NSStringFromClass(self) deCamelizeWith:@"_"] stringByAppendingString:@"s"];
+    return [[[NSStringFromClass(self) deCamelizeWith:@"_"] substringFromIndex:1] stringByAppendingString:@"s"];
 }
 
 + (NSString*) remoteCollectionURLForAction:(Action)action {
@@ -218,7 +218,7 @@
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish);
     request.didFailSelector = @selector(findRemoteDidFail:);
-    [[[self coreManager] requestQueue] addOperation:request];
+    [CoreManager enqueueRequest:request];
 }
 
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request {

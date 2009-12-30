@@ -6,6 +6,8 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
+#include "ASIHTTPRequest.h"
+
 @interface CoreManager : NSObject {    
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
@@ -34,13 +36,19 @@
 
 #pragma mark -
 #pragma mark Networking
-+ (BOOL) checkReachability: (BOOL) showConnectionError;
++ (BOOL) checkReachability:(BOOL)showConnectionError;
++ (void) enqueueRequest:(ASIHTTPRequest*)request;
 
 
 #pragma mark -
 #pragma mark Alerts
 + (void) alertWithError:(NSError*)error;
 + (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message;
+
+
+#pragma mark -
+#pragma mark Core Data
+- (void)save;
 
 @end
 

@@ -53,6 +53,11 @@ static CoreManager* _main;
     return YES;
 }
 
++ (void) enqueueRequest:(ASIHTTPRequest*)request {
+    NSLog(@"[CoreManager#enqueueRequest] request queued: %@", request.url);
+    [[self main].requestQueue addOperation:request];
+}
+
 
 # pragma mark Alerts
 

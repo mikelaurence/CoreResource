@@ -6,11 +6,10 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
-#include "ASIHTTPRequest.h"
 #include "CoreManager.h"
 #include "CoreResultsController.h"
 
-typedef enum tagAction {
+typedef enum _Action {
     Create = 0,
     Read = 1,
     Update = 2,
