@@ -29,7 +29,7 @@ typedef enum _Action {
 + (NSString*) remoteCollectionURLForAction:(Action)action;
 - (NSString*) remoteResourceURLForAction:(Action)action;
 
-+ (Class) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
 
 
 #pragma mark -
@@ -43,12 +43,19 @@ typedef enum _Action {
 + (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection;
 
 
+#pragma mark -
+#pragma mark Core Data
+
++ (NSString*) entityName;
++ (NSEntityDescription*) entityDescription;
+
 
 #pragma mark -
 #pragma mark Create
 
 + (id) create: (id)parameters;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object;
 - (void) updateWithDictionary:(NSDictionary*)dict;
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
 

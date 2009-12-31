@@ -41,7 +41,7 @@
     By default, this caches the resulting dictionaries provided by Core Data
     in order to maximize efficiency.
 */
-+ (Class) propertyTypeForField:(NSString*)field inModel:(Class)modelClass {
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass {
     NSDictionary *modelTypes = [[[CoreManager main] modelPropertyTypes] objectForKey:modelClass];
     
     // Create entry for the given class if it doesn't exist yet
@@ -114,7 +114,7 @@
 
 
 #pragma mark -
-#pragma mark Core Data Basics
+#pragma mark Core Data
 
 + (NSString*) entityName {
     return [NSString stringWithFormat:@"%@", self];
@@ -178,6 +178,14 @@
     return nil;
 }
 
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object {
+    id otherObject = [self createOrUpdateWithDictionary:dict];
+    if (otherObject)
+        [otherObject setObject:object forKey:[relationship name]];
+    return otherObject;
+}
+
+
 /**
     Determines whether or not an existing (local) record should be updated with data from the provided dictionary
     (presumably retrieved from a remote source.) The most likely determinant would be if the new data is newer
@@ -216,8 +224,16 @@
             
             // If property is a relationship, do some cascading object creation/updation
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
-            
-            
+                Class relationshipClass = NSClassFromString([[(NSRelationshipDescription*)propertyDescription destinationEntity] managedObjectClassName]);
+                NSRelationshipDescription* inverseRelationship = [(NSRelationshipDescription*)propertyDescription inverseRelationship];
+                
+                // Create/update relationship items and assign this object to their inverse relationship (to link them)
+                if ([value isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary *dict in value)
+                        [relationshipClass createOrUpdateWithDictionary:dict andRelationship:inverseRelationship toObject:self];
+                }
+                else if ([value isKindOfClass:[NSDictionary class]])
+                    [relationshipClass createOrUpdateWithDictionary:value andRelationship:inverseRelationship toObject:self];
             }
             
             // If it's an attribute, just assign the value to the object
