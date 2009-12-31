@@ -38,26 +38,19 @@
 
 /**
     Returns the class type for a given property in a given model.
-    By default, this caches the results provided by scanning the actual property types
+    By default, this caches the resulting dictionaries provided by Core Data
     in order to maximize efficiency.
 */
 + (Class) propertyTypeForField:(NSString*)field inModel:(Class)modelClass {
-    NSMutableDictionary *modelTypes = [[[CoreManager main] modelPropertyTypes] objectForKey:modelClass];
+    NSDictionary *modelTypes = [[[CoreManager main] modelPropertyTypes] objectForKey:modelClass];
     
     // Create entry for the given class if it doesn't exist yet
     if (modelTypes == nil) {
-        modelTypes = [[NSMutableDictionary dictionary] autorelease];
-        [[[CoreManager main] modelPropertyTypes] setObject:modelTypes forKey:modelClass];
+        modelTypes = [[NSDictionary dictionary] autorelease];
+        [[[CoreManager main] modelPropertyTypes] setObject:[[self entityDescription] propertiesByName] forKey:modelClass];
     }
-    
-    // Likewise, create entry for the given field if not yet extant
-    NSString *type = [modelTypes objectForKey:field];
-    if (type == nil) {
-        type = [self getPropertyType:field];
-        [modelTypes setObject:type forKey:field];
-    }
-     
-    return [type isEqualToString:@"NULL" ? nil : NSClassFromString(type)];
+
+    return [modelTypes objectForKey:field];
 }
 
 
@@ -215,18 +208,30 @@
 
     // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
-        if ([self respondsToSelector:NSSelectorFromString(field)]) {
+        NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:field inModel:[self class]];
+        NSLog(@"Property description for %@ is %@", field, propertyDescription);
+        
+        if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
-            Class propertyType = [[self class] propertyTypeForField:field inModel:[self class]];
+            
+            // If property is a relationship, do some cascading object creation/updation
+            if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
+            
+            
+            }
+            
+            // If it's an attribute, just assign the value to the object
+            else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]]) {                
 
-            NSLog(@"Return type for %@ is %@", field, propertyType);
-            
-            // Perform additional processing on value based on property type
-            // (e.g., cascade along associations, parse dates, etc.)
-            if ([propertyType isEqualToString:@"NSDate"])
-                value = [[[self class] dateParserForField:field] dateFromString:value];
-            
-            [self setValue:value forKey:field];
+                // Perform additional processing on value based on attribute type
+                switch ([(NSAttributeDescription*)propertyDescription attributeType]) {
+                    case NSDateAttributeType:
+                        value = [[[self class] dateParserForField:field] dateFromString:value];
+                        break;
+                }
+                
+                [self setValue:value forKey:field];
+            }
         }
     }
 }
