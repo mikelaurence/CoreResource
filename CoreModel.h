@@ -29,6 +29,7 @@ typedef enum _Action {
 + (NSString*) remoteCollectionURLForAction:(Action)action;
 - (NSString*) remoteResourceURLForAction:(Action)action;
 
++ (Class) propertyTypeForField:(NSString*)field inModel:(Class)modelClass;
 
 
 #pragma mark -

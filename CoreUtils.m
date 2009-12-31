@@ -7,8 +7,16 @@
 //
 
 #include "CoreUtils.h"
+#include "TargetConditionals.h"
 
 @implementation CoreUtils
+
++ (BOOL) runningInSimulator {
+    #if TARGET_IPHONE_SIMULATOR
+    return YES;
+    #endif
+    return NO;
+}
 
 /**
     Generates an array of sort descriptors based on a SQL-esque string
@@ -19,11 +27,11 @@
 
     NSArray* sortChunks = [string componentsSeparatedByString:@" "];
     if ([sortChunks count] % 2 == 0) {
-        sortDescriptors = [[NSMutableArray arrayWithCapacity:[sortChunks count] / 2] autorelease];
+        sortDescriptors = [NSMutableArray arrayWithCapacity:[sortChunks count] / 2];
         for (int chunkIdx = 0; chunkIdx < [sortChunks count]; chunkIdx += 2) {
             [sortDescriptors addObject:
-                [[[NSSortDescriptor alloc] initWithKey:[sortChunks objectAtIndex:chunkIdx] ascending:
-                    [[sortChunks objectAtIndex:chunkIdx + 1] caseInsensitiveCompare:@"asc"] == NSOrderedSame] autorelease]];
+                [[NSSortDescriptor alloc] initWithKey:[sortChunks objectAtIndex:chunkIdx] ascending:
+                    [[sortChunks objectAtIndex:chunkIdx + 1] caseInsensitiveCompare:@"asc"] == NSOrderedSame]];
         }
     }
     return sortDescriptors;
@@ -31,7 +39,7 @@
 
 + (NSURL*) URLWithSite:(NSString*)site andFormat:(NSString*)format andParameters:(id)parameters {
     // Build query parameter string from supplied parameters
-    NSMutableString *str = [[NSMutableString stringWithString:site] autorelease];
+    NSMutableString *str = [NSMutableString stringWithString:site];
     
     // Add in format if extant
     if (format != nil) {

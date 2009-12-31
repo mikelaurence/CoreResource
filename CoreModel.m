@@ -9,6 +9,7 @@
 #import "CoreModel.h"
 #import "CoreUtils.h"
 #import "JSON.h"
+#import "NSString+InflectionSupport.h"
 
 @implementation CoreModel
 
@@ -33,6 +34,30 @@
 
 - (NSString*) remoteResourceURLForAction:(Action)action {
     return [NSString stringWithFormat:@"%@/%@/%@", [[self class] remoteSiteURL], [[self class] remoteCollectionName]]; 
+}
+
+/**
+    Returns the class type for a given property in a given model.
+    By default, this caches the results provided by scanning the actual property types
+    in order to maximize efficiency.
+*/
++ (Class) propertyTypeForField:(NSString*)field inModel:(Class)modelClass {
+    NSMutableDictionary *modelTypes = [[[CoreManager main] modelPropertyTypes] objectForKey:modelClass];
+    
+    // Create entry for the given class if it doesn't exist yet
+    if (modelTypes == nil) {
+        modelTypes = [[NSMutableDictionary dictionary] autorelease];
+        [[[CoreManager main] modelPropertyTypes] setObject:modelTypes forKey:modelClass];
+    }
+    
+    // Likewise, create entry for the given field if not yet extant
+    NSString *type = [modelTypes objectForKey:field];
+    if (type == nil) {
+        type = [self getPropertyType:field];
+        [modelTypes setObject:type forKey:field];
+    }
+     
+    return [type isEqualToString:@"NULL" ? nil : NSClassFromString(type)];
 }
 
 
@@ -64,8 +89,9 @@
 
         NSArray* data = [self dataCollectionFromDeserializedCollection:deserialized];
         if (data != nil) {
+            NSLog(@"Deserializing %@ %@", [NSNumber numberWithInt:[deserialized count]], [self remoteCollectionName]);
             NSMutableArray *objs = [NSMutableArray arrayWithCapacity:[(NSArray*)data count]];
-            for (NSDictionary *dict in (NSArray*)deserialized) {
+            for (NSMutableDictionary *dict in (NSArray*)deserialized) {
                 id obj = [self createOrUpdateWithDictionary:dict];
                 if (obj != nil)
                     [objs addObject:obj];
@@ -166,23 +192,40 @@
 */
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict { 
     if ([self respondsToSelector:@selector(updated_at)]) {
-        return [(NSDate*)[self performSelector:@selector(updated_at)] compare:
-            [[[self class] dateParserForField:@"updated_at"] dateFromString:[dict objectForKey:@"updated_at"]]] == NSOrderedAscending;
+        NSDate *updatedAt = (NSDate*)[self performSelector:@selector(updated_at)];
+        if (updatedAt != nil) {
+            return [updatedAt compare:
+                [[[self class] dateParserForField:@"updated_at"] dateFromString:[dict objectForKey:@"updated_at"]]] == NSOrderedAscending;
+        }
     }
-    else
-        return YES;
+    return YES;
 }
 
 - (void) updateWithDictionary:(NSDictionary*)dict {
-    // Loop through and apply fields in dictionary
+
+    if (![dict isKindOfClass:[NSMutableDictionary class]])
+        dict = [dict mutableCopy];
+
+    // Change remote ID field to local ID field
+    id remoteIdValue = [dict objectForKey:[[self class] remoteIdField]];
+    if (remoteIdValue != nil) {
+        [(NSMutableDictionary*)dict removeObjectForKey:[[self class] remoteIdField]];
+        [(NSMutableDictionary*)dict setObject:remoteIdValue forKey:[[self class] localIdField]];
+    }
+
+    // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
-        id value = [dict objectForKey:field];
-        
-        NSMethodSignature* fieldSignature = [[self class] instanceMethodSignatureForSelector:NSSelectorFromString(field)];
-        if (fieldSignature != nil) {
-            NSString* returnType = [[NSString alloc] initWithCString:[fieldSignature methodReturnType]];
-            NSLog(@"Return type for %@ is %@", field, returnType);
-            //if ([returnType isEqualToString:@"double"])
+        if ([self respondsToSelector:NSSelectorFromString(field)]) {
+            id value = [dict objectForKey:field];
+            Class propertyType = [[self class] propertyTypeForField:field inModel:[self class]];
+
+            NSLog(@"Return type for %@ is %@", field, propertyType);
+            
+            // Perform additional processing on value based on property type
+            // (e.g., cascade along associations, parse dates, etc.)
+            if ([propertyType isEqualToString:@"NSDate"])
+                value = [[[self class] dateParserForField:field] dateFromString:value];
+            
             [self setValue:value forKey:field];
         }
     }
@@ -216,17 +259,18 @@
     ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:
         [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andFormat:@"json" andParameters:parameters]];
     request.delegate = self;
-    request.didFinishSelector = @selector(findRemoteDidFinish);
+    request.didFinishSelector = @selector(findRemoteDidFinish:);
     request.didFailSelector = @selector(findRemoteDidFail:);
     [CoreManager enqueueRequest:request];
 }
 
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request {
+    NSLog(@"[%@#findRemoteDidFinish] Find remote request succeeded.", self);
     [self deserializeFromString:[request responseString]];
 }
 
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request {
-    NSLog(@"[%@#findRemoteDidFail] Find request failed: %@", self, request);
+    NSLog(@"[%@#findRemoteDidFail] Find remote request failed.", self);
 }
 
 #pragma mark -

@@ -17,6 +17,8 @@
     
     NSString *remoteSiteURL;
     NSDateFormatter *defaultDateParser;
+    
+    NSMutableDictionary *modelPropertyTypes;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
@@ -27,6 +29,8 @@
 
 @property (nonatomic, retain) NSString *remoteSiteURL;
 @property (nonatomic, retain) NSDateFormatter *defaultDateParser;
+
+@property (nonatomic, retain) NSMutableDictionary *modelPropertyTypes;
 
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;
