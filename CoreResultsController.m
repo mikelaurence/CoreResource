@@ -18,6 +18,11 @@
 }
 
 - (void) fetchLocal:(id)parameters {
+
+    // If parameter is a predicate, set it on the results controller
+    if ([parameters isKindOfClass:[NSPredicate class]])
+        self.fetchRequest.predicate = parameters;
+
     NSError *error = nil;
 	if (![self performFetch:&error]) {
 		NSLog(@"[CoreResultsController#fetchLocal] Error on local core data fetch: %@", error);

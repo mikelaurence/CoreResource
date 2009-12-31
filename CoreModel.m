@@ -77,7 +77,7 @@
 }
 
 + (NSArray*) deserializeFromString:(NSString*)serializedString {
-    NSLog(@"Serialized data: %@", serializedString);
+    //NSLog(@"Serialized data: %@", serializedString);
     id deserialized = [serializedString JSONValue];
     if (deserialized != nil) {
         // Turn into array if not already one
@@ -136,7 +136,7 @@
 #pragma mark -
 #pragma mark Create
 
-+ (id) create: (id)parameters {
++ (id) create:(id)parameters {
 	
 	// Create a new instance of the entity managed by the fetched results controller.
 	NSManagedObjectContext *context = [[self coreManager] managedObjectContext];
@@ -173,7 +173,7 @@
             CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
                 insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
             [newObject updateWithDictionary:dict];
-            NSLog(@"Created new object (#%@)", newObject);
+            NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
             return newObject;
         }
     }
@@ -212,10 +212,14 @@
 
     // Determine whether this object needs to be updated (relationships will still be checked no matter what)
     BOOL shouldUpdateRoot = [self shouldUpdateWithDictionary:dict];
-    
-    // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake
-    if (!shouldUpdateRoot && ![[self class] hasRelationships])
-        return;
+    if (shouldUpdateRoot)
+        NSLog(@"Updating %@ with id %@", [self class], [self valueForKey:[[self class] localIdField]]);
+    else {
+        NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", [self class], [self valueForKey:[[self class] localIdField]]);
+        // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake
+        if (![[self class] hasRelationships])
+            return;
+    }
 
     // Mutable-ize dictionary if necessary
     if (![dict isKindOfClass:[NSMutableDictionary class]])
