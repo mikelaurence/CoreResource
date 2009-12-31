@@ -48,6 +48,7 @@ typedef enum _Action {
 
 + (NSString*) entityName;
 + (NSEntityDescription*) entityDescription;
++ (BOOL) hasRelationships;
 
 
 #pragma mark -

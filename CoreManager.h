@@ -19,6 +19,7 @@
     NSDateFormatter *defaultDateParser;
     
     NSMutableDictionary *modelPropertyTypes;
+    NSMutableDictionary *modelRelationships;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSDateFormatter *defaultDateParser;
 
 @property (nonatomic, retain) NSMutableDictionary *modelPropertyTypes;
+@property (nonatomic, retain) NSMutableDictionary *modelRelationships;
 
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;
@@ -41,14 +43,14 @@
 #pragma mark -
 #pragma mark Networking
 + (BOOL) checkReachability:(BOOL)showConnectionError;
-+ (void) enqueueRequest:(ASIHTTPRequest*)request;
+- (void) enqueueRequest:(ASIHTTPRequest*)request;
 
 
 #pragma mark -
-#pragma mark Alerts
+#pragma mark Alerts & Errors
 + (void) alertWithError:(NSError*)error;
 + (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message;
-
++ (void) logCoreDataError:(NSError*)error;
 
 #pragma mark -
 #pragma mark Core Data

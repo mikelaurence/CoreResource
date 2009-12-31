@@ -46,8 +46,11 @@
     
     // Create entry for the given class if it doesn't exist yet
     if (modelTypes == nil) {
-        modelTypes = [[NSDictionary dictionary] autorelease];
+        modelTypes = [NSDictionary dictionary];
         [[[CoreManager main] modelPropertyTypes] setObject:[[self entityDescription] propertiesByName] forKey:modelClass];
+        
+        // Also add relationships dictionary
+        [[[CoreManager main] modelRelationships] setObject:[[self entityDescription] relationshipsByName] forKey:modelClass];
     }
 
     return [modelTypes objectForKey:field];
@@ -58,7 +61,7 @@
 #pragma mark Serialization
 
 + (NSString*) localIdField {
-    return @"recordId";
+    return @"remote_id";
 }
 
 + (NSString*) remoteIdField {
@@ -74,6 +77,7 @@
 }
 
 + (NSArray*) deserializeFromString:(NSString*)serializedString {
+    NSLog(@"Serialized data: %@", serializedString);
     id deserialized = [serializedString JSONValue];
     if (deserialized != nil) {
         // Turn into array if not already one
@@ -124,6 +128,10 @@
     return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:[[self coreManager] managedObjectContext]];
 }
 
++ (BOOL) hasRelationships {
+    return [(NSDictionary*)[[[[self class] coreManager] modelRelationships] objectForKey:self] count] > 0;
+}
+
 
 #pragma mark -
 #pragma mark Create
@@ -143,6 +151,10 @@
         fetchRequestFromTemplateWithName:[NSString stringWithFormat:@"%@ById", self] 
         substitutionVariables:[NSDictionary dictionaryWithObject:[dict objectForKey:[self remoteIdField]] forKey:@"id"]
     ];
+    if (fetch == nil)
+        [NSException raise:@"No finder template available" 
+            format:@"No fetch request template could be found for entity %@. Please implement the template '%@' in your Core Data model (xcdatamodel file).",
+            self, [NSString stringWithFormat:@"%@ById", self]];
     [fetch setFetchLimit:1];
 
     NSError* fetchError = nil;
@@ -152,13 +164,7 @@
         // If there is a result, check to see whether we should update it or not
         if ([fetchResults count] > 0) {
             CoreModel *existingObject = [fetchResults objectAtIndex:0];
-            if ([existingObject shouldUpdateWithDictionary:dict]) {
-                // Result is newer than fetched object, so update it
-                NSLog(@"%@ needs update [old: %@, new: %@]", existingObject, dict);
-            }
-            else {
-                NSLog(@"%@ up-to-date", existingObject);
-            }
+            [existingObject updateWithDictionary:dict];
             return existingObject;
         }
         
@@ -181,7 +187,7 @@
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object {
     id otherObject = [self createOrUpdateWithDictionary:dict];
     if (otherObject)
-        [otherObject setObject:object forKey:[relationship name]];
+        [otherObject setValue:object forKey:[relationship name]];
     return otherObject;
 }
 
@@ -204,6 +210,14 @@
 
 - (void) updateWithDictionary:(NSDictionary*)dict {
 
+    // Determine whether this object needs to be updated (relationships will still be checked no matter what)
+    BOOL shouldUpdateRoot = [self shouldUpdateWithDictionary:dict];
+    
+    // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake
+    if (!shouldUpdateRoot && ![[self class] hasRelationships])
+        return;
+
+    // Mutable-ize dictionary if necessary
     if (![dict isKindOfClass:[NSMutableDictionary class]])
         dict = [dict mutableCopy];
 
@@ -217,12 +231,12 @@
     // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
         NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:field inModel:[self class]];
-        NSLog(@"Property description for %@ is %@", field, propertyDescription);
+        //NSLog(@"Property description for %@.%@ is %@", [self class], field, propertyDescription);
         
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
             
-            // If property is a relationship, do some cascading object creation/updation
+            // If property is a relationship, do some cascading object creation/updation (occurs regardless of shouldUpdateRoot)
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
                 Class relationshipClass = NSClassFromString([[(NSRelationshipDescription*)propertyDescription destinationEntity] managedObjectClassName]);
                 NSRelationshipDescription* inverseRelationship = [(NSRelationshipDescription*)propertyDescription inverseRelationship];
@@ -236,17 +250,22 @@
                     [relationshipClass createOrUpdateWithDictionary:value andRelationship:inverseRelationship toObject:self];
             }
             
-            // If it's an attribute, just assign the value to the object
-            else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]]) {                
-
-                // Perform additional processing on value based on attribute type
-                switch ([(NSAttributeDescription*)propertyDescription attributeType]) {
-                    case NSDateAttributeType:
-                        value = [[[self class] dateParserForField:field] dateFromString:value];
-                        break;
-                }
+            // If it's an attribute, just assign the value to the object (unless the object is up-to-date)
+            else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]] && shouldUpdateRoot) {                
                 
-                [self setValue:value forKey:field];
+                // Check if value is NSNull, which should be set as nil on fields (since NSNull is just used as a collection placeholder)
+                if ([value isEqual:[NSNull null]])
+                    [self setValue:nil forKey:field];
+
+                else {
+                    // Perform additional processing on value based on attribute type
+                    switch ([(NSAttributeDescription*)propertyDescription attributeType]) {
+                        case NSDateAttributeType:
+                            value = [[[self class] dateParserForField:field] dateFromString:value];
+                            break;
+                    }
+                    [self setValue:value forKey:field];
+                }
             }
         }
     }
@@ -282,12 +301,13 @@
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish:);
     request.didFailSelector = @selector(findRemoteDidFail:);
-    [CoreManager enqueueRequest:request];
+    [[self coreManager] enqueueRequest:request];
 }
 
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request {
     NSLog(@"[%@#findRemoteDidFinish] Find remote request succeeded.", self);
     [self deserializeFromString:[request responseString]];
+    [[self coreManager] save];
 }
 
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request {

@@ -13,7 +13,7 @@
 
 @synthesize requestQueue;
 @synthesize remoteSiteURL, defaultDateParser;
-@synthesize modelPropertyTypes;
+@synthesize modelPropertyTypes, modelRelationships;
 
 #pragma mark -
 #pragma mark Static access
@@ -32,10 +32,11 @@ static CoreManager* _main;
         
         // Default date parser is ruby DateTime.to_s style parser
         self.defaultDateParser = [[NSDateFormatter alloc] init];
-        //defaultDateParser.dat  @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-        [defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
+        [defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+        //[defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
         
         self.modelPropertyTypes = [NSMutableDictionary dictionary];
+        self.modelRelationships = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -61,9 +62,9 @@ static CoreManager* _main;
     return YES;
 }
 
-+ (void) enqueueRequest:(ASIHTTPRequest*)request {
+- (void) enqueueRequest:(ASIHTTPRequest*)request {
     NSLog(@"[CoreManager#enqueueRequest] request queued: %@", request.url);
-    [[self main].requestQueue addOperation:request];
+    [requestQueue addOperation:request];
 }
 
 
@@ -80,6 +81,19 @@ static CoreManager* _main;
     [alert release];
 }
 
++ (void) logCoreDataError:(NSError *)error {
+    NSLog(@"Failed to save to data store: %@", [error localizedDescription]);
+    NSArray* detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
+    if(detailedErrors != nil && [detailedErrors count] > 0) {
+            for(NSError* detailedError in detailedErrors) {
+                    NSLog(@"  DetailedError: %@", [detailedError userInfo]);
+            }
+    }
+    else {
+            NSLog(@"  %@", [error userInfo]);
+    }
+}
+
 
 
 
@@ -91,17 +105,10 @@ static CoreManager* _main;
 
  */
 - (void)save {
-	
     NSError *error = nil;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			/*
-			 Replace this implementation with code to handle the error appropriately.
-			 
-			 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-			 */
-			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-			abort();
+			[[self class] logCoreDataError:error];
         } 
     }
 }
@@ -188,6 +195,7 @@ static CoreManager* _main;
 
 - (void)dealloc {
     [modelPropertyTypes release];
+    [modelRelationships release];
 
     [remoteSiteURL release];
 
