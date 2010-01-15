@@ -15,7 +15,41 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* ArtistCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ArtistCollectionController.m */; };
 		28F335F11007B36200424DE2 /* ArtistCollectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* ArtistCollectionController.xib */; };
-		B56851A11100D41500A4C816 /* CoreModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56850481100D12500A4C816 /* CoreModelTests.m */; };
+		B56851A11100D41500A4C816 /* CoreModelSenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56850481100D12500A4C816 /* CoreModelSenTests.m */; };
+		B56851F01100DCB600A4C816 /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = B56851EC1100DCB600A4C816 /* RunTests.sh */; };
+		B56851FF1100DD2000A4C816 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09810FFE10700D57FCA /* SystemConfiguration.framework */; };
+		B56852001100DD2000A4C816 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09910FFE10700D57FCA /* libz.1.2.3.dylib */; };
+		B56852011100DD2000A4C816 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09A10FFE10700D57FCA /* CFNetwork.framework */; };
+		B56852021100DD2000A4C816 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09B10FFE10700D57FCA /* CoreData.framework */; };
+		B56852031100DD2000A4C816 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		B56852041100DD2000A4C816 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		B56852051100DD2000A4C816 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		B568524D1100E0AC00A4C816 /* CoreTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CoreTestAppDelegate.m */; };
+		B568524E1100E0AC00A4C816 /* ArtistCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ArtistCollectionController.m */; };
+		B568524F1100E0AC00A4C816 /* CoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04510FFE05D00D57FCA /* CoreModel.m */; };
+		B56852501100E0AC00A4C816 /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */; };
+		B56852511100E0AC00A4C816 /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */; };
+		B56852521100E0AC00A4C816 /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04B10FFE05D00D57FCA /* CoreManager.m */; };
+		B56852531100E0AC00A4C816 /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */; };
+		B56852541100E0AC00A4C816 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04F10FFE05D00D57FCA /* NSString+InflectionSupport.m */; };
+		B56852551100E0AC00A4C816 /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC05110FFE05D00D57FCA /* CoreTableController.m */; };
+		B56852561100E0AC00A4C816 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0A410FFE13500D57FCA /* Reachability.m */; };
+		B56852571100E0AC00A4C816 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0A810FFE13500D57FCA /* NSObject+SBJSON.m */; };
+		B56852581100E0AC00A4C816 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0AA10FFE13500D57FCA /* NSString+SBJSON.m */; };
+		B56852591100E0AC00A4C816 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0AC10FFE13500D57FCA /* SBJSON.m */; };
+		B568525A1100E0AC00A4C816 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0AE10FFE13500D57FCA /* SBJsonBase.m */; };
+		B568525B1100E0AC00A4C816 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0B010FFE13500D57FCA /* SBJsonParser.m */; };
+		B568525C1100E0AC00A4C816 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0B210FFE13500D57FCA /* SBJsonWriter.m */; };
+		B568525D1100E0AC00A4C816 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0B510FFE13500D57FCA /* ASIFormDataRequest.m */; };
+		B568525E1100E0AC00A4C816 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0B710FFE13500D57FCA /* ASIHTTPRequest.m */; };
+		B568525F1100E0AC00A4C816 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0B910FFE13500D57FCA /* ASINetworkQueue.m */; };
+		B56852601100E0AC00A4C816 /* NSHTTPCookieAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0BB10FFE13500D57FCA /* NSHTTPCookieAdditions.m */; };
+		B56852611100E0AC00A4C816 /* CoreTest.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0D410FFE1E000D57FCA /* CoreTest.xcdatamodel */; };
+		B56852621100E0AC00A4C816 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0D810FFE27600D57FCA /* Artist.m */; };
+		B56852701100E14E00A4C816 /* CoreModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B568526F1100E14E00A4C816 /* CoreModelTests.m */; };
+		B56852A71100E4A700A4C816 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B56851E81100DCB600A4C816 /* libGHUnitIPhone3_0.a */; };
+		B56852B01100E51600A4C816 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B56851E61100DCB600A4C816 /* GHUnitIPhoneTestMain.m */; };
+		B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B568535B11010A6F00A4C816 /* TestHelpers.m */; };
 		B5BAC05310FFE05D00D57FCA /* CoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04510FFE05D00D57FCA /* CoreModel.m */; };
 		B5BAC05410FFE05D00D57FCA /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */; };
 		B5BAC05510FFE05D00D57FCA /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */; };
@@ -58,9 +92,32 @@
 		8D1107310486CEB800E47090 /* CoreTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B56850371100D01F00A4C816 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56850381100D01F00A4C816 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
-		B56850481100D12500A4C816 /* CoreModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelTests.m; sourceTree = "<group>"; };
+		B56850481100D12500A4C816 /* CoreModelSenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelSenTests.m; sourceTree = "<group>"; };
 		B56851B81100D6BA00A4C816 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.json; sourceTree = "<group>"; };
 		B56851D81100D9E700A4C816 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../readme.md; sourceTree = SOURCE_ROOT; };
+		B56851DC1100DCB600A4C816 /* GHAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHAsyncTestCase.h; sourceTree = "<group>"; };
+		B56851DD1100DCB600A4C816 /* GHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTest.h; sourceTree = "<group>"; };
+		B56851DE1100DCB600A4C816 /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestCase.h; sourceTree = "<group>"; };
+		B56851DF1100DCB600A4C816 /* GHTestGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestGroup.h; sourceTree = "<group>"; };
+		B56851E01100DCB600A4C816 /* GHTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTesting.h; sourceTree = "<group>"; };
+		B56851E11100DCB600A4C816 /* GHTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestMacros.h; sourceTree = "<group>"; };
+		B56851E21100DCB600A4C816 /* GHTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestRunner.h; sourceTree = "<group>"; };
+		B56851E31100DCB600A4C816 /* GHTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestSuite.h; sourceTree = "<group>"; };
+		B56851E41100DCB600A4C816 /* GHUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnit.h; sourceTree = "<group>"; };
+		B56851E51100DCB600A4C816 /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnitIPhoneAppDelegate.h; sourceTree = "<group>"; };
+		B56851E61100DCB600A4C816 /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIPhoneTestMain.m; sourceTree = "<group>"; };
+		B56851E71100DCB600A4C816 /* GHUNSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUNSObject+Swizzle.h"; sourceTree = "<group>"; };
+		B56851E81100DCB600A4C816 /* libGHUnitIPhone3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGHUnitIPhone3_0.a; sourceTree = "<group>"; };
+		B56851E91100DCB600A4C816 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B56851EA1100DCB600A4C816 /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+GHTestFailureExceptions.h"; sourceTree = "<group>"; };
+		B56851EB1100DCB600A4C816 /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+GHValueFormatter.h"; sourceTree = "<group>"; };
+		B56851EC1100DCB600A4C816 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
+		B56851F91100DD0500A4C816 /* GHLogicTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHLogicTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56851FB1100DD0500A4C816 /* GHLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHLogicTests-Info.plist"; sourceTree = "<group>"; };
+		B568526F1100E14E00A4C816 /* CoreModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelTests.m; sourceTree = "<group>"; };
+		B56852981100E3E800A4C816 /* GHLogicTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogicTests_Prefix.pch; sourceTree = "<group>"; };
+		B568535A11010A6F00A4C816 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
+		B568535B11010A6F00A4C816 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
 		B5BAC04510FFE05D00D57FCA /* CoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreModel.m; path = ../CoreModel.m; sourceTree = SOURCE_ROOT; };
 		B5BAC04610FFE05D00D57FCA /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../CoreRequest.h; sourceTree = SOURCE_ROOT; };
 		B5BAC04710FFE05D00D57FCA /* CoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreModel.h; path = ../CoreModel.h; sourceTree = SOURCE_ROOT; };
@@ -129,12 +186,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B56851F71100DD0500A4C816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56852A71100E4A700A4C816 /* libGHUnitIPhone3_0.a in Frameworks */,
+				B56851FF1100DD2000A4C816 /* SystemConfiguration.framework in Frameworks */,
+				B56852001100DD2000A4C816 /* libz.1.2.3.dylib in Frameworks */,
+				B56852011100DD2000A4C816 /* CFNetwork.framework in Frameworks */,
+				B56852021100DD2000A4C816 /* CoreData.framework in Frameworks */,
+				B56852031100DD2000A4C816 /* UIKit.framework in Frameworks */,
+				B56852041100DD2000A4C816 /* Foundation.framework in Frameworks */,
+				B56852051100DD2000A4C816 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B56851DB1100DCB500A4C816 /* GHUnit */,
 				B5BAC0A210FFE13500D57FCA /* Reachability */,
 				B5BAC0A510FFE13500D57FCA /* JSON */,
 				B5BAC0B310FFE13500D57FCA /* ASIHTTPRequest */,
@@ -153,6 +226,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* CoreTest.app */,
 				B56850371100D01F00A4C816 /* LogicTests.octest */,
+				B56851F91100DD0500A4C816 /* GHLogicTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +243,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B56850381100D01F00A4C816 /* LogicTests-Info.plist */,
+				B56851FB1100DD0500A4C816 /* GHLogicTests-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -176,8 +251,9 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				28A0AAE50D9B0CCF005BE974 /* CoreTest_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				28A0AAE50D9B0CCF005BE974 /* CoreTest_Prefix.pch */,
+				B56852981100E3E800A4C816 /* GHLogicTests_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -210,7 +286,10 @@
 		B568503D1100D03C00A4C816 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B56850481100D12500A4C816 /* CoreModelTests.m */,
+				B56850481100D12500A4C816 /* CoreModelSenTests.m */,
+				B568526F1100E14E00A4C816 /* CoreModelTests.m */,
+				B568535A11010A6F00A4C816 /* TestHelpers.h */,
+				B568535B11010A6F00A4C816 /* TestHelpers.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -221,6 +300,30 @@
 				B56851B81100D6BA00A4C816 /* artists.json */,
 			);
 			name = "Test Data";
+			sourceTree = "<group>";
+		};
+		B56851DB1100DCB500A4C816 /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				B56851DC1100DCB600A4C816 /* GHAsyncTestCase.h */,
+				B56851DD1100DCB600A4C816 /* GHTest.h */,
+				B56851DE1100DCB600A4C816 /* GHTestCase.h */,
+				B56851DF1100DCB600A4C816 /* GHTestGroup.h */,
+				B56851E01100DCB600A4C816 /* GHTesting.h */,
+				B56851E11100DCB600A4C816 /* GHTestMacros.h */,
+				B56851E21100DCB600A4C816 /* GHTestRunner.h */,
+				B56851E31100DCB600A4C816 /* GHTestSuite.h */,
+				B56851E41100DCB600A4C816 /* GHUnit.h */,
+				B56851E51100DCB600A4C816 /* GHUnitIPhoneAppDelegate.h */,
+				B56851E61100DCB600A4C816 /* GHUnitIPhoneTestMain.m */,
+				B56851E71100DCB600A4C816 /* GHUNSObject+Swizzle.h */,
+				B56851E81100DCB600A4C816 /* libGHUnitIPhone3_0.a */,
+				B56851E91100DCB600A4C816 /* Makefile */,
+				B56851EA1100DCB600A4C816 /* NSException+GHTestFailureExceptions.h */,
+				B56851EB1100DCB600A4C816 /* NSValue+GHValueFormatter.h */,
+				B56851EC1100DCB600A4C816 /* RunTests.sh */,
+			);
+			path = GHUnit;
 			sourceTree = "<group>";
 		};
 		B5BAC04410FFE04600D57FCA /* CoreResource */ = {
@@ -335,6 +438,23 @@
 			productReference = B56850371100D01F00A4C816 /* LogicTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		B56851F81100DD0500A4C816 /* GHLogicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B56851FE1100DD0600A4C816 /* Build configuration list for PBXNativeTarget "GHLogicTests" */;
+			buildPhases = (
+				B56851F51100DD0500A4C816 /* Resources */,
+				B56851F61100DD0500A4C816 /* Sources */,
+				B56851F71100DD0500A4C816 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GHLogicTests;
+			productName = GHLogicTests;
+			productReference = B56851F91100DD0500A4C816 /* GHLogicTests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -356,6 +476,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* CoreTest */,
 				B56850361100D01F00A4C816 /* LogicTests */,
+				B56851F81100DD0500A4C816 /* GHLogicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -371,6 +492,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B56850321100D01F00A4C816 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56851F01100DCB600A4C816 /* RunTests.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56851F51100DD0500A4C816 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,7 +559,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B56851A11100D41500A4C816 /* CoreModelTests.m in Sources */,
+				B56851A11100D41500A4C816 /* CoreModelSenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56851F61100DD0500A4C816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56852B01100E51600A4C816 /* GHUnitIPhoneTestMain.m in Sources */,
+				B568524D1100E0AC00A4C816 /* CoreTestAppDelegate.m in Sources */,
+				B568524E1100E0AC00A4C816 /* ArtistCollectionController.m in Sources */,
+				B568524F1100E0AC00A4C816 /* CoreModel.m in Sources */,
+				B56852501100E0AC00A4C816 /* CoreResultsController.m in Sources */,
+				B56852511100E0AC00A4C816 /* CoreRequest.m in Sources */,
+				B56852521100E0AC00A4C816 /* CoreManager.m in Sources */,
+				B56852531100E0AC00A4C816 /* CoreUtils.m in Sources */,
+				B56852541100E0AC00A4C816 /* NSString+InflectionSupport.m in Sources */,
+				B56852551100E0AC00A4C816 /* CoreTableController.m in Sources */,
+				B56852561100E0AC00A4C816 /* Reachability.m in Sources */,
+				B56852571100E0AC00A4C816 /* NSObject+SBJSON.m in Sources */,
+				B56852581100E0AC00A4C816 /* NSString+SBJSON.m in Sources */,
+				B56852591100E0AC00A4C816 /* SBJSON.m in Sources */,
+				B568525A1100E0AC00A4C816 /* SBJsonBase.m in Sources */,
+				B568525B1100E0AC00A4C816 /* SBJsonParser.m in Sources */,
+				B568525C1100E0AC00A4C816 /* SBJsonWriter.m in Sources */,
+				B568525D1100E0AC00A4C816 /* ASIFormDataRequest.m in Sources */,
+				B568525E1100E0AC00A4C816 /* ASIHTTPRequest.m in Sources */,
+				B568525F1100E0AC00A4C816 /* ASINetworkQueue.m in Sources */,
+				B56852601100E0AC00A4C816 /* NSHTTPCookieAdditions.m in Sources */,
+				B56852611100E0AC00A4C816 /* CoreTest.xcdatamodel in Sources */,
+				B56852621100E0AC00A4C816 /* Artist.m in Sources */,
+				B56852701100E14E00A4C816 /* CoreModelTests.m in Sources */,
+				B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +639,10 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "LogicTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/GHUnit\"",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -504,6 +669,10 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "LogicTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/GHUnit\"",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -513,6 +682,63 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
 				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		B56851FC1100DD0600A4C816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GHLogicTests_Prefix.pch;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "GHLogicTests-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Classes/GHUnit\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = GHLogicTests;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		B56851FD1100DD0600A4C816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GHLogicTests_Prefix.pch;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "GHLogicTests-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Classes/GHUnit\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = GHLogicTests;
+				SDKROOT = iphoneos3.1.2;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -560,6 +786,15 @@
 			buildConfigurations = (
 				B56850391100D01F00A4C816 /* Debug */,
 				B568503A1100D01F00A4C816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B56851FE1100DD0600A4C816 /* Build configuration list for PBXNativeTarget "GHLogicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56851FC1100DD0600A4C816 /* Debug */,
+				B56851FD1100DD0600A4C816 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

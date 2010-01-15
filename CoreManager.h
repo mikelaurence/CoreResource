@@ -8,7 +8,7 @@
 
 #include "ASIHTTPRequest.h"
 
-@interface CoreManager : NSObject {    
+@interface CoreManager : NSObject {
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
