@@ -6,9 +6,10 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
+#import "GHUnitIPhoneAppDelegate.h"
 #import "CoreManager.h"
 
-@interface CoreTestAppDelegate : NSObject <UIApplicationDelegate> {
+@interface CoreTestAppDelegate : GHUnitIPhoneAppDelegate {
     UIWindow *window;
     UINavigationController *navigationController;
     

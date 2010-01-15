@@ -267,6 +267,7 @@
 								<string>B568503D1100D03C00A4C816</string>
 								<string>B56851B41100D66D00A4C816</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>B56851DB1100DCB500A4C816</string>
 								<string>B5BAC0B310FFE13500D57FCA</string>
 								<string>B5BAC04410FFE04600D57FCA</string>
 								<string>B5BAC0D610FFE1EF00D57FCA</string>
@@ -281,13 +282,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
-									<integer>2</integer>
+									<integer>62</integer>
+									<integer>9</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {322, 910}}</string>
+							<string>{{0, 674}, {322, 910}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -324,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreModelTests.m</string>
+								<string>CoreTestAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreModelTests.m</string>
+										<string>CoreTestAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B56854341101225200A4C816</string>
+										<string>B56854711101293C00A4C816</string>
 										<key>history</key>
 										<array>
 											<string>B5BAC12910FFE51500D57FCA</string>
@@ -344,30 +345,34 @@
 											<string>B56850501100D15100A4C816</string>
 											<string>B56851741100D26100A4C816</string>
 											<string>B56851761100D26100A4C816</string>
-											<string>B56851C51100D71F00A4C816</string>
 											<string>B568520D1100DD2100A4C816</string>
 											<string>B568520E1100DD2100A4C816</string>
 											<string>B568527D1100E1B800A4C816</string>
 											<string>B56852C01100E54100A4C816</string>
-											<string>B56852D71100E6B900A4C816</string>
 											<string>B56852E31100FB0100A4C816</string>
-											<string>B56853071101047C00A4C816</string>
-											<string>B568530A1101047C00A4C816</string>
-											<string>B568530B1101047C00A4C816</string>
 											<string>B568535611010A4800A4C816</string>
 											<string>B568536611010AB100A4C816</string>
 											<string>B568536711010AB100A4C816</string>
-											<string>B56853B91101149900A4C816</string>
 											<string>B56853EB11011EEE00A4C816</string>
 											<string>B56853EC11011EEE00A4C816</string>
 											<string>B56853EE11011EEE00A4C816</string>
-											<string>B56854171101210A00A4C816</string>
-											<string>B56854181101210A00A4C816</string>
 											<string>B56854191101210A00A4C816</string>
 											<string>B568541A1101210A00A4C816</string>
-											<string>B568541B1101210A00A4C816</string>
-											<string>B56854301101223B00A4C816</string>
-											<string>B56854311101223B00A4C816</string>
+											<string>B56854351101265500A4C816</string>
+											<string>B56854441101272300A4C816</string>
+											<string>B56854451101272300A4C816</string>
+											<string>B56854461101272300A4C816</string>
+											<string>B56854471101272300A4C816</string>
+											<string>B56854481101272300A4C816</string>
+											<string>B5685457110128A000A4C816</string>
+											<string>B5685458110128A000A4C816</string>
+											<string>B5685459110128A000A4C816</string>
+											<string>B568545A110128A000A4C816</string>
+											<string>B568545B110128A000A4C816</string>
+											<string>B568545C110128A000A4C816</string>
+											<string>B56854681101292800A4C816</string>
+											<string>B568546F1101293C00A4C816</string>
+											<string>B56854701101293C00A4C816</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -569,9 +574,9 @@
 		<string>B568538C110112AB00A4C816</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/CoreTest/CoreTest.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>5 59 1669 969 0 0 1680 1028 </string>
@@ -595,7 +600,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreModelTests.m</string>
+								<string>CoreModel.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -947,7 +952,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

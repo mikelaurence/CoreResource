@@ -19,4 +19,7 @@
 @property (nonatomic, retain) NSArray* resources;
 @property (nonatomic, retain) NSError* error;
 
+- (id) initWithResource:(id)resource;
+- (id) initWithResources:(NSArray*)resourceArray;
+
 @end

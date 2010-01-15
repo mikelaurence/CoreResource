@@ -47,7 +47,7 @@
 }
 
 - (NSString*) bundleResourcePathForAction:(Action)action {
-    return [NSString stringWithFormat:@"%@.%@", [self remoteCollectionName]];
+    return [NSString stringWithFormat:@"%@.%@", [[self class] remoteCollectionName]];
 }
 
 
@@ -299,45 +299,61 @@
 #pragma mark -
 #pragma mark Read
 
-+ (id) find:(NSString*)recordId {
++ (CoreResult*) find:(NSString*)recordId {
+    return [self find:recordId andNotify:nil withSelector:nil];
+}
+
++ (CoreResult*) find:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector {
     id obj = [self findLocal:recordId];
     if (obj != nil)
-        return obj;
-    [self findRemote:recordId];
+        return [[CoreResult alloc] initWithResource:obj];
+    [self findRemote:recordId andNotify:del withSelector:selector];
     return nil;
 }
 
-+ (id) findAll:(id)parameters {
++ (CoreResult*) findAll:(id)parameters {
     return nil;
 }
 
-+ (id) findLocal:(NSString*)recordId {
++ (CoreResult*) findAll:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector {
     return nil;
 }
 
-+ (id) findAllLocal:(id)parameters {
++ (CoreResult*) findLocal:(NSString*)recordId {
+    return nil;
+}
+
++ (CoreResult*) findAllLocal:(id)parameters {
     NSError* error = nil;
     NSFetchRequest* fetch = [self fetchRequestWithSort:nil andPredicate:[self predicateWithParameters:parameters]];
     NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
 
-    CoreResult* result = [[CoreResult alloc] init];
-    if (error == nil)
-        result.resources = resources;
-    else
+    CoreResult* result = [[CoreResult alloc] initWithResources:resources];
+    if (error != nil)
         result.error = error;
     return result;
 }
 
 + (void) findRemote:(NSString*)recordId {
-    [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], recordId]];
+    [self findRemote:recordId andNotify:nil withSelector:nil];
+}
+
++ (void) findRemote:(NSString *)recordId andNotify:(id)del withSelector:(SEL)selector {
+    [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], recordId] andNotify:del withSelector:selector];
 }
 
 + (void) findAllRemote:(id)parameters {
+    [self findAllRemote:parameters andNotify:nil withSelector:nil];
+}
+
++ (void) findAllRemote:(id)parameters andNotify:(id)del withSelector:(SEL)selector {
     CoreRequest *request = [[CoreRequest alloc] initWithURL:
         [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andFormat:@"json" andParameters:parameters]];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish:);
-    request.didFailSelector = @selector(findRemoteDidFail:);    
+    request.didFailSelector = @selector(findRemoteDidFail:);
+    request.coreDelegate = del;
+    request.coreSelector = selector;
 
     // If we're using bundle requests, just attempt to find the data within the project
     if ([self useBundleRequests]) {

@@ -8,6 +8,8 @@
 
 @interface NSString (InflectionSupport)
 
+- (NSString *)deCamelizeWith:(NSString *)delimiter;
+
 /**
  * Return the dashed form af this camelCase string:
  *
