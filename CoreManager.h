@@ -16,6 +16,7 @@
     NSOperationQueue *requestQueue;
     
     NSString *remoteSiteURL;
+    float localRequestDelay;
     NSDateFormatter *defaultDateParser;
     
     NSMutableDictionary *modelPropertyTypes;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSOperationQueue *requestQueue;
 
 @property (nonatomic, retain) NSString *remoteSiteURL;
+@property (nonatomic, assign) float localRequestDelay;
 @property (nonatomic, retain) NSDateFormatter *defaultDateParser;
 
 @property (nonatomic, retain) NSMutableDictionary *modelPropertyTypes;

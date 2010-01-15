@@ -50,6 +50,7 @@
 		B56852A71100E4A700A4C816 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B56851E81100DCB600A4C816 /* libGHUnitIPhone3_0.a */; };
 		B56852B01100E51600A4C816 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B56851E61100DCB600A4C816 /* GHUnitIPhoneTestMain.m */; };
 		B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B568535B11010A6F00A4C816 /* TestHelpers.m */; };
+		B56853AD1101140300A4C816 /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B56853AC1101140300A4C816 /* CoreResult.m */; };
 		B5BAC05310FFE05D00D57FCA /* CoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04510FFE05D00D57FCA /* CoreModel.m */; };
 		B5BAC05410FFE05D00D57FCA /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */; };
 		B5BAC05510FFE05D00D57FCA /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */; };
@@ -118,6 +119,8 @@
 		B56852981100E3E800A4C816 /* GHLogicTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogicTests_Prefix.pch; sourceTree = "<group>"; };
 		B568535A11010A6F00A4C816 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
 		B568535B11010A6F00A4C816 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
+		B56853AB1101140300A4C816 /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../CoreResult.h; sourceTree = SOURCE_ROOT; };
+		B56853AC1101140300A4C816 /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../CoreResult.m; sourceTree = SOURCE_ROOT; };
 		B5BAC04510FFE05D00D57FCA /* CoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreModel.m; path = ../CoreModel.m; sourceTree = SOURCE_ROOT; };
 		B5BAC04610FFE05D00D57FCA /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../CoreRequest.h; sourceTree = SOURCE_ROOT; };
 		B5BAC04710FFE05D00D57FCA /* CoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreModel.h; path = ../CoreModel.h; sourceTree = SOURCE_ROOT; };
@@ -329,12 +332,14 @@
 		B5BAC04410FFE04600D57FCA /* CoreResource */ = {
 			isa = PBXGroup;
 			children = (
+				B56853AB1101140300A4C816 /* CoreResult.h */,
+				B56853AC1101140300A4C816 /* CoreResult.m */,
 				B5BAC04710FFE05D00D57FCA /* CoreModel.h */,
 				B5BAC04510FFE05D00D57FCA /* CoreModel.m */,
 				B5BAC04610FFE05D00D57FCA /* CoreRequest.h */,
+				B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */,
 				B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */,
 				B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */,
-				B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */,
 				B5BAC04B10FFE05D00D57FCA /* CoreManager.m */,
 				B5BAC04C10FFE05D00D57FCA /* CoreManager.h */,
 				B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */,
@@ -592,6 +597,7 @@
 				B56852621100E0AC00A4C816 /* Artist.m in Sources */,
 				B56852701100E14E00A4C816 /* CoreModelTests.m in Sources */,
 				B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */,
+				B56853AD1101140300A4C816 /* CoreResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

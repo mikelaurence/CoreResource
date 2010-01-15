@@ -1,16 +1,18 @@
 //
-//  CoreRequest.m
+//  CoreResult.m
 //  CoreResource
 //
 //  Created by Mike Laurence on 12/31/09.
 //  Copyright 2009 Punkbot LLC. All rights reserved.
 //
 
-#import "CoreRequest.h"
+#import "CoreResult.h"
 
 
-@implementation CoreRequest
+@implementation CoreResult
 
-@synthesize coreDelegate, coreSelector;
+@synthesize request;
+@synthesize resources;
+@synthesize error;
 
 @end

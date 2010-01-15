@@ -8,6 +8,8 @@
 
 #import "CoreModel.h"
 #import "CoreUtils.h"
+#import "CoreRequest.h"
+#import "CoreResult.h"
 #import "JSON.h"
 #import "NSString+InflectionSupport.h"
 
@@ -297,7 +299,16 @@
 }
 
 + (id) findAllLocal:(id)parameters {
-    return nil;
+    NSError* error = nil;
+    NSFetchRequest* fetch = [self fetchRequestWithSort:nil andPredicate:[self predicateWithParameters:parameters]];
+    NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
+
+    CoreResult* result = [[CoreResult alloc] init];
+    if (error == nil)
+        result.resources = resources;
+    else
+        result.error = error;
+    return result;
 }
 
 + (void) findRemote:(NSString*)recordId {
@@ -328,7 +339,7 @@
 #pragma mark Results Management
 
 + (NSFetchRequest*) fetchRequest {
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:[self entityDescription]];
     return fetchRequest;
 }
@@ -338,6 +349,10 @@
     [fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromString:sorting]];
     [fetchRequest setPredicate:predicate];
     return fetchRequest;
+}
+
++ (NSPredicate*) predicateWithParameters:(id)parameters {
+    return nil;
 }
 
 + (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey {
@@ -353,8 +368,6 @@
     coreResultsController.entityClass = self;
     return coreResultsController;
 }
-
-
 
 @end
 

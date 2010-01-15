@@ -267,7 +267,7 @@
 								<string>B568503D1100D03C00A4C816</string>
 								<string>B56851B41100D66D00A4C816</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>B56851DB1100DCB500A4C816</string>
+								<string>B5BAC0B310FFE13500D57FCA</string>
 								<string>B5BAC04410FFE04600D57FCA</string>
 								<string>B5BAC0D610FFE1EF00D57FCA</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
@@ -276,14 +276,14 @@
 								<string>B568526B1100E12900A4C816</string>
 								<string>B56852061100DD2100A4C816</string>
 								<string>B56852D61100E6B900A4C816</string>
-								<string>B56852071100DD2100A4C816</string>
-								<string>B56852081100DD2100A4C816</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>24</integer>
+									<integer>22</integer>
+									<integer>9</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -325,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreModelTests.m</string>
+								<string>CoreResult.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreModelTests.m</string>
+										<string>CoreResult.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B568536A11010AB100A4C816</string>
+										<string>B56853C81101179F00A4C816</string>
 										<key>history</key>
 										<array>
 											<string>B5BAC12910FFE51500D57FCA</string>
@@ -346,7 +346,6 @@
 											<string>B56851741100D26100A4C816</string>
 											<string>B56851761100D26100A4C816</string>
 											<string>B56851C51100D71F00A4C816</string>
-											<string>B56852091100DD2100A4C816</string>
 											<string>B568520A1100DD2100A4C816</string>
 											<string>B568520D1100DD2100A4C816</string>
 											<string>B568520E1100DD2100A4C816</string>
@@ -356,17 +355,26 @@
 											<string>B56852D71100E6B900A4C816</string>
 											<string>B56852E31100FB0100A4C816</string>
 											<string>B56853071101047C00A4C816</string>
-											<string>B56853081101047C00A4C816</string>
-											<string>B56853091101047C00A4C816</string>
 											<string>B568530A1101047C00A4C816</string>
 											<string>B568530B1101047C00A4C816</string>
-											<string>B568530C1101047C00A4C816</string>
-											<string>B568530D1101047C00A4C816</string>
 											<string>B568535611010A4800A4C816</string>
 											<string>B568536611010AB100A4C816</string>
 											<string>B568536711010AB100A4C816</string>
 											<string>B568536811010AB100A4C816</string>
-											<string>B568536911010AB100A4C816</string>
+											<string>B568536B11010D3B00A4C816</string>
+											<string>B5685382110112AB00A4C816</string>
+											<string>B5685383110112AB00A4C816</string>
+											<string>B5685384110112AB00A4C816</string>
+											<string>B56853B11101149900A4C816</string>
+											<string>B56853B21101149900A4C816</string>
+											<string>B56853B41101149900A4C816</string>
+											<string>B56853B71101149900A4C816</string>
+											<string>B56853B91101149900A4C816</string>
+											<string>B56853C41101179F00A4C816</string>
+											<string>B56853C51101179F00A4C816</string>
+											<string>B56853C61101179F00A4C816</string>
+											<string>B56853C71101179F00A4C816</string>
+											<string>B56853B61101149900A4C816</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -564,6 +572,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B568538A110112AB00A4C816</string>
+		<string>B568538B110112AB00A4C816</string>
+		<string>B568538C110112AB00A4C816</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
@@ -592,7 +603,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TestHelpers.m</string>
+								<string>CoreModelTests.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

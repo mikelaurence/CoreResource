@@ -64,13 +64,18 @@ typedef enum _Action {
 #pragma mark -
 #pragma mark Read
 + (id) find:(NSString*)recordId;
++ (id) find:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector;
 + (id) findAll:(id)parameters;
++ (id) findAll:(id)parameters andNotify:(id)del withSelector:(SEL)selector;
 
 + (id) findLocal:(NSString*)recordId;
 + (id) findAllLocal:(id)parameters;
 
 + (void) findRemote:(NSString*)recordId;
++ (void) findRemote:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector;
 + (void) findAllRemote:(id)parameters;
++ (void) findAllRemote:(id)parameters andNotify:(id)del withSelector:(SEL)selector;
+
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request;
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request;
 
@@ -81,8 +86,10 @@ typedef enum _Action {
 
 + (NSFetchRequest*) fetchRequest;
 + (NSFetchRequest*) fetchRequestWithSort:(NSString*)sorting andPredicate:(NSPredicate*)predicate;
++ (NSPredicate*) predicateWithParameters:(id)parameters;
 + (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey;
 + (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
+
 
 @end
 
