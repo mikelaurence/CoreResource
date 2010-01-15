@@ -6,6 +6,8 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
+#include "CoreRequest.h"
+
 @interface CoreResultsController : NSFetchedResultsController {
     Class entityClass;
 }

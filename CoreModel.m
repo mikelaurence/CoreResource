@@ -256,7 +256,7 @@
             
             // If it's an attribute, just assign the value to the object (unless the object is up-to-date)
             else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]] && shouldUpdateRoot) {                
-                
+                NSLog(@"Setting property: %@ %@", field, value);
                 // Check if value is NSNull, which should be set as nil on fields (since NSNull is just used as a collection placeholder)
                 if ([value isEqual:[NSNull null]])
                     [self setValue:nil forKey:field];
@@ -276,10 +276,15 @@
 }
 
 
+
 #pragma mark -
 #pragma mark Read
 
 + (id) find:(NSString*)recordId {
+    id obj = [self findLocal:recordId];
+    if (obj != nil)
+        return obj;
+    [self findRemote:recordId];
     return nil;
 }
 
@@ -309,7 +314,6 @@
 }
 
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request {
-    NSLog(@"[%@#findRemoteDidFinish] Find remote request succeeded.", self);
     [self deserializeFromString:[request responseString]];
     [[self coreManager] save];
 }
@@ -317,6 +321,8 @@
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request {
     NSLog(@"[%@#findRemoteDidFail] Find remote request failed.", self);
 }
+
+
 
 #pragma mark -
 #pragma mark Results Management
