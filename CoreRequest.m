@@ -12,5 +12,28 @@
 @implementation CoreRequest
 
 @synthesize coreDelegate, coreSelector;
+@synthesize bundleDataPath, bundleDataResult;
+
+- (void) executeAsBundleRequest {
+    NSError* parseError;
+    self.bundleDataResult = [NSString stringWithContentsOfFile:
+            [[NSBundle mainBundle] pathForResource:bundleDataPath ofType:@"json"] 
+        encoding:NSUTF8StringEncoding error:&parseError];
+        
+    if (parseError = nil)
+        [self requestFinished];
+    else
+        [self failWithError:parseError];
+}
+
+- (NSString*) stringData {
+    return bundleDataResult != nil ? bundleDataResult : [self responseString];
+}
+
+- (void) dealloc {
+    [bundleDataResult release];
+    [bundleDataPath release];
+    [super dealloc];
+}
 
 @end

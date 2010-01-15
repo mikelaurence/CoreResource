@@ -24,10 +24,17 @@ typedef enum _Action {
 #pragma mark Configuration
 
 + (CoreManager*) coreManager;
+
+// Per-class determination of whether or not to get data from within the bundle (instead of performing remote HTTP requests)
+// Most often used for testing.
++ (BOOL) useBundleRequests;
+
 + (NSString*) remoteSiteURL;
 + (NSString*) remoteCollectionName;
 + (NSString*) remoteCollectionURLForAction:(Action)action;
 - (NSString*) remoteResourceURLForAction:(Action)action;
++ (NSString*) bundleCollectionPathForAction:(Action)action;
+- (NSString*) bundleResourcePathForAction:(Action)action;
 
 + (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
 
@@ -49,6 +56,7 @@ typedef enum _Action {
 + (NSString*) entityName;
 + (NSEntityDescription*) entityDescription;
 + (BOOL) hasRelationships;
++ (NSManagedObjectContext*) managedObjectContext;
 
 
 #pragma mark -

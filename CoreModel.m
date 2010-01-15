@@ -22,6 +22,10 @@
     return [CoreManager main];
 }
 
++ (BOOL) useBundleRequests {
+    return [[self coreManager] useBundleRequests];
+}
+
 + (NSString*) remoteSiteURL {
     return [[self coreManager] remoteSiteURL];
 }
@@ -37,6 +41,15 @@
 - (NSString*) remoteResourceURLForAction:(Action)action {
     return [NSString stringWithFormat:@"%@/%@/%@", [[self class] remoteSiteURL], [[self class] remoteCollectionName]]; 
 }
+
++ (NSString*) bundleCollectionPathForAction:(Action)action {
+    return [NSString stringWithFormat:@"%@", [self remoteSiteURL], [self remoteCollectionName]];
+}
+
+- (NSString*) bundleResourcePathForAction:(Action)action {
+    return [NSString stringWithFormat:@"%@.%@", [self remoteCollectionName]];
+}
+
 
 /**
     Returns the class type for a given property in a given model.
@@ -132,6 +145,10 @@
 
 + (BOOL) hasRelationships {
     return [(NSDictionary*)[[[[self class] coreManager] modelRelationships] objectForKey:self] count] > 0;
+}
+
++ (NSManagedObjectContext*) managedObjectContext {
+    return [[self coreManager] managedObjectContext];
 }
 
 
@@ -316,20 +333,36 @@
 }
 
 + (void) findAllRemote:(id)parameters {
-    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:
+    CoreRequest *request = [[CoreRequest alloc] initWithURL:
         [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andFormat:@"json" andParameters:parameters]];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish:);
-    request.didFailSelector = @selector(findRemoteDidFail:);
-    [[self coreManager] enqueueRequest:request];
+    request.didFailSelector = @selector(findRemoteDidFail:);    
+
+    // If we're using bundle requests, just attempt to find the data within the project
+    if ([self useBundleRequests]) {
+        request.bundleDataPath = [self bundleCollectionPathForAction:Read];
+        [request executeAsBundleRequest];
+    }
+    
+    // Enqueue as remote HTTP request 
+    else
+        [[self coreManager] enqueueRequest:request];
 }
 
-+ (void) findRemoteDidFinish:(ASIHTTPRequest*)request {
-    [self deserializeFromString:[request responseString]];
++ (void) findRemoteDidFinish:(CoreRequest*)request {
+    NSArray* resources = [self deserializeFromString:[request responseString]];
     [[self coreManager] save];
+    
+    // Notify core delegate of request (if any)
+    if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {
+        CoreResult* result = [[CoreResult alloc] init];
+        result.resources = resources;
+        [request.coreDelegate performSelector:request.coreSelector withObject:result];
+    }
 }
 
-+ (void) findRemoteDidFail:(ASIHTTPRequest*)request {
++ (void) findRemoteDidFail:(CoreRequest*)request {
     NSLog(@"[%@#findRemoteDidFail] Find remote request failed.", self);
 }
 

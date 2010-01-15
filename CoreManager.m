@@ -12,7 +12,7 @@
 @implementation CoreManager
 
 @synthesize requestQueue;
-@synthesize remoteSiteURL, localRequestDelay, defaultDateParser;
+@synthesize remoteSiteURL, useBundleRequests, bundleRequestDelay, defaultDateParser;
 @synthesize modelPropertyTypes, modelRelationships;
 
 #pragma mark -
@@ -38,7 +38,8 @@ static CoreManager* _main;
         self.modelPropertyTypes = [NSMutableDictionary dictionary];
         self.modelRelationships = [NSMutableDictionary dictionary];
         
-        localRequestDelay = 0;
+        useBundleRequests = NO;
+        bundleRequestDelay = 0;
     }
     return self;
 }

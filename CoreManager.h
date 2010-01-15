@@ -16,7 +16,13 @@
     NSOperationQueue *requestQueue;
     
     NSString *remoteSiteURL;
-    float localRequestDelay;
+    
+    // Default setting for whether or not to get data from within the bundle (instead of performing remote HTTP requests)
+    BOOL useBundleRequests;
+
+    // Artificial delay added for bundle requests
+    float bundleRequestDelay;
+
     NSDateFormatter *defaultDateParser;
     
     NSMutableDictionary *modelPropertyTypes;
@@ -30,7 +36,9 @@
 @property (nonatomic, retain) NSOperationQueue *requestQueue;
 
 @property (nonatomic, retain) NSString *remoteSiteURL;
-@property (nonatomic, assign) float localRequestDelay;
+@property (nonatomic, assign) BOOL useBundleRequests;
+@property (nonatomic, assign) float bundleRequestDelay;
+
 @property (nonatomic, retain) NSDateFormatter *defaultDateParser;
 
 @property (nonatomic, retain) NSMutableDictionary *modelPropertyTypes;

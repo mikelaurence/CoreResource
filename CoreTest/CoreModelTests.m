@@ -3,25 +3,48 @@
 #import "CoreResult.h"
 
 @interface CoreModelTests : GHTestCase {}
+- (NSArray*) allLocalArtists;
 @end
 
 @implementation CoreModelTests
 
 - (BOOL)shouldRunOnMainThread { return NO; }
-- (void)setUpClass {}
+
+- (void)setUpClass {
+    [CoreManager main].useBundleRequests = YES;
+}
+
 - (void)tearDownClass {}
 - (void)setUp {}
 
 - (void)tearDown {
-    [Artist entityDescription];
+    for (Artist* artist in [self allLocalArtists])
+        [[artist managedObjectContext] deleteObject:artist];
 }
 
+#pragma mark -
+#pragma mark Convenience methods
+
+- (NSArray*) allLocalArtists {
+    NSError* error = nil;
+    GHAssertNULL(error, @"There should be no errors in the allLocalArtists convenience method");
+    return [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequest] error:&error];
+}
+
+
+
+#pragma mark -
+#pragma mark Tests
+
 - (void) testFindWithoutLocalHit {
-    [Artist find:@"1"];
+    GHAssertNULL([Artist find:@"1"], @"Find should not immediately return an object if the object doesn't yet exist");
+    GHAssertEquals([[self allLocalArtists] count], 1, nil);
 }
 
 - (void) testFindWithLocalHit {
-    [Artist find:@"1"];
+    CoreResult* result = [Artist find:@"1"];
+    GHAssertEquals([[result resources] count], 1, nil);
+    GHAssertEquals([[self allLocalArtists] count], 1, nil);
 }
 
 
@@ -30,7 +53,7 @@
 }
 
 - (void) completeTestFindAndNotify:(CoreResult*)result {
-    
+    GHAssertEquals([[result resources] count], 1, nil);
 }
 
 
