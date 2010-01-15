@@ -4,6 +4,7 @@
 
 @interface CoreModelTests : GHTestCase {}
 - (NSArray*) allLocalArtists;
+- (void) validateFirstArtist:(Artist*)artist;
 @end
 
 @implementation CoreModelTests
@@ -31,6 +32,12 @@
     return [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequest] error:&error];
 }
 
+- (void) validateFirstArtist:(Artist*)artist {
+    GHAssertEqualStrings(artist.name, @"Peter Gabriel", nil);
+    GHAssertEqualStrings(artist.summary, @"Peter Brian Gabriel is an English musician and songwriter.", nil);
+    GHAssertEquals([artist.remote_id intValue], 1, nil);
+}
+
 
 
 #pragma mark -
@@ -39,10 +46,13 @@
 - (void) testFindWithoutLocalHit {
     GHAssertNULL([Artist find:@"1"], @"Find should not immediately return an object if the object doesn't yet exist");
     GHAssertEquals([[self allLocalArtists] count], 1, nil);
+    Artist* artist = [[self allLocalArtists] objectAtIndex:0];
+    [self validateFirstArtist:artist];
 }
 
 - (void) testFindWithLocalHit {
     CoreResult* result = [Artist find:@"1"];
+    GHAssertNotNULL(result, nil);
     GHAssertEquals([[result resources] count], 1, nil);
     GHAssertEquals([[self allLocalArtists] count], 1, nil);
 }
@@ -54,6 +64,7 @@
 
 - (void) completeTestFindAndNotify:(CoreResult*)result {
     GHAssertEquals([[result resources] count], 1, nil);
+    GHFail(nil);
 }
 
 
@@ -67,7 +78,13 @@
 
     // Assert equal objects, add custom error description
     //GHAssertEqualObjects([NSNull null], [NSNull null], @"Foo should be equal to: %@. Something bad happened", nil);
+    GHFail(nil);
 }
+
+
+
+#pragma mark -
+#pragma mark Runtime method implementations
 
 + (NSString*) remoteCollectionNm {
     return @"woohoo";

@@ -282,13 +282,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>62</integer>
-									<integer>9</integer>
+									<integer>4</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 674}, {322, 910}}</string>
+							<string>{{0, 0}, {322, 910}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -325,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreTestAppDelegate.m</string>
+								<string>CoreModelTests.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreTestAppDelegate.m</string>
+										<string>CoreModelTests.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B56854711101293C00A4C816</string>
+										<string>B56854AC1101326900A4C816</string>
 										<key>history</key>
 										<array>
 											<string>B5BAC12910FFE51500D57FCA</string>
@@ -355,24 +355,25 @@
 											<string>B568536711010AB100A4C816</string>
 											<string>B56853EB11011EEE00A4C816</string>
 											<string>B56853EC11011EEE00A4C816</string>
-											<string>B56853EE11011EEE00A4C816</string>
 											<string>B56854191101210A00A4C816</string>
 											<string>B568541A1101210A00A4C816</string>
-											<string>B56854351101265500A4C816</string>
-											<string>B56854441101272300A4C816</string>
 											<string>B56854451101272300A4C816</string>
 											<string>B56854461101272300A4C816</string>
 											<string>B56854471101272300A4C816</string>
 											<string>B56854481101272300A4C816</string>
-											<string>B5685457110128A000A4C816</string>
-											<string>B5685458110128A000A4C816</string>
-											<string>B5685459110128A000A4C816</string>
-											<string>B568545A110128A000A4C816</string>
 											<string>B568545B110128A000A4C816</string>
-											<string>B568545C110128A000A4C816</string>
 											<string>B56854681101292800A4C816</string>
 											<string>B568546F1101293C00A4C816</string>
-											<string>B56854701101293C00A4C816</string>
+											<string>B56854831101306F00A4C816</string>
+											<string>B56854851101306F00A4C816</string>
+											<string>B56854861101306F00A4C816</string>
+											<string>B56854871101306F00A4C816</string>
+											<string>B56854881101306F00A4C816</string>
+											<string>B56854891101306F00A4C816</string>
+											<string>B56854921101318F00A4C816</string>
+											<string>B56854931101318F00A4C816</string>
+											<string>B56854941101318F00A4C816</string>
+											<string>B56854951101318F00A4C816</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -575,8 +576,8 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
-		<string>/Users/mikelaurence/Projects/CoreResource/CoreTest/CoreTest.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mikelaurence/Projects/CoreResource/CoreTest/CoreTest.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>5 59 1669 969 0 0 1680 1028 </string>
@@ -600,7 +601,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreModel.m</string>
+								<string>CoreModelTests.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -671,7 +672,7 @@
 			<key>WindowToolGUID</key>
 			<string>B5BAC03F10FFE02400D57FCA</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

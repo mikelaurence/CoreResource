@@ -11,4 +11,9 @@
 
 @implementation Artist
 
+@dynamic description;
+@dynamic name;
+@dynamic remote_id;
+@dynamic summary;
+
 @end
