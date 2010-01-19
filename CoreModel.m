@@ -71,12 +71,24 @@
     return [modelTypes objectForKey:field];
 }
 
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field {
+    return [self propertyDescriptionForField:field inModel:self];
+}
+
 
 #pragma mark -
 #pragma mark Serialization
 
++ (NSString*) localNameForRemoteField:(NSString*)name {
+    return name;
+}
+
++ (NSString*) remoteNameForLocalField:(NSString*)name {
+    return name;
+}
+
 + (NSString*) localIdField {
-    return @"remote_id";
+    return @"resourceId";
 }
 
 + (NSString*) remoteIdField {
@@ -299,15 +311,15 @@
 #pragma mark -
 #pragma mark Read
 
-+ (CoreResult*) find:(NSString*)recordId {
-    return [self find:recordId andNotify:nil withSelector:nil];
++ (CoreResult*) find:(NSString*)resourceId {
+    return [self find:resourceId andNotify:nil withSelector:nil];
 }
 
-+ (CoreResult*) find:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector {
-    id obj = [self findLocal:recordId];
++ (CoreResult*) find:(NSString*)resourceId andNotify:(id)del withSelector:(SEL)selector {
+    id obj = [self findLocal:resourceId];
     if (obj != nil)
         return [[CoreResult alloc] initWithResource:obj];
-    [self findRemote:recordId andNotify:del withSelector:selector];
+    [self findRemote:resourceId andNotify:del withSelector:selector];
     return nil;
 }
 
@@ -315,11 +327,11 @@
     return nil;
 }
 
-+ (CoreResult*) findAll:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector {
++ (CoreResult*) findAll:(NSString*)resourceId andNotify:(id)del withSelector:(SEL)selector {
     return nil;
 }
 
-+ (CoreResult*) findLocal:(NSString*)recordId {
++ (CoreResult*) findLocal:(NSString*)resourceId {
     return nil;
 }
 
@@ -334,12 +346,12 @@
     return result;
 }
 
-+ (void) findRemote:(NSString*)recordId {
-    [self findRemote:recordId andNotify:nil withSelector:nil];
++ (void) findRemote:(NSString*)resourceId {
+    [self findRemote:resourceId andNotify:nil withSelector:nil];
 }
 
-+ (void) findRemote:(NSString *)recordId andNotify:(id)del withSelector:(SEL)selector {
-    [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], recordId] andNotify:del withSelector:selector];
++ (void) findRemote:(NSString *)resourceId andNotify:(id)del withSelector:(SEL)selector {
+    [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], resourceId] andNotify:del withSelector:selector];
 }
 
 + (void) findAllRemote:(id)parameters {

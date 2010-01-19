@@ -43,13 +43,17 @@
 #pragma mark Tests - Configuration
 
 - (void) testPropertyDescriptionForField {
-    GHFail(nil);
+    NSDictionary* props = [[Artist entityDescription] propertiesByName];
+    GHAssertEquals([Artist propertyDescriptionForField:@"name"], [props objectForKey:@"name"], nil);
+    GHAssertEquals([Artist propertyDescriptionForField:@"summary"], [props objectForKey:@"summary"], nil);
 }
 
 
 #pragma mark -
 #pragma mark Tests - Serialization
 
+- (void) testLocalNameForRemoteField { GHFail(nil); }
+- (void) testRemoteNameForLocalField { GHFail(nil); }
 - (void) testAlteredLocalIdField { GHFail(nil); }
 - (void) testAlteredRemoteIdField { GHFail(nil); }
 - (void) testAlteredDateParser { GHFail(nil); }

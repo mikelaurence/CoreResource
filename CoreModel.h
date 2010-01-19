@@ -38,11 +38,14 @@ typedef enum _Action {
 - (NSString*) bundleResourcePathForAction:(Action)action;
 
 + (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field;
 
 
 #pragma mark -
 #pragma mark Serialization
 
++ (NSString*) localNameForRemoteField:(NSString*)name;
++ (NSString*) remoteNameForLocalField:(NSString*)name;
 + (NSString*) localIdField;
 + (NSString*) remoteIdField;
 + (NSDateFormatter*) dateParser;
