@@ -7,6 +7,9 @@
 //
 
 #import "CoreResourceTestCase.h"
+#import "Artist.h"
+#import "Song.h"
+#import "User.h"
 
 @interface CoreModelCoreDataTests : CoreResourceTestCase {}
 @end
@@ -16,10 +19,20 @@
 #pragma mark -
 #pragma mark Core Data
 
-- (void) testAlteredEntityName { GHFail(nil); }
-- (void) testEntityDescription { GHFail(nil); }
-- (void) testHasRelationships { GHFail(nil); }
-- (void) testAlteredManagedObjectContext { GHFail(nil); }
+- (void) testEntityName { 
+    GHAssertEqualStrings([Artist entityName], @"Artist");
+    GHAssertEqualStrings([Song entityName], @"Song");
+}
 
+- (void) testEntityDescription { 
+    NSEntityDescription* artistDescription = [NSEntityDescription entityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
+    GHAssertEquals([Artist entityDescription], artistDescription);
+}
+
+- (void) testHasRelationships { 
+    GHAssertTrue([Artist hasRelationships]);
+    GHAssertTrue([Song hasRelationships]);
+    GHAssertFalse([User hasRelationships]);
+}
 
 @end

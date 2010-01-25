@@ -14,6 +14,7 @@
 @dynamic description;
 @dynamic name;
 @dynamic remote_id;
+@dynamic songs;
 @dynamic summary;
 
 @end

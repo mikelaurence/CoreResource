@@ -10,7 +10,11 @@
 #import "Artist.h"
 #import "CoreResult.h"
 
-@interface CoreResourceTestCase : GHTestCase {}
+@interface CoreResourceTestCase : GHAsyncTestCase {
+    NSMutableDictionary* delegatesCalled;
+}
+
+@property (nonatomic, retain) NSMutableDictionary* delegatesCalled;
 
 - (NSArray*) allLocalArtists;
 - (void) validateFirstArtist:(Artist*)artist;

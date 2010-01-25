@@ -14,6 +14,7 @@
 @implementation CoreModelSerializationTests
 
 - (void)setUpClass {
+    [super setUpClass];
     [CoreManager main].useBundleRequests = YES;
 }
 
@@ -34,7 +35,7 @@
     // Assert a is not NULL, with no custom error description
     //GHAssertNotNULL(nil, nil);
     
-   // NSLog(@"Base collection name: %@", [Artist remoteCollectionName]);
+    // NSLog(@"Base collection name: %@", [Artist remoteCollectionName]);
     //SwizzleMethod([Artist class], @selector(remoteCollectionName), [self class], @selector(remoteCollectionNm), NO);
 
     // Assert equal objects, add custom error description

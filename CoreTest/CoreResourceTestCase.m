@@ -10,6 +10,8 @@
 
 @implementation CoreResourceTestCase
 
+@synthesize delegatesCalled;
+
 #pragma mark -
 #pragma mark Convenience methods
 
@@ -31,6 +33,10 @@
 #pragma mark GHUnit Configuration
 
 - (BOOL)shouldRunOnMainThread { return NO; }
+
+- (void) setUpClass {
+    self.delegatesCalled = [NSMutableDictionary dictionary];
+}
 
 - (void)tearDown {
     for (Artist* artist in [self allLocalArtists])

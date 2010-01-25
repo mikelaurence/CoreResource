@@ -18,6 +18,8 @@
 
 - (void) testPropertyDescriptionForField {
     NSDictionary* props = [[Artist entityDescription] propertiesByName];
+    GHAssertNotNil([Artist propertyDescriptionForField:@"name"], nil);
+    GHAssertNotNil([Artist propertyDescriptionForField:@"summary"], nil);
     GHAssertEquals([Artist propertyDescriptionForField:@"name"], [props objectForKey:@"name"], nil);
     GHAssertEquals([Artist propertyDescriptionForField:@"summary"], [props objectForKey:@"summary"], nil);
 }

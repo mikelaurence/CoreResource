@@ -42,13 +42,19 @@
 
 - (void) testFindAllWithoutLocalHits { GHFail(nil); }
 - (void) testFindAllWithLocalHits { GHFail(nil); }
+- (void) testFindAllParameterizedWithoutLocalHits { GHFail(nil); }
+- (void) testFindAllParameterizedWithLocalHits { GHFail(nil); }
 - (void) testFindAllAndNotify { GHFail(nil); }
-- (void) findLocal:(NSString*)recordId { GHFail(nil); }
-- (void) findAllLocal:(id)parameters { GHFail(nil); }
+- (void) testFindLocal { GHFail(nil); }
+- (void) testFindAllLocal { GHFail(nil); }
 - (void) testFindRemote { GHFail(nil); }
 - (void) testFindRemoteAndNotify { GHFail(nil); }
 - (void) testFindAllRemote { GHFail(nil); }
 - (void) testFindAllRemoteAndNotify { GHFail(nil); }
 
+
+- (void) testZ {
+    GHAssertNotNil([delegatesCalled objectForKey:@"completeTestFindAndNotify"], @"completeTestFindAndNotify not called");
+}
 
 @end
