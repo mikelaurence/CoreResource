@@ -20,19 +20,19 @@
 #pragma mark Core Data
 
 - (void) testEntityName { 
-    GHAssertEqualStrings([Artist entityName], @"Artist");
-    GHAssertEqualStrings([Song entityName], @"Song");
+    GHAssertEqualStrings([Artist entityName], @"Artist", nil);
+    GHAssertEqualStrings([Song entityName], @"Song", nil);
 }
 
 - (void) testEntityDescription { 
     NSEntityDescription* artistDescription = [NSEntityDescription entityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
-    GHAssertEquals([Artist entityDescription], artistDescription);
+    GHAssertEquals([Artist entityDescription], artistDescription, nil);
 }
 
 - (void) testHasRelationships { 
-    GHAssertTrue([Artist hasRelationships]);
-    GHAssertTrue([Song hasRelationships]);
-    GHAssertFalse([User hasRelationships]);
+    GHAssertTrue([Artist hasRelationships], nil);
+    GHAssertTrue([Song hasRelationships], nil);
+    GHAssertFalse([User hasRelationships], nil);
 }
 
 @end

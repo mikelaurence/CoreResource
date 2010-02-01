@@ -27,4 +27,8 @@
     return self;
 }
 
+- (CoreModel*) resource {
+    return self.resources != nil && [self.resources count] > 0 ? [self.resources objectAtIndex:0] : nil;
+}
+
 @end

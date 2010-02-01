@@ -77,14 +77,17 @@ typedef enum _Action {
 #pragma mark Read
 + (CoreResult*) find:(NSString*)recordId;
 + (CoreResult*) find:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector;
++ (CoreResult*) findAll;
 + (CoreResult*) findAll:(id)parameters;
 + (CoreResult*) findAll:(id)parameters andNotify:(id)del withSelector:(SEL)selector;
 
 + (CoreResult*) findLocal:(NSString*)recordId;
++ (CoreResult*) findAllLocal;
 + (CoreResult*) findAllLocal:(id)parameters;
 
 + (void) findRemote:(NSString*)recordId;
 + (void) findRemote:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector;
++ (void) findAllRemote;
 + (void) findAllRemote:(id)parameters;
 + (void) findAllRemote:(id)parameters andNotify:(id)del withSelector:(SEL)selector;
 

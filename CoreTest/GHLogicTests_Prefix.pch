@@ -14,4 +14,5 @@
     #import <CoreData/CoreData.h>
     #import "GHUnit.h"
     #import "TestHelpers.h"
+    #import "NSString+SBJSON.h"
 #endif

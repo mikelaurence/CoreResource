@@ -12,8 +12,34 @@
 
 @synthesize delegatesCalled;
 
+static NSArray* _artistData;
+
 #pragma mark -
 #pragma mark Convenience methods
+
+- (NSArray*) artistData {
+    if (_artistData == nil) {
+        NSError* parseError;
+        _artistData = [[NSString stringWithContentsOfFile:
+            [[NSBundle mainBundle] pathForResource:@"artists" ofType:@"json"] 
+            encoding:NSUTF8StringEncoding error:&parseError] JSONValue];
+    }
+    return _artistData;
+}
+
+- (void) loadAllArtists {
+    [self loadArtist:0];
+    [self loadArtist:1];
+    [self loadArtist:2];
+}
+
+- (void) loadArtist:(int)index {
+    Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
+    NSDictionary* dict = [[self artistData] objectAtIndex:index];
+    artist.name = [dict objectForKey:@"name"];
+    artist.summary = [dict objectForKey:@"summary"];
+    artist.remote_id = [dict objectForKey:@"id"];
+}
 
 - (NSArray*) allLocalArtists {
     NSError* error = nil;
@@ -25,6 +51,16 @@
     GHAssertEqualStrings(artist.name, @"Peter Gabriel", nil);
     GHAssertEqualStrings(artist.summary, @"Peter Brian Gabriel is an English musician and songwriter.", nil);
     GHAssertEquals([artist.remote_id intValue], 1, nil);
+}
+
+- (void) validateSecondArtist:(Artist*)artist {
+    GHAssertEqualStrings(artist.name, @"Spoon", nil);
+    GHAssertEqualStrings(artist.summary, @"Spoon is an American indie rock band from Austin, Texas.", nil);
+    GHAssertEquals([artist.remote_id intValue], 1, nil);
+}
+
+- (void) performRequestsAsynchronously {
+    [CoreManager main].bundleRequestDelay = 0.1;   // Add delay to request so it performs asynchronously
 }
 
 

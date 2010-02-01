@@ -16,7 +16,13 @@
 
 @property (nonatomic, retain) NSMutableDictionary* delegatesCalled;
 
+- (NSArray*) artistData;
+- (void) loadAllArtists;
+- (void) loadArtist:(int)index;
 - (NSArray*) allLocalArtists;
 - (void) validateFirstArtist:(Artist*)artist;
+- (void) validateSecondArtist:(Artist*)artist;
+
+- (void) performRequestsAsynchronously;
 
 @end

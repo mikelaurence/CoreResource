@@ -323,6 +323,10 @@
     return nil;
 }
 
++ (CoreResult*) findAll {
+    return nil;
+}
+
 + (CoreResult*) findAll:(id)parameters {
     return nil;
 }
@@ -333,6 +337,10 @@
 
 + (CoreResult*) findLocal:(NSString*)resourceId {
     return nil;
+}
+
++ (CoreResult*) findAllLocal {
+    return [self findAllLocal:nil];
 }
 
 + (CoreResult*) findAllLocal:(id)parameters {
@@ -352,6 +360,10 @@
 
 + (void) findRemote:(NSString *)resourceId andNotify:(id)del withSelector:(SEL)selector {
     [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], resourceId] andNotify:del withSelector:selector];
+}
+
++ (void) findAllRemote {
+    [self findAllRemote:nil];
 }
 
 + (void) findAllRemote:(id)parameters {
