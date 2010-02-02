@@ -22,7 +22,7 @@
 #pragma mark Read
 /*
 - (void) testFindWithoutLocalHit {
-    GHAssertNULL([Artist find:@"0"], @"Find should not immediately return an object if the object doesn't yet exist");
+    GHAssertNULL([Artist find:[NSNumber numberWithInt:0]], @"Find should not immediately return an object if the object doesn't yet exist");
     
     // Verify existance of artist after find call
     GHAssertEquals([[self allLocalArtists] count], 1, nil);
@@ -31,7 +31,7 @@
 
 - (void) testFindWithLocalHit {
     [self loadArtist:0];
-    CoreResult* result = [Artist find:@"0"];
+    CoreResult* result = [Artist find:[NSNumber numberWithInt:0]];
     GHAssertNotNULL([result resources], nil);
     GHAssertEquals([[result resources] count], 1, nil);
     GHAssertEquals([[self allLocalArtists] count], 1, nil);
@@ -42,7 +42,7 @@
 - (void) testFindAndNotify {
     [self performRequestsAsynchronously];
     [self prepare];
-    [Artist find:@"0" andNotify:self withSelector:@selector(completeTestFindAndNotify:)];
+    [Artist find:[NSNumber numberWithInt:0] andNotify:self withSelector:@selector(completeTestFindAndNotify:)];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
 }
 
@@ -121,16 +121,16 @@
 }
 
 - (void) testFindRemote {
-    [Artist findRemote:@"1"];
-
-    GHAssertEquals([[self allLocalArtists] count], 1, nil);
+    [Artist findRemote:[NSNumber numberWithInt:1]];
+    int count = [[self allLocalArtists] count];
+    GHAssertEquals(count, 1, nil);
     [self validateSecondArtist:(Artist*)[[self allLocalArtists] lastObject]];
 }
 /*
 - (void) testFindRemoteAndNotify { 
     [self performRequestsAsynchronously];
     [self prepare];
-    [Artist findRemote:@"0" andNotify:self withSelector:@selector(completeTestFindRemoteAndNotify:)];
+    [Artist findRemote:[NSNumber numberWithInt:0] andNotify:self withSelector:@selector(completeTestFindRemoteAndNotify:)];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
 }
 

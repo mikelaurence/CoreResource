@@ -32,10 +32,12 @@ typedef enum _Action {
 
 + (NSString*) remoteSiteURL;
 + (NSString*) remoteCollectionName;
-+ (NSString*) remoteCollectionURLForAction:(Action)action;
-- (NSString*) remoteResourceURLForAction:(Action)action;
-+ (NSString*) bundleCollectionPathForAction:(Action)action;
-- (NSString*) bundleResourcePathForAction:(Action)action;
++ (NSString*) remoteURLForCollectionAction:(Action)action;
++ (NSString*) remoteURLForResource:(id)resourceId action:(Action)action;
+- (NSString*) remoteURLForAction:(Action)action;
++ (NSString*) bundlePathForCollectionAction:(Action)action;
++ (NSString*) bundlePathForResource:(id)resourceId action:(Action)action;
+- (NSString*) bundlePathForAction:(Action)action;
 
 
 #pragma mark -

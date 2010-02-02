@@ -34,20 +34,28 @@
     return [[[NSStringFromClass(self) deCamelizeWith:@"_"] substringFromIndex:1] stringByAppendingString:@"s"];
 }
 
-+ (NSString*) remoteCollectionURLForAction:(Action)action {
++ (NSString*) remoteURLForCollectionAction:(Action)action {
     return [NSString stringWithFormat:@"%@/%@", [self remoteSiteURL], [self remoteCollectionName]];
 }
 
-- (NSString*) remoteResourceURLForAction:(Action)action {
-    return [NSString stringWithFormat:@"%@/%@/%@", [[self class] remoteSiteURL], [[self class] remoteCollectionName]]; 
++ (NSString*) remoteURLForResource:(id)resourceId action:(Action)action {
+    return [NSString stringWithFormat:@"%@/%@/%@", [[self class] remoteSiteURL], [[self class] remoteCollectionName], resourceId]; 
 }
 
-+ (NSString*) bundleCollectionPathForAction:(Action)action {
+- (NSString*) remoteURLForAction:(Action)action {
+    return [[self class] remoteURLForResource:[self localId] action:action];
+}
+
++ (NSString*) bundlePathForCollectionAction:(Action)action {
     return [NSString stringWithFormat:@"%@", [self remoteCollectionName]];
 }
 
-- (NSString*) bundleResourcePathForAction:(Action)action {
-    return [NSString stringWithFormat:@"%@.%@", [[self class] remoteCollectionName], [self localId]];
++ (NSString*) bundlePathForResource:(id)resourceId action:(Action)action {
+    return [NSString stringWithFormat:@"%@.%@", [[self class] remoteCollectionName], resourceId];
+}
+
+- (NSString*) bundlePathForAction:(Action)action {
+    return [[self class] bundlePathForResource:[self localId] action:action];
 }
 
 
@@ -360,8 +368,6 @@
     NSError* error = nil;
     NSFetchRequest* fetch = [self fetchRequestWithSort:nil andPredicate:[self predicateWithParameters:parameters]];
     NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
-    
-    NSLog(@"\n\n\nFETCH!\n %@ %@ \n\n\n", fetch, resources);
 
     CoreResult* result = [[CoreResult alloc] initWithResources:resources];
     if (error != nil)
@@ -374,7 +380,23 @@
 }
 
 + (void) findRemote:(id)resourceId andNotify:(id)del withSelector:(SEL)selector {
-    [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], resourceId] andNotify:del withSelector:selector];
+    CoreRequest *request = [[CoreRequest alloc] initWithURL:
+        [CoreUtils URLWithSite:[self remoteURLForResource:resourceId action:Read] andFormat:@"json" andParameters:nil]];
+    request.delegate = self;
+    request.didFinishSelector = @selector(findRemoteDidFinish:);
+    request.didFailSelector = @selector(findRemoteDidFail:);
+    request.coreDelegate = del;
+    request.coreSelector = selector;
+
+    // If we're using bundle requests, just attempt to find the data within the project
+    if ([self useBundleRequests]) {
+        request.bundleDataPath = [self bundlePathForResource:resourceId action:Read];
+        [request executeAsBundleRequest];
+    }
+    
+    // Enqueue as remote HTTP request 
+    else
+        [[self coreManager] enqueueRequest:request];
 }
 
 + (void) findAllRemote {
@@ -387,7 +409,7 @@
 
 + (void) findAllRemote:(id)parameters andNotify:(id)del withSelector:(SEL)selector {
     CoreRequest *request = [[CoreRequest alloc] initWithURL:
-        [CoreUtils URLWithSite:[self remoteCollectionURLForAction:Read] andFormat:@"json" andParameters:parameters]];
+        [CoreUtils URLWithSite:[self remoteURLForCollectionAction:Read] andFormat:@"json" andParameters:parameters]];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish:);
     request.didFailSelector = @selector(findRemoteDidFail:);
@@ -396,7 +418,7 @@
 
     // If we're using bundle requests, just attempt to find the data within the project
     if ([self useBundleRequests]) {
-        request.bundleDataPath = [self bundleCollectionPathForAction:Read];
+        request.bundleDataPath = [self bundlePathForCollectionAction:Read];
         [request executeAsBundleRequest];
     }
     

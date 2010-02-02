@@ -44,8 +44,9 @@ static NSArray* _artistData;
 
 - (NSArray*) allLocalArtists {
     NSError* error = nil;
+    NSArray* artists = [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequest] error:&error];
     GHAssertNULL(error, @"There should be no errors in the allLocalArtists convenience method");
-    return [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequest] error:&error];
+    return artists != nil ? artists : [NSArray array];
 }
 
 - (void) validateFirstArtist:(Artist*)artist {
