@@ -13,7 +13,7 @@
 
 @synthesize requestQueue;
 @synthesize remoteSiteURL, useBundleRequests, bundleRequestDelay, defaultDateParser;
-@synthesize modelPropertyTypes, modelRelationships;
+@synthesize modelProperties, modelRelationships;
 
 #pragma mark -
 #pragma mark Static access
@@ -27,7 +27,8 @@ static CoreManager* _main;
 
 - (id) init {
     if (self = [super init]) {
-        [CoreManager setMain:self];
+        if (_main == nil)
+            _main = self;
         self.requestQueue = [[NSOperationQueue alloc] init];
         
         // Default date parser is ruby DateTime.to_s style parser
@@ -35,7 +36,7 @@ static CoreManager* _main;
         [defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
         //[defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
         
-        self.modelPropertyTypes = [NSMutableDictionary dictionary];
+        self.modelProperties = [NSMutableDictionary dictionary];
         self.modelRelationships = [NSMutableDictionary dictionary];
         
         useBundleRequests = NO;
@@ -197,7 +198,7 @@ static CoreManager* _main;
 #pragma mark Memory management
 
 - (void)dealloc {
-    [modelPropertyTypes release];
+    [modelProperties release];
     [modelRelationships release];
 
     [remoteSiteURL release];

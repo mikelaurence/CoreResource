@@ -15,12 +15,12 @@
 
 #pragma mark -
 #pragma mark Create
-
+/*
 - (void) testCreate { GHFail(nil); }
 - (void) testCreateOrUpdateWithDictionary { GHFail(nil); }
 - (void) testCreateOrUpdateWithDictionaryAndRelationship { GHFail(nil); }
 - (void) testUpdateWithDictionary:(NSDictionary*)dict { GHFail(nil); }
 - (void) testShouldUpdateWithDictionary:(NSDictionary*)dict { GHFail(nil); }
-
+*/
 
 @end

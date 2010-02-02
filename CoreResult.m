@@ -28,7 +28,11 @@
 }
 
 - (CoreModel*) resource {
-    return self.resources != nil && [self.resources count] > 0 ? [self.resources objectAtIndex:0] : nil;
+    return resources != nil && [resources count] > 0 ? [resources objectAtIndex:0] : nil;
+}
+
+- (int) resourceCount {
+    return resources != nil ? [resources count] : 0;
 }
 
 @end

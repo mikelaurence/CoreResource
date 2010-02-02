@@ -30,4 +30,6 @@
 */
 - (CoreModel*) resource;
 
+- (int) resourceCount;
+
 @end

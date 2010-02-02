@@ -11,7 +11,7 @@
 
 @implementation Artist
 
-@dynamic description;
+@dynamic detail;
 @dynamic name;
 @dynamic remote_id;
 @dynamic songs;

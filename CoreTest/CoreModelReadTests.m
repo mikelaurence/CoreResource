@@ -20,7 +20,7 @@
 
 #pragma mark -
 #pragma mark Read
-
+/*
 
 - (void) testFindWithoutLocalHit {
     GHAssertNULL([Artist find:@"0"], @"Find should not immediately return an object if the object doesn't yet exist");
@@ -157,5 +157,6 @@
     [self validateSecondArtist:[[self allLocalArtists] objectAtIndex:1]];
     [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(completeTestFindAllRemoteAndNotify:)];
 }
+*/
 
 @end

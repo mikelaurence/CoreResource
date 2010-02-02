@@ -13,7 +13,7 @@
 @interface Artist : CoreModel {
 }
 
-@property (nonatomic, retain) NSString * description;
+@property (nonatomic, retain) NSString * detail;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * remote_id;
 @property (nonatomic, retain) NSArray * songs;

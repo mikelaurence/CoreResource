@@ -51,30 +51,6 @@
 }
 
 
-/**
-    Returns the class type for a given property in a given model.
-    By default, this caches the resulting dictionaries provided by Core Data
-    in order to maximize efficiency.
-*/
-+ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass {
-    NSDictionary *modelTypes = [[[CoreManager main] modelPropertyTypes] objectForKey:modelClass];
-    
-    // Create entry for the given class if it doesn't exist yet
-    if (modelTypes == nil) {
-        modelTypes = [NSDictionary dictionary];
-        [[[CoreManager main] modelPropertyTypes] setObject:[[self entityDescription] propertiesByName] forKey:modelClass];
-        
-        // Also add relationships dictionary
-        [[[CoreManager main] modelRelationships] setObject:[[self entityDescription] relationshipsByName] forKey:modelClass];
-    }
-
-    return [modelTypes objectForKey:field];
-}
-
-+ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field {
-    return [self propertyDescriptionForField:field inModel:self];
-}
-
 
 #pragma mark -
 #pragma mark Serialization
@@ -147,6 +123,10 @@
 #pragma mark -
 #pragma mark Core Data
 
++ (NSManagedObjectContext*) managedObjectContext {
+    return [[self coreManager] managedObjectContext];
+}
+
 + (NSString*) entityName {
     return [NSString stringWithFormat:@"%@", self];
 }
@@ -155,12 +135,41 @@
     return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:[[self coreManager] managedObjectContext]];
 }
 
-+ (BOOL) hasRelationships {
-    return [(NSDictionary*)[[[[self class] coreManager] modelRelationships] objectForKey:self] count] > 0;
++ (NSDictionary*) relationshipsByName {
+    NSDictionary* rels = [[[CoreManager main] modelRelationships] objectForKey:self];
+    if (rels == nil) {
+        // Cache relationships dictionary if not yet extant
+        rels = [[self entityDescription] relationshipsByName];
+        [[[CoreManager main] modelRelationships] setObject:rels forKey:self];
+    }
+    return rels;
 }
 
-+ (NSManagedObjectContext*) managedObjectContext {
-    return [[self coreManager] managedObjectContext];
++ (BOOL) hasRelationships {
+    return [[self relationshipsByName] count] > 0;
+}
+
++ (NSDictionary*) propertiesByName {
+    NSDictionary* props = [[[CoreManager main] modelProperties] objectForKey:self];
+    if (props == nil) {
+        // Cache properties dictionary if not yet extant
+        props = [[self entityDescription] propertiesByName];
+        [[[CoreManager main] modelProperties] setObject:props forKey:self];
+    }
+    return props;
+}
+
+/**
+    Returns the property description for a given property in a given model.
+    By default, this caches the resulting dictionaries provided by Core Data
+    in order to maximize efficiency (caching performed in #propertiesByName).
+*/
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass {
+    return [[modelClass propertiesByName] objectForKey:field];
+}
+
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field {
+    return [self propertyDescriptionForField:field inModel:self];
 }
 
 
@@ -404,6 +413,15 @@
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
     NSLog(@"[%@#findRemoteDidFail] Find remote request failed.", self);
+}
+
+
+#pragma mark -
+#pragma mark Delete
+
++ (void) destroyAllLocal {
+    for (CoreModel* model in [[[self class] findAllLocal] resources])
+        [[self managedObjectContext] deleteObject:model];
 }
 
 

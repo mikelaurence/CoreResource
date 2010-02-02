@@ -22,7 +22,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
     self.coreManager = [[CoreManager alloc] init];
-    NSLog(@"Created Core Manager");
+    NSLog(@"Created Core Manager: %@", [CoreManager main]);
 
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];

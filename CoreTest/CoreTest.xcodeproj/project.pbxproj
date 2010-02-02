@@ -15,6 +15,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* ArtistCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ArtistCollectionController.m */; };
 		28F335F11007B36200424DE2 /* ArtistCollectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* ArtistCollectionController.xib */; };
+		B556BB0D1118C33600D4570C /* CoreModelDestroyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */; };
 		B56418A211064C7900D1B038 /* CoreModelConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */; };
 		B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */; };
 		B56418AB11064E0000D1B038 /* CoreModelCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418AA11064E0000D1B038 /* CoreModelCoreDataTests.m */; };
@@ -100,6 +101,7 @@
 		28F335F01007B36200424DE2 /* ArtistCollectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCollectionController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CoreTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelDestroyTests.m; sourceTree = "<group>"; };
 		B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelConfigurationTests.m; sourceTree = "<group>"; };
 		B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceTestCase.m; sourceTree = "<group>"; };
 		B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResourceTestCase.h; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 		B56851EA1100DCB600A4C816 /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+GHTestFailureExceptions.h"; sourceTree = "<group>"; };
 		B56851EB1100DCB600A4C816 /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+GHValueFormatter.h"; sourceTree = "<group>"; };
 		B56851EC1100DCB600A4C816 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
-		B56851F91100DD0500A4C816 /* GHLogicTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHLogicTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56851F91100DD0500A4C816 /* CoreResource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreResource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56851FB1100DD0500A4C816 /* GHLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHLogicTests-Info.plist"; sourceTree = "<group>"; };
 		B568526F1100E14E00A4C816 /* CoreModelSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelSerializationTests.m; sourceTree = "<group>"; };
 		B56852981100E3E800A4C816 /* GHLogicTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogicTests_Prefix.pch; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* CoreTest.app */,
-				B56851F91100DD0500A4C816 /* GHLogicTests.app */,
+				B56851F91100DD0500A4C816 /* CoreResource.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,6 +313,7 @@
 				B56418AE11064E5400D1B038 /* CoreModelCreateTests.m */,
 				B56418B011064E7100D1B038 /* CoreModelUpdateTests.m */,
 				B56418B311064E9B00D1B038 /* CoreModelResultsTests.m */,
+				B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -461,7 +464,7 @@
 			);
 			name = CoreResourceLogicTests;
 			productName = GHLogicTests;
-			productReference = B56851F91100DD0500A4C816 /* GHLogicTests.app */;
+			productReference = B56851F91100DD0500A4C816 /* CoreResource.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -580,6 +583,7 @@
 				B56418B411064E9B00D1B038 /* CoreModelResultsTests.m in Sources */,
 				B5A6614B110DF95400100C9E /* Song.m in Sources */,
 				B5A6615C110DF9CD00100C9E /* User.m in Sources */,
+				B556BB0D1118C33600D4570C /* CoreModelDestroyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +639,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = GHLogicTests;
+				PRODUCT_NAME = CoreResource;
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Debug;
@@ -663,7 +667,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = GHLogicTests;
+				PRODUCT_NAME = CoreResource;
 				SDKROOT = iphoneos3.1.2;
 				ZERO_LINK = NO;
 			};

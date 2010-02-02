@@ -37,9 +37,6 @@ typedef enum _Action {
 + (NSString*) bundleCollectionPathForAction:(Action)action;
 - (NSString*) bundleResourcePathForAction:(Action)action;
 
-+ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
-+ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field;
-
 
 #pragma mark -
 #pragma mark Serialization
@@ -57,10 +54,14 @@ typedef enum _Action {
 #pragma mark -
 #pragma mark Core Data
 
++ (NSManagedObjectContext*) managedObjectContext;
 + (NSString*) entityName;
 + (NSEntityDescription*) entityDescription;
++ (NSDictionary*) relationshipsByName;
 + (BOOL) hasRelationships;
-+ (NSManagedObjectContext*) managedObjectContext;
++ (NSDictionary*) propertiesByName;
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
++ (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field;
 
 
 #pragma mark -
@@ -75,6 +76,7 @@ typedef enum _Action {
 
 #pragma mark -
 #pragma mark Read
+
 + (CoreResult*) find:(NSString*)recordId;
 + (CoreResult*) find:(NSString*)recordId andNotify:(id)del withSelector:(SEL)selector;
 + (CoreResult*) findAll;
@@ -94,6 +96,12 @@ typedef enum _Action {
 + (void) findRemoteDidFinish:(ASIHTTPRequest*)request;
 + (void) findRemoteDidFail:(ASIHTTPRequest*)request;
 
+
+
+#pragma mark -
+#pragma mark Delete
+
++ (void) destroyAllLocal;
 
 
 #pragma mark -
