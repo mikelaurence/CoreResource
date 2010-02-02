@@ -16,6 +16,7 @@
 
 - (void) executeAsBundleRequest {
     NSError* parseError;
+    NSLog(@"EXBUND: %@", bundleDataPath);
     self.bundleDataResult = [NSString stringWithContentsOfFile:
             [[NSBundle mainBundle] pathForResource:bundleDataPath ofType:@"json"] 
         encoding:NSUTF8StringEncoding error:&parseError];

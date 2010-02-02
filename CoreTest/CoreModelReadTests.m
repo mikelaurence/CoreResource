@@ -21,7 +21,6 @@
 #pragma mark -
 #pragma mark Read
 /*
-
 - (void) testFindWithoutLocalHit {
     GHAssertNULL([Artist find:@"0"], @"Find should not immediately return an object if the object doesn't yet exist");
     
@@ -37,6 +36,8 @@
     GHAssertEquals([[result resources] count], 1, nil);
     GHAssertEquals([[self allLocalArtists] count], 1, nil);
 }
+
+/*
 
 - (void) testFindAndNotify {
     [self performRequestsAsynchronously];
@@ -98,12 +99,12 @@
     [self validateSecondArtist:[[result resources] objectAtIndex:1]];
     [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(completeTestFindAllAndNotify:)];
 }
-
+*/
 - (void) testFindLocal {
     [self loadArtist:1];
 
-    CoreResult* result = [Artist findLocal:@"1"];
-    GHAssertEquals([[result resources] count], 1, nil);
+    CoreResult* result = [Artist findLocal:[NSNumber numberWithInt:1]];
+    GHAssertEquals([result resourceCount], 1, nil);
     [self validateSecondArtist:(Artist*)[result resource]];
 }
 
@@ -111,9 +112,12 @@
     [self loadAllArtists];
     
     CoreResult* result = [Artist findAllLocal];
-    GHAssertNotNULL([result resources], nil);
-    GHAssertEquals([[result resources] count], 3, nil);
-    GHAssertEquals([[self allLocalArtists] count], 3, nil);
+    GHAssertEquals([result resourceCount], 3, nil);
+    // Sort results by ID manually so we can validate
+    NSArray* sortedResources = [[result resources] sortedArrayUsingDescriptors:
+        [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"resourceId" ascending:YES]]];
+    [self validateFirstArtist:(Artist*)[sortedResources objectAtIndex:0]];
+    [self validateSecondArtist:(Artist*)[sortedResources objectAtIndex:1]];
 }
 
 - (void) testFindRemote {
@@ -122,7 +126,7 @@
     GHAssertEquals([[self allLocalArtists] count], 1, nil);
     [self validateSecondArtist:(Artist*)[[self allLocalArtists] lastObject]];
 }
-
+/*
 - (void) testFindRemoteAndNotify { 
     [self performRequestsAsynchronously];
     [self prepare];

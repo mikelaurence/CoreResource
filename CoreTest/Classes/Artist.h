@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * detail;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * remote_id;
+@property (nonatomic, retain) NSNumber * resourceId;
 @property (nonatomic, retain) NSArray * songs;
 @property (nonatomic, retain) NSString * summary;
 

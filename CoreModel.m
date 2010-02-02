@@ -43,11 +43,11 @@
 }
 
 + (NSString*) bundleCollectionPathForAction:(Action)action {
-    return [NSString stringWithFormat:@"%@", [self remoteSiteURL], [self remoteCollectionName]];
+    return [NSString stringWithFormat:@"%@", [self remoteCollectionName]];
 }
 
 - (NSString*) bundleResourcePathForAction:(Action)action {
-    return [NSString stringWithFormat:@"%@.%@", [[self class] remoteCollectionName]];
+    return [NSString stringWithFormat:@"%@.%@", [[self class] remoteCollectionName], [self localId]];
 }
 
 
@@ -65,6 +65,10 @@
 
 + (NSString*) localIdField {
     return @"resourceId";
+}
+
+- (id) localId {
+    return [self performSelector:NSSelectorFromString([[self class] localIdField])];
 }
 
 + (NSString*) remoteIdField {
@@ -320,14 +324,14 @@
 #pragma mark -
 #pragma mark Read
 
-+ (CoreResult*) find:(NSString*)resourceId {
++ (CoreResult*) find:(id)resourceId {
     return [self find:resourceId andNotify:nil withSelector:nil];
 }
 
-+ (CoreResult*) find:(NSString*)resourceId andNotify:(id)del withSelector:(SEL)selector {
-    id obj = [self findLocal:resourceId];
-    if (obj != nil)
-        return [[CoreResult alloc] initWithResource:obj];
++ (CoreResult*) find:(id)resourceId andNotify:(id)del withSelector:(SEL)selector {
+    CoreResult* localResult = [self findLocal:resourceId];
+    if ([localResult hasAnyResources])
+        return localResult;
     [self findRemote:resourceId andNotify:del withSelector:selector];
     return nil;
 }
@@ -340,12 +344,12 @@
     return nil;
 }
 
-+ (CoreResult*) findAll:(NSString*)resourceId andNotify:(id)del withSelector:(SEL)selector {
++ (CoreResult*) findAll:(id)resourceId andNotify:(id)del withSelector:(SEL)selector {
     return nil;
 }
 
-+ (CoreResult*) findLocal:(NSString*)resourceId {
-    return nil;
++ (CoreResult*) findLocal:(id)resourceId {
+    return [self findAllLocal:[NSString stringWithFormat:@"%@ = %@", [self localIdField], resourceId]];
 }
 
 + (CoreResult*) findAllLocal {
@@ -356,6 +360,8 @@
     NSError* error = nil;
     NSFetchRequest* fetch = [self fetchRequestWithSort:nil andPredicate:[self predicateWithParameters:parameters]];
     NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
+    
+    NSLog(@"\n\n\nFETCH!\n %@ %@ \n\n\n", fetch, resources);
 
     CoreResult* result = [[CoreResult alloc] initWithResources:resources];
     if (error != nil)
@@ -363,11 +369,11 @@
     return result;
 }
 
-+ (void) findRemote:(NSString*)resourceId {
++ (void) findRemote:(id)resourceId {
     [self findRemote:resourceId andNotify:nil withSelector:nil];
 }
 
-+ (void) findRemote:(NSString *)resourceId andNotify:(id)del withSelector:(SEL)selector {
++ (void) findRemote:(id)resourceId andNotify:(id)del withSelector:(SEL)selector {
     [self findAllRemote:[NSString stringWithFormat:@"%@=%@", [self remoteIdField], resourceId] andNotify:del withSelector:selector];
 }
 
@@ -443,6 +449,10 @@
 }
 
 + (NSPredicate*) predicateWithParameters:(id)parameters {
+    // If parameters are a string, just reuse it in the predicate
+    if ([parameters isKindOfClass:[NSString class]])
+        return [NSPredicate predicateWithFormat:parameters];
+
     return nil;
 }
 

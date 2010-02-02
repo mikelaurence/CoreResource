@@ -18,6 +18,7 @@
 
 - (void) testDestroyAllLocal { 
     [self loadAllArtists];
+    GHAssertTrue([[Artist findAllLocal] resourceCount] > 0, nil);
     [Artist destroyAllLocal];
     GHAssertEquals([[Artist findAllLocal] resourceCount], 0, nil);
 }

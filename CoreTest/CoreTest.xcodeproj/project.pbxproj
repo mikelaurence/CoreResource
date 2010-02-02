@@ -16,6 +16,10 @@
 		28C286E10D94DF7D0034E888 /* ArtistCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ArtistCollectionController.m */; };
 		28F335F11007B36200424DE2 /* ArtistCollectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* ArtistCollectionController.xib */; };
 		B556BB0D1118C33600D4570C /* CoreModelDestroyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */; };
+		B556BBFA1118DA0800D4570C /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = B56851B81100D6BA00A4C816 /* artists.json */; };
+		B556BBFB1118DA0E00D4570C /* artists.0.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA11118D42900D4570C /* artists.0.json */; };
+		B556BBFC1118DA1200D4570C /* artists.1.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA21118D44900D4570C /* artists.1.json */; };
+		B556BBFD1118DA1500D4570C /* artists.2.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA31118D44F00D4570C /* artists.2.json */; };
 		B56418A211064C7900D1B038 /* CoreModelConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */; };
 		B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */; };
 		B56418AB11064E0000D1B038 /* CoreModelCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418AA11064E0000D1B038 /* CoreModelCoreDataTests.m */; };
@@ -102,6 +106,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CoreTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelDestroyTests.m; sourceTree = "<group>"; };
+		B556BBA11118D42900D4570C /* artists.0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.0.json; sourceTree = "<group>"; };
+		B556BBA21118D44900D4570C /* artists.1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.1.json; sourceTree = "<group>"; };
+		B556BBA31118D44F00D4570C /* artists.2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.2.json; sourceTree = "<group>"; };
 		B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelConfigurationTests.m; sourceTree = "<group>"; };
 		B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceTestCase.m; sourceTree = "<group>"; };
 		B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResourceTestCase.h; sourceTree = "<group>"; };
@@ -322,6 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				B56851B81100D6BA00A4C816 /* artists.json */,
+				B556BBA11118D42900D4570C /* artists.0.json */,
+				B556BBA21118D44900D4570C /* artists.1.json */,
+				B556BBA31118D44F00D4570C /* artists.2.json */,
 			);
 			name = "Test Data";
 			sourceTree = "<group>";
@@ -506,6 +516,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B556BBFA1118DA0800D4570C /* artists.json in Resources */,
+				B556BBFB1118DA0E00D4570C /* artists.0.json in Resources */,
+				B556BBFC1118DA1200D4570C /* artists.1.json in Resources */,
+				B556BBFD1118DA1500D4570C /* artists.2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

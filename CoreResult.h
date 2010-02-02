@@ -30,6 +30,7 @@
 */
 - (CoreModel*) resource;
 
+- (BOOL) hasAnyResources;
 - (int) resourceCount;
 
 @end

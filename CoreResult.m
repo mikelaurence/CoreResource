@@ -31,6 +31,10 @@
     return resources != nil && [resources count] > 0 ? [resources objectAtIndex:0] : nil;
 }
 
+- (BOOL) hasAnyResources {
+    return [self resourceCount] > 0;
+}
+
 - (int) resourceCount {
     return resources != nil ? [resources count] : 0;
 }

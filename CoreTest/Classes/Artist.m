@@ -13,7 +13,7 @@
 
 @dynamic detail;
 @dynamic name;
-@dynamic remote_id;
+@dynamic resourceId;
 @dynamic songs;
 @dynamic summary;
 
