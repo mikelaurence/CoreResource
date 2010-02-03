@@ -369,8 +369,6 @@
 				B5BAC04510FFE05D00D57FCA /* CoreModel.m */,
 				B5BAC04610FFE05D00D57FCA /* CoreRequest.h */,
 				B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */,
-				B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */,
-				B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */,
 				B5BAC04B10FFE05D00D57FCA /* CoreManager.m */,
 				B5BAC04C10FFE05D00D57FCA /* CoreManager.h */,
 				B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */,
@@ -379,6 +377,8 @@
 				B5BAC05010FFE05D00D57FCA /* NSString+InflectionSupport.h */,
 				B5BAC05110FFE05D00D57FCA /* CoreTableController.m */,
 				B5BAC05210FFE05D00D57FCA /* CoreTableController.h */,
+				B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */,
+				B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */,
 			);
 			name = CoreResource;
 			sourceTree = "<group>";
@@ -482,6 +482,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Mike Laurence";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoreTest" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;

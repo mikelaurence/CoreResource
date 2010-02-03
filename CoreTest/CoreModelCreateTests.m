@@ -15,8 +15,18 @@
 
 #pragma mark -
 #pragma mark Create
+
+- (void) testCreate { 
+    NSDictionary* paramsOne = [[self artistData] objectAtIndex:0];
+    Artist* artistOne = [Artist create:paramsOne];
+    [self validateFirstArtist:artistOne];
+    
+    NSDictionary* paramsTwo = [[self artistData] objectAtIndex:1];
+    Artist* artistTwo = [Artist create:paramsTwo];
+    [self validateSecondArtist:artistTwo];
+}
+
 /*
-- (void) testCreate { GHFail(nil); }
 - (void) testCreateOrUpdateWithDictionary { GHFail(nil); }
 - (void) testCreateOrUpdateWithDictionaryAndRelationship { GHFail(nil); }
 - (void) testUpdateWithDictionary:(NSDictionary*)dict { GHFail(nil); }

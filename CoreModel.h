@@ -70,7 +70,7 @@ typedef enum _Action {
 #pragma mark -
 #pragma mark Create
 
-+ (id) create: (id)parameters;
++ (id) create:(id)parameters;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object;
 - (void) updateWithDictionary:(NSDictionary*)dict;
