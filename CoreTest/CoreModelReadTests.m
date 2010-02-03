@@ -120,13 +120,14 @@
     [self validateSecondArtist:(Artist*)[sortedResources objectAtIndex:1]];
 }
 
+/*
 - (void) testFindRemote {
     [Artist findRemote:[NSNumber numberWithInt:1]];
     int count = [[self allLocalArtists] count];
     GHAssertEquals(count, 1, nil);
     [self validateSecondArtist:(Artist*)[[self allLocalArtists] lastObject]];
 }
-/*
+
 - (void) testFindRemoteAndNotify { 
     [self performRequestsAsynchronously];
     [self prepare];

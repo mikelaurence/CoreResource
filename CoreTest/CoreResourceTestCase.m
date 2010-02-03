@@ -17,12 +17,16 @@ static NSArray* _artistData;
 #pragma mark -
 #pragma mark Convenience methods
 
+- (NSString*) artistDataJSON:(NSString*)file {
+    NSError* parseError;
+    return [NSString stringWithContentsOfFile:
+        [[NSBundle mainBundle] pathForResource:file ofType:@"json"] 
+        encoding:NSUTF8StringEncoding error:&parseError];
+}
+
 - (NSArray*) artistData {
     if (_artistData == nil) {
-        NSError* parseError;
-        _artistData = [[NSString stringWithContentsOfFile:
-            [[NSBundle mainBundle] pathForResource:@"artists" ofType:@"json"] 
-            encoding:NSUTF8StringEncoding error:&parseError] JSONValue];
+        _artistData = [[self artistDataJSON:@"artists"] JSONValue];
         [_artistData retain];
     }
     return _artistData;
@@ -74,6 +78,7 @@ static NSArray* _artistData;
 
 - (void) setUpClass {
     self.delegatesCalled = [NSMutableDictionary dictionary];
+    [CoreManager main].useBundleRequests = YES;
 }
 
 - (void)tearDown {

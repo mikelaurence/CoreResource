@@ -198,40 +198,43 @@
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict {
     
-    // Attempt to find existing record by using ById fetch template
-    NSFetchRequest* fetch = [[[self coreManager] managedObjectModel] 
-        fetchRequestFromTemplateWithName:[NSString stringWithFormat:@"%@ById", self] 
-        substitutionVariables:[NSDictionary dictionaryWithObject:[dict objectForKey:[self remoteIdField]] forKey:@"id"]
-    ];
-    if (fetch == nil)
-        [NSException raise:@"No finder template available" 
-            format:@"No fetch request template could be found for entity %@. Please implement the template '%@' in your Core Data model (xcdatamodel file).",
-            self, [NSString stringWithFormat:@"%@ById", self]];
-    [fetch setFetchLimit:1];
-
-    NSError* fetchError = nil;
-    NSMutableArray* fetchResults = [[[[self coreManager] managedObjectContext] executeFetchRequest:fetch error:&fetchError] mutableCopy];
-
-    if (fetchError == nil) {
-        // If there is a result, check to see whether we should update it or not
-        if ([fetchResults count] > 0) {
-            CoreModel *existingObject = [fetchResults objectAtIndex:0];
-            [existingObject updateWithDictionary:dict];
-            return existingObject;
+    // Get remote ID
+    id resourceId = [dict objectForKey:[self remoteIdField]];
+    
+    // If there is an ID, attempt to find existing record by using ById fetch template
+    if (resourceId != nil) {
+        NSFetchRequest* fetch = [[[self coreManager] managedObjectModel] 
+            fetchRequestFromTemplateWithName:[NSString stringWithFormat:@"%@ById", self] 
+            substitutionVariables:[NSDictionary dictionaryWithObject:resourceId forKey:@"id"]
+        ];
+        if (fetch == nil) {
+            fetch = [self fetchRequestWithSort:nil andPredicate:
+                [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ = %@", [self localIdField], resourceId]]];
         }
-        
-        // No existing record found, so create a new object
+        [fetch setFetchLimit:1];
+
+        NSError* fetchError = nil;
+        NSMutableArray* fetchResults = [[[[self coreManager] managedObjectContext] executeFetchRequest:fetch error:&fetchError] mutableCopy];
+
+        if (fetchError == nil) {
+            // If there is a result, check to see whether we should update it or not
+            if ([fetchResults count] > 0) {
+                CoreModel *existingObject = [fetchResults objectAtIndex:0];
+                [existingObject updateWithDictionary:dict];
+                return existingObject;
+            }
+        }
         else {
-            CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
-                insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
-            [newObject updateWithDictionary:dict];
-            NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
-            return newObject;
+            NSLog(@"Error in fetching with dictionary %@ for update comparison: %@", dict, [fetchError localizedDescription]);
         }
     }
-    else {
-        NSLog(@"Error in fetching with dictionary %@ for update comparison: %@", dict, [fetchError localizedDescription]);
-    }
+            
+    // No existing record found, so create a new object
+    CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
+        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
+    [newObject updateWithDictionary:dict];
+    NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
+    return newObject;
     
     return nil;
 }
@@ -440,7 +443,7 @@
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
-    NSLog(@"[%@#findRemoteDidFail] Find remote request failed.", self);
+    NSLog(@"[%@#findRemoteDidFail] Find remote request failed: %@", self, [[request error] localizedDescription]);
 }
 
 

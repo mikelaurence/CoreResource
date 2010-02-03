@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary* delegatesCalled;
 
+- (NSString*) artistDataJSON:(NSString*)file;
 - (NSArray*) artistData;
 - (void) loadAllArtists;
 - (void) loadArtist:(int)index;

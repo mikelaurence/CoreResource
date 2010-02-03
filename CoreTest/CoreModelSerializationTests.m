@@ -15,7 +15,6 @@
 
 - (void)setUpClass {
     [super setUpClass];
-    [CoreManager main].useBundleRequests = YES;
 }
 
 
@@ -28,7 +27,30 @@
 - (void) testAlteredRemoteIdField { GHFail(nil); }
 - (void) testAlteredDateParser { GHFail(nil); }
 - (void) testDateParserForField:(NSString*)field { GHFail(nil); }
-- (void) testDeserializeFromString:(NSString*)serializedString { GHFail(nil); }
+
+*/
+
+- (void) testDeserializeFromString {
+    [self loadAllArtists];
+    
+    NSString* artist0String = [self artistDataJSON:@"artists.0"];
+    NSArray* deserializedArtist = [Artist deserializeFromString:artist0String];
+    int artistCt = [deserializedArtist count];
+    GHAssertEquals(artistCt, 1, nil);
+    [self validateFirstArtist:[deserializedArtist lastObject]];
+
+    NSString* artistsString = [self artistDataJSON:@"artists"];
+    NSArray* deserializedArtistCollection = [Artist deserializeFromString:artistsString];
+    int collectionCt = [deserializedArtistCollection count];
+    GHAssertEquals(collectionCt, 3, nil);
+    NSArray* sortedResources = [deserializedArtistCollection sortedArrayUsingDescriptors:
+        [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"resourceId" ascending:YES]]];
+    
+    [self validateFirstArtist:[sortedResources objectAtIndex:0]];
+    [self validateSecondArtist:[sortedResources objectAtIndex:1]];
+}
+
+/*
 - (void) testAlteredDataCollectionFromDeserializedCollection { GHFail(nil); }
 
 - (void) testRemoteCollectionName {

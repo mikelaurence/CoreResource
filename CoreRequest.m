@@ -15,13 +15,12 @@
 @synthesize bundleDataPath, bundleDataResult;
 
 - (void) executeAsBundleRequest {
-    NSError* parseError;
-    NSLog(@"EXBUND: %@", bundleDataPath);
+    NSError* parseError = nil;
     self.bundleDataResult = [NSString stringWithContentsOfFile:
             [[NSBundle mainBundle] pathForResource:bundleDataPath ofType:@"json"] 
         encoding:NSUTF8StringEncoding error:&parseError];
-        
-    if (parseError = nil)
+                
+    if (parseError == nil)
         [self requestFinished];
     else
         [self failWithError:parseError];
