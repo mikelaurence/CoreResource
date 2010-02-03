@@ -30,6 +30,10 @@
     return bundleDataResult != nil ? bundleDataResult : [self responseString];
 }
 
+- (NSString*) responseString {
+    return bundleDataResult != nil ? bundleDataResult : [super responseString];
+}
+
 - (void) dealloc {
     [bundleDataResult release];
     [bundleDataPath release];
