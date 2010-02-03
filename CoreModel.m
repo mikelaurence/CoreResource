@@ -311,7 +311,7 @@
             
             // If it's an attribute, just assign the value to the object (unless the object is up-to-date)
             else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]] && shouldUpdateRoot) {                
-                NSLog(@"Setting property: %@ %@", field, value);
+                //NSLog(@"Setting property: %@ %@", field, value);
                 // Check if value is NSNull, which should be set as nil on fields (since NSNull is just used as a collection placeholder)
                 if ([value isEqual:[NSNull null]])
                     [self setValue:nil forKey:field];

@@ -267,7 +267,6 @@
 								<string>B568503D1100D03C00A4C816</string>
 								<string>B56851B41100D66D00A4C816</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>B56851DB1100DCB500A4C816</string>
 								<string>B5BAC0B310FFE13500D57FCA</string>
 								<string>B5BAC04410FFE04600D57FCA</string>
 								<string>B5BAC0D610FFE1EF00D57FCA</string>
@@ -280,14 +279,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>54</integer>
-									<integer>50</integer>
-									<integer>20</integer>
+									<integer>10</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 171}, {317, 897}}</string>
+							<string>{{0, 0}, {317, 897}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -324,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreModel.m</string>
+								<string>CoreModelReadTests.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreModel.m</string>
+										<string>CoreModelReadTests.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5693CFC1119F351002FF878</string>
+										<string>B5693D71111A0A5C002FF878</string>
 										<key>history</key>
 										<array>
 											<string>B5BAC12910FFE51500D57FCA</string>
@@ -346,7 +344,6 @@
 											<string>B568520D1100DD2100A4C816</string>
 											<string>B568520E1100DD2100A4C816</string>
 											<string>B56852C01100E54100A4C816</string>
-											<string>B56852E31100FB0100A4C816</string>
 											<string>B568536711010AB100A4C816</string>
 											<string>B56853EB11011EEE00A4C816</string>
 											<string>B56853EC11011EEE00A4C816</string>
@@ -387,16 +384,17 @@
 											<string>B5693C431119E7E3002FF878</string>
 											<string>B5693C551119E8D8002FF878</string>
 											<string>B5693C5B1119E8FB002FF878</string>
-											<string>B5693C7C1119EBAE002FF878</string>
 											<string>B5693C7D1119EBAE002FF878</string>
 											<string>B5693CAB1119EEB1002FF878</string>
 											<string>B5693CAC1119EEB1002FF878</string>
 											<string>B5693CBC1119EFBD002FF878</string>
-											<string>B5693CE51119F1A0002FF878</string>
 											<string>B5693CEE1119F2B5002FF878</string>
 											<string>B5693CF41119F32A002FF878</string>
-											<string>B5693CFA1119F351002FF878</string>
-											<string>B5693CFB1119F351002FF878</string>
+											<string>B5693D0E1119F776002FF878</string>
+											<string>B5693D21111A04CF002FF878</string>
+											<string>B5693D22111A04CF002FF878</string>
+											<string>B5693D38111A05BA002FF878</string>
+											<string>B5693D39111A05BA002FF878</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -599,8 +597,8 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
-		<string>/Users/mikelaurence/Projects/CoreResource/CoreTest/CoreTest.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mikelaurence/Projects/CoreResource/CoreTest/CoreTest.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 72 1672 956 0 0 1680 1028 </string>
@@ -619,8 +617,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -643,6 +639,8 @@
 							<string>217pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

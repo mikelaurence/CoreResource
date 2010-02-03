@@ -7,6 +7,7 @@
 //
 
 #import "CoreRequest.h"
+#import "CoreManager.h"
 
 
 @implementation CoreRequest
@@ -21,8 +22,13 @@
         encoding:NSUTF8StringEncoding error:&parseError];
                 
     if (parseError == nil) {
-        if (didFinishSelector && ![self isCancelled] && [delegate respondsToSelector:didFinishSelector])
-            [delegate performSelector:didFinishSelector withObject:self];
+        if (didFinishSelector && ![self isCancelled] && [delegate respondsToSelector:didFinishSelector]) {
+            if ([CoreManager main].bundleRequestDelay == 0)
+                [delegate performSelector:didFinishSelector withObject:self];
+            else {
+                [delegate performSelector:didFinishSelector withObject:self afterDelay:[CoreManager main].bundleRequestDelay];
+            }
+        }
     }
     else
         [self failWithError:parseError];
