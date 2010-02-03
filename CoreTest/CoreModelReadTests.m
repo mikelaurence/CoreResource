@@ -123,6 +123,7 @@
 
 - (void) testFindRemote {
     [Artist findRemote:[NSNumber numberWithInt:1]];
+    NSLog(@"\n\nCHECKING COUNT\n\n");
     int count = [[self allLocalArtists] count];
     GHAssertEquals(count, 1, nil);
     [self validateSecondArtist:(Artist*)[[self allLocalArtists] lastObject]];

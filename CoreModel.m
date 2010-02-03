@@ -432,7 +432,7 @@
 
 + (void) findRemoteDidFinish:(CoreRequest*)request {
     NSArray* resources = [self deserializeFromString:[request responseString]];
-    [[self coreManager] save];
+    //[[self coreManager] save]; // TO-DO: Optional save after request?
     
     // Notify core delegate of request (if any)
     if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {

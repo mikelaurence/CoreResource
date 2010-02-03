@@ -20,8 +20,10 @@
             [[NSBundle mainBundle] pathForResource:bundleDataPath ofType:@"json"] 
         encoding:NSUTF8StringEncoding error:&parseError];
                 
-    if (parseError == nil)
-        [self requestFinished];
+    if (parseError == nil) {
+        if (didFinishSelector && ![self isCancelled] && [delegate respondsToSelector:didFinishSelector])
+            [delegate performSelector:didFinishSelector withObject:self];
+    }
     else
         [self failWithError:parseError];
 }
