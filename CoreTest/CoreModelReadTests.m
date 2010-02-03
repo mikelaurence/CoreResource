@@ -3,7 +3,7 @@
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
-//  Copyright 2010 Punkbot LLC. All rights reserved.
+//  Copyright 2010 Mike Laurence. All rights reserved.
 //
 
 #import "CoreResourceTestCase.h"

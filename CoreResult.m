@@ -3,7 +3,7 @@
 //  CoreResource
 //
 //  Created by Mike Laurence on 12/31/09.
-//  Copyright 2009 Punkbot LLC. All rights reserved.
+//  Copyright 2009 Mike Laurence. All rights reserved.
 //
 
 #import "CoreResult.h"

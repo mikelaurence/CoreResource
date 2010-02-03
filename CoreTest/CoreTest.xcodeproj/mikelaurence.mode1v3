@@ -279,13 +279,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>2</integer>
+									<integer>41</integer>
+									<integer>33</integer>
+									<integer>20</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 4}, {317, 897}}</string>
+							<string>{{0, 0}, {317, 897}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreModelCreateTests.m</string>
+								<string>CoreManager.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreModelCreateTests.m</string>
+										<string>CoreManager.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5693E3B111A17F5002FF878</string>
+										<string>B5693E57111A189B002FF878</string>
 										<key>history</key>
 										<array>
 											<string>B5BAC12910FFE51500D57FCA</string>
@@ -362,7 +363,6 @@
 											<string>B5C7215F1117626500F52CBA</string>
 											<string>B5C721601117626500F52CBA</string>
 											<string>B556BB331118C57C00D4570C</string>
-											<string>B556BB341118C57C00D4570C</string>
 											<string>B556BB441118C65700D4570C</string>
 											<string>B556BB981118D2E200D4570C</string>
 											<string>B556BB991118D2E200D4570C</string>
@@ -376,25 +376,26 @@
 											<string>B556BCB31118E60A00D4570C</string>
 											<string>B556BCB41118E60A00D4570C</string>
 											<string>B556BCB51118E60A00D4570C</string>
-											<string>B5693C2E1119E797002FF878</string>
-											<string>B5693C321119E797002FF878</string>
-											<string>B5693C551119E8D8002FF878</string>
-											<string>B5693C5B1119E8FB002FF878</string>
-											<string>B5693CAB1119EEB1002FF878</string>
-											<string>B5693CBC1119EFBD002FF878</string>
 											<string>B5693CF41119F32A002FF878</string>
 											<string>B5693D22111A04CF002FF878</string>
-											<string>B5693D38111A05BA002FF878</string>
-											<string>B5693D75111A0AF4002FF878</string>
-											<string>B5693D76111A0AF4002FF878</string>
-											<string>B5693E2F111A1788002FF878</string>
-											<string>B5693E30111A1788002FF878</string>
-											<string>B5693E31111A1788002FF878</string>
-											<string>B5693E32111A1788002FF878</string>
-											<string>B5693E33111A1788002FF878</string>
-											<string>B5693E34111A1788002FF878</string>
-											<string>B5693E35111A1788002FF878</string>
-											<string>B5693E36111A1788002FF878</string>
+											<string>B5693E45111A189B002FF878</string>
+											<string>B5693E46111A189B002FF878</string>
+											<string>B5693E47111A189B002FF878</string>
+											<string>B5693E48111A189B002FF878</string>
+											<string>B5693E49111A189B002FF878</string>
+											<string>B5693E4A111A189B002FF878</string>
+											<string>B5693E4B111A189B002FF878</string>
+											<string>B5693E4C111A189B002FF878</string>
+											<string>B5693E4D111A189B002FF878</string>
+											<string>B5693E4E111A189B002FF878</string>
+											<string>B5693E4F111A189B002FF878</string>
+											<string>B5693E50111A189B002FF878</string>
+											<string>B5693E51111A189B002FF878</string>
+											<string>B5693E52111A189B002FF878</string>
+											<string>B5693E53111A189B002FF878</string>
+											<string>B5693E54111A189B002FF878</string>
+											<string>B5693E55111A189B002FF878</string>
+											<string>B5693E56111A189B002FF878</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
