@@ -59,7 +59,16 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultCell"];
+    if (cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefaultCell"];
+    
+    CoreModel *resource = [self resourceAtIndexPath:indexPath];
+    cell.textLabel.text = [resource performSelector:
+        ([resource respondsToSelector:@selector(title)] ? @selector(title) :
+            ([resource respondsToSelector:@selector(name)] ? @selector(name) : @selector(description)))];
+    
+    return cell;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView noResultsCellForSection:(int)section {
@@ -76,7 +85,8 @@
 
 
 // NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+- (void)controllerDidChangeContent:(NSFetchedResultsController*)controller {
+
 	// In the simplest, most efficient, case, reload the table view.
 	[(UITableView*)self.view reloadData];
 }
@@ -85,10 +95,12 @@
 - (CoreResultsController*) coreResultsController {
     if (coreResultsController == nil) {
         self.coreResultsController = [[CoreResultsController alloc] 
-            initWithFetchRequest:[[self model] fetchRequest]
+            initWithFetchRequest:[[self model] fetchRequestWithDefaultSort]
             managedObjectContext:[[self model] managedObjectContext] 
             sectionNameKeyPath:nil 
             cacheName:nil];
+        coreResultsController.entityClass = [self model];
+        coreResultsController.delegate = self;
     }
     return coreResultsController;
 }

@@ -290,14 +290,12 @@
     
         // Get local field name (by default, this is the same as the remote name)
         NSString* localField = [[self class] localNameForRemoteField:field];
-    
+        
         NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:localField inModel:[self class]];
         //NSLog(@"Property description for %@.%@ is %@", [self class], field, propertyDescription);
         
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
-            
-            NSLog(@"PROP: %@ %@ %@", field, localField, value);
             
             // If property is a relationship, do some cascading object creation/updation (occurs regardless of shouldUpdateRoot)
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
@@ -469,6 +467,13 @@
 + (NSFetchRequest*) fetchRequest {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:[self entityDescription]];
+    return fetchRequest;
+}
+
++ (NSFetchRequest*) fetchRequestWithDefaultSort {
+    NSFetchRequest *fetchRequest = [self fetchRequest];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:
+        [[NSSortDescriptor alloc] initWithKey:[self localIdField] ascending:YES]]];
     return fetchRequest;
 }
 
