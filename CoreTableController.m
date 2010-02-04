@@ -8,24 +8,40 @@
 
 #import "CoreTableController.h"
 
+
 @implementation CoreTableController;
 
 @synthesize coreResultsController;
 
 
 #pragma mark -
-#pragma mark View lifecycle
+#pragma mark Data methods
+
+- (int) resultsCountForSection:(int)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[coreResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+
+- (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath {
+    return (CoreModel*)[coreResultsController objectAtIndexPath:indexPath];
+}
+
+- (NSString*) noResultsMessageForSection:(int)section {
+    return @"No results found.";
+}
+
 
 #pragma mark -
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[coreResultsController sections] count];
+    int sections = [[coreResultsController sections] count];
+    return sections > 0 ? sections : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[coreResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    int ct = [self resultsCountForSection:section];
+    return ct > 0 ? ct : ([self noResultsMessageForSection:section] != nil ? 1 : 0);
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -33,8 +49,29 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[coreResultsController sections] objectAtIndex:indexPath.section];
+    if ([sectionInfo numberOfObjects] > 0)
+        return [self tableView:tableView resultCellForRowAtIndexPath:indexPath];
+    else
+        return [self tableView:tableView noResultsCellForSection:indexPath.section];
+}
+
+- (UITableViewCell*)tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
     return nil;
 }
+
+- (UITableViewCell*)tableView:(UITableView *)tableView noResultsCellForSection:(int)section {
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"NoResultsCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoResultsCell"];
+        cell.textLabel.text = [self noResultsMessageForSection:section];
+        cell.textLabel.font = [UIFont systemFontOfSize:22.0];
+        cell.textLabel.textColor = [UIColor grayColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
+}
+
 
 // NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
