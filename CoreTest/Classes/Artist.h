@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSNumber * resourceId;
 @property (nonatomic, retain) NSArray * songs;
 @property (nonatomic, retain) NSString * summary;
+@property (nonatomic, retain) NSDate * updatedAt;
 
 @end

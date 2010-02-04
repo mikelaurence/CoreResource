@@ -107,10 +107,10 @@
     [self loadAllArtists];
     
     CoreResult* result = [Artist findAllLocal];
-    GHAssertEquals([result resourceCount], 3, nil);
+    GHAssertEquals((NSInteger) [result resourceCount], 3, nil);
     // Sort results by ID manually so we can validate
     NSArray* sortedResources = [[result resources] sortedArrayUsingDescriptors:
-        [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"resourceId" ascending:YES]]];
+        [CoreUtils sortDescriptorsFromString:@"resourceId ASC"]];
     [self validateFirstArtist:(Artist*)[sortedResources objectAtIndex:0]];
     [self validateSecondArtist:(Artist*)[sortedResources objectAtIndex:1]];
 }

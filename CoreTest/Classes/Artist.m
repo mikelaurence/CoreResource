@@ -16,5 +16,6 @@
 @dynamic resourceId;
 @dynamic songs;
 @dynamic summary;
+@dynamic updatedAt;
 
 @end

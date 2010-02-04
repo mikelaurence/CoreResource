@@ -12,8 +12,6 @@
 
 @synthesize delegatesCalled;
 
-static NSArray* _artistData;
-
 #pragma mark -
 #pragma mark Convenience methods
 
@@ -24,14 +22,6 @@ static NSArray* _artistData;
         encoding:NSUTF8StringEncoding error:&parseError];
 }
 
-- (NSArray*) artistData {
-    if (_artistData == nil) {
-        _artistData = [[self artistDataJSON:@"artists"] JSONValue];
-        [_artistData retain];
-    }
-    return _artistData;
-}
-
 - (void) loadAllArtists {
     [self loadArtist:0];
     [self loadArtist:1];
@@ -40,15 +30,17 @@ static NSArray* _artistData;
 
 - (void) loadArtist:(int)index {
     Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
-    NSDictionary* dict = [[self artistData] objectAtIndex:index];
+    NSDictionary* dict = [[self artistDataJSON:[NSString stringWithFormat:@"artists.%@", [NSNumber numberWithInt:index]]] JSONValue];
+    artist.resourceId = [dict objectForKey:@"id"];
     artist.name = [dict objectForKey:@"name"];
     artist.summary = [dict objectForKey:@"summary"];
-    artist.resourceId = [dict objectForKey:@"id"];
+    artist.detail = [dict objectForKey:@"detail"];
+    artist.updatedAt = [[[CoreManager main] defaultDateParser] dateFromString:[dict objectForKey:@"updatedAt"]];
 }
 
 - (NSArray*) allLocalArtists {
     NSError* error = nil;
-    NSArray* artists = [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequest] error:&error];
+    NSArray* artists = [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequestWithSort:@"resourceId ASC" andPredicate:nil] error:&error];
     GHAssertNULL(error, @"There should be no errors in the allLocalArtists convenience method");
     return artists != nil ? artists : [NSArray array];
 }

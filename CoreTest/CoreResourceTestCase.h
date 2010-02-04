@@ -8,6 +8,7 @@
 
 #import "GHUnit.h"
 #import "Artist.h"
+#import "CoreUtils.h"
 #import "CoreResult.h"
 
 @interface CoreResourceTestCase : GHAsyncTestCase {
@@ -17,7 +18,6 @@
 @property (nonatomic, retain) NSMutableDictionary* delegatesCalled;
 
 - (NSString*) artistDataJSON:(NSString*)file;
-- (NSArray*) artistData;
 - (void) loadAllArtists;
 - (void) loadArtist:(int)index;
 - (NSArray*) allLocalArtists;

@@ -189,11 +189,15 @@
 #pragma mark Create
 
 + (id) create:(id)parameters {
-	
-	// Create a new instance of the entity managed by the fetched results controller.
-	NSManagedObjectContext *context = [[self coreManager] managedObjectContext];
-	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[self entityName] inManagedObjectContext:context];
-    return newManagedObject;
+	return [self createWithDictionary:parameters];
+}
+
++ (id) createWithDictionary:(NSDictionary*)dict {
+    CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
+        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
+    [newObject updateWithDictionary:dict];
+    NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
+    return newObject;
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict {
@@ -228,15 +232,9 @@
             NSLog(@"Error in fetching with dictionary %@ for update comparison: %@", dict, [fetchError localizedDescription]);
         }
     }
-            
-    // No existing record found, so create a new object
-    CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
-        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
-    [newObject updateWithDictionary:dict];
-    NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
-    return newObject;
     
-    return nil;
+    // Otherwise, no existing record found, so create a new object
+    return [self createWithDictionary:dict];
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object {
