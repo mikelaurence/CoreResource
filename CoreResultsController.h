@@ -14,6 +14,7 @@
 
 @property (nonatomic) Class entityClass;
 
+- (void) fetch;
 - (void) fetch:(id)parameters;
 - (void) fetchLocal:(id)parameters;
 - (void) fetchRemote:(id)parameters;

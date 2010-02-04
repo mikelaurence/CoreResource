@@ -14,6 +14,7 @@
 @synthesize requestQueue;
 @synthesize remoteSiteURL, useBundleRequests, bundleRequestDelay, defaultDateParser;
 @synthesize modelProperties, modelRelationships;
+@synthesize logLevel;
 
 #pragma mark -
 #pragma mark Static access
@@ -41,6 +42,8 @@ static CoreManager* _main;
         
         useBundleRequests = NO;
         bundleRequestDelay = 0;
+        
+        logLevel = 1;
     }
     return self;
 }

@@ -278,24 +278,25 @@
     if (![dict isKindOfClass:[NSMutableDictionary class]])
         dict = [dict mutableCopy];
 
-    // Change remote ID field to local ID field
-    id remoteIdValue = [dict objectForKey:[[self class] remoteIdField]];
-    if (remoteIdValue != nil) {
-        [(NSMutableDictionary*)dict removeObjectForKey:[[self class] remoteIdField]];
-        [(NSMutableDictionary*)dict setObject:remoteIdValue forKey:[[self class] localIdField]];
-    }
-
     // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
     
         // Get local field name (by default, this is the same as the remote name)
-        NSString* localField = [[self class] localNameForRemoteField:field];
+        // If this is an ID field, use remote/localIdField methods; otherwise, localNameForRemoteField
+        NSString* localField = nil;
+        if ([field isEqualToString:[[self class] remoteIdField]])
+            localField = [[self class] localIdField];
+        else
+            localField = [[self class] localNameForRemoteField:field];
         
         NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:localField inModel:[self class]];
         //NSLog(@"Property description for %@.%@ is %@", [self class], field, propertyDescription);
         
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
+            
+            if ([[self class] coreManager].logLevel > 4)
+                NSLog(@"[%@] Setting remote field: %@, local field: %@, value: %@", [self class], field, localField, value);
             
             // If property is a relationship, do some cascading object creation/updation (occurs regardless of shouldUpdateRoot)
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {

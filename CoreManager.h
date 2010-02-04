@@ -27,6 +27,8 @@
     
     NSMutableDictionary *modelProperties;
     NSMutableDictionary *modelRelationships;
+    
+    int logLevel;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
@@ -43,6 +45,8 @@
 
 @property (nonatomic, retain) NSMutableDictionary *modelProperties;
 @property (nonatomic, retain) NSMutableDictionary *modelRelationships;
+
+@property (nonatomic, assign) int logLevel;
 
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;

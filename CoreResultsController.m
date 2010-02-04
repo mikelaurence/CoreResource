@@ -12,6 +12,10 @@
 
 @synthesize entityClass;
 
+- (void) fetch {
+    [self fetch:nil];
+}
+
 - (void) fetch:(id)parameters {
     [self fetchLocal:parameters];
     [self fetchRemote:parameters];

@@ -16,6 +16,8 @@
 
 - (Class) model { return nil; }
 
+
+
 #pragma mark -
 #pragma mark Data methods
 
@@ -84,7 +86,11 @@
 }
 
 
-// NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
+
+#pragma mark -
+#pragma mark FetchedResultsController delegate methods
+
+// Notifies the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController*)controller {
 
 	// In the simplest, most efficient, case, reload the table view.
