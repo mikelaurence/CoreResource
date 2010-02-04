@@ -18,4 +18,8 @@
 @dynamic summary;
 @dynamic updatedAt;
 
+@dynamic theDetail;
+@dynamic theName;
+@dynamic theSummary;
+
 @end

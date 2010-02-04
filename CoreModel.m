@@ -287,11 +287,17 @@
 
     // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
-        NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:field inModel:[self class]];
+    
+        // Get local field name (by default, this is the same as the remote name)
+        NSString* localField = [[self class] localNameForRemoteField:field];
+    
+        NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:localField inModel:[self class]];
         //NSLog(@"Property description for %@.%@ is %@", [self class], field, propertyDescription);
         
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
+            
+            NSLog(@"PROP: %@ %@ %@", field, localField, value);
             
             // If property is a relationship, do some cascading object creation/updation (occurs regardless of shouldUpdateRoot)
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
@@ -312,16 +318,16 @@
                 //NSLog(@"Setting property: %@ %@", field, value);
                 // Check if value is NSNull, which should be set as nil on fields (since NSNull is just used as a collection placeholder)
                 if ([value isEqual:[NSNull null]])
-                    [self setValue:nil forKey:field];
+                    [self setValue:nil forKey:localField];
 
                 else {
                     // Perform additional processing on value based on attribute type
                     switch ([(NSAttributeDescription*)propertyDescription attributeType]) {
                         case NSDateAttributeType:
-                            value = [[[self class] dateParserForField:field] dateFromString:value];
+                            value = [[[self class] dateParserForField:localField] dateFromString:value];
                             break;
                     }
-                    [self setValue:value forKey:field];
+                    [self setValue:value forKey:localField];
                 }
             }
         }

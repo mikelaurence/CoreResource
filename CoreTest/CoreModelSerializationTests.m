@@ -7,6 +7,8 @@
 //
 
 #import "CoreResourceTestCase.h"
+#import "User.h"
+
 
 @interface CoreModelSerializationTests : CoreResourceTestCase {}
 @end
@@ -20,8 +22,20 @@
 
 #pragma mark -
 #pragma mark Tests - Serialization
+
+- (void) testLocalNameForRemoteField { 
+    // Override Artist's localNameForRemoteField method using this class as a source
+    SwizzleMethod([Artist class], @selector(localNameForRemoteField:), [self class], @selector(localNameForRemoteField:), NO);
+
+    Artist* artist = [Artist create:[[self artistDataJSON:@"artists.0.alternate-field-names"] JSONValue]];
+    GHAssertEqualStrings(artist.theName, @"Peter Gabriel", nil);
+    GHAssertEqualStrings(artist.theSummary, @"Peter Brian Gabriel is an English musician and songwriter.", nil);
+    
+    // Revert Artist's localNameForRemoteField method
+    SwizzleMethod([Artist class], @selector(localNameForRemoteField:), [User class], @selector(localNameForRemoteField:), NO);
+}
+
 /*
-- (void) testLocalNameForRemoteField { GHFail(nil); }
 - (void) testRemoteNameForLocalField { GHFail(nil); }
 - (void) testAlteredLocalIdField { GHFail(nil); }
 - (void) testAlteredRemoteIdField { GHFail(nil); }
@@ -74,5 +88,15 @@
     return @"woohoo";
 }
 */
+
++ (NSString*) localNameForRemoteField:(NSString*)name {
+    NSString* alt = [[NSDictionary dictionaryWithObjectsAndKeys:
+        @"theName", @"name",
+        @"theSummary", @"summary",
+        @"theDescription", @"description", nil]
+        objectForKey:name];
+    return alt != nil ? alt : name;
+}
+
 
 @end
