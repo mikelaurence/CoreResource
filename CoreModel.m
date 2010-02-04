@@ -342,19 +342,21 @@
     if ([localResult hasAnyResources])
         return localResult;
     [self findRemote:resourceId andNotify:del withSelector:selector];
-    return nil;
+    return [[CoreResult alloc] init];
 }
 
 + (CoreResult*) findAll {
-    return nil;
+    return [self findAll:nil andNotify:nil withSelector:nil];
 }
 
 + (CoreResult*) findAll:(id)parameters {
-    return nil;
+    return [self findAll:parameters andNotify:nil withSelector:nil];
 }
 
-+ (CoreResult*) findAll:(id)resourceId andNotify:(id)del withSelector:(SEL)selector {
-    return nil;
++ (CoreResult*) findAll:(id)parameters andNotify:(id)del withSelector:(SEL)selector {
+    CoreResult* localResult = [self findAllLocal];
+    [self findAllRemote:parameters andNotify:del withSelector:selector];
+    return localResult;
 }
 
 + (CoreResult*) findLocal:(id)resourceId {

@@ -17,12 +17,10 @@
 #pragma mark Create
 
 - (void) testCreate { 
-    NSDictionary* paramsOne = [[self artistData] objectAtIndex:0];
-    Artist* artistOne = [Artist create:paramsOne];
+    Artist* artistOne = [Artist create:[self artistData:0]];
     [self validateFirstArtist:artistOne];
     
-    NSDictionary* paramsTwo = [[self artistData] objectAtIndex:1];
-    Artist* artistTwo = [Artist create:paramsTwo];
+    Artist* artistTwo = [Artist create:[self artistData:1]];
     [self validateSecondArtist:artistTwo];
 }
 

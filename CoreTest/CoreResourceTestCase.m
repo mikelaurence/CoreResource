@@ -22,6 +22,10 @@
         encoding:NSUTF8StringEncoding error:&parseError];
 }
 
+- (NSDictionary*) artistData:(int)index {
+    return [[self artistDataJSON:[NSString stringWithFormat:@"artists.%@", [NSNumber numberWithInt:index]]] JSONValue];
+}
+
 - (void) loadAllArtists {
     [self loadArtist:0];
     [self loadArtist:1];
@@ -30,7 +34,7 @@
 
 - (void) loadArtist:(int)index {
     Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
-    NSDictionary* dict = [[self artistDataJSON:[NSString stringWithFormat:@"artists.%@", [NSNumber numberWithInt:index]]] JSONValue];
+    NSDictionary* dict = [self artistData:index];
     artist.resourceId = [dict objectForKey:@"id"];
     artist.name = [dict objectForKey:@"name"];
     artist.summary = [dict objectForKey:@"summary"];
