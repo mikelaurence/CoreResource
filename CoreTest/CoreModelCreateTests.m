@@ -24,11 +24,7 @@
     [self validateSecondArtist:artistTwo];
 }
 
-/*
 - (void) testCreateOrUpdateWithDictionary { GHFail(nil); }
 - (void) testCreateOrUpdateWithDictionaryAndRelationship { GHFail(nil); }
-- (void) testUpdateWithDictionary:(NSDictionary*)dict { GHFail(nil); }
-- (void) testShouldUpdateWithDictionary:(NSDictionary*)dict { GHFail(nil); }
-*/
 
 @end
