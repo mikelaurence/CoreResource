@@ -145,6 +145,7 @@
 		B568535B11010A6F00A4C816 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
 		B56853AB1101140300A4C816 /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../CoreResult.h; sourceTree = SOURCE_ROOT; };
 		B56853AC1101140300A4C816 /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../CoreResult.m; sourceTree = SOURCE_ROOT; };
+		B56FD902111B308900D4CEA7 /* artists.0.update.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.0.update.json; sourceTree = "<group>"; };
 		B5A66149110DF95400100C9E /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		B5A6614A110DF95400100C9E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		B5A6615A110DF9CD00100C9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -330,6 +331,7 @@
 			children = (
 				B56851B81100D6BA00A4C816 /* artists.json */,
 				B556BBA11118D42900D4570C /* artists.0.json */,
+				B56FD902111B308900D4CEA7 /* artists.0.update.json */,
 				B556BBA21118D44900D4570C /* artists.1.json */,
 				B556BBA31118D44F00D4570C /* artists.2.json */,
 			);
