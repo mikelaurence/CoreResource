@@ -1,6 +1,7 @@
 ## Known Issues
 
-- Requests for individual models need to be stored statically in case the object is deallocated before the request completes
+- HTTP Requests for individual models need to be stored statically in case the object is deallocated before the request completes
+- Relationship deserialization currently only works for bidirectional relationships
 
 
 ## License

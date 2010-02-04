@@ -14,16 +14,18 @@
 @synthesize coreResultsController;
 
 
+- (Class) model { return nil; }
+
 #pragma mark -
 #pragma mark Data methods
 
 - (int) resultsCountForSection:(int)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[coreResultsController sections] objectAtIndex:section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[[self coreResultsController] sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
 
 - (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath {
-    return (CoreModel*)[coreResultsController objectAtIndexPath:indexPath];
+    return (CoreModel*)[[self coreResultsController] objectAtIndexPath:indexPath];
 }
 
 - (NSString*) noResultsMessageForSection:(int)section {
@@ -35,7 +37,7 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    int sections = [[coreResultsController sections] count];
+    int sections = [[[self coreResultsController] sections] count];
     return sections > 0 ? sections : 1;
 }
 
@@ -49,7 +51,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[coreResultsController sections] objectAtIndex:indexPath.section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[[self coreResultsController] sections] objectAtIndex:indexPath.section];
     if ([sectionInfo numberOfObjects] > 0)
         return [self tableView:tableView resultCellForRowAtIndexPath:indexPath];
     else
@@ -77,6 +79,18 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
 	// In the simplest, most efficient, case, reload the table view.
 	[(UITableView*)self.view reloadData];
+}
+
+
+- (CoreResultsController*) coreResultsController {
+    if (coreResultsController == nil) {
+        self.coreResultsController = [[CoreResultsController alloc] 
+            initWithFetchRequest:[[self model] fetchRequest]
+            managedObjectContext:[[self model] managedObjectContext] 
+            sectionNameKeyPath:nil 
+            cacheName:nil];
+    }
+    return coreResultsController;
 }
 
 

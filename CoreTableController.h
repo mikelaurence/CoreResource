@@ -16,6 +16,8 @@
 
 @property (nonatomic, retain) CoreResultsController *coreResultsController;
 
+- (Class) model;
+
 - (int) resultsCountForSection:(int)section;
 - (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath;
 - (NSString*) noResultsMessageForSection:(int)section;
@@ -24,4 +26,3 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView noResultsCellForSection:(int)section;
 
 @end
-
