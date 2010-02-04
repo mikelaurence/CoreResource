@@ -281,7 +281,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>10</integer>
 									<integer>2</integer>
 									<integer>0</integer>
 								</array>
@@ -324,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResourceTestCase.h</string>
+								<string>CoreModelReadTests.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreResourceTestCase.h</string>
+										<string>CoreModelReadTests.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5A299CD111A7EAC009D4758</string>
+										<string>B5A299DF111A7FB2009D4758</string>
 										<key>history</key>
 										<array>
 											<string>B5BAC12910FFE51500D57FCA</string>
@@ -392,14 +392,14 @@
 											<string>B5A29990111A774C009D4758</string>
 											<string>B5A299A2111A7909009D4758</string>
 											<string>B5A299A3111A7909009D4758</string>
-											<string>B5A299BD111A7E46009D4758</string>
 											<string>B5A299BE111A7E46009D4758</string>
 											<string>B5A299BF111A7E46009D4758</string>
 											<string>B5A299C0111A7E46009D4758</string>
 											<string>B5A299C9111A7EAC009D4758</string>
 											<string>B5A299CA111A7EAC009D4758</string>
 											<string>B5A299CB111A7EAC009D4758</string>
-											<string>B5A299CC111A7EAC009D4758</string>
+											<string>B5A299D0111A7F2D009D4758</string>
+											<string>B5A299D1111A7F2D009D4758</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

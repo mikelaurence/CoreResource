@@ -242,6 +242,12 @@
 			B5A299CB111A7EAC009D4758 /* PBXTextBookmark */ = B5A299CB111A7EAC009D4758 /* PBXTextBookmark */;
 			B5A299CC111A7EAC009D4758 /* PBXTextBookmark */ = B5A299CC111A7EAC009D4758 /* PBXTextBookmark */;
 			B5A299CD111A7EAC009D4758 /* PBXTextBookmark */ = B5A299CD111A7EAC009D4758 /* PBXTextBookmark */;
+			B5A299D0111A7F2D009D4758 /* PBXTextBookmark */ = B5A299D0111A7F2D009D4758 /* PBXTextBookmark */;
+			B5A299D1111A7F2D009D4758 /* PBXTextBookmark */ = B5A299D1111A7F2D009D4758 /* PBXTextBookmark */;
+			B5A299D2111A7F2D009D4758 /* PBXTextBookmark */ = B5A299D2111A7F2D009D4758 /* PBXTextBookmark */;
+			B5A299D5111A7F46009D4758 /* PBXTextBookmark */ = B5A299D5111A7F46009D4758 /* PBXTextBookmark */;
+			B5A299D8111A7F5F009D4758 /* PBXTextBookmark */ = B5A299D8111A7F5F009D4758 /* PBXTextBookmark */;
+			B5A299DF111A7FB2009D4758 /* PBXTextBookmark */ = B5A299DF111A7FB2009D4758 /* PBXTextBookmark */;
 			B5A661A3110E5AB700100C9E = B5A661A3110E5AB700100C9E /* PBXTextBookmark */;
 			B5A661A8110E5AB700100C9E = B5A661A8110E5AB700100C9E /* PBXTextBookmark */;
 			B5A661A9110E5AB700100C9E = B5A661A9110E5AB700100C9E /* PBXTextBookmark */;
@@ -456,9 +462,9 @@
 	};
 	B56418AC11064E3700D1B038 /* CoreModelReadTests.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1272, 3135}}";
-			sepNavSelRange = "{2566, 0}";
-			sepNavVisRange = "{1850, 1267}";
+			sepNavIntBoundsRect = "{{0, 0}, {1284, 3154}}";
+			sepNavSelRange = "{1705, 0}";
+			sepNavVisRange = "{918, 1443}";
 		};
 	};
 	B56418AE11064E5400D1B038 /* CoreModelCreateTests.m */ = {
@@ -982,7 +988,7 @@
 		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
 		name = "CoreModelReadTests.m: 112";
 		rLen = 0;
-		rLoc = 4044;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1333;
 		vrLoc = 3364;
@@ -1310,7 +1316,7 @@
 		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
 		name = "CoreModelReadTests.m: 107";
 		rLen = 0;
-		rLoc = 3804;
+		rLoc = 3770;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 3531;
@@ -1420,7 +1426,7 @@
 		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
 		name = "CoreModelReadTests.m: 107";
 		rLen = 0;
-		rLoc = 3804;
+		rLoc = 3770;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 3531;
@@ -2409,7 +2415,7 @@
 		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
 		name = "CoreModelReadTests.m: 113";
 		rLen = 0;
-		rLoc = 4143;
+		rLoc = 4109;
 		rType = 0;
 		vrLen = 1327;
 		vrLoc = 3534;
@@ -2419,7 +2425,7 @@
 		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
 		name = "CoreModelReadTests.m: 74";
 		rLen = 0;
-		rLoc = 2566;
+		rLoc = 2532;
 		rType = 0;
 		vrLen = 1267;
 		vrLoc = 1850;
@@ -2523,6 +2529,66 @@
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 0;
+	};
+	B5A299D0111A7F2D009D4758 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
+		name = "CoreResourceTestCase.h: 21";
+		rLen = 0;
+		rLoc = 482;
+		rType = 0;
+		vrLen = 709;
+		vrLoc = 0;
+	};
+	B5A299D1111A7F2D009D4758 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
+		name = "CoreModelReadTests.m: 74";
+		rLen = 0;
+		rLoc = 2532;
+		rType = 0;
+		vrLen = 1267;
+		vrLoc = 1850;
+	};
+	B5A299D2111A7F2D009D4758 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
+		name = "CoreModelReadTests.m: 53";
+		rLen = 0;
+		rLoc = 1705;
+		rType = 0;
+		vrLen = 1421;
+		vrLoc = 1167;
+	};
+	B5A299D5111A7F46009D4758 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
+		name = "CoreModelReadTests.m: 67";
+		rLen = 0;
+		rLoc = 2353;
+		rType = 0;
+		vrLen = 1356;
+		vrLoc = 1344;
+	};
+	B5A299D8111A7F5F009D4758 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
+		name = "CoreModelReadTests.m: 68";
+		rLen = 0;
+		rLoc = 2432;
+		rType = 0;
+		vrLen = 1369;
+		vrLoc = 1345;
+	};
+	B5A299DF111A7FB2009D4758 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */;
+		name = "CoreModelReadTests.m: 53";
+		rLen = 0;
+		rLoc = 1705;
+		rType = 0;
+		vrLen = 1443;
+		vrLoc = 918;
 	};
 	B5A66149110DF95400100C9E /* Song.h */ = {
 		uiCtxt = {

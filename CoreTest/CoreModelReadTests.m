@@ -22,7 +22,7 @@
 #pragma mark Read
 
 - (void) testFindWithoutLocalHit {
-    GHAssertNULL([Artist find:[NSNumber numberWithInt:0]], @"Find should not immediately return an object if the object doesn't yet exist");
+    GHAssertFalse([[Artist find:[NSNumber numberWithInt:0]] hasAnyResources], @"Find should not immediately return an object if the object doesn't yet exist");
     
     // Verify existance of artist after find call
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 1, nil);
@@ -50,7 +50,7 @@
 }
 
 - (void) testFindAllWithoutLocalHits { 
-    GHAssertNULL([[Artist findAll] resources], @"Find all should not immediately any objects if the objects don't yet exist");
+    GHAssertFalse([[Artist findAll] hasAnyResources], @"Find all should not immediately any objects if the objects don't yet exist");
     
     // Verify existance of artists after find call
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
@@ -64,9 +64,8 @@
     [self loadArtist:2];
     
     CoreResult* result = [Artist findAll];
-    GHAssertEquals((NSInteger) [result resourceCount], 1, nil);
+    GHAssertEquals((NSInteger) [result resourceCount], 2, nil);
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
-    [self validateSecondArtist:(Artist*)[result resource]];
 }
  
 - (void) testFindAllWithAllLocalHits { 
