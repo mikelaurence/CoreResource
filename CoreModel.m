@@ -196,7 +196,10 @@
     CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
         insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
     [newObject updateWithDictionary:dict];
-    NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
+    
+    if ([[self class] coreManager].logLevel > 2)
+        NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
+    
     return newObject;
 }
 
@@ -237,11 +240,26 @@
     return [self createWithDictionary:dict];
 }
 
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object {
-    id otherObject = [self createOrUpdateWithDictionary:dict];
-    if (otherObject)
-        [otherObject setValue:object forKey:[relationship name]];
-    return otherObject;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)relatedObject {
+    id object = [self createOrUpdateWithDictionary:dict];
+    
+    // If object was created/updated successfully, link relationship
+    if (object) {
+        if ([relationship isToMany]) {
+            // If a dual toMany relationship, use the add method to link the relationship (TODO)
+            if ([[relationship inverseRelationship] isToMany])
+                NSLog(@"Dual to-many relationships not yet supported");
+            
+            // Otherwise, this is only toMany on this end, so we can just set the object normally on the other end
+            else
+                [relatedObject setValue:object forKey:[[relationship inverseRelationship] name]];
+        }
+        // If a singular relationship, just set the object here
+        else
+            [object setValue:relatedObject forKey:[relationship name]];
+        
+    }
+    return object;
 }
 
 
@@ -265,8 +283,10 @@
 
     // Determine whether this object needs to be updated (relationships will still be checked no matter what)
     BOOL shouldUpdateRoot = [self shouldUpdateWithDictionary:dict];
-    if (shouldUpdateRoot)
-        NSLog(@"Updating %@ with id %@", [self class], [self valueForKey:[[self class] localIdField]]);
+    if (shouldUpdateRoot) {
+        if ([[self class] coreManager].logLevel > 2)
+            NSLog(@"TODO - updating %@ with id %@", [self class], [self valueForKey:[[self class] localIdField]]);
+    }
     else {
         NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", [self class], [self valueForKey:[[self class] localIdField]]);
         // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake

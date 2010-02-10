@@ -73,7 +73,7 @@ typedef enum _Action {
 + (id) create:(id)parameters;
 + (id) createWithDictionary:(NSDictionary*)dict;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)object;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)relatedObject;
 - (void) updateWithDictionary:(NSDictionary*)dict;
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
 
