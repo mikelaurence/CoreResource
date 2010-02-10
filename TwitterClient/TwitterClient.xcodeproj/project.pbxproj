@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* TwitterClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TwitterClientAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		B567B78F1122498E0053A7E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B567B78B1122498E0053A7E9 /* SystemConfiguration.framework */; };
+		B567B7901122498E0053A7E9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B567B78C1122498E0053A7E9 /* libz.1.2.3.dylib */; };
+		B567B7911122498E0053A7E9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B567B78D1122498E0053A7E9 /* CFNetwork.framework */; };
+		B567B7DA112249B40053A7E9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7C2112249B40053A7E9 /* Reachability.m */; };
+		B567B7DB112249B40053A7E9 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7C6112249B40053A7E9 /* NSObject+SBJSON.m */; };
+		B567B7DC112249B40053A7E9 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7C8112249B40053A7E9 /* NSString+SBJSON.m */; };
+		B567B7DD112249B40053A7E9 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7CA112249B40053A7E9 /* SBJSON.m */; };
+		B567B7DE112249B40053A7E9 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7CC112249B40053A7E9 /* SBJsonBase.m */; };
+		B567B7DF112249B40053A7E9 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7CE112249B40053A7E9 /* SBJsonParser.m */; };
+		B567B7E0112249B40053A7E9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7D0112249B40053A7E9 /* SBJsonWriter.m */; };
+		B567B7E1112249B40053A7E9 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7D3112249B40053A7E9 /* ASIFormDataRequest.m */; };
+		B567B7E2112249B40053A7E9 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7D5112249B40053A7E9 /* ASIHTTPRequest.m */; };
+		B567B7E3112249B40053A7E9 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7D7112249B40053A7E9 /* ASINetworkQueue.m */; };
+		B567B7E4112249B40053A7E9 /* NSHTTPCookieAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7D9112249B40053A7E9 /* NSHTTPCookieAdditions.m */; };
+		B567B7FA11224A0F0053A7E9 /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7E711224A0F0053A7E9 /* CoreManager.m */; };
+		B567B7FB11224A0F0053A7E9 /* CoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7E911224A0F0053A7E9 /* CoreModel.m */; };
+		B567B7FC11224A0F0053A7E9 /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7EB11224A0F0053A7E9 /* CoreRequest.m */; };
+		B567B7FD11224A0F0053A7E9 /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7ED11224A0F0053A7E9 /* CoreResult.m */; };
+		B567B7FE11224A0F0053A7E9 /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7EF11224A0F0053A7E9 /* CoreResultsController.m */; };
+		B567B7FF11224A0F0053A7E9 /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7F111224A0F0053A7E9 /* CoreTableController.m */; };
+		B567B80011224A0F0053A7E9 /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7F311224A0F0053A7E9 /* CoreUtils.m */; };
+		B567B80111224A0F0053A7E9 /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7F511224A0F0053A7E9 /* NSObject+Core.m */; };
+		B567B80211224A0F0053A7E9 /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7F711224A0F0053A7E9 /* NSSet+Core.m */; };
+		B567B80311224A0F0053A7E9 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B7F911224A0F0053A7E9 /* NSString+InflectionSupport.m */; };
+		B567B80F1122695B0053A7E9 /* twitter.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B567B80E1122695B0053A7E9 /* twitter.xcdatamodel */; };
+		B567B814112269840053A7E9 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B813112269840053A7E9 /* Status.m */; };
+		B567B81711226C780053A7E9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B81611226C780053A7E9 /* User.m */; };
+		B567B81A11226C8B0053A7E9 /* TwitterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B81911226C8B0053A7E9 /* TwitterModel.m */; };
+		B567B8F8112270450053A7E9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B567B8F7112270450053A7E9 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* TwitterClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClientAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* TwitterClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClientAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* TwitterClient_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* TwitterClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TwitterClient-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B567B78B1122498E0053A7E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		B567B78C1122498E0053A7E9 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = /usr/local/lib/libz.1.2.3.dylib; sourceTree = "<absolute>"; };
+		B567B78D1122498E0053A7E9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B567B7C1112249B40053A7E9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B567B7C2112249B40053A7E9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B567B7C4112249B40053A7E9 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		B567B7C5112249B40053A7E9 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		B567B7C6112249B40053A7E9 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		B567B7C7112249B40053A7E9 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		B567B7C8112249B40053A7E9 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		B567B7C9112249B40053A7E9 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		B567B7CA112249B40053A7E9 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		B567B7CB112249B40053A7E9 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		B567B7CC112249B40053A7E9 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		B567B7CD112249B40053A7E9 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		B567B7CE112249B40053A7E9 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		B567B7CF112249B40053A7E9 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		B567B7D0112249B40053A7E9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		B567B7D2112249B40053A7E9 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		B567B7D3112249B40053A7E9 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		B567B7D4112249B40053A7E9 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		B567B7D5112249B40053A7E9 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		B567B7D6112249B40053A7E9 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		B567B7D7112249B40053A7E9 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		B567B7D8112249B40053A7E9 /* NSHTTPCookieAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHTTPCookieAdditions.h; sourceTree = "<group>"; };
+		B567B7D9112249B40053A7E9 /* NSHTTPCookieAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHTTPCookieAdditions.m; sourceTree = "<group>"; };
+		B567B7E611224A0F0053A7E9 /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreManager.h; path = ../CoreManager.h; sourceTree = SOURCE_ROOT; };
+		B567B7E711224A0F0053A7E9 /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreManager.m; path = ../CoreManager.m; sourceTree = SOURCE_ROOT; };
+		B567B7E811224A0F0053A7E9 /* CoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreModel.h; path = ../CoreModel.h; sourceTree = SOURCE_ROOT; };
+		B567B7E911224A0F0053A7E9 /* CoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreModel.m; path = ../CoreModel.m; sourceTree = SOURCE_ROOT; };
+		B567B7EA11224A0F0053A7E9 /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../CoreRequest.h; sourceTree = SOURCE_ROOT; };
+		B567B7EB11224A0F0053A7E9 /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreRequest.m; path = ../CoreRequest.m; sourceTree = SOURCE_ROOT; };
+		B567B7EC11224A0F0053A7E9 /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../CoreResult.h; sourceTree = SOURCE_ROOT; };
+		B567B7ED11224A0F0053A7E9 /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../CoreResult.m; sourceTree = SOURCE_ROOT; };
+		B567B7EE11224A0F0053A7E9 /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResultsController.h; path = ../CoreResultsController.h; sourceTree = SOURCE_ROOT; };
+		B567B7EF11224A0F0053A7E9 /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResultsController.m; path = ../CoreResultsController.m; sourceTree = SOURCE_ROOT; };
+		B567B7F011224A0F0053A7E9 /* CoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTableController.h; path = ../CoreTableController.h; sourceTree = SOURCE_ROOT; };
+		B567B7F111224A0F0053A7E9 /* CoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTableController.m; path = ../CoreTableController.m; sourceTree = SOURCE_ROOT; };
+		B567B7F211224A0F0053A7E9 /* CoreUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreUtils.h; path = ../CoreUtils.h; sourceTree = SOURCE_ROOT; };
+		B567B7F311224A0F0053A7E9 /* CoreUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreUtils.m; path = ../CoreUtils.m; sourceTree = SOURCE_ROOT; };
+		B567B7F411224A0F0053A7E9 /* NSObject+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Core.h"; path = "../NSObject+Core.h"; sourceTree = SOURCE_ROOT; };
+		B567B7F511224A0F0053A7E9 /* NSObject+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Core.m"; path = "../NSObject+Core.m"; sourceTree = SOURCE_ROOT; };
+		B567B7F611224A0F0053A7E9 /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Core.h"; path = "../NSSet+Core.h"; sourceTree = SOURCE_ROOT; };
+		B567B7F711224A0F0053A7E9 /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Core.m"; path = "../NSSet+Core.m"; sourceTree = SOURCE_ROOT; };
+		B567B7F811224A0F0053A7E9 /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+InflectionSupport.h"; path = "../NSString+InflectionSupport.h"; sourceTree = SOURCE_ROOT; };
+		B567B7F911224A0F0053A7E9 /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+InflectionSupport.m"; path = "../NSString+InflectionSupport.m"; sourceTree = SOURCE_ROOT; };
+		B567B80E1122695B0053A7E9 /* twitter.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = twitter.xcdatamodel; sourceTree = "<group>"; };
+		B567B812112269840053A7E9 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		B567B813112269840053A7E9 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		B567B81511226C780053A7E9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B567B81611226C780053A7E9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B567B81811226C8B0053A7E9 /* TwitterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterModel.h; sourceTree = "<group>"; };
+		B567B81911226C8B0053A7E9 /* TwitterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterModel.m; sourceTree = "<group>"; };
+		B567B8F7112270450053A7E9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				B567B78F1122498E0053A7E9 /* SystemConfiguration.framework in Frameworks */,
+				B567B7901122498E0053A7E9 /* libz.1.2.3.dylib in Frameworks */,
+				B567B7911122498E0053A7E9 /* CFNetwork.framework in Frameworks */,
+				B567B8F8112270450053A7E9 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B567B8101122696C0053A7E9 /* Libraries */,
+				B567B811112269740053A7E9 /* Models */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* TwitterClientAppDelegate.h */,
+				1D3623250D0F684500981E51 /* TwitterClientAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* TwitterClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* TwitterClient_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				B567B80E1122695B0053A7E9 /* twitter.xcdatamodel */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* TwitterClient-Info.plist */,
+			);
+			name = "Resources-iPhone";
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B567B78B1122498E0053A7E9 /* SystemConfiguration.framework */,
+				B567B78C1122498E0053A7E9 /* libz.1.2.3.dylib */,
+				B567B78D1122498E0053A7E9 /* CFNetwork.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				B567B8F7112270450053A7E9 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B567B7C0112249B40053A7E9 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B567B7C1112249B40053A7E9 /* Reachability.h */,
+				B567B7C2112249B40053A7E9 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		B567B7C3112249B40053A7E9 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B567B7C4112249B40053A7E9 /* JSON.h */,
+				B567B7C5112249B40053A7E9 /* NSObject+SBJSON.h */,
+				B567B7C6112249B40053A7E9 /* NSObject+SBJSON.m */,
+				B567B7C7112249B40053A7E9 /* NSString+SBJSON.h */,
+				B567B7C8112249B40053A7E9 /* NSString+SBJSON.m */,
+				B567B7C9112249B40053A7E9 /* SBJSON.h */,
+				B567B7CA112249B40053A7E9 /* SBJSON.m */,
+				B567B7CB112249B40053A7E9 /* SBJsonBase.h */,
+				B567B7CC112249B40053A7E9 /* SBJsonBase.m */,
+				B567B7CD112249B40053A7E9 /* SBJsonParser.h */,
+				B567B7CE112249B40053A7E9 /* SBJsonParser.m */,
+				B567B7CF112249B40053A7E9 /* SBJsonWriter.h */,
+				B567B7D0112249B40053A7E9 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		B567B7D1112249B40053A7E9 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B567B7D2112249B40053A7E9 /* ASIFormDataRequest.h */,
+				B567B7D3112249B40053A7E9 /* ASIFormDataRequest.m */,
+				B567B7D4112249B40053A7E9 /* ASIHTTPRequest.h */,
+				B567B7D5112249B40053A7E9 /* ASIHTTPRequest.m */,
+				B567B7D6112249B40053A7E9 /* ASINetworkQueue.h */,
+				B567B7D7112249B40053A7E9 /* ASINetworkQueue.m */,
+				B567B7D8112249B40053A7E9 /* NSHTTPCookieAdditions.h */,
+				B567B7D9112249B40053A7E9 /* NSHTTPCookieAdditions.m */,
+			);
+			path = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		B567B80411224A190053A7E9 /* CoreResource */ = {
+			isa = PBXGroup;
+			children = (
+				B567B7E611224A0F0053A7E9 /* CoreManager.h */,
+				B567B7E711224A0F0053A7E9 /* CoreManager.m */,
+				B567B7E811224A0F0053A7E9 /* CoreModel.h */,
+				B567B7E911224A0F0053A7E9 /* CoreModel.m */,
+				B567B7EA11224A0F0053A7E9 /* CoreRequest.h */,
+				B567B7EB11224A0F0053A7E9 /* CoreRequest.m */,
+				B567B7EC11224A0F0053A7E9 /* CoreResult.h */,
+				B567B7ED11224A0F0053A7E9 /* CoreResult.m */,
+				B567B7EE11224A0F0053A7E9 /* CoreResultsController.h */,
+				B567B7EF11224A0F0053A7E9 /* CoreResultsController.m */,
+				B567B7F011224A0F0053A7E9 /* CoreTableController.h */,
+				B567B7F111224A0F0053A7E9 /* CoreTableController.m */,
+				B567B7F211224A0F0053A7E9 /* CoreUtils.h */,
+				B567B7F311224A0F0053A7E9 /* CoreUtils.m */,
+				B567B7F411224A0F0053A7E9 /* NSObject+Core.h */,
+				B567B7F511224A0F0053A7E9 /* NSObject+Core.m */,
+				B567B7F611224A0F0053A7E9 /* NSSet+Core.h */,
+				B567B7F711224A0F0053A7E9 /* NSSet+Core.m */,
+				B567B7F811224A0F0053A7E9 /* NSString+InflectionSupport.h */,
+				B567B7F911224A0F0053A7E9 /* NSString+InflectionSupport.m */,
+			);
+			name = CoreResource;
+			sourceTree = "<group>";
+		};
+		B567B8101122696C0053A7E9 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B567B80411224A190053A7E9 /* CoreResource */,
+				B567B7C0112249B40053A7E9 /* Reachability */,
+				B567B7C3112249B40053A7E9 /* JSON */,
+				B567B7D1112249B40053A7E9 /* ASIHTTPRequest */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		B567B811112269740053A7E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B567B81811226C8B0053A7E9 /* TwitterModel.h */,
+				B567B81911226C8B0053A7E9 /* TwitterModel.m */,
+				B567B812112269840053A7E9 /* Status.h */,
+				B567B813112269840053A7E9 /* Status.m */,
+				B567B81511226C780053A7E9 /* User.h */,
+				B567B81611226C780053A7E9 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* TwitterClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TwitterClient" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwitterClient;
+			productName = TwitterClient;
+			productReference = 1D6058910D05DD3D006BFB54 /* TwitterClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Mike Laurence";
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TwitterClient" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* TwitterClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* TwitterClientAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				B567B7DA112249B40053A7E9 /* Reachability.m in Sources */,
+				B567B7DB112249B40053A7E9 /* NSObject+SBJSON.m in Sources */,
+				B567B7DC112249B40053A7E9 /* NSString+SBJSON.m in Sources */,
+				B567B7DD112249B40053A7E9 /* SBJSON.m in Sources */,
+				B567B7DE112249B40053A7E9 /* SBJsonBase.m in Sources */,
+				B567B7DF112249B40053A7E9 /* SBJsonParser.m in Sources */,
+				B567B7E0112249B40053A7E9 /* SBJsonWriter.m in Sources */,
+				B567B7E1112249B40053A7E9 /* ASIFormDataRequest.m in Sources */,
+				B567B7E2112249B40053A7E9 /* ASIHTTPRequest.m in Sources */,
+				B567B7E3112249B40053A7E9 /* ASINetworkQueue.m in Sources */,
+				B567B7E4112249B40053A7E9 /* NSHTTPCookieAdditions.m in Sources */,
+				B567B7FA11224A0F0053A7E9 /* CoreManager.m in Sources */,
+				B567B7FB11224A0F0053A7E9 /* CoreModel.m in Sources */,
+				B567B7FC11224A0F0053A7E9 /* CoreRequest.m in Sources */,
+				B567B7FD11224A0F0053A7E9 /* CoreResult.m in Sources */,
+				B567B7FE11224A0F0053A7E9 /* CoreResultsController.m in Sources */,
+				B567B7FF11224A0F0053A7E9 /* CoreTableController.m in Sources */,
+				B567B80011224A0F0053A7E9 /* CoreUtils.m in Sources */,
+				B567B80111224A0F0053A7E9 /* NSObject+Core.m in Sources */,
+				B567B80211224A0F0053A7E9 /* NSSet+Core.m in Sources */,
+				B567B80311224A0F0053A7E9 /* NSString+InflectionSupport.m in Sources */,
+				B567B80F1122695B0053A7E9 /* twitter.xcdatamodel in Sources */,
+				B567B814112269840053A7E9 /* Status.m in Sources */,
+				B567B81711226C780053A7E9 /* User.m in Sources */,
+				B567B81A11226C8B0053A7E9 /* TwitterModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TwitterClient_Prefix.pch;
+				INFOPLIST_FILE = "TwitterClient-Info.plist";
+				PRODUCT_NAME = TwitterClient;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TwitterClient_Prefix.pch;
+				INFOPLIST_FILE = "TwitterClient-Info.plist";
+				PRODUCT_NAME = TwitterClient;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TwitterClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TwitterClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
