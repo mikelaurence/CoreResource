@@ -7,7 +7,6 @@
 //
 
 #import "TwitterClientAppDelegate.h"
-#import "RootViewController.h"
 
 
 @implementation TwitterClientAppDelegate
@@ -19,11 +18,19 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    // Override point for customization after app launch    
-	
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    	
+
+    // Create & configure Core Manager
+    coreManager = [[CoreManager alloc] init];
+    coreManager.useBundleRequests = YES;
+    coreManager.remoteSiteURL = @"twitter.com";
+    coreManager.logLevel = 5;
+    [coreManager retain];
+
+    // Configure window
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
+    
 	return YES;
 }
 
@@ -37,6 +44,7 @@
 #pragma mark Memory management
 
 - (void)dealloc {
+    [coreManager release];
 	[navigationController release];
 	[window release];
 	[super dealloc];

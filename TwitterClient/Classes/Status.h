@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "TwitterModel.h"
 
+@class User;
 
 @interface Status : TwitterModel {
-
 }
+
+@property (nonatomic, retain) NSDate *createdAt;
+@property (nonatomic, retain) NSNumber *resourceId;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) User *user;
 
 @end

@@ -11,4 +11,15 @@
 
 @implementation User
 
+@dynamic createdAt;
+@dynamic description;
+@dynamic following;
+@dynamic friendsCount;
+@dynamic location;
+@dynamic name;
+@dynamic profileImageUrl;
+@dynamic resourceId;
+@dynamic statusesCount;
+@dynamic statuses;
+
 @end

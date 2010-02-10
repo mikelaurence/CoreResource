@@ -11,4 +11,17 @@
 
 @implementation Status
 
+@dynamic createdAt;
+@dynamic resourceId;
+@dynamic text;
+@dynamic user;
+
++ (NSString*) remoteURLForCollectionAction:(Action)action {
+    return @"http://twitter.com/statuses/user_timeline.json?screen_name=mikelaurence";
+}
+
++ (NSString*) bundlePathForCollectionAction:(Action)action {
+    return @"users.mikelaurence";
+}
+
 @end

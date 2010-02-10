@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  StatusesController.h
 //  TwitterClient
 //
 //  Created by Mike Laurence on 2/9/10.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreTableController.h"
 
-@interface RootViewController : UITableViewController {
+@interface StatusesController : CoreTableController {
 }
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreManager.h"
 
 @interface TwitterClientAppDelegate : NSObject <UIApplicationDelegate> {
-    
     UIWindow *window;
     UINavigationController *navigationController;
+    
+    CoreManager *coreManager;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

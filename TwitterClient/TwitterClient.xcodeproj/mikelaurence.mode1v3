@@ -264,7 +264,10 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>B567B9CC112278AD0053A7E9</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>B567B8101122696C0053A7E9</string>
+								<string>B567B930112273110053A7E9</string>
 								<string>B567B811112269740053A7E9</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
@@ -272,6 +275,7 @@
 								<string>B567B8F7112270450053A7E9</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>B567B82311226F5C0053A7E9</string>
+								<string>B567B9F5112279080053A7E9</string>
 								<string>B567B82411226F5C0053A7E9</string>
 								<string>B567B8F7112270450053A7E9</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -279,8 +283,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>14</integer>
+									<integer>20</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -322,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TwitterClient_Prefix.pch</string>
+								<string>StatusesController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,24 +334,30 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TwitterClient_Prefix.pch</string>
+										<string>StatusesController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B567B90F112270DA0053A7E9</string>
+										<string>B567BA5011227D0C0053A7E9</string>
 										<key>history</key>
 										<array>
-											<string>B567B82511226F5C0053A7E9</string>
-											<string>B567B82611226F5C0053A7E9</string>
-											<string>B567B82711226F5C0053A7E9</string>
-											<string>B567B82811226F5C0053A7E9</string>
-											<string>B567B82911226F5C0053A7E9</string>
 											<string>B567B82A11226F5C0053A7E9</string>
-											<string>B567B82B11226F5C0053A7E9</string>
-											<string>B567B903112270B40053A7E9</string>
-											<string>B567B904112270B40053A7E9</string>
 											<string>B567B905112270B40053A7E9</string>
-											<string>B567B906112270B40053A7E9</string>
+											<string>B567B9261122721A0053A7E9</string>
+											<string>B567B9271122721A0053A7E9</string>
+											<string>B567B9291122721A0053A7E9</string>
+											<string>B567B92A1122721A0053A7E9</string>
+											<string>B567B92B1122721A0053A7E9</string>
+											<string>B567B970112276990053A7E9</string>
+											<string>B567B9BD1122785A0053A7E9</string>
+											<string>B567BA161122794C0053A7E9</string>
+											<string>B567BA171122794C0053A7E9</string>
+											<string>B567BA2011227A640053A7E9</string>
+											<string>B567BA2111227A640053A7E9</string>
+											<string>B567BA4D11227D0C0053A7E9</string>
+											<string>B567BA4E11227D0C0053A7E9</string>
+											<string>B567BA4F11227D0C0053A7E9</string>
+											<string>B567BA2711227A810053A7E9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -545,10 +555,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B567B80C11224A2D0053A7E9</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/TwitterClient/TwitterClient.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 79 1561 926 0 0 1680 1028 </string>
@@ -567,12 +577,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreManager.m</string>
+								<string>TwitterClientAppDelegate.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -589,8 +601,6 @@
 							<string>487pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -897,18 +907,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {650, 209}}</string>
+								<string>{{0, 0}, {1562, 429}}</string>
 								<key>RubberWindowFrame</key>
-								<string>46 732 650 250 0 0 1680 1028 </string>
+								<string>46 512 1562 470 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
 							<key>Proportion</key>
-							<string>209pt</string>
+							<string>429pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>209pt</string>
+					<string>429pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -928,11 +938,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>46 732 650 250 0 0 1680 1028 </string>
+			<string>46 512 1562 470 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

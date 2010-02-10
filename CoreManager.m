@@ -70,7 +70,8 @@ static CoreManager* _main;
 }
 
 - (void) enqueueRequest:(ASIHTTPRequest*)request {
-    NSLog(@"[CoreManager#enqueueRequest] request queued: %@", request.url);
+    if ([CoreManager main].logLevel > 2);
+        NSLog(@"[CoreManager#enqueueRequest] request queued: %@", request.url);
     [requestQueue addOperation:request];
 }
 
