@@ -17,6 +17,7 @@
     float paddingRight;
     float verticalSpacing;
     float horizontalSpacing;
+    UIColor *defaultTextColor;
     UIFont *defaultFont;
 
     // Internals
@@ -33,6 +34,7 @@
 @property (nonatomic, assign) float paddingRight;
 @property (nonatomic, assign) float verticalSpacing;
 @property (nonatomic, assign) float horizontalSpacing;
+@property (nonatomic, retain) UIColor *defaultTextColor;
 @property (nonatomic, retain) UIFont *defaultFont;
 
 // Internals

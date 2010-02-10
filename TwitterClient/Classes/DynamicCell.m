@@ -15,7 +15,7 @@
 @synthesize unusedSubviews;
 @synthesize paddingTop, paddingBottom, paddingLeft, paddingRight;
 @synthesize verticalSpacing, horizontalSpacing;
-@synthesize defaultFont;
+@synthesize defaultFont, defaultTextColor;
 
 - (void) reset {
     for (UIView *subview in [self subviews]) {
@@ -51,17 +51,17 @@
             CGPointMake(paddingLeft, lastFrame.origin.y + lastFrame.size.height + verticalSpacing) :
             CGPointMake(lastFrame.origin.x + lastFrame.size.width + horizontalSpacing, lastFrame.origin.y));
     
-    CGSize constrainedSize = CGSizeMake([self superview].bounds.size.width - origin.x, NSIntegerMax);
+    CGSize constrainedSize = CGSizeMake(self.bounds.size.width - origin.x, NSIntegerMax);
     CGSize fittedSize = CGSizeZero;
     
     if ([view isKindOfClass:[UITextView class]]) {
         fittedSize = [((UITextView*)view).text sizeWithFont:((UITextView*)view).font constrainedToSize:constrainedSize];
-        NSLog(@"SIZEY: %@", NSStringFromCGSize(fittedSize));
+        fittedSize.height += 20.0;
     }
-    else {
-        fittedSize = [view sizeThatFits:CGSizeZero];
-        view.frame = CGRectMake(origin.x, origin.y, fittedSize.width, fittedSize.height);
-    }
+    else
+        fittedSize = [view sizeThatFits:constrainedSize];
+        
+    view.frame = CGRectMake(origin.x, origin.y, fittedSize.width, fittedSize.height);
     
     [self addSubview:view];
 
@@ -92,16 +92,27 @@
     return defaultFont;
 }
 
+- (UIColor*) defaultTextColor {
+    if (defaultTextColor == nil)
+        self.defaultTextColor = [UIColor blackColor];
+    return defaultTextColor;
+}
+
 - (UILabel*) addLabelWithText:(NSString*)text andFont:(UIFont*)font onNewLine:(BOOL)newLine {
+    if (text == nil)
+        text = @"";
+
     UILabel* label = [unusedSubviews objectOfClass:[UILabel class]];
     if (label != nil)
         [unusedSubviews removeObject:label];
-    else
+    else {
         label = [[UILabel alloc] init];
+        label.lineBreakMode = UILineBreakModeWordWrap;
+    }
 
-    
     label.font = font;
-    label.text = text != nil ? text : @"";
+    label.text = text;
+    label.textColor = [self defaultTextColor];
     
     // Determine number of newlines in string
     NSString *countString = @"";
@@ -134,11 +145,15 @@
     UITextView* textView = [unusedSubviews objectOfClass:[UITextView class]];
     if (textView != nil)
         [unusedSubviews removeObject:textView];
-    else
+    else {
         textView = [[UITextView alloc] init];
+        textView.scrollEnabled = NO;
+        textView.editable = NO;
+    }
     
     textView.font = font;
     textView.text = text != nil ? text : @"";
+    textView.textColor = [self defaultTextColor];
         
     [self addSubview:textView onNewLine:newLine];
     return textView;
@@ -182,7 +197,8 @@
 
 
 - (void)dealloc {
-    [defaultFont dealloc];
+    [defaultTextColor release];
+    [defaultFont release];
     [super dealloc];
 }
 

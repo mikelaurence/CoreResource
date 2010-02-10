@@ -46,6 +46,8 @@
 		B567B8F8112270450053A7E9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B567B8F7112270450053A7E9 /* CoreData.framework */; };
 		B567B93A112273260053A7E9 /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B567B939112273260053A7E9 /* DynamicCell.m */; };
 		B567B9F0112279030053A7E9 /* users.mikelaurence.json in Resources */ = {isa = PBXBuildFile; fileRef = B567B9CD112278C50053A7E9 /* users.mikelaurence.json */; };
+		B567BB09112289300053A7E9 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B567BB07112289300053A7E9 /* NSDate+Helper.m */; };
+		B567BB0A112289300053A7E9 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = B567BB08112289300053A7E9 /* README.textile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,9 @@
 		B567B938112273260053A7E9 /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCell.h; sourceTree = "<group>"; };
 		B567B939112273260053A7E9 /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCell.m; sourceTree = "<group>"; };
 		B567B9CD112278C50053A7E9 /* users.mikelaurence.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.mikelaurence.json; sourceTree = "<group>"; };
+		B567BB06112289300053A7E9 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		B567BB07112289300053A7E9 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		B567BB08112289300053A7E9 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +286,7 @@
 		B567B8101122696C0053A7E9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B567BB03112289230053A7E9 /* NSDate-Helper */,
 				B567B930112273110053A7E9 /* DynamicCell */,
 				B567B80411224A190053A7E9 /* CoreResource */,
 				B567B7C0112249B40053A7E9 /* Reachability */,
@@ -318,6 +324,16 @@
 				B567B9CD112278C50053A7E9 /* users.mikelaurence.json */,
 			);
 			name = Mocks;
+			sourceTree = "<group>";
+		};
+		B567BB03112289230053A7E9 /* NSDate-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B567BB06112289300053A7E9 /* NSDate+Helper.h */,
+				B567BB07112289300053A7E9 /* NSDate+Helper.m */,
+				B567BB08112289300053A7E9 /* README.textile */,
+			);
+			name = "NSDate-Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +391,7 @@
 				B567B9F0112279030053A7E9 /* users.mikelaurence.json in Resources */,
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* StatusesController.xib in Resources */,
+				B567BB0A112289300053A7E9 /* README.textile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +431,7 @@
 				B567B81711226C780053A7E9 /* User.m in Sources */,
 				B567B81A11226C8B0053A7E9 /* TwitterModel.m in Sources */,
 				B567B93A112273260053A7E9 /* DynamicCell.m in Sources */,
+				B567BB09112289300053A7E9 /* NSDate+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

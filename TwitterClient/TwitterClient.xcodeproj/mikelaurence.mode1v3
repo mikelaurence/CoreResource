@@ -267,7 +267,7 @@
 								<string>B567B9CC112278AD0053A7E9</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>B567B8101122696C0053A7E9</string>
-								<string>B567B930112273110053A7E9</string>
+								<string>B567BB03112289230053A7E9</string>
 								<string>B567B811112269740053A7E9</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
@@ -283,7 +283,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>20</integer>
+									<integer>24</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -326,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>StatusesController.m</string>
+								<string>TwitterClientAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,30 +334,35 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>StatusesController.m</string>
+										<string>TwitterClientAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B567BA5011227D0C0053A7E9</string>
+										<string>B567BB3011228ADF0053A7E9</string>
 										<key>history</key>
 										<array>
 											<string>B567B82A11226F5C0053A7E9</string>
 											<string>B567B905112270B40053A7E9</string>
 											<string>B567B9261122721A0053A7E9</string>
 											<string>B567B9271122721A0053A7E9</string>
-											<string>B567B9291122721A0053A7E9</string>
 											<string>B567B92A1122721A0053A7E9</string>
 											<string>B567B92B1122721A0053A7E9</string>
-											<string>B567B970112276990053A7E9</string>
 											<string>B567B9BD1122785A0053A7E9</string>
-											<string>B567BA161122794C0053A7E9</string>
 											<string>B567BA171122794C0053A7E9</string>
 											<string>B567BA2011227A640053A7E9</string>
-											<string>B567BA2111227A640053A7E9</string>
-											<string>B567BA4D11227D0C0053A7E9</string>
-											<string>B567BA4E11227D0C0053A7E9</string>
-											<string>B567BA4F11227D0C0053A7E9</string>
-											<string>B567BA2711227A810053A7E9</string>
+											<string>B567BAA8112281CB0053A7E9</string>
+											<string>B567BAA9112281CB0053A7E9</string>
+											<string>B567BAAA112281CB0053A7E9</string>
+											<string>B567BAFB112288630053A7E9</string>
+											<string>B567BAFC112288630053A7E9</string>
+											<string>B567BB111122899A0053A7E9</string>
+											<string>B567BB141122899A0053A7E9</string>
+											<string>B567BB2011228A2C0053A7E9</string>
+											<string>B567BB2811228AC60053A7E9</string>
+											<string>B567BB2911228AC60053A7E9</string>
+											<string>B567BB2A11228AC60053A7E9</string>
+											<string>B567BB2D11228AD90053A7E9</string>
+											<string>B567BB2E11228AD90053A7E9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -557,8 +562,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B567B80C11224A2D0053A7E9</string>
-		<string>/Users/mikelaurence/Projects/CoreResource/TwitterClient/TwitterClient.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mikelaurence/Projects/CoreResource/TwitterClient/TwitterClient.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 79 1561 926 0 0 1680 1028 </string>
@@ -584,7 +589,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TwitterClientAppDelegate.m</string>
+								<string>DynamicCell.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

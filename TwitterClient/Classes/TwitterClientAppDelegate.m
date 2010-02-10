@@ -3,7 +3,7 @@
 //  TwitterClient
 //
 //  Created by Mike Laurence on 2/9/10.
-//  Copyright Punkbot LLC 2010. All rights reserved.
+//  Copyright 2010 Mike Laurence. All rights reserved.
 //
 
 #import "TwitterClientAppDelegate.h"
@@ -22,6 +22,11 @@
 
     // Create & configure Core Manager
     coreManager = [[CoreManager alloc] init];
+    
+    // Twitter date format: Tue Feb 09 19:38:16 +0000 2010
+    coreManager.defaultDateParser = [[NSDateFormatter alloc] init];
+    [coreManager.defaultDateParser setDateFormat:@"EEE MMM dd HH:mm:ss ZZZZ yyyy"];
+    
     coreManager.useBundleRequests = YES;
     coreManager.remoteSiteURL = @"twitter.com";
     coreManager.logLevel = 5;
