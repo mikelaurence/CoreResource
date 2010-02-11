@@ -48,6 +48,7 @@ typedef enum _Action {
 + (NSString*) localIdField;
 - (id) localId;
 + (NSString*) remoteIdField;
++ (NSString*) updatedAtField;
 + (NSDateFormatter*) dateParser;
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
 + (NSArray*) deserializeFromString:(NSString*)serializedString;
@@ -76,6 +77,8 @@ typedef enum _Action {
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)relatedObject;
 - (void) updateWithDictionary:(NSDictionary*)dict;
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
+
+- (void) didCreate;
 
 
 #pragma mark -

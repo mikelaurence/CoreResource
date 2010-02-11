@@ -83,6 +83,10 @@
     return @"id";
 }
 
++ (NSString*) updatedAtField {
+    return @"updatedAt";
+}
+
 + (NSDateFormatter*) dateParser {
     return [[self coreManager] defaultDateParser];
 }
@@ -197,8 +201,11 @@
         insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
     [newObject updateWithDictionary:dict];
     
-    if ([[self class] coreManager].logLevel > 2)
+    if ([[self class] coreManager].logLevel > 1)
         NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
+    
+    // Call didCreate for user-specified create hooks
+    [newObject didCreate];
     
     return newObject;
 }
@@ -266,14 +273,16 @@
 /**
     Determines whether or not an existing (local) record should be updated with data from the provided dictionary
     (presumably retrieved from a remote source.) The most likely determinant would be if the new data is newer
-    than the object.
+    than the object, which by default is determined through the field returned by [self updatedAtField]
 */
-- (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict { 
-    if ([self respondsToSelector:@selector(updated_at)]) {
-        NSDate *updatedAt = (NSDate*)[self performSelector:@selector(updated_at)];
+- (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict {
+    SEL updatedAtSel = NSSelectorFromString([[self class] updatedAtField]);
+    if ([self respondsToSelector:updatedAtSel]) {
+        NSDate *updatedAt = (NSDate*)[self performSelector:updatedAtSel];
         if (updatedAt != nil) {
             return [updatedAt compare:
-                [[[self class] dateParserForField:@"updated_at"] dateFromString:[dict objectForKey:@"updated_at"]]] == NSOrderedAscending;
+                [[[self class] dateParserForField:[[self class] updatedAtField]] dateFromString:
+                    [dict objectForKey:[[self class] updatedAtField]]]] == NSOrderedAscending;
         }
     }
     return YES;
@@ -284,7 +293,7 @@
     // Determine whether this object needs to be updated (relationships will still be checked no matter what)
     BOOL shouldUpdateRoot = [self shouldUpdateWithDictionary:dict];
     if (shouldUpdateRoot) {
-        if ([[self class] coreManager].logLevel > 2)
+        if ([[self class] coreManager].logLevel > 1)
             NSLog(@"TODO - updating %@ with id %@", [self class], [self valueForKey:[[self class] localIdField]]);
     }
     else {
@@ -352,6 +361,11 @@
         }
     }
 }
+
+/**
+    Override for post-create hooks
+*/
+- (void) didCreate {}
 
 
 
