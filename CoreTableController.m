@@ -14,53 +14,65 @@
 @synthesize coreResultsController;
 
 
-- (Class) model { return nil; }
-
-
-
 #pragma mark -
 #pragma mark Data methods
 
+- (Class) model { return nil; }
+
+- (int) resultsSectionCount {
+    return [[[self coreResultsController] sections] count];
+}
+
+- (BOOL) hasResults {
+    return [self resultsSectionCount] > 0;
+}
+
+- (id) resultsInfoForSection:(int)section {
+    return [[[self coreResultsController] sections] objectAtIndex:section];
+}
+
 - (int) resultsCountForSection:(int)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[[self coreResultsController] sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    if ([self hasResults])
+        return [[self resultsInfoForSection:section] numberOfObjects];
+    return 1;
 }
 
 - (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath {
-    return (CoreModel*)[[self coreResultsController] objectAtIndexPath:indexPath];
+    if (indexPath.section < [self resultsSectionCount])
+        return (CoreModel*)[[self coreResultsController] objectAtIndexPath:indexPath];
+    return nil;
 }
 
-- (NSString*) noResultsMessageForSection:(int)section {
+- (NSString*) noResultsMessage {
     return @"No results found.";
 }
+
+- (BOOL) hasNoResultsMessage {
+    return [self noResultsMessage] != nil;
+}
+
 
 
 #pragma mark -
 #pragma mark Table view methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    int sections = [[[self coreResultsController] sections] count];
-    return sections > 0 ? sections : 1;
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self hasResults] ? [self resultsSectionCount] : 
+        ([self hasNoResultsMessage] ? 1 : 0);
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int ct = [self resultsCountForSection:section];
-    return ct > 0 ? ct : ([self noResultsMessageForSection:section] != nil ? 1 : 0);
+- (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self hasResults] ? [self resultsCountForSection:section] : 1;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
-}
-
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[[self coreResultsController] sections] objectAtIndex:indexPath.section];
-    if ([sectionInfo numberOfObjects] > 0)
+- (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
+    if ([self hasResults])
         return [self tableView:tableView resultCellForRowAtIndexPath:indexPath];
     else
-        return [self tableView:tableView noResultsCellForSection:indexPath.section];
+        return [self noResultsCellForTableView:tableView];
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (UITableViewCell*) tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultCell"];
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefaultCell"];
@@ -73,11 +85,11 @@
     return cell;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView noResultsCellForSection:(int)section {
+- (UITableViewCell*) noResultsCellForTableView:(UITableView*)tableView {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"NoResultsCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoResultsCell"];
-        cell.textLabel.text = [self noResultsMessageForSection:section];
+        cell.textLabel.text = [self noResultsMessage];
         cell.textLabel.font = [UIFont systemFontOfSize:22.0];
         cell.textLabel.textColor = [UIColor grayColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;

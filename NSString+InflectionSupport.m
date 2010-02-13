@@ -85,6 +85,10 @@
 	return [output substringToIndex:[self length]];
 }
 
+- (NSString *)decapitalize {
+    return [[[self substringToIndex:1] lowercaseString] stringByAppendingString:[self substringFromIndex:1]];
+}
+
 - (NSString *)toClassName {
 	NSString *result = [self camelize];
 	return [result stringByReplacingCharactersInRange:NSMakeRange(0,1) 

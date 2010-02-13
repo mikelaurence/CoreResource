@@ -10,6 +10,7 @@
 }
 
 + (BOOL) runningInSimulator;
++ (NSPredicate*) predicateFromObject:(id)object;
 + (NSArray*) sortDescriptorsFromString:(NSString*)string;
 + (NSURL*) URLWithSite:(NSString*)site andFormat:(NSString*)format andParameters:(id)parameters;
 

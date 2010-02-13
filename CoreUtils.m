@@ -6,8 +6,8 @@
 //  Copyright Punkbot LLC 2010. All rights reserved.
 //
 
-#include "CoreUtils.h"
-#include "TargetConditionals.h"
+#import "CoreUtils.h"
+#import "TargetConditionals.h"
 
 @implementation CoreUtils
 
@@ -17,6 +17,42 @@
     #endif
     return NO;
 }
+
+
+
+/**
+    Generates a predicate from the following kinds of objects:
+    Predicate - returns untouched
+    Dictionary - keys equalling values
+    String - straight transformation using predicate formatting
+*/
++ (NSPredicate*) predicateFromObject:(id)object {
+    if (object != nil) {
+        if ([object isKindOfClass:[NSPredicate class]])
+            return object;
+            
+        if ([object isKindOfClass:[NSString class]])
+            return [NSPredicate predicateWithFormat:(NSString*)object];
+
+        if ([object isKindOfClass:[NSDictionary class]]) {
+
+            // Generate mutable string & array to hold expression & arguments, respectively
+            NSMutableString *expression = [NSMutableString string];
+            NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:[(NSDictionary*)object count]];
+        
+            // Iterate through dictionary keys to add to predicate expression/arguments
+            for (NSString *key in (NSDictionary*)object) {
+                [expression appendFormat:@"%@%@=\%@", [expression length] > 0 ? @" AND" : @"", key];
+                [arguments addObject:[(NSDictionary*)object objectForKey:key]];
+            }
+            
+            return [NSPredicate predicateWithFormat:expression argumentArray:arguments];
+        }
+    }
+
+    return [NSPredicate predicateWithValue:YES];
+}
+
 
 /**
     Generates an array of sort descriptors based on a SQL-esque string

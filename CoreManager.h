@@ -6,7 +6,7 @@
 //  Copyright Mike Laurence 2010. All rights reserved.
 //
 
-#include "ASIHTTPRequest.h"
+#import "ASIHTTPRequest.h"
 
 @interface CoreManager : NSObject {
     NSManagedObjectModel *managedObjectModel;

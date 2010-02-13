@@ -6,9 +6,9 @@
 //  Copyright Mike Laurence 2010. All rights reserved.
 //
 
-#include "CoreManager.h"
-#include "CoreResultsController.h"
-#include "CoreResult.h"
+#import "CoreManager.h"
+#import "CoreResultsController.h"
+#import "CoreResult.h"
 
 typedef enum _Action {
     Create = 0,

@@ -16,13 +16,20 @@
 
 @property (nonatomic, retain) CoreResultsController *coreResultsController;
 
+#pragma mark -
+#pragma mark Date methods
 - (Class) model;
-
+- (int) resultsSectionCount;
+- (BOOL) hasResults;
+- (id) resultsInfoForSection:(int)section;
 - (int) resultsCountForSection:(int)section;
 - (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath;
-- (NSString*) noResultsMessageForSection:(int)section;
+- (NSString*) noResultsMessage;
+- (BOOL) hasNoResultsMessage;
 
-- (UITableViewCell*)tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath;
-- (UITableViewCell*)tableView:(UITableView*)tableView noResultsCellForSection:(int)section;
+#pragma mark -
+#pragma mark Table view methods
+- (UITableViewCell*) tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath;
+- (UITableViewCell*) noResultsCellForTableView:(UITableView*)tableView;
 
 @end

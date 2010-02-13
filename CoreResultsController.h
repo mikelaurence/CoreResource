@@ -6,7 +6,9 @@
 //  Copyright Mike Laurence 2010. All rights reserved.
 //
 
-#include "CoreRequest.h"
+#import "CoreRequest.h"
+
+@class CoreModel;
 
 @interface CoreResultsController : NSFetchedResultsController {
     Class entityClass;
@@ -18,6 +20,13 @@
 - (void) fetch:(id)parameters;
 - (void) fetchLocal:(id)parameters;
 - (void) fetchRemote:(id)parameters;
+
+#pragma mark -
+#pragma mark Convenience fetch methods
+- (void) fetchForRelatedResource:(CoreModel*)resource withSort:(NSString*)sort;
+- (void) fetchForRelatedResource:(CoreModel*)resource withParameters:(id)parameters andSort:(NSString*)sort;
+- (void) fetchForResource:(CoreModel*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort;
+- (void) fetchForResource:(CoreModel*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort;
 
 @end
 

@@ -297,7 +297,8 @@
             NSLog(@"TODO - updating %@ with id %@", [self class], [self valueForKey:[[self class] localIdField]]);
     }
     else {
-        NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", [self class], [self valueForKey:[[self class] localIdField]]);
+        if ([[self class] coreManager].logLevel > 1)
+            NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", [self class], [self valueForKey:[[self class] localIdField]]);
         // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake
         if (![[self class] hasRelationships])
             return;
