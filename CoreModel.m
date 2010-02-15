@@ -83,6 +83,10 @@
     return @"id";
 }
 
++ (NSString*) createdAtField {
+    return @"createdAt";
+}
+
 + (NSString*) updatedAtField {
     return @"updatedAt";
 }
@@ -201,8 +205,17 @@
         insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]] autorelease];
     [newObject updateWithDictionary:dict];
     
-    if ([[self class] coreManager].logLevel > 1)
-        NSLog(@"Created new %@ with id %@", self, [newObject valueForKey:[self localIdField]]);
+    // Set createdAt timestamp if possible
+    SEL createdAtSel = NSSelectorFromString([self createdAtField]);
+    if ([newObject respondsToSelector:createdAtSel])
+        [newObject setValue:[NSDate date] forKey:[self createdAtField]];
+    
+    // Log creation
+    if ([[self class] coreManager].logLevel > 1) {
+        NSLog(@"Created new %@", self, [newObject valueForKey:[self localIdField]]);
+        if ([[self class] coreManager].logLevel > 4)
+            NSLog(@"=> %@", newObject);
+    }
     
     // Call didCreate for user-specified create hooks
     [newObject didCreate];
@@ -280,9 +293,13 @@
     if ([self respondsToSelector:updatedAtSel]) {
         NSDate *updatedAt = (NSDate*)[self performSelector:updatedAtSel];
         if (updatedAt != nil) {
-            return [updatedAt compare:
-                [[[self class] dateParserForField:[[self class] updatedAtField]] dateFromString:
-                    [dict objectForKey:[[self class] updatedAtField]]]] == NSOrderedAscending;
+            NSString *dictUpdatedAtString = [dict objectForKey:[[self class] updatedAtField]];
+            if (dictUpdatedAtString != nil) {
+                NSDate *dictUpdatedAt = [[[self class] dateParserForField:[[self class] updatedAtField]] dateFromString:dictUpdatedAtString];
+                if (updatedAt != nil) {
+                    return [updatedAt compare:dictUpdatedAt] == NSOrderedAscending;
+                }
+            }
         }
     }
     return YES;
@@ -292,11 +309,7 @@
 
     // Determine whether this object needs to be updated (relationships will still be checked no matter what)
     BOOL shouldUpdateRoot = [self shouldUpdateWithDictionary:dict];
-    if (shouldUpdateRoot) {
-        if ([[self class] coreManager].logLevel > 1)
-            NSLog(@"TODO - updating %@ with id %@", [self class], [self valueForKey:[[self class] localIdField]]);
-    }
-    else {
+    if (!shouldUpdateRoot) {
         if ([[self class] coreManager].logLevel > 1)
             NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", [self class], [self valueForKey:[[self class] localIdField]]);
         // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake
@@ -325,26 +338,29 @@
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
             
-            if ([[self class] coreManager].logLevel > 4)
-                NSLog(@"[%@] Setting remote field: %@, local field: %@, value: %@", [self class], field, localField, value);
-            
             // If property is a relationship, do some cascading object creation/updation (occurs regardless of shouldUpdateRoot)
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
                 Class relationshipClass = NSClassFromString([[(NSRelationshipDescription*)propertyDescription destinationEntity] managedObjectClassName]);
                 NSRelationshipDescription* inverseRelationship = [(NSRelationshipDescription*)propertyDescription inverseRelationship];
                 
-                // Create/update relationship items and assign this object to their inverse relationship (to link them)
-                if ([value isKindOfClass:[NSArray class]]) {
-                    for (NSDictionary *dict in value)
-                        [relationshipClass createOrUpdateWithDictionary:dict andRelationship:inverseRelationship toObject:self];
+                // Create/update relationship resource(s) and link to this resource
+                if ([value isKindOfClass:relationshipClass]) {
+                    [self setValue:value forKey:localField];
                 }
                 else if ([value isKindOfClass:[NSDictionary class]])
                     [relationshipClass createOrUpdateWithDictionary:value andRelationship:inverseRelationship toObject:self];
+                else if ([value isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary *dict in value)
+                        [relationshipClass createOrUpdateWithDictionary:dict andRelationship:inverseRelationship toObject:self];
+                }
             }
             
             // If it's an attribute, just assign the value to the object (unless the object is up-to-date)
             else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]] && shouldUpdateRoot) {                
-                //NSLog(@"Setting property: %@ %@", field, value);
+                
+                if ([[self class] coreManager].logLevel > 4)
+                    NSLog(@"[%@] Setting remote field: %@, local field: %@, value: %@", [self class], field, localField, value);
+                
                 // Check if value is NSNull, which should be set as nil on fields (since NSNull is just used as a collection placeholder)
                 if ([value isEqual:[NSNull null]])
                     [self setValue:nil forKey:localField];

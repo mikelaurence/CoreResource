@@ -48,6 +48,7 @@ typedef enum _Action {
 + (NSString*) localIdField;
 - (id) localId;
 + (NSString*) remoteIdField;
++ (NSString*) createdAtField;
 + (NSString*) updatedAtField;
 + (NSDateFormatter*) dateParser;
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
