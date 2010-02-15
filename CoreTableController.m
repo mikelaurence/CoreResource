@@ -75,7 +75,7 @@
 - (UITableViewCell*) tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultCell"];
     if (cell == nil)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefaultCell"];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefaultCell"] autorelease];
     
     CoreModel *resource = [self resourceAtIndexPath:indexPath];
     cell.textLabel.text = [resource performSelector:
@@ -88,7 +88,7 @@
 - (UITableViewCell*) noResultsCellForTableView:(UITableView*)tableView {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"NoResultsCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoResultsCell"];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoResultsCell"] autorelease];
         cell.textLabel.text = [self noResultsMessage];
         cell.textLabel.font = [UIFont systemFontOfSize:22.0];
         cell.textLabel.textColor = [UIColor grayColor];
@@ -112,11 +112,11 @@
 
 - (CoreResultsController*) coreResultsController {
     if (coreResultsController == nil) {
-        self.coreResultsController = [[CoreResultsController alloc] 
+        self.coreResultsController = [[[CoreResultsController alloc] 
             initWithFetchRequest:[[self model] fetchRequestWithDefaultSort]
             managedObjectContext:[[self model] managedObjectContext] 
             sectionNameKeyPath:nil 
-            cacheName:nil];
+            cacheName:nil] autorelease];
         coreResultsController.entityClass = [self model];
         coreResultsController.delegate = self;
     }

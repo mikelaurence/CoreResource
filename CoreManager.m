@@ -30,10 +30,10 @@ static CoreManager* _main;
     if (self = [super init]) {
         if (_main == nil)
             _main = self;
-        self.requestQueue = [[NSOperationQueue alloc] init];
+        self.requestQueue = [[[NSOperationQueue alloc] init] autorelease];
         
         // Default date parser is ruby DateTime.to_s style parser
-        self.defaultDateParser = [[NSDateFormatter alloc] init];
+        self.defaultDateParser = [[[NSDateFormatter alloc] init] autorelease];
         [defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
         //[defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
         

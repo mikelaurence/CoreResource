@@ -197,8 +197,8 @@
 }
 
 + (id) createWithDictionary:(NSDictionary*)dict {
-    CoreModel *newObject = [[self alloc] initWithEntity:[self entityDescription] 
-        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
+    CoreModel *newObject = [[[self alloc] initWithEntity:[self entityDescription] 
+        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]] autorelease];
     [newObject updateWithDictionary:dict];
     
     if ([[self class] coreManager].logLevel > 1)
@@ -382,7 +382,7 @@
     if ([localResult hasAnyResources])
         return localResult;
     [self findRemote:resourceId andNotify:del withSelector:selector];
-    return [[CoreResult alloc] init];
+    return [[[CoreResult alloc] init] autorelease];
 }
 
 + (CoreResult*) findAll {
@@ -412,7 +412,7 @@
     NSFetchRequest* fetch = [self fetchRequestWithSort:nil andPredicate:[self predicateWithParameters:parameters]];
     NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
 
-    CoreResult* result = [[CoreResult alloc] initWithResources:resources];
+    CoreResult* result = [[[CoreResult alloc] initWithResources:resources] autorelease];
     if (error != nil)
         result.error = error;
     return result;
@@ -423,8 +423,8 @@
 }
 
 + (void) findRemote:(id)resourceId andNotify:(id)del withSelector:(SEL)selector {
-    CoreRequest *request = [[CoreRequest alloc] initWithURL:
-        [CoreUtils URLWithSite:[self remoteURLForResource:resourceId action:Read] andFormat:@"json" andParameters:nil]];
+    CoreRequest *request = [[[CoreRequest alloc] initWithURL:
+        [CoreUtils URLWithSite:[self remoteURLForResource:resourceId action:Read] andFormat:@"json" andParameters:nil]] autorelease];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish:);
     request.didFailSelector = @selector(findRemoteDidFail:);
@@ -451,8 +451,8 @@
 }
 
 + (void) findAllRemote:(id)parameters andNotify:(id)del withSelector:(SEL)selector {
-    CoreRequest *request = [[CoreRequest alloc] initWithURL:
-        [CoreUtils URLWithSite:[self remoteURLForCollectionAction:Read] andFormat:@"json" andParameters:parameters]];
+    CoreRequest *request = [[[CoreRequest alloc] initWithURL:
+        [CoreUtils URLWithSite:[self remoteURLForCollectionAction:Read] andFormat:@"json" andParameters:parameters]] autorelease];
     request.delegate = self;
     request.didFinishSelector = @selector(findRemoteDidFinish:);
     request.didFailSelector = @selector(findRemoteDidFail:);
@@ -476,7 +476,7 @@
     
     // Notify core delegate of request (if any)
     if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {
-        CoreResult* result = [[CoreResult alloc] init];
+        CoreResult* result = [[[CoreResult alloc] init] autorelease];
         result.resources = resources;
         [request.coreDelegate performSelector:request.coreSelector withObject:result];
     }
@@ -501,7 +501,7 @@
 #pragma mark Results Management
 
 + (NSFetchRequest*) fetchRequest {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
     [fetchRequest setEntity:[self entityDescription]];
     return fetchRequest;
 }
@@ -509,7 +509,7 @@
 + (NSFetchRequest*) fetchRequestWithDefaultSort {
     NSFetchRequest *fetchRequest = [self fetchRequest];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:
-        [[NSSortDescriptor alloc] initWithKey:[self localIdField] ascending:YES]]];
+        [[[NSSortDescriptor alloc] initWithKey:[self localIdField] ascending:YES] autorelease]]];
     return fetchRequest;
 }
 
