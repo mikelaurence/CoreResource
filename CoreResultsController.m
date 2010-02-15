@@ -19,11 +19,6 @@
 }
 
 - (void) fetch:(id)parameters {
-    [self fetchLocal:parameters];
-    [self fetchRemote:parameters];
-}
-
-- (void) fetchLocal:(id)parameters {
 
     // If parameter is a predicate, set it on the results controller
     if ([parameters isKindOfClass:[NSPredicate class]])
@@ -33,10 +28,6 @@
 	if (![self performFetch:&error]) {
 		NSLog(@"[CoreResultsController#fetchLocal] Error on local core data fetch: %@", error);
 	}
-}
-
-- (void) fetchRemote:(id)parameters {
-    [entityClass performSelector:@selector(findAllRemote:) withObject:parameters];
 }
 
 
@@ -76,8 +67,6 @@
         [NSCompoundPredicate andPredicateWithSubpredicates:
             [NSArray arrayWithObjects:relationshipPredicate, [CoreUtils predicateFromObject:parameters], nil]] :
         relationshipPredicate;
-        
-    NSLog(@"PREDICATE: %@", fetchPredicate);
 
     // Perform fetch using parent to generate predicate
     [self fetch:fetchPredicate];
