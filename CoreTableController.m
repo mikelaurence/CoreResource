@@ -24,7 +24,7 @@
 }
 
 - (BOOL) hasResults {
-    return [self resultsSectionCount] > 0;
+    return [self resultsSectionCount] > 0 && [self resultsCountForSection:0] > 0;
 }
 
 - (id) resultsInfoForSection:(int)section {
@@ -32,7 +32,7 @@
 }
 
 - (int) resultsCountForSection:(int)section {
-    if ([self hasResults])
+    if (section < [self resultsSectionCount])
         return [[self resultsInfoForSection:section] numberOfObjects];
     return 1;
 }

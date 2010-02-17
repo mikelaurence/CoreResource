@@ -23,6 +23,7 @@
 
 - (id) initWithResource:(id)resource;
 - (id) initWithResources:(NSArray*)resourceArray;
+- (id) initWithError:(NSError*)error;
 
 /*
   Returns a single resource (specifically, the first object in the resources array).

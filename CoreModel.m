@@ -197,18 +197,20 @@
 #pragma mark Create
 
 + (id) create:(id)parameters {
-	return [self createWithDictionary:parameters];
+	id newObject = [self createWithDictionary:parameters];
+
+    // Set createdAt timestamp if possible
+    SEL createdAtSel = NSSelectorFromString([self createdAtField]);
+    if ([newObject respondsToSelector:createdAtSel])
+        [newObject setValue:[NSDate date] forKey:[self createdAtField]];
+        
+    return newObject;
 }
 
 + (id) createWithDictionary:(NSDictionary*)dict {
     CoreModel *newObject = [[[self alloc] initWithEntity:[self entityDescription] 
         insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]] autorelease];
     [newObject updateWithDictionary:dict];
-    
-    // Set createdAt timestamp if possible
-    SEL createdAtSel = NSSelectorFromString([self createdAtField]);
-    if ([newObject respondsToSelector:createdAtSel])
-        [newObject setValue:[NSDate date] forKey:[self createdAtField]];
     
     // Log creation
     if ([[self class] coreManager].logLevel > 1) {
@@ -499,7 +501,11 @@
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
-    NSLog(@"[%@#findRemoteDidFail] Find remote request failed: %@", self, [[request error] localizedDescription]);
+    // Notify core delegate (if extant) of failure
+    if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {
+        CoreResult* result = [[[CoreResult alloc] initWithError:[request error]] autorelease];
+        [request.coreDelegate performSelector:request.coreSelector withObject:result];
+    }
 }
 
 

@@ -27,6 +27,12 @@
     return self;
 }
 
+- (id) initWithError:(NSError*)theError {
+    if (self = [super init])
+        self.error = theError;
+    return self;
+}
+
 - (CoreModel*) resource {
     return resources != nil && [resources count] > 0 ? [resources objectAtIndex:0] : nil;
 }
