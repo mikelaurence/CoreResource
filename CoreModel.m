@@ -371,7 +371,8 @@
                     // Perform additional processing on value based on attribute type
                     switch ([(NSAttributeDescription*)propertyDescription attributeType]) {
                         case NSDateAttributeType:
-                            value = [[[self class] dateParserForField:localField] dateFromString:value];
+                            if (value != nil && [value isKindOfClass:[NSString class]])
+                                value = [[[self class] dateParserForField:localField] dateFromString:value];
                             break;
                     }
                     [self setValue:value forKey:localField];
@@ -515,6 +516,10 @@
 + (void) destroyAllLocal {
     for (CoreModel* model in [[[self class] findAllLocal] resources])
         [[self managedObjectContext] deleteObject:model];
+}
+
+- (void) destroyLocal {
+    [[[self class] managedObjectContext] deleteObject:self];
 }
 
 

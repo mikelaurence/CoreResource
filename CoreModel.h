@@ -110,6 +110,8 @@ typedef enum _Action {
 #pragma mark Delete
 
 + (void) destroyAllLocal;
+- (void) destroyLocal;
+
 
 
 #pragma mark -
