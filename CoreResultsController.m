@@ -20,9 +20,8 @@
 
 - (void) fetch:(id)parameters {
 
-    // If parameter is a predicate, set it on the results controller
-    if ([parameters isKindOfClass:[NSPredicate class]])
-        self.fetchRequest.predicate = parameters;
+    // Generate predicate from parameters and set on fetch request
+    self.fetchRequest.predicate = [CoreUtils predicateFromObject:parameters];
 
     NSError *error = nil;
 	if (![self performFetch:&error]) {

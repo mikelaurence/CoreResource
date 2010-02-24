@@ -17,7 +17,7 @@
 @property (nonatomic, retain) CoreResultsController *coreResultsController;
 
 #pragma mark -
-#pragma mark Date methods
+#pragma mark Results methods
 - (Class) model;
 - (int) resultsSectionCount;
 - (BOOL) hasResults;
@@ -31,5 +31,10 @@
 #pragma mark Table view methods
 - (UITableViewCell*) tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath;
 - (UITableViewCell*) noResultsCellForTableView:(UITableView*)tableView;
+
+#pragma mark -
+#pragma mark Core Results Controller
+- (void) setSectionKeyPath:(NSString*)keyPath;
+- (CoreResultsController*) coreResultsControllerWithSectionKeyPath:(NSString*)keyPath;
 
 @end

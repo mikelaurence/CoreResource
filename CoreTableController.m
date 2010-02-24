@@ -110,17 +110,36 @@
 }
 
 
-- (CoreResultsController*) coreResultsController {
-    if (coreResultsController == nil) {
-        self.coreResultsController = [[[CoreResultsController alloc] 
-            initWithFetchRequest:[[self model] fetchRequestWithDefaultSort]
-            managedObjectContext:[[self model] managedObjectContext] 
-            sectionNameKeyPath:nil 
-            cacheName:nil] autorelease];
-        coreResultsController.entityClass = [self model];
-        coreResultsController.delegate = self;
+
+#pragma mark -
+#pragma mark Core Results Controller
+
+- (void) setSectionKeyPath:(NSString*)keyPath {
+    if (coreResultsController != nil) {
+        // Cancel if the key path isn't changing
+        if ([coreResultsController.sectionNameKeyPath isEqualToString:keyPath])
+            return;
+            
+        [coreResultsController release];
     }
+    self.coreResultsController = [self coreResultsControllerWithSectionKeyPath:keyPath];
+}
+
+- (CoreResultsController*) coreResultsController {
+    if (coreResultsController == nil)
+        self.coreResultsController = [self coreResultsControllerWithSectionKeyPath:nil];
     return coreResultsController;
+}
+
+- (CoreResultsController*) coreResultsControllerWithSectionKeyPath:(NSString*)keyPath {
+    CoreResultsController* controller = [[[CoreResultsController alloc] 
+        initWithFetchRequest:[[self model] fetchRequestWithDefaultSort]
+        managedObjectContext:[[self model] managedObjectContext] 
+        sectionNameKeyPath:keyPath
+        cacheName:nil] autorelease];
+    controller.entityClass = [self model];
+    controller.delegate = self;
+    return controller;
 }
 
 
