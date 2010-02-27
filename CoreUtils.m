@@ -19,41 +19,6 @@
 }
 
 
-
-/**
-    Generates a predicate from the following kinds of objects:
-    Predicate - returns untouched
-    Dictionary - keys equalling values
-    String - straight transformation using predicate formatting
-*/
-+ (NSPredicate*) predicateFromObject:(id)object {
-    if (object != nil) {
-        if ([object isKindOfClass:[NSPredicate class]])
-            return object;
-            
-        if ([object isKindOfClass:[NSString class]])
-            return [NSPredicate predicateWithFormat:(NSString*)object];
-
-        if ([object isKindOfClass:[NSDictionary class]]) {
-
-            // Generate mutable string & array to hold expression & arguments, respectively
-            NSMutableString *expression = [NSMutableString string];
-            NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:[(NSDictionary*)object count]];
-        
-            // Iterate through dictionary keys to add to predicate expression/arguments
-            for (NSString *key in (NSDictionary*)object) {
-                [expression appendFormat:@"%@%@=\%@", [expression length] > 0 ? @" AND" : @"", key];
-                [arguments addObject:[(NSDictionary*)object objectForKey:key]];
-            }
-            
-            return [NSPredicate predicateWithFormat:expression argumentArray:arguments];
-        }
-    }
-
-    return [NSPredicate predicateWithValue:YES];
-}
-
-
 /**
     Generates an array of sort descriptors based on a SQL-esque string
     Example: "lastName ASC updatedAt DESC"
@@ -71,6 +36,14 @@
         }
     }
     return sortDescriptors;
+}
+
++ (NSArray*) sortDescriptorsFromParameters:(id)parameters {
+    if ([parameters isKindOfClass:[NSString class]])
+        return [self sortDescriptorsFromString:parameters];
+    else if ([parameters isKindOfClass:[NSArray class]])
+        return parameters;
+    return nil;
 }
 
 + (NSURL*) URLWithSite:(NSString*)site andFormat:(NSString*)format andParameters:(id)parameters {
@@ -103,5 +76,55 @@
     
     return [NSURL URLWithString:str];
 }
+
+
+
+
+#pragma mark -
+#pragma mark Predicates
+
+/**
+    Generates a predicate from the following kinds of objects:
+    Predicate - returns untouched
+    Dictionary - keys equalling values
+    String - straight transformation using predicate formatting
+*/
++ (NSPredicate*) predicateFromObject:(id)object {
+    return object != nil ? [[self variablePredicateFromObject:object] predicateWithSubstitutionVariables:object] : nil;
+}
+
++ (NSPredicate*) variablePredicateFromObject:(id)object {
+    if (object != nil) {
+        if ([object isKindOfClass:[NSPredicate class]])
+            return object;
+            
+        if ([object isKindOfClass:[NSString class]])
+            return [NSPredicate predicateWithFormat:(NSString*)object];
+
+        if ([object isKindOfClass:[NSDictionary class]]) {
+            NSMutableArray *predicates = [NSMutableArray arrayWithCapacity:[object count]];
+            for (NSString *key in object) {
+                [predicates addObject:
+                    [self equivalencyPredicateForKey:key]];
+                    //[[self equivalencyPredicateForKey:key andValue:[object objectForKey:key]] 
+                    //    predicateWithSubstitutionVariables:object]];
+            }
+            
+            return [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+        }
+    }
+
+    return [NSPredicate predicateWithValue:YES];
+}
+
++ (NSPredicate*) equivalencyPredicateForKey:(NSString*)key {
+    return [NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:key] 
+        rightExpression:[NSExpression expressionForVariable:key]
+        modifier:NSDirectPredicateModifier 
+        type:NSEqualToPredicateOperatorType 
+        options:0];
+}
+
+
 
 @end

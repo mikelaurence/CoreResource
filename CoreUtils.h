@@ -10,8 +10,14 @@
 }
 
 + (BOOL) runningInSimulator;
-+ (NSPredicate*) predicateFromObject:(id)object;
 + (NSArray*) sortDescriptorsFromString:(NSString*)string;
++ (NSArray*) sortDescriptorsFromParameters:(id)parameters;
 + (NSURL*) URLWithSite:(NSString*)site andFormat:(NSString*)format andParameters:(id)parameters;
+
+#pragma mark -
+#pragma mark Predicates
++ (NSPredicate*) variablePredicateFromObject:(id)object;
++ (NSPredicate*) predicateFromObject:(id)object;
++ (NSPredicate*) equivalencyPredicateForKey:(NSString*)key;
 
 @end

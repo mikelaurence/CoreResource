@@ -147,6 +147,10 @@
     return [[self coreManager] managedObjectContext];
 }
 
++ (NSManagedObjectModel*) managedObjectModel {
+    return [[self coreManager] managedObjectModel];
+}
+
 + (NSString*) entityName {
     return [NSString stringWithFormat:@"%@", self];
 }
@@ -427,8 +431,36 @@
 }
 
 + (CoreResult*) findAllLocal:(id)parameters {
+    NSFetchRequest* fetch = nil;
     NSError* error = nil;
-    NSFetchRequest* fetch = [self fetchRequestWithSort:nil andPredicate:[self predicateWithParameters:parameters]];
+
+    // If there's a template parameter, use it to get a stored fetch request (increases efficiency)
+    NSString* templateName = [parameters isKindOfClass:[NSDictionary class]] ? [parameters objectForKey:@"$template"] : nil;
+    if (templateName != nil)
+        fetch = [[[self class] managedObjectModel] fetchRequestFromTemplateWithName:templateName substitutionVariables:parameters];
+
+    // If no fetch template was found, generate one
+    if (fetch == nil) {
+        id sortParameters = [parameters isKindOfClass:[NSDictionary class]] ?
+            [CoreUtils sortDescriptorsFromParameters:[parameters objectForKey:@"$sort"]] : nil;
+        fetch = [self fetchRequestWithSort:sortParameters 
+            andPredicate:templateName != nil ? 
+                [self variablePredicateWithParameters:parameters] :
+                [self predicateWithParameters:parameters]];
+        
+        // If there's a template name, store this fetch as a template
+        if (templateName != nil) {
+            [[[self class] managedObjectModel] setFetchRequestTemplate:fetch forName:templateName];
+                
+            // Now apply the substitution variables by resetting the fetch request to the template-provided version
+            if (parameters != nil)
+                fetch = [[[self class] managedObjectModel] fetchRequestFromTemplateWithName:templateName substitutionVariables:parameters];
+        }
+    }
+    
+    //NSLog(@"[Fetch] params: %@, fetch request: %@", parameters, fetch);
+
+    // Perform fetch
     NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
 
     CoreResult* result = [[[CoreResult alloc] initWithResources:resources] autorelease];
@@ -540,22 +572,33 @@
     return fetchRequest;
 }
 
-+ (NSFetchRequest*) fetchRequestWithSort:(NSString*)sorting andPredicate:(NSPredicate*)predicate {
++ (NSFetchRequest*) fetchRequestWithSort:(id)sorting andPredicate:(NSPredicate*)predicate {
     NSFetchRequest *fetchRequest = [self fetchRequest];
-    [fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromString:sorting]];
+    [fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromParameters:sorting]];
     [fetchRequest setPredicate:predicate];
     return fetchRequest;
 }
 
-+ (NSPredicate*) predicateWithParameters:(id)parameters {
-    // If parameters are a string, just reuse it in the predicate
-    if ([parameters isKindOfClass:[NSString class]])
-        return [NSPredicate predicateWithFormat:parameters];
-
-    return nil;
++ (NSPredicate*) variablePredicateWithParameters:(id)parameters {    
+    // If parameters are a dictionary, remove all meta keys ($sort, $template, etc.) 
+    // and any attributes that don't exist for this class
+    if ([parameters isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary* mutableParameters = [NSMutableDictionary dictionaryWithCapacity:[parameters count]];
+        for (NSString* key in parameters) {
+            if ([self propertyDescriptionForField:key] != nil)
+                [mutableParameters setObject:[parameters objectForKey:key] forKey:key];
+        }
+        return [CoreUtils variablePredicateFromObject:mutableParameters];
+    }
+    
+    return [CoreUtils variablePredicateFromObject:parameters];
 }
 
-+ (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey {
++ (NSPredicate*) predicateWithParameters:(id)parameters {
+    return parameters != nil ? [[self variablePredicateWithParameters:parameters] predicateWithSubstitutionVariables:parameters] : nil;
+}
+
++ (CoreResultsController*) coreResultsControllerWithSort:(id)sorting andSectionKey:(NSString*)sectionKey {
     NSFetchRequest *fetchRequest = [self fetchRequestWithSort:sorting andPredicate:nil];
     return [self coreResultsControllerWithRequest:fetchRequest andSectionKey:sectionKey];
 }

@@ -60,6 +60,7 @@ typedef enum _Action {
 #pragma mark Core Data
 
 + (NSManagedObjectContext*) managedObjectContext;
++ (NSManagedObjectModel*) managedObjectModel;
 + (NSString*) entityName;
 + (NSEntityDescription*) entityDescription;
 + (NSDictionary*) relationshipsByName;
@@ -119,9 +120,10 @@ typedef enum _Action {
 
 + (NSFetchRequest*) fetchRequest;
 + (NSFetchRequest*) fetchRequestWithDefaultSort;
-+ (NSFetchRequest*) fetchRequestWithSort:(NSString*)sorting andPredicate:(NSPredicate*)predicate;
++ (NSFetchRequest*) fetchRequestWithSort:(id)sorting andPredicate:(NSPredicate*)predicate;
 + (NSPredicate*) predicateWithParameters:(id)parameters;
-+ (CoreResultsController*) coreResultsControllerWithSort:(NSString*)sorting andSectionKey:(NSString*)sectionKey;
++ (NSPredicate*) variablePredicateWithParameters:(id)parameters;
++ (CoreResultsController*) coreResultsControllerWithSort:(id)sorting andSectionKey:(NSString*)sectionKey;
 + (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
 
 
