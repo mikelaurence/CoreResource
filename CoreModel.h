@@ -39,6 +39,8 @@ typedef enum _Action {
 + (NSString*) bundlePathForResource:(id)resourceId action:(Action)action;
 - (NSString*) bundlePathForAction:(Action)action;
 
++ (void) configureRequest:(CoreRequest*)request forAction:(NSString*)action;
+
 
 #pragma mark -
 #pragma mark Serialization

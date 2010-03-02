@@ -58,6 +58,8 @@
     return [[self class] bundlePathForResource:[self localId] action:action];
 }
 
++ (void) configureRequest:(CoreRequest*)request forAction:(NSString*)action {}
+
 
 
 #pragma mark -
@@ -481,6 +483,7 @@
     request.didFailSelector = @selector(findRemoteDidFail:);
     request.coreDelegate = del;
     request.coreSelector = selector;
+    [self configureRequest:request forAction:@"find"];
 
     // If we're using bundle requests, just attempt to find the data within the project
     if ([self useBundleRequests]) {
@@ -509,6 +512,7 @@
     request.didFailSelector = @selector(findRemoteDidFail:);
     request.coreDelegate = del;
     request.coreSelector = selector;
+    [self configureRequest:request forAction:@"findAll"];
 
     // If we're using bundle requests, just attempt to find the data within the project
     if ([self useBundleRequests]) {
