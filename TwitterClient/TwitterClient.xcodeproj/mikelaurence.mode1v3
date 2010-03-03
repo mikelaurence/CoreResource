@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5EED84C113E356A004DAE9C</string>
+										<string>B5EED851113E4B20004DAE9C</string>
 										<key>history</key>
 										<array>
 											<string>B567B82A11226F5C0053A7E9</string>
@@ -344,24 +344,18 @@
 											<string>B567B92B1122721A0053A7E9</string>
 											<string>B567B9BD1122785A0053A7E9</string>
 											<string>B567BA2011227A640053A7E9</string>
-											<string>B567BAA9112281CB0053A7E9</string>
-											<string>B567BAAA112281CB0053A7E9</string>
 											<string>B567BB111122899A0053A7E9</string>
 											<string>B567BB2811228AC60053A7E9</string>
 											<string>B567BB2911228AC60053A7E9</string>
 											<string>B567BB2A11228AC60053A7E9</string>
 											<string>B5EED79F113E2D19004DAE9C</string>
-											<string>B5EED801113E312E004DAE9C</string>
-											<string>B5EED802113E312E004DAE9C</string>
-											<string>B5EED803113E312E004DAE9C</string>
-											<string>B5EED80E113E31B0004DAE9C</string>
 											<string>B5EED80F113E31B0004DAE9C</string>
 											<string>B5EED810113E31B0004DAE9C</string>
 											<string>B5EED832113E33FA004DAE9C</string>
 											<string>B5EED833113E33FA004DAE9C</string>
 											<string>B5EED834113E33FA004DAE9C</string>
 											<string>B5EED839113E3412004DAE9C</string>
-											<string>B5EED83A113E3412004DAE9C</string>
+											<string>B5EED850113E4B20004DAE9C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -588,7 +582,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResultsController.m</string>
+								<string>StatusesController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

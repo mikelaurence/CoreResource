@@ -111,9 +111,9 @@
 
         NSArray* data = [self dataCollectionFromDeserializedCollection:deserialized];
         if (data != nil) {
-            NSLog(@"Deserializing %@ %@", [NSNumber numberWithInt:[deserialized count]], [self remoteCollectionName]);
+            NSLog(@"Deserializing %@ %@", [NSNumber numberWithInt:[data count]], [self remoteCollectionName]);
             NSMutableArray *objs = [NSMutableArray arrayWithCapacity:[(NSArray*)data count]];
-            for (NSMutableDictionary *dict in (NSArray*)deserialized) {
+            for (NSMutableDictionary *dict in (NSArray*)data) {
                 id obj = [self createOrUpdateWithDictionary:dict];
                 if (obj != nil)
                     [objs addObject:obj];
