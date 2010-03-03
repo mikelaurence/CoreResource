@@ -12,7 +12,7 @@
 @implementation User
 
 @dynamic createdAt;
-@dynamic description;
+@dynamic desc;
 @dynamic following;
 @dynamic friendsCount;
 @dynamic location;

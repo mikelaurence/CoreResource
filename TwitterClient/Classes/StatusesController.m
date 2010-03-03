@@ -17,15 +17,22 @@
 
 - (Class) model { return [Status class]; }
 
-- (void) viewDidLoad {
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+
+    // Send off remote find request
+    [Status findAllRemote];
+
     // Activate local & remote fetch of statuses
-    [[self coreResultsController].fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromString:@"createdAt DESC"]];
-    [[self coreResultsController] fetch];
+    [[self coreResultsController] fetch:[NSDictionary dictionaryWithObjectsAndKeys:
+        @"createdAt DESC", @"$sort", 
+        @"statusList", @"$template",
+        nil]];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Simply return DynamicCell's computed height
-    return [(DynamicCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath] height];
+    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell isKindOfClass:[DynamicCell class]] ? [(DynamicCell*)cell height] : 60.0;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
@@ -33,7 +40,7 @@
     // Get/create dynamic cell
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"StatusCell"];
     if (cell == nil) {
-        cell = [[DynamicCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"StatusCell"];
+        cell = [DynamicCell cellWithReuseIdentifier:@"StatusCell"];
         cell.defaultFont = [UIFont systemFontOfSize:14.0];
     }
 
@@ -45,6 +52,7 @@
     [cell addLabelWithText:status.text];
     UILabel *dateLabel = [cell addLabelWithText:[status.createdAt stringDaysAgoAgainstMidnight:YES] andFont:[UIFont italicSystemFontOfSize:12.0]];
     dateLabel.textColor = [UIColor grayColor];
+    [cell prepare];
 
     return cell;
 }

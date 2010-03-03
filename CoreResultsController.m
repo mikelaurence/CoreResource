@@ -8,6 +8,7 @@
 
 #import "CoreResultsController.h"
 #import "CoreUtils.h"
+#import "NSString+InflectionSupport.h"
 
 
 @implementation CoreResultsController
@@ -20,8 +21,11 @@
 
 - (void) fetch:(id)parameters {
 
-    // Generate predicate from parameters and set on fetch request
-    self.fetchRequest.predicate = [CoreUtils predicateFromObject:parameters];
+    // Generate throwaway fetch request so we can pull out the predicate/sort descriptors/etc.
+    // (since we can't just reassign the results controller fetch request)
+    NSFetchRequest* fetch = [entityClass performSelector:@selector(fetchRequest:) withObject:parameters];
+    self.fetchRequest.predicate = [fetch predicate];
+    [self.fetchRequest setSortDescriptors:[fetch sortDescriptors]];
 
     NSError *error = nil;
 	if (![self performFetch:&error]) {

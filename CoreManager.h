@@ -53,12 +53,9 @@
 
 - (NSString *)applicationDocumentsDirectory;
 
-
 #pragma mark -
 #pragma mark Networking
-+ (BOOL) checkReachability:(BOOL)showConnectionError;
 - (void) enqueueRequest:(ASIHTTPRequest*)request;
-
 
 #pragma mark -
 #pragma mark Alerts & Errors

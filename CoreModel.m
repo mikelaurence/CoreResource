@@ -433,35 +433,10 @@
 }
 
 + (CoreResult*) findAllLocal:(id)parameters {
-    NSFetchRequest* fetch = nil;
+    // Generate (or get templated) fetch request
+    NSFetchRequest* fetch = [self fetchRequest:parameters];
     NSError* error = nil;
-
-    // If there's a template parameter, use it to get a stored fetch request (increases efficiency)
-    NSString* templateName = [parameters isKindOfClass:[NSDictionary class]] ? [parameters objectForKey:@"$template"] : nil;
-    if (templateName != nil)
-        fetch = [[[self class] managedObjectModel] fetchRequestFromTemplateWithName:templateName substitutionVariables:parameters];
-
-    // If no fetch template was found, generate one
-    if (fetch == nil) {
-        id sortParameters = [parameters isKindOfClass:[NSDictionary class]] ?
-            [CoreUtils sortDescriptorsFromParameters:[parameters objectForKey:@"$sort"]] : nil;
-        fetch = [self fetchRequestWithSort:sortParameters 
-            andPredicate:templateName != nil ? 
-                [self variablePredicateWithParameters:parameters] :
-                [self predicateWithParameters:parameters]];
-        
-        // If there's a template name, store this fetch as a template
-        if (templateName != nil) {
-            [[[self class] managedObjectModel] setFetchRequestTemplate:fetch forName:templateName];
-                
-            // Now apply the substitution variables by resetting the fetch request to the template-provided version
-            if (parameters != nil)
-                fetch = [[[self class] managedObjectModel] fetchRequestFromTemplateWithName:templateName substitutionVariables:parameters];
-        }
-    }
     
-    //NSLog(@"[Fetch] params: %@, fetch request: %@", parameters, fetch);
-
     // Perform fetch
     NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
 
@@ -567,6 +542,36 @@
     NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
     [fetchRequest setEntity:[self entityDescription]];
     return fetchRequest;
+}
+
++ (NSFetchRequest*) fetchRequest:(id)parameters {
+    NSFetchRequest* fetch = nil;
+
+    // If there's a template parameter, use it to get a stored fetch request (increases efficiency)
+    NSString* templateName = [parameters isKindOfClass:[NSDictionary class]] ? [parameters objectForKey:@"$template"] : nil;
+    if (templateName != nil)
+        fetch = [[[self class] managedObjectModel] fetchRequestFromTemplateWithName:templateName substitutionVariables:parameters];
+
+    // If no fetch template was found, generate one
+    if (fetch == nil) {
+        id sortParameters = [parameters isKindOfClass:[NSDictionary class]] ?
+            [CoreUtils sortDescriptorsFromParameters:[parameters objectForKey:@"$sort"]] : nil;
+        fetch = [self fetchRequestWithSort:sortParameters 
+            andPredicate:templateName != nil ? 
+                [self variablePredicateWithParameters:parameters] :
+                [self predicateWithParameters:parameters]];
+        
+        // If there's a template name, store this fetch as a template
+        if (templateName != nil) {
+            [[[self class] managedObjectModel] setFetchRequestTemplate:fetch forName:templateName];
+                
+            // Now apply the substitution variables by resetting the fetch request to the template-provided version
+            if (parameters != nil)
+                fetch = [[[self class] managedObjectModel] fetchRequestFromTemplateWithName:templateName substitutionVariables:parameters];
+        }
+    }
+    
+    return fetch;
 }
 
 + (NSFetchRequest*) fetchRequestWithDefaultSort {

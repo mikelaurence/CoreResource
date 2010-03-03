@@ -22,16 +22,14 @@
 
     // Create & configure Core Manager
     coreManager = [[CoreManager alloc] init];
+    //coreManager.useBundleRequests = YES;
+    coreManager.remoteSiteURL = @"twitter.com";
+    coreManager.logLevel = 5;
     
-    // Twitter date format: Tue Feb 09 19:38:16 +0000 2010
+    // Set default date format to Twitter standard: Tue Feb 09 19:38:16 +0000 2010
     coreManager.defaultDateParser = [[NSDateFormatter alloc] init];
     [coreManager.defaultDateParser setDateFormat:@"EEE MMM dd HH:mm:ss ZZZZ yyyy"];
     
-    coreManager.useBundleRequests = YES;
-    coreManager.remoteSiteURL = @"twitter.com";
-    coreManager.logLevel = 5;
-    [coreManager retain];
-
     // Configure window
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];

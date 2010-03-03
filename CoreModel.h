@@ -121,6 +121,7 @@ typedef enum _Action {
 #pragma mark Results Management
 
 + (NSFetchRequest*) fetchRequest;
++ (NSFetchRequest*) fetchRequest:(id)parameters;
 + (NSFetchRequest*) fetchRequestWithDefaultSort;
 + (NSFetchRequest*) fetchRequestWithSort:(id)sorting andPredicate:(NSPredicate*)predicate;
 + (NSPredicate*) predicateWithParameters:(id)parameters;

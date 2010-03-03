@@ -52,23 +52,6 @@ static CoreManager* _main;
 #pragma mark -
 #pragma mark Networking
 
-+ (BOOL) checkReachability: (BOOL) showConnectionError {
-    // Check if the remote server is available
-    Reachability *reachManager = [Reachability sharedReachability];
-    [reachManager setHostName: @"api.meetup.com"];
-    NetworkStatus remoteHostStatus = [reachManager remoteHostStatus];
-    if (remoteHostStatus == NotReachable) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
-        
-        if (showConnectionError)
-            [self alertWithTitle:@"Network Error" 
-                andMessage:@"Oops - cannot reach the server! Please ensure you have Internet connectivity and try again."];
-        
-        return NO;
-    }
-    return YES;
-}
-
 - (void) enqueueRequest:(ASIHTTPRequest*)request {
     if ([CoreManager main].logLevel > 2);
         NSLog(@"[CoreManager#enqueueRequest] request queued: %@", request.url);
@@ -76,6 +59,7 @@ static CoreManager* _main;
 }
 
 
+#pragma mark -
 # pragma mark Alerts
 
 + (void) alertWithError:(NSError*)error {
@@ -107,7 +91,6 @@ static CoreManager* _main;
 
 #pragma mark -
 #pragma mark Core Data stack
-
 
 /**
 

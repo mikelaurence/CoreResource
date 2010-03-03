@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, retain) NSDate *createdAt;
-@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *desc;
 @property (nonatomic, retain) NSNumber *following;
 @property (nonatomic, retain) NSNumber *friendsCount;
 @property (nonatomic, retain) NSString *location;
