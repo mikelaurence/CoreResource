@@ -18,6 +18,25 @@
     return NO;
 }
 
+NSDictionary* $D(id firstObject, ...) {
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    id eachObject;
+    id key = firstObject;
+    va_list argumentList;
+    va_start(argumentList, firstObject);
+    while (eachObject = va_arg(argumentList, id)) {
+        if (key != nil) {
+            [dict setObject:eachObject forKey:key];
+            key = nil;
+        }
+        else
+            key = eachObject;
+    }
+    va_end(argumentList);
+    return dict;
+}
+
+
 
 /**
     Generates an array of sort descriptors based on a SQL-esque string

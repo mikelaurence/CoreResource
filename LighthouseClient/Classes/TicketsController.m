@@ -7,8 +7,9 @@
 //
 
 #import "TicketsController.h"
-#import "Ticket.h"
+#import "TicketController.h"
 #import "DynamicCell.h"
+#import "CoreUtils.h"
 
 
 @implementation TicketsController
@@ -16,6 +17,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [Ticket findAll];
+    [[self coreResultsController] fetch:[NSDictionary dictionaryWithObject:@"priority ASC" forKey:@"$sort"]];
 }
 
 
@@ -37,19 +39,39 @@
 
 - (UITableViewCell*) tableView:(UITableView *)tableView resultCellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    static float defaultFontSize = 17.0;
+    static float defaultFontSize = 15.0;
 
-    DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"DynamicCell"];
+    DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"TicketsCell"];
     if (cell == nil) {
-        cell = [DynamicCell cellWithReuseIdentifier:@"DynamicCell"];
+        cell = [DynamicCell cellWithReuseIdentifier:@"TicketsCell"];
+        cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     Ticket *ticket = (Ticket*)[self resourceAtIndexPath:indexPath];
     
     [cell reset];
-    [cell addLabelWithText:ticket.title andFont:[UIFont boldSystemFontOfSize:defaultFontSize]];
+
+    // Priority label
+    UILabel* priorityLabel = [cell addLabelWithText:[ticket.priority stringValue] 
+        andFont:[UIFont boldSystemFontOfSize:defaultFontSize * 3]];
+    priorityLabel.textColor = [UIColor orangeColor];
+
+    // Title label
+    [cell addLabelWithText:ticket.title andFont:[UIFont boldSystemFontOfSize:defaultFontSize] onNewLine:NO];
+    
+    // User labels
+    UILabel *userLabel = [cell addLabelWithText:[NSString stringWithFormat:@"Assigned to %@", ticket.assignedUserName]];
+    userLabel.textColor = [UIColor grayColor];
+
     [cell prepare];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TicketController *ticketController = [[[TicketController alloc] initWithNibName:nil bundle:nil] autorelease];
+    ticketController.ticket = (Ticket*)[self resourceAtIndexPath:indexPath];
+    [self.navigationController pushViewController:ticketController animated:YES];
 }
 
 

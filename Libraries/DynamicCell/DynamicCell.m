@@ -151,10 +151,17 @@
                     paddingLeft : 
                     lastFrame.origin.x + lastFrame.size.width + columnSpacing;
             
+            // Calculate bounds width (generally remaining width of cell minus any accessory view)
+            float boundsWidth = self.bounds.size.width;
+            if (self.accessoryView != nil)
+                boundsWidth -= self.accessoryView.bounds.size.width - columnSpacing;
+            if (self.accessoryType != UITableViewCellAccessoryNone)
+                boundsWidth -= 20.0 - columnSpacing;
+            
             // Calculate size to constrain element to
             float maxWidth = (columnPositions != nil && (viewIndex + 1) < [columnPositions count] ?
                 [[columnPositions objectAtIndex:viewIndex + 1] floatValue] : 
-                self.bounds.size.width) - 
+                boundsWidth) - 
                 originX - (viewIndex < [columnPositions count] - 1 ? columnSpacing : 0);
             CGSize constrainedSize = CGSizeMake(maxWidth, maxRowHeight);
             

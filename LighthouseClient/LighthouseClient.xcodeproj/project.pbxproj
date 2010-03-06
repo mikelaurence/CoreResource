@@ -50,6 +50,8 @@
 		B5A9C5581142C4080007B71C /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54C1142C4080007B71C /* NSSet+Core.m */; };
 		B5A9C5591142C4080007B71C /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54E1142C4080007B71C /* NSString+InflectionSupport.m */; };
 		B5A9C5C11142CA880007B71C /* tickets.json in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C5341142C3B20007B71C /* tickets.json */; };
+		B5A9C6541142DB020007B71C /* TicketController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C6521142DB020007B71C /* TicketController.m */; };
+		B5A9C6551142DB020007B71C /* TicketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C6531142DB020007B71C /* TicketController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,9 @@
 		B5A9C54C1142C4080007B71C /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Core.m"; path = "../NSSet+Core.m"; sourceTree = SOURCE_ROOT; };
 		B5A9C54D1142C4080007B71C /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+InflectionSupport.h"; path = "../NSString+InflectionSupport.h"; sourceTree = SOURCE_ROOT; };
 		B5A9C54E1142C4080007B71C /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+InflectionSupport.m"; path = "../NSString+InflectionSupport.m"; sourceTree = SOURCE_ROOT; };
+		B5A9C6511142DB020007B71C /* TicketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketController.h; sourceTree = "<group>"; };
+		B5A9C6521142DB020007B71C /* TicketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketController.m; sourceTree = "<group>"; };
+		B5A9C6531142DB020007B71C /* TicketController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,10 +162,13 @@
 				B5A9C5381142C3F10007B71C /* CoreResource */,
 				B5A9C52D1142C2F40007B71C /* Models */,
 				B5A9C4E01142C2E10007B71C /* Libraries */,
-				28216C950DB411BC00E5133A /* TicketsController.h */,
-				28216C960DB411BC00E5133A /* TicketsController.m */,
 				1D3623240D0F684500981E51 /* LighthouseClientAppDelegate.h */,
 				1D3623250D0F684500981E51 /* LighthouseClientAppDelegate.m */,
+				28216C950DB411BC00E5133A /* TicketsController.h */,
+				28216C960DB411BC00E5133A /* TicketsController.m */,
+				B5A9C6511142DB020007B71C /* TicketController.h */,
+				B5A9C6521142DB020007B71C /* TicketController.m */,
+				B5A9C6531142DB020007B71C /* TicketController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				B5A9C52B1142C2E10007B71C /* README.textile in Resources */,
 				B5A9C5C11142CA880007B71C /* tickets.json in Resources */,
+				B5A9C6551142DB020007B71C /* TicketController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +446,7 @@
 				B5A9C5571142C4080007B71C /* NSObject+Core.m in Sources */,
 				B5A9C5581142C4080007B71C /* NSSet+Core.m in Sources */,
 				B5A9C5591142C4080007B71C /* NSString+InflectionSupport.m in Sources */,
+				B5A9C6541142DB020007B71C /* TicketController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

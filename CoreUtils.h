@@ -9,6 +9,8 @@
 @interface CoreUtils : NSObject {
 }
 
+NSDictionary* $D(id firstKey, ...);
+
 + (BOOL) runningInSimulator;
 + (NSArray*) sortDescriptorsFromString:(NSString*)string;
 + (NSArray*) sortDescriptorsFromParameters:(id)parameters;

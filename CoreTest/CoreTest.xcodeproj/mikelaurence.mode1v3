@@ -279,13 +279,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>30</integer>
 									<integer>28</integer>
 									<integer>22</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 372}, {317, 904}}</string>
+							<string>{{0, 0}, {317, 904}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CoreResource.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string></string>
+										<string>CoreResource.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5A9C3B51142AFE10007B71C</string>
+										<string>B5A9C6681142DBF80007B71C</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -348,15 +349,12 @@
 											<string>B5A29983111A76BF009D4758</string>
 											<string>B5A29984111A76BF009D4758</string>
 											<string>B5A299BE111A7E46009D4758</string>
-											<string>B5A299F6111AA5D2009D4758</string>
 											<string>B56FDB2A111B39FC00D4CEA7</string>
 											<string>B56FDB60111B3BE400D4CEA7</string>
 											<string>B56FDB75111B3D8800D4CEA7</string>
 											<string>B56FDB76111B3D8800D4CEA7</string>
 											<string>B56FDB77111B3D8800D4CEA7</string>
-											<string>B56FDB8C111B3E8600D4CEA7</string>
 											<string>B56FDBAC111B3F8600D4CEA7</string>
-											<string>B56FDEC0111B981000D4CEA7</string>
 											<string>B56FDEC1111B981000D4CEA7</string>
 											<string>B56FDEC2111B981000D4CEA7</string>
 											<string>B56FDEC3111B981000D4CEA7</string>
@@ -384,6 +382,11 @@
 											<string>B5A9C3901142AED20007B71C</string>
 											<string>B5A9C3A61142AF9F0007B71C</string>
 											<string>B5A9C3B41142AFE10007B71C</string>
+											<string>B5A9C6631142DBF80007B71C</string>
+											<string>B5A9C6641142DBF80007B71C</string>
+											<string>B5A9C6651142DBF80007B71C</string>
+											<string>B5A9C6661142DBF80007B71C</string>
+											<string>B5A9C6671142DBF80007B71C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -583,9 +586,9 @@
 	<array>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/CoreTest/CoreTest.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>59 65 1533 963 0 0 1680 1028 </string>
@@ -609,7 +612,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CoreResource.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -680,7 +683,7 @@
 			<key>WindowToolGUID</key>
 			<string>B5BAC03F10FFE02400D57FCA</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
