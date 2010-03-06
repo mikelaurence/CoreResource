@@ -13,13 +13,21 @@
 @implementation TicketController
 
 @synthesize ticket;
+static UIFont *boldFont;
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+}
 
 
 #pragma mark -
 #pragma mark Table View Methods
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 4;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -30,6 +38,8 @@
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     static float defaultFontSize = 15.0;
+    if (boldFont == nil)
+        boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];
 
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"TicketCell"];
     if (cell == nil) {
@@ -38,14 +48,33 @@
     }
     
     [cell reset];
-
-    // Priority label
-    UILabel* priorityLabel = [cell addLabelWithText:[ticket.priority stringValue] 
-        andFont:[UIFont boldSystemFontOfSize:defaultFontSize * 3]];
-    priorityLabel.textColor = [UIColor orangeColor];
-
-    // Title label
-    [cell addLabelWithText:ticket.title andFont:[UIFont boldSystemFontOfSize:defaultFontSize] onNewLine:NO];
+    
+    switch (indexPath.row) {
+    case 0:
+        // Title label
+        [cell addLabelWithText:ticket.title andFont:[boldFont fontWithSize:defaultFontSize * 1.1]];
+        break;
+    case 1:
+        // Priority label
+        [cell addLabelWithText:@"Priority:"];
+        UILabel *priorityLabel = [cell addLabelWithText:[ticket.priority stringValue] andFont:boldFont onNewLine:NO];
+        priorityLabel.textColor = [UIColor orangeColor];
+        break;
+    case 2:
+        // User labels
+        [cell addLabelWithText:@"Created by:"];
+        [cell addLabelWithText:ticket.creatorName andFont:boldFont onNewLine:NO];
+        [cell addLabelWithText:@"Created at:"];
+        [cell addLabelWithText:[dateFormatter stringFromDate:ticket.createdAt] andFont:boldFont onNewLine:NO];
+        [cell addLabelWithText:@"Assigned to:"];
+        [cell addLabelWithText:ticket.assignedUserName andFont:boldFont onNewLine:NO];
+        break;
+    case 3:
+        // Body
+        [cell addLabelWithText:@"Body:" andFont:boldFont];
+        [cell addLabelWithText:ticket.latestBody andFont:[UIFont systemFontOfSize:defaultFontSize * 0.9]];
+        break;
+    }
 
     [cell prepare];
     return cell;
@@ -54,6 +83,7 @@
 
 
 - (void) dealloc {
+    [dateFormatter release];
     [ticket release];
     [super dealloc];
 }

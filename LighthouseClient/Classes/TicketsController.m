@@ -70,7 +70,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TicketController *ticketController = [[[TicketController alloc] initWithNibName:nil bundle:nil] autorelease];
-    ticketController.ticket = (Ticket*)[self resourceAtIndexPath:indexPath];
+    Ticket *ticket = (Ticket*)[self resourceAtIndexPath:indexPath];
+    ticketController.ticket = ticket;
+    ticketController.title = [NSString stringWithFormat:@"Ticket #%@", ticket.number];
     [self.navigationController pushViewController:ticketController animated:YES];
 }
 

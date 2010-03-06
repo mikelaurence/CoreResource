@@ -12,6 +12,7 @@
 @implementation Ticket
 
 @dynamic assignedUserName;
+@dynamic createdAt;
 @dynamic creatorName;
 @dynamic latestBody;
 @dynamic priority;

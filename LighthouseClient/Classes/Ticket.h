@@ -14,6 +14,7 @@
 }
 
 @property (nonatomic, retain) NSString * assignedUserName;
+@property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSString * creatorName;
 @property (nonatomic, retain) NSString * latestBody;
 @property (nonatomic, retain) NSNumber * priority;

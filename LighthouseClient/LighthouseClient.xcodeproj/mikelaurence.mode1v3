@@ -266,7 +266,9 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>B5A9C5331142C3A30007B71C</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>B5A9C52D1142C2F40007B71C</string>
 								<string>B5A9C4E01142C2E10007B71C</string>
+								<string>B5A9C4EF1142C2E10007B71C</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
@@ -277,7 +279,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>7</integer>
+									<integer>5</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -320,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TicketsController.m</string>
+								<string>LighthouseResource.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,27 +331,28 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TicketsController.m</string>
+										<string>LighthouseResource.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5A9C69C1142DD470007B71C</string>
+										<string>B5A9C6E91142E43D0007B71C</string>
 										<key>history</key>
 										<array>
-											<string>B5A9C5821142C6DC0007B71C</string>
-											<string>B5A9C5831142C6DC0007B71C</string>
-											<string>B5A9C5841142C6DC0007B71C</string>
 											<string>B5A9C5851142C6DC0007B71C</string>
 											<string>B5A9C5901142C8190007B71C</string>
 											<string>B5A9C5AE1142CA410007B71C</string>
-											<string>B5A9C5FC1142D5980007B71C</string>
-											<string>B5A9C6071142D67B0007B71C</string>
-											<string>B5A9C6311142D88D0007B71C</string>
-											<string>B5A9C6581142DB1B0007B71C</string>
-											<string>B5A9C68B1142DCEE0007B71C</string>
 											<string>B5A9C68C1142DCEE0007B71C</string>
-											<string>B5A9C6941142DD000007B71C</string>
-											<string>B5A9C6951142DD000007B71C</string>
+											<string>B5A9C6A81142DE8A0007B71C</string>
+											<string>B5A9C6BF1142E0FD0007B71C</string>
+											<string>B5A9C6C11142E0FD0007B71C</string>
+											<string>B5A9C6C21142E0FD0007B71C</string>
+											<string>B5A9C6C51142E10B0007B71C</string>
+											<string>B5A9C6CE1142E1340007B71C</string>
+											<string>B5A9C6D41142E1570007B71C</string>
+											<string>B5A9C6DF1142E35E0007B71C</string>
+											<string>B5A9C6E61142E43D0007B71C</string>
+											<string>B5A9C6E71142E43D0007B71C</string>
+											<string>B5A9C6E81142E43D0007B71C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -551,8 +555,8 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5A9C3DF1142C2A30007B71C</string>
-		<string>/Users/mikelaurence/Projects/CoreResource/LighthouseClient/LighthouseClient.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/mikelaurence/Projects/CoreResource/LighthouseClient/LighthouseClient.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>105 114 1471 867 0 0 1680 1028 </string>
@@ -578,7 +582,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TicketController.m</string>
+								<string>TicketsController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
