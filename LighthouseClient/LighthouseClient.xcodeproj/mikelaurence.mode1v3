@@ -279,7 +279,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
+									<integer>21</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LighthouseClientAppDelegate.m</string>
+								<string>TicketsController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,28 +330,28 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LighthouseClientAppDelegate.m</string>
+										<string>TicketsController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5A9C6FB1142E7E00007B71C</string>
+										<string>B5A9C7131142E9040007B71C</string>
 										<key>history</key>
 										<array>
 											<string>B5A9C5851142C6DC0007B71C</string>
 											<string>B5A9C5901142C8190007B71C</string>
 											<string>B5A9C5AE1142CA410007B71C</string>
-											<string>B5A9C68C1142DCEE0007B71C</string>
 											<string>B5A9C6A81142DE8A0007B71C</string>
 											<string>B5A9C6BF1142E0FD0007B71C</string>
 											<string>B5A9C6C11142E0FD0007B71C</string>
 											<string>B5A9C6C21142E0FD0007B71C</string>
 											<string>B5A9C6C51142E10B0007B71C</string>
-											<string>B5A9C6CE1142E1340007B71C</string>
 											<string>B5A9C6E71142E43D0007B71C</string>
 											<string>B5A9C6EA1142E4A40007B71C</string>
 											<string>B5A9C6EF1142E4E80007B71C</string>
 											<string>B5A9C6F91142E7E00007B71C</string>
-											<string>B5A9C6FA1142E7E00007B71C</string>
+											<string>B5A9C7001142E85F0007B71C</string>
+											<string>B5A9C7031142E8BD0007B71C</string>
+											<string>B5A9C7041142E8BD0007B71C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

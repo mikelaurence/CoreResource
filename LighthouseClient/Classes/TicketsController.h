@@ -11,7 +11,8 @@
 
 
 @interface TicketsController : CoreTableController {
-
 }
+
+- (IBAction) refresh;
 
 @end

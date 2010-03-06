@@ -20,6 +20,10 @@
     [[self coreResultsController] fetch:[NSDictionary dictionaryWithObject:@"priority ASC" forKey:@"$sort"]];
 }
 
+- (IBAction) refresh {
+    [Ticket findAllRemote];
+}
+
 
 #pragma mark -
 #pragma mark Core table controller methods
@@ -69,6 +73,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     TicketController *ticketController = [[[TicketController alloc] initWithNibName:nil bundle:nil] autorelease];
     Ticket *ticket = (Ticket*)[self resourceAtIndexPath:indexPath];
     ticketController.ticket = ticket;
