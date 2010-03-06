@@ -29,13 +29,10 @@
     /*
     if (PRODUCTION == 1) {
         NSLog(@"===== RUNNING IN PRODUCTION MODE =====");
-        coreManager.remoteSiteURL = @"https://devcache-1001-3.dns2go.com/RestServer/practices/1001/patients";
-        [Patient findAll];
-        //[Event findAll];
     }
     else {
         coreManager.remoteSiteURL = @"http://localhost:4567";
-        [Patient findAll:nil andNotify:self withSelector:@selector(mockCompleted:)];
+        [Ticket findAll:nil andNotify:self withSelector:@selector(mockCompleted:)];
     }
     */
     

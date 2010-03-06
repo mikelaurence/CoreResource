@@ -45,6 +45,7 @@ static UIFont *boldFont;
     if (cell == nil) {
         cell = [DynamicCell cellWithReuseIdentifier:@"TicketCell"];
         cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     }
     
     [cell reset];
