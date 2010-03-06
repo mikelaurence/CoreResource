@@ -37,10 +37,12 @@ static UIFont *boldFont;
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    // Default fonts
     static float defaultFontSize = 15.0;
     if (boldFont == nil)
         boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];
 
+    // Get existing or create Dynamic Cell
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"TicketCell"];
     if (cell == nil) {
         cell = [DynamicCell cellWithReuseIdentifier:@"TicketCell"];
@@ -50,6 +52,7 @@ static UIFont *boldFont;
     
     [cell reset];
     
+    // Add different UI elements based on cell row
     switch (indexPath.row) {
     case 0:
         // Title label

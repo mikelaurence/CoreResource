@@ -20,7 +20,6 @@
     
     // Initialize Core Manager
     self.coreManager = [[[CoreManager alloc] init] autorelease];
-    //[coreManager.defaultDateParser setDateFormat:@"MM-dd-yyyy HH:mm:ss"];
     coreManager.logLevel = 1;
     coreManager.remoteSiteURL = @"http://coreresource.lighthouseapp.com";
     //coreManager.useBundleRequests = YES;

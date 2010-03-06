@@ -1,6 +1,5 @@
 //
 //  DynamicCell.m
-//  MeridianRemote
 //
 //  Created by Mike Laurence on 2/5/10.
 //  Copyright 2010 Pathfinder Development. All rights reserved.

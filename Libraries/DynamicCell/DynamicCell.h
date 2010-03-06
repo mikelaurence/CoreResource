@@ -1,13 +1,11 @@
 //
 //  DynamicCell.h
-//  MeridianRemote
 //
 //  Created by Mike Laurence on 2/5/10.
 //  Copyright 2010 Pathfinder Development. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
 
 @interface DynamicCell : UITableViewCell {
     // Layout attributes
@@ -106,8 +104,6 @@
 - (UIButton*) addButtonOfType:(UIButtonType)type withTitle:(NSString*)title andTarget:(id)target action:(SEL)action;
 - (UIButton*) addButtonOfType:(UIButtonType)type withTitle:(NSString*)title andTarget:(id)target action:(SEL)action onNewLine:(BOOL)newLine;
 - (UIButton*) buttonOfType:(UIButtonType)type;
-
-
 
 #pragma mark -
 #pragma mark External view access

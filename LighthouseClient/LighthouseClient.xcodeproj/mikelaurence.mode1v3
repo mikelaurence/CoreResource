@@ -279,13 +279,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>3</integer>
+									<integer>34</integer>
+									<integer>30</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 43}, {291, 808}}</string>
+							<string>{{0, 0}, {291, 808}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -304,7 +304,7 @@
 							<real>291</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>105 114 1471 867 0 0 1680 1028 </string>
+						<string>113 110 1471 867 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -315,14 +315,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TicketsController.m</string>
+								<string>LighthouseClient-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,28 +328,29 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TicketsController.m</string>
+										<string>LighthouseClient-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5A9C7131142E9040007B71C</string>
+										<string>B5A9C7701142FF420007B71C</string>
 										<key>history</key>
 										<array>
-											<string>B5A9C5851142C6DC0007B71C</string>
 											<string>B5A9C5901142C8190007B71C</string>
 											<string>B5A9C5AE1142CA410007B71C</string>
-											<string>B5A9C6A81142DE8A0007B71C</string>
-											<string>B5A9C6BF1142E0FD0007B71C</string>
 											<string>B5A9C6C11142E0FD0007B71C</string>
 											<string>B5A9C6C21142E0FD0007B71C</string>
-											<string>B5A9C6C51142E10B0007B71C</string>
 											<string>B5A9C6E71142E43D0007B71C</string>
-											<string>B5A9C6EA1142E4A40007B71C</string>
 											<string>B5A9C6EF1142E4E80007B71C</string>
-											<string>B5A9C6F91142E7E00007B71C</string>
-											<string>B5A9C7001142E85F0007B71C</string>
 											<string>B5A9C7031142E8BD0007B71C</string>
-											<string>B5A9C7041142E8BD0007B71C</string>
+											<string>B5A9C71D1142EAAC0007B71C</string>
+											<string>B5A9C7691142FF420007B71C</string>
+											<string>B5A9C76A1142FF420007B71C</string>
+											<string>B5A9C76B1142FF420007B71C</string>
+											<string>B5A9C76C1142FF420007B71C</string>
+											<string>B5A9C76D1142FF420007B71C</string>
+											<string>B5A9C76E1142FF420007B71C</string>
+											<string>B5A9C76F1142FF420007B71C</string>
+											<string>B5A9C72F1142EB2C0007B71C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -365,7 +364,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1158, 640}}</string>
 								<key>RubberWindowFrame</key>
-								<string>105 114 1471 867 0 0 1680 1028 </string>
+								<string>113 110 1471 867 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -385,7 +384,7 @@
 								<key>Frame</key>
 								<string>{{0, 645}, {1158, 181}}</string>
 								<key>RubberWindowFrame</key>
-								<string>105 114 1471 867 0 0 1680 1028 </string>
+								<string>113 110 1471 867 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -553,12 +552,12 @@
 		<string>B5A9C5DB1142CB930007B71C</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>B5A9C3DF1142C2A30007B71C</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>B5A9C3DF1142C2A30007B71C</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/LighthouseClient/LighthouseClient.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>105 114 1471 867 0 0 1680 1028 </string>
+	<string>113 110 1471 867 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -792,12 +791,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>&lt;No Editor&gt;</string>
+										<string>DynamicCell.h</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -818,8 +819,6 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -931,7 +930,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

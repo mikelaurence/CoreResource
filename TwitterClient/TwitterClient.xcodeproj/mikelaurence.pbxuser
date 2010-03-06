@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* TwitterClientAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 1045}}";
-			sepNavSelRange = "{458, 0}";
-			sepNavVisRange = "{255, 945}";
+			sepNavIntBoundsRect = "{{0, 0}, {940, 1045}}";
+			sepNavSelRange = "{489, 0}";
+			sepNavVisRange = "{255, 926}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* TwitterClient */ = {
@@ -44,7 +44,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B567B743112249760053A7E9 /* TwitterClient */;
-		activeSDKPreference = iphonesimulator3.1;
+		activeSDKPreference = iphoneos3.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* TwitterClient */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* TwitterClient */,
@@ -61,7 +61,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					968,
+					589,
 					20,
 					48,
 					43,
@@ -100,8 +100,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289587836;
-			PBXWorkspaceStateSaveDate = 289587836;
+			PBXPerProjectTemplateStateSaveDate = 289603286;
+			PBXWorkspaceStateSaveDate = 289603286;
 		};
 		perUserProjectItems = {
 			B567B82A11226F5C0053A7E9 = B567B82A11226F5C0053A7E9 /* PBXTextBookmark */;
@@ -110,10 +110,8 @@
 			B567B92B1122721A0053A7E9 = B567B92B1122721A0053A7E9 /* PBXTextBookmark */;
 			B567B9BD1122785A0053A7E9 = B567B9BD1122785A0053A7E9 /* PBXTextBookmark */;
 			B567BA2011227A640053A7E9 = B567BA2011227A640053A7E9 /* PBXTextBookmark */;
-			B567BB111122899A0053A7E9 = B567BB111122899A0053A7E9 /* PBXTextBookmark */;
-			B567BB2811228AC60053A7E9 = B567BB2811228AC60053A7E9 /* PBXTextBookmark */;
-			B567BB2911228AC60053A7E9 = B567BB2911228AC60053A7E9 /* PBXTextBookmark */;
 			B567BB2A11228AC60053A7E9 = B567BB2A11228AC60053A7E9 /* PBXTextBookmark */;
+			B5A9C72A1142EB290007B71C = B5A9C72A1142EB290007B71C /* PBXTextBookmark */;
 			B5EED79F113E2D19004DAE9C = B5EED79F113E2D19004DAE9C /* PBXTextBookmark */;
 			B5EED80F113E31B0004DAE9C = B5EED80F113E31B0004DAE9C /* PBXTextBookmark */;
 			B5EED810113E31B0004DAE9C = B5EED810113E31B0004DAE9C /* PBXTextBookmark */;
@@ -121,7 +119,6 @@
 			B5EED833113E33FA004DAE9C = B5EED833113E33FA004DAE9C /* XDModelBookmark */;
 			B5EED834113E33FA004DAE9C = B5EED834113E33FA004DAE9C /* PBXTextBookmark */;
 			B5EED839113E3412004DAE9C = B5EED839113E3412004DAE9C /* PBXTextBookmark */;
-			B5EED850113E4B20004DAE9C = B5EED850113E4B20004DAE9C /* PBXTextBookmark */;
 			B5EED851113E4B20004DAE9C = B5EED851113E4B20004DAE9C /* PBXTextBookmark */;
 		};
 		sourceControlManager = B567B7BE1122498E0053A7E9 /* Source Control */;
@@ -498,60 +495,6 @@
 		vrLen = 506;
 		vrLoc = 0;
 	};
-	B567BB06112289300053A7E9 /* NSDate+Helper.h */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = sourcecode.c.h;
-		name = "NSDate+Helper.h";
-		path = "/Users/mikelaurence/Projects/CoreResource/TwitterClient/Classes/NSDate+Helper.h";
-		sourceTree = "<absolute>";
-	};
-	B567BB07112289300053A7E9 /* NSDate+Helper.m */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = sourcecode.c.objc;
-		name = "NSDate+Helper.m";
-		path = "/Users/mikelaurence/Projects/CoreResource/TwitterClient/Classes/NSDate+Helper.m";
-		sourceTree = "<absolute>";
-	};
-	B567BB08112289300053A7E9 /* README.textile */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = text;
-		name = README.textile;
-		path = /Users/mikelaurence/Projects/CoreResource/TwitterClient/Classes/README.textile;
-		sourceTree = "<absolute>";
-	};
-	B567BB111122899A0053A7E9 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B567BB08112289300053A7E9 /* README.textile */;
-		name = "README.textile: 5";
-		rLen = 0;
-		rLoc = 210;
-		rType = 0;
-		vrLen = 1478;
-		vrLoc = 0;
-	};
-	B567BB2811228AC60053A7E9 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B567BB06112289300053A7E9 /* NSDate+Helper.h */;
-		name = "NSDate+Helper.h: 17";
-		rLen = 0;
-		rLoc = 364;
-		rType = 0;
-		vrLen = 783;
-		vrLoc = 0;
-	};
-	B567BB2911228AC60053A7E9 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B567BB07112289300053A7E9 /* NSDate+Helper.m */;
-		name = "NSDate+Helper.m: 40";
-		rLen = 28;
-		rLoc = 1007;
-		rType = 0;
-		vrLen = 846;
-		vrLoc = 502;
-	};
 	B567BB2A11228AC60053A7E9 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623240D0F684500981E51 /* TwitterClientAppDelegate.h */;
@@ -561,6 +504,16 @@
 		rType = 0;
 		vrLen = 535;
 		vrLoc = 0;
+	};
+	B5A9C72A1142EB290007B71C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* TwitterClientAppDelegate.m */;
+		name = "TwitterClientAppDelegate.m: 23";
+		rLen = 0;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 927;
+		vrLoc = 255;
 	};
 	B5EED76A113E2A49004DAE9C /* README.textile */ = {
 		uiCtxt = {
@@ -633,16 +586,6 @@
 		rType = 0;
 		vrLen = 383;
 		vrLoc = 0;
-	};
-	B5EED850113E4B20004DAE9C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* TwitterClientAppDelegate.m */;
-		name = "TwitterClientAppDelegate.m: 27";
-		rLen = 0;
-		rLoc = 664;
-		rType = 0;
-		vrLen = 945;
-		vrLoc = 255;
 	};
 	B5EED851113E4B20004DAE9C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
