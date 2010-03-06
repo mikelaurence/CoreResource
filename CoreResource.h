@@ -56,6 +56,8 @@ typedef enum _Action {
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
 + (NSArray*) deserializeFromString:(NSString*)serializedString;
 + (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection;
+- (NSString*) serialize;
+- (NSString*) serialize:(id)parameters;
 
 
 #pragma mark -

@@ -4,6 +4,11 @@
 - Relationship deserialization currently only works for bidirectional relationships
 
 
+## Planned Features
+
+- Asynchronous image download helpers/views (probably centrally managed in case models deallocate before images finish downloading)
+
+
 ## License
 
 (The MIT License)

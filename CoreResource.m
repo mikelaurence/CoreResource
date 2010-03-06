@@ -141,6 +141,17 @@
 }
 
 
+- (NSString*) serialize {
+    return [self serialize:nil];
+}
+
+- (NSString*) serialize:(id)parameters {
+    // Build dictionary
+    return nil;
+}
+
+
+
 
 #pragma mark -
 #pragma mark Core Data
