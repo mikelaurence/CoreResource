@@ -26,10 +26,6 @@
 		B5A9C51D1142C2E10007B71C /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4EC1142C2E10007B71C /* ASINetworkQueue.m */; };
 		B5A9C51E1142C2E10007B71C /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4EE1142C2E10007B71C /* ASINSStringAdditions.m */; };
 		B5A9C51F1142C2E10007B71C /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4F11142C2E10007B71C /* DynamicCell.m */; };
-		B5A9C5201142C2E10007B71C /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4FD1142C2E10007B71C /* GHUnitIPhoneTestMain.m */; };
-		B5A9C5211142C2E10007B71C /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4FF1142C2E10007B71C /* libGHUnitIPhone3_0.a */; };
-		B5A9C5221142C2E10007B71C /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5001142C2E10007B71C /* Makefile */; };
-		B5A9C5231142C2E10007B71C /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C5031142C2E10007B71C /* RunTests.sh */; };
 		B5A9C5241142C2E10007B71C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5071142C2E10007B71C /* NSObject+SBJSON.m */; };
 		B5A9C5251142C2E10007B71C /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5091142C2E10007B71C /* NSString+SBJSON.m */; };
 		B5A9C5261142C2E10007B71C /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C50B1142C2E10007B71C /* SBJSON.m */; };
@@ -53,6 +49,7 @@
 		B5A9C5571142C4080007B71C /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54A1142C4080007B71C /* NSObject+Core.m */; };
 		B5A9C5581142C4080007B71C /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54C1142C4080007B71C /* NSSet+Core.m */; };
 		B5A9C5591142C4080007B71C /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54E1142C4080007B71C /* NSString+InflectionSupport.m */; };
+		B5A9C5C11142CA880007B71C /* tickets.json in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C5341142C3B20007B71C /* tickets.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,23 +85,6 @@
 		B5A9C4EE1142C2E10007B71C /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
 		B5A9C4F01142C2E10007B71C /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCell.h; sourceTree = "<group>"; };
 		B5A9C4F11142C2E10007B71C /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCell.m; sourceTree = "<group>"; };
-		B5A9C4F31142C2E10007B71C /* GHAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHAsyncTestCase.h; sourceTree = "<group>"; };
-		B5A9C4F41142C2E10007B71C /* GHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTest.h; sourceTree = "<group>"; };
-		B5A9C4F51142C2E10007B71C /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestCase.h; sourceTree = "<group>"; };
-		B5A9C4F61142C2E10007B71C /* GHTestGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestGroup.h; sourceTree = "<group>"; };
-		B5A9C4F71142C2E10007B71C /* GHTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTesting.h; sourceTree = "<group>"; };
-		B5A9C4F81142C2E10007B71C /* GHTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestMacros.h; sourceTree = "<group>"; };
-		B5A9C4F91142C2E10007B71C /* GHTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestRunner.h; sourceTree = "<group>"; };
-		B5A9C4FA1142C2E10007B71C /* GHTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestSuite.h; sourceTree = "<group>"; };
-		B5A9C4FB1142C2E10007B71C /* GHUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnit.h; sourceTree = "<group>"; };
-		B5A9C4FC1142C2E10007B71C /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnitIPhoneAppDelegate.h; sourceTree = "<group>"; };
-		B5A9C4FD1142C2E10007B71C /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIPhoneTestMain.m; sourceTree = "<group>"; };
-		B5A9C4FE1142C2E10007B71C /* GHUNSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUNSObject+Swizzle.h"; sourceTree = "<group>"; };
-		B5A9C4FF1142C2E10007B71C /* libGHUnitIPhone3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGHUnitIPhone3_0.a; sourceTree = "<group>"; };
-		B5A9C5001142C2E10007B71C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		B5A9C5011142C2E10007B71C /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+GHTestFailureExceptions.h"; sourceTree = "<group>"; };
-		B5A9C5021142C2E10007B71C /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+GHValueFormatter.h"; sourceTree = "<group>"; };
-		B5A9C5031142C2E10007B71C /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		B5A9C5051142C2E10007B71C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		B5A9C5061142C2E10007B71C /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		B5A9C5071142C2E10007B71C /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -165,7 +145,6 @@
 				B5A9C4DC1142C2C30007B71C /* libz.1.2.3.dylib in Frameworks */,
 				B5A9C4DD1142C2C30007B71C /* CFNetwork.framework in Frameworks */,
 				B5A9C4DE1142C2C30007B71C /* CoreData.framework in Frameworks */,
-				B5A9C5211142C2E10007B71C /* libGHUnitIPhone3_0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +225,6 @@
 			children = (
 				B5A9C4E11142C2E10007B71C /* ASIHTTPRequest */,
 				B5A9C4EF1142C2E10007B71C /* DynamicCell */,
-				B5A9C4F21142C2E10007B71C /* GHUnit */,
 				B5A9C5041142C2E10007B71C /* JSON */,
 				B5A9C5121142C2E10007B71C /* NSDate-Helper */,
 				B5A9C5161142C2E10007B71C /* Reachability */,
@@ -282,30 +260,6 @@
 				B5A9C4F11142C2E10007B71C /* DynamicCell.m */,
 			);
 			path = DynamicCell;
-			sourceTree = "<group>";
-		};
-		B5A9C4F21142C2E10007B71C /* GHUnit */ = {
-			isa = PBXGroup;
-			children = (
-				B5A9C4F31142C2E10007B71C /* GHAsyncTestCase.h */,
-				B5A9C4F41142C2E10007B71C /* GHTest.h */,
-				B5A9C4F51142C2E10007B71C /* GHTestCase.h */,
-				B5A9C4F61142C2E10007B71C /* GHTestGroup.h */,
-				B5A9C4F71142C2E10007B71C /* GHTesting.h */,
-				B5A9C4F81142C2E10007B71C /* GHTestMacros.h */,
-				B5A9C4F91142C2E10007B71C /* GHTestRunner.h */,
-				B5A9C4FA1142C2E10007B71C /* GHTestSuite.h */,
-				B5A9C4FB1142C2E10007B71C /* GHUnit.h */,
-				B5A9C4FC1142C2E10007B71C /* GHUnitIPhoneAppDelegate.h */,
-				B5A9C4FD1142C2E10007B71C /* GHUnitIPhoneTestMain.m */,
-				B5A9C4FE1142C2E10007B71C /* GHUNSObject+Swizzle.h */,
-				B5A9C4FF1142C2E10007B71C /* libGHUnitIPhone3_0.a */,
-				B5A9C5001142C2E10007B71C /* Makefile */,
-				B5A9C5011142C2E10007B71C /* NSException+GHTestFailureExceptions.h */,
-				B5A9C5021142C2E10007B71C /* NSValue+GHValueFormatter.h */,
-				B5A9C5031142C2E10007B71C /* RunTests.sh */,
-			);
-			path = GHUnit;
 			sourceTree = "<group>";
 		};
 		B5A9C5041142C2E10007B71C /* JSON */ = {
@@ -439,8 +393,8 @@
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
-				B5A9C5231142C2E10007B71C /* RunTests.sh in Resources */,
 				B5A9C52B1142C2E10007B71C /* README.textile in Resources */,
+				B5A9C5C11142CA880007B71C /* tickets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +415,6 @@
 				B5A9C51D1142C2E10007B71C /* ASINetworkQueue.m in Sources */,
 				B5A9C51E1142C2E10007B71C /* ASINSStringAdditions.m in Sources */,
 				B5A9C51F1142C2E10007B71C /* DynamicCell.m in Sources */,
-				B5A9C5201142C2E10007B71C /* GHUnitIPhoneTestMain.m in Sources */,
-				B5A9C5221142C2E10007B71C /* Makefile in Sources */,
 				B5A9C5241142C2E10007B71C /* NSObject+SBJSON.m in Sources */,
 				B5A9C5251142C2E10007B71C /* NSString+SBJSON.m in Sources */,
 				B5A9C5261142C2E10007B71C /* SBJSON.m in Sources */,
@@ -506,6 +458,7 @@
 					"\"$(SRCROOT)/../Libraries/GHUnit\"",
 				);
 				PRODUCT_NAME = LighthouseClient;
+				SDKROOT = iphoneos3.1;
 			};
 			name = Debug;
 		};
@@ -522,6 +475,7 @@
 					"\"$(SRCROOT)/../Libraries/GHUnit\"",
 				);
 				PRODUCT_NAME = LighthouseClient;
+				SDKROOT = iphoneos3.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreManager.h"
+
 
 @interface LighthouseClientAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+    CoreManager *coreManager;
+    
     UIWindow *window;
     UITabBarController *tabBarController;
 }
+
+@property (nonatomic, retain) CoreManager *coreManager;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;

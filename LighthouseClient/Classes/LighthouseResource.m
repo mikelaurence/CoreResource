@@ -7,6 +7,7 @@
 //
 
 #import "LighthouseResource.h"
+#import "NSString+InflectionSupport.h"
 
 
 @implementation LighthouseResource
@@ -20,9 +21,12 @@
 }
 
 // Remove nesting from JSON response
-+ (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection {
-    NSMutableArray* array = [NSMutableArray arrayWithCapacity:[deserializedCollection count]];
-    for (NSDictionary* dict in deserializedCollection)
++ (NSArray*) dataCollectionFromDeserializedCollection:(id)deserializedCollection {
+
+    NSArray* collectionArray = [[[deserializedCollection objectAtIndex:0] allValues] objectAtIndex:0];
+
+    NSMutableArray* array = [NSMutableArray arrayWithCapacity:[collectionArray count]];
+    for (NSDictionary* dict in collectionArray)
         [array addObject:[[dict allValues] objectAtIndex:0]];
     
     return array;

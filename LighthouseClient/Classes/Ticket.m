@@ -22,11 +22,11 @@
 @dynamic url;
 
 + (NSString*) localIdField {
-    return @"number"
+    return @"number";
 }
 
 + (NSString*) remoteIdField {
-    return @"number"
+    return @"number";
 }
 
 @end
