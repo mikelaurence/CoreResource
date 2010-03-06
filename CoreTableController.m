@@ -37,9 +37,9 @@
     return 1;
 }
 
-- (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath {
+- (CoreResource*) resourceAtIndexPath:(NSIndexPath*)indexPath {
     if (indexPath.section < [self resultsSectionCount])
-        return (CoreModel*)[[self coreResultsController] objectAtIndexPath:indexPath];
+        return (CoreResource*)[[self coreResultsController] objectAtIndexPath:indexPath];
     return nil;
 }
 
@@ -77,7 +77,7 @@
     if (cell == nil)
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefaultCell"] autorelease];
     
-    CoreModel *resource = [self resourceAtIndexPath:indexPath];
+    CoreResource *resource = [self resourceAtIndexPath:indexPath];
     cell.textLabel.text = [resource performSelector:
         ([resource respondsToSelector:@selector(title)] ? @selector(title) :
             ([resource respondsToSelector:@selector(name)] ? @selector(name) : @selector(description)))];

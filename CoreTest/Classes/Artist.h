@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CoreModel.h"
+#import "CoreResource.h"
 
 
-@interface Artist : CoreModel {
+@interface Artist : CoreResource {
 }
 
 @property (nonatomic, retain) NSString * detail;

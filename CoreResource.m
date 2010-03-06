@@ -1,19 +1,19 @@
 //
-//  CoreModel.m
+//  CoreResource.m
 //  CoreResource
 //
 //  Created by Mike Laurence on 12/24/09.
 //  Copyright Mike Laurence 2010. All rights reserved.
 //
 
-#import "CoreModel.h"
+#import "CoreResource.h"
 #import "CoreUtils.h"
 #import "CoreRequest.h"
 #import "CoreResult.h"
 #import "JSON.h"
 #import "NSString+InflectionSupport.h"
 
-@implementation CoreModel
+@implementation CoreResource
 
 #pragma mark -
 #pragma mark Configuration
@@ -214,7 +214,7 @@
 }
 
 + (id) createWithDictionary:(NSDictionary*)dict {
-    CoreModel *newObject = [[[self alloc] initWithEntity:[self entityDescription] 
+    CoreResource *newObject = [[[self alloc] initWithEntity:[self entityDescription] 
         insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]] autorelease];
     [newObject updateWithDictionary:dict];
     
@@ -254,7 +254,7 @@
         if (fetchError == nil) {
             // If there is a result, check to see whether we should update it or not
             if ([fetchResults count] > 0) {
-                CoreModel *existingObject = [fetchResults objectAtIndex:0];
+                CoreResource *existingObject = [fetchResults objectAtIndex:0];
                 [existingObject updateWithDictionary:dict];
                 return existingObject;
             }
@@ -268,7 +268,7 @@
     return [self createWithDictionary:dict];
 }
 
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)relatedObject {
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject {
     id object = [self createOrUpdateWithDictionary:dict];
     
     // If object was created/updated successfully, link relationship
@@ -525,7 +525,7 @@
 #pragma mark Delete
 
 + (void) destroyAllLocal {
-    for (CoreModel* model in [[[self class] findAllLocal] resources])
+    for (CoreResource* model in [[[self class] findAllLocal] resources])
         [[self managedObjectContext] deleteObject:model];
 }
 

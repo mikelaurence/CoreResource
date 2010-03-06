@@ -1,5 +1,5 @@
 //
-//  CoreModelCreateTests.m
+//  CoreResourceCreateTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -8,10 +8,10 @@
 
 #import "CoreResourceTestCase.h"
 
-@interface CoreModelCreateTests : CoreResourceTestCase {}
+@interface CoreResourceCreateTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelCreateTests
+@implementation CoreResourceCreateTests
 
 #pragma mark -
 #pragma mark Create

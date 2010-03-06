@@ -7,7 +7,7 @@
 //
 
 #import "CoreResultsController.h"
-#import "CoreModel.h"
+#import "CoreResource.h"
 
 
 @interface CoreTableController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>  {
@@ -23,7 +23,7 @@
 - (BOOL) hasResults;
 - (id) resultsInfoForSection:(int)section;
 - (int) resultsCountForSection:(int)section;
-- (CoreModel*) resourceAtIndexPath:(NSIndexPath*)indexPath;
+- (CoreResource*) resourceAtIndexPath:(NSIndexPath*)indexPath;
 - (NSString*) noResultsMessage;
 - (BOOL) hasNoResultsMessage;
 

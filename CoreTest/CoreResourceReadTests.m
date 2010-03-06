@@ -1,5 +1,5 @@
 //
-//  CoreModelReadTests.m
+//  CoreResourceReadTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -8,10 +8,10 @@
 
 #import "CoreResourceTestCase.h"
 
-@interface CoreModelReadTests : CoreResourceTestCase {}
+@interface CoreResourceReadTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelReadTests
+@implementation CoreResourceReadTests
 
 - (void) setUp {
     [CoreManager main].bundleRequestDelay = 0;

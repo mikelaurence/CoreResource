@@ -38,22 +38,22 @@
 #pragma mark -
 #pragma mark Convenience fetch methods
 
-- (void) fetchForRelatedResource:(CoreModel*)resource withSort:(NSString*)sort {
+- (void) fetchForRelatedResource:(CoreResource*)resource withSort:(NSString*)sort {
     [self fetchForRelatedResource:resource withParameters:nil andSort:sort];
 }
 
-- (void) fetchForRelatedResource:(CoreModel*)resource withParameters:(id)parameters andSort:(NSString*)sort {
+- (void) fetchForRelatedResource:(CoreResource*)resource withParameters:(id)parameters andSort:(NSString*)sort {
     [self fetchForResource:resource 
         inRelationship:[NSStringFromClass([resource class]) decapitalize]
         withParameters:parameters
         andSort:sort];
 }
 
-- (void) fetchForResource:(CoreModel*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort {
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort {
     [self fetchForResource:resource inRelationship:relationshipName withParameters:nil andSort:sort];
 }
 
-- (void) fetchForResource:(CoreModel*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort {
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort {
     // Configure sort
     [self.fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromString:sort]];
 

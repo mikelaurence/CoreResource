@@ -1,5 +1,5 @@
 //
-//  CoreModelDestroyTests.m
+//  CoreResourceDestroyTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -8,10 +8,10 @@
 
 #import "CoreResourceTestCase.h"
 
-@interface CoreModelDestroyTests : CoreResourceTestCase {}
+@interface CoreResourceDestroyTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelDestroyTests
+@implementation CoreResourceDestroyTests
 
 #pragma mark -
 #pragma mark Results Management

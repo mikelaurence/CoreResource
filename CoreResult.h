@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CoreRequest.h"
 
-@class CoreModel;
+@class CoreResource;
 
 @interface CoreResult : NSObject {
     CoreRequest* request;
@@ -29,7 +29,7 @@
   Returns a single resource (specifically, the first object in the resources array).
   This is a convenience method for when you know you'll only have one result or when you just don't care.
 */
-- (CoreModel*) resource;
+- (CoreResource*) resource;
 
 - (BOOL) hasAnyResources;
 - (int) resourceCount;

@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B556BB0D1118C33600D4570C /* CoreModelDestroyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */; };
 		B556BBFA1118DA0800D4570C /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = B56851B81100D6BA00A4C816 /* artists.json */; };
 		B556BBFB1118DA0E00D4570C /* artists.0.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA11118D42900D4570C /* artists.0.json */; };
 		B556BBFC1118DA1200D4570C /* artists.1.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA21118D44900D4570C /* artists.1.json */; };
 		B556BBFD1118DA1500D4570C /* artists.2.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA31118D44F00D4570C /* artists.2.json */; };
-		B56418A211064C7900D1B038 /* CoreModelConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */; };
 		B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */; };
-		B56418AB11064E0000D1B038 /* CoreModelCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418AA11064E0000D1B038 /* CoreModelCoreDataTests.m */; };
-		B56418AD11064E3700D1B038 /* CoreModelReadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418AC11064E3700D1B038 /* CoreModelReadTests.m */; };
-		B56418AF11064E5400D1B038 /* CoreModelCreateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418AE11064E5400D1B038 /* CoreModelCreateTests.m */; };
-		B56418B111064E7100D1B038 /* CoreModelUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418B011064E7100D1B038 /* CoreModelUpdateTests.m */; };
-		B56418B411064E9B00D1B038 /* CoreModelResultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418B311064E9B00D1B038 /* CoreModelResultsTests.m */; };
 		B56851FF1100DD2000A4C816 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09810FFE10700D57FCA /* SystemConfiguration.framework */; };
 		B56852001100DD2000A4C816 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09910FFE10700D57FCA /* libz.1.2.3.dylib */; };
 		B56852011100DD2000A4C816 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09A10FFE10700D57FCA /* CFNetwork.framework */; };
@@ -28,7 +21,6 @@
 		B56852051100DD2000A4C816 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		B568524D1100E0AC00A4C816 /* CoreTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CoreTestAppDelegate.m */; };
 		B568524E1100E0AC00A4C816 /* ArtistCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ArtistCollectionController.m */; };
-		B568524F1100E0AC00A4C816 /* CoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04510FFE05D00D57FCA /* CoreModel.m */; };
 		B56852501100E0AC00A4C816 /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */; };
 		B56852511100E0AC00A4C816 /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */; };
 		B56852521100E0AC00A4C816 /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04B10FFE05D00D57FCA /* CoreManager.m */; };
@@ -37,13 +29,21 @@
 		B56852551100E0AC00A4C816 /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC05110FFE05D00D57FCA /* CoreTableController.m */; };
 		B56852611100E0AC00A4C816 /* CoreTest.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0D410FFE1E000D57FCA /* CoreTest.xcdatamodel */; };
 		B56852621100E0AC00A4C816 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0D810FFE27600D57FCA /* Artist.m */; };
-		B56852701100E14E00A4C816 /* CoreModelSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B568526F1100E14E00A4C816 /* CoreModelSerializationTests.m */; };
 		B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B568535B11010A6F00A4C816 /* TestHelpers.m */; };
 		B56853AD1101140300A4C816 /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B56853AC1101140300A4C816 /* CoreResult.m */; };
 		B56FDB5B111B3BDA00D4CEA7 /* artists.0.alternate-field-names.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FDB18111B37F100D4CEA7 /* artists.0.alternate-field-names.json */; };
 		B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FD902111B308900D4CEA7 /* artists.0.update.json */; };
 		B5A6614B110DF95400100C9E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6614A110DF95400100C9E /* Song.m */; };
 		B5A6615C110DF9CD00100C9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6615B110DF9CD00100C9E /* User.m */; };
+		B5A9C39E1142AF950007B71C /* CoreResourceConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */; };
+		B5A9C39F1142AF950007B71C /* CoreResourceCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3971142AF950007B71C /* CoreResourceCoreDataTests.m */; };
+		B5A9C3A01142AF950007B71C /* CoreResourceCreateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3981142AF950007B71C /* CoreResourceCreateTests.m */; };
+		B5A9C3A11142AF950007B71C /* CoreResourceDestroyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3991142AF950007B71C /* CoreResourceDestroyTests.m */; };
+		B5A9C3A21142AF950007B71C /* CoreResourceReadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */; };
+		B5A9C3A31142AF950007B71C /* CoreResourceResultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */; };
+		B5A9C3A41142AF950007B71C /* CoreResourceSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */; };
+		B5A9C3A51142AF950007B71C /* CoreResourceUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */; };
+		B5A9C3AA1142AFC30007B71C /* CoreResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3A91142AFC30007B71C /* CoreResource.m */; };
 		B5EED656113E1AF6004DAE9C /* NSMutableArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED651113E1AF6004DAE9C /* NSMutableArray+Core.m */; };
 		B5EED657113E1AF6004DAE9C /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED653113E1AF6004DAE9C /* NSObject+Core.m */; };
 		B5EED658113E1AF6004DAE9C /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED655113E1AF6004DAE9C /* NSSet+Core.m */; };
@@ -78,22 +78,14 @@
 		28F335F01007B36200424DE2 /* ArtistCollectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCollectionController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CoreTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelDestroyTests.m; sourceTree = "<group>"; };
 		B556BBA11118D42900D4570C /* artists.0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.0.json; sourceTree = "<group>"; };
 		B556BBA21118D44900D4570C /* artists.1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.1.json; sourceTree = "<group>"; };
 		B556BBA31118D44F00D4570C /* artists.2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.2.json; sourceTree = "<group>"; };
-		B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelConfigurationTests.m; sourceTree = "<group>"; };
 		B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceTestCase.m; sourceTree = "<group>"; };
 		B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResourceTestCase.h; sourceTree = "<group>"; };
-		B56418AA11064E0000D1B038 /* CoreModelCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelCoreDataTests.m; sourceTree = "<group>"; };
-		B56418AC11064E3700D1B038 /* CoreModelReadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelReadTests.m; sourceTree = "<group>"; };
-		B56418AE11064E5400D1B038 /* CoreModelCreateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelCreateTests.m; sourceTree = "<group>"; };
-		B56418B011064E7100D1B038 /* CoreModelUpdateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelUpdateTests.m; sourceTree = "<group>"; };
-		B56418B311064E9B00D1B038 /* CoreModelResultsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelResultsTests.m; sourceTree = "<group>"; };
 		B56851B81100D6BA00A4C816 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.json; sourceTree = "<group>"; };
 		B56851D81100D9E700A4C816 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../readme.md; sourceTree = SOURCE_ROOT; };
 		B56851F91100DD0500A4C816 /* CoreTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B568526F1100E14E00A4C816 /* CoreModelSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreModelSerializationTests.m; sourceTree = "<group>"; };
 		B56852981100E3E800A4C816 /* GHLogicTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogicTests_Prefix.pch; sourceTree = "<group>"; };
 		B568535A11010A6F00A4C816 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
 		B568535B11010A6F00A4C816 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
@@ -105,9 +97,17 @@
 		B5A6614A110DF95400100C9E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		B5A6615A110DF9CD00100C9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B5A6615B110DF9CD00100C9E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		B5BAC04510FFE05D00D57FCA /* CoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreModel.m; path = ../CoreModel.m; sourceTree = SOURCE_ROOT; };
+		B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceConfigurationTests.m; sourceTree = "<group>"; };
+		B5A9C3971142AF950007B71C /* CoreResourceCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceCoreDataTests.m; sourceTree = "<group>"; };
+		B5A9C3981142AF950007B71C /* CoreResourceCreateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceCreateTests.m; sourceTree = "<group>"; };
+		B5A9C3991142AF950007B71C /* CoreResourceDestroyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceDestroyTests.m; sourceTree = "<group>"; };
+		B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceReadTests.m; sourceTree = "<group>"; };
+		B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceResultsTests.m; sourceTree = "<group>"; };
+		B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceSerializationTests.m; sourceTree = "<group>"; };
+		B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceUpdateTests.m; sourceTree = "<group>"; };
+		B5A9C3A81142AFC30007B71C /* CoreResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResource.h; path = ../CoreResource.h; sourceTree = SOURCE_ROOT; };
+		B5A9C3A91142AFC30007B71C /* CoreResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResource.m; path = ../CoreResource.m; sourceTree = SOURCE_ROOT; };
 		B5BAC04610FFE05D00D57FCA /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../CoreRequest.h; sourceTree = SOURCE_ROOT; };
-		B5BAC04710FFE05D00D57FCA /* CoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreModel.h; path = ../CoreModel.h; sourceTree = SOURCE_ROOT; };
 		B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResultsController.m; path = ../CoreResultsController.m; sourceTree = SOURCE_ROOT; };
 		B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResultsController.h; path = ../CoreResultsController.h; sourceTree = SOURCE_ROOT; };
 		B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreRequest.m; path = ../CoreRequest.m; sourceTree = SOURCE_ROOT; };
@@ -276,14 +276,14 @@
 				B568535B11010A6F00A4C816 /* TestHelpers.m */,
 				B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */,
 				B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */,
-				B56418A111064C7900D1B038 /* CoreModelConfigurationTests.m */,
-				B568526F1100E14E00A4C816 /* CoreModelSerializationTests.m */,
-				B56418AA11064E0000D1B038 /* CoreModelCoreDataTests.m */,
-				B56418AC11064E3700D1B038 /* CoreModelReadTests.m */,
-				B56418AE11064E5400D1B038 /* CoreModelCreateTests.m */,
-				B56418B011064E7100D1B038 /* CoreModelUpdateTests.m */,
-				B56418B311064E9B00D1B038 /* CoreModelResultsTests.m */,
-				B556BB0C1118C33600D4570C /* CoreModelDestroyTests.m */,
+				B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */,
+				B5A9C3971142AF950007B71C /* CoreResourceCoreDataTests.m */,
+				B5A9C3981142AF950007B71C /* CoreResourceCreateTests.m */,
+				B5A9C3991142AF950007B71C /* CoreResourceDestroyTests.m */,
+				B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */,
+				B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */,
+				B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */,
+				B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -304,10 +304,10 @@
 		B5BAC04410FFE04600D57FCA /* CoreResource */ = {
 			isa = PBXGroup;
 			children = (
+				B5A9C3A81142AFC30007B71C /* CoreResource.h */,
+				B5A9C3A91142AFC30007B71C /* CoreResource.m */,
 				B56853AB1101140300A4C816 /* CoreResult.h */,
 				B56853AC1101140300A4C816 /* CoreResult.m */,
-				B5BAC04710FFE05D00D57FCA /* CoreModel.h */,
-				B5BAC04510FFE05D00D57FCA /* CoreModel.m */,
 				B5BAC04610FFE05D00D57FCA /* CoreRequest.h */,
 				B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */,
 				B5BAC04B10FFE05D00D57FCA /* CoreManager.m */,
@@ -499,7 +499,6 @@
 			files = (
 				B568524D1100E0AC00A4C816 /* CoreTestAppDelegate.m in Sources */,
 				B568524E1100E0AC00A4C816 /* ArtistCollectionController.m in Sources */,
-				B568524F1100E0AC00A4C816 /* CoreModel.m in Sources */,
 				B56852501100E0AC00A4C816 /* CoreResultsController.m in Sources */,
 				B56852511100E0AC00A4C816 /* CoreRequest.m in Sources */,
 				B56852521100E0AC00A4C816 /* CoreManager.m in Sources */,
@@ -508,19 +507,11 @@
 				B56852551100E0AC00A4C816 /* CoreTableController.m in Sources */,
 				B56852611100E0AC00A4C816 /* CoreTest.xcdatamodel in Sources */,
 				B56852621100E0AC00A4C816 /* Artist.m in Sources */,
-				B56852701100E14E00A4C816 /* CoreModelSerializationTests.m in Sources */,
 				B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */,
 				B56853AD1101140300A4C816 /* CoreResult.m in Sources */,
-				B56418A211064C7900D1B038 /* CoreModelConfigurationTests.m in Sources */,
 				B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */,
-				B56418AB11064E0000D1B038 /* CoreModelCoreDataTests.m in Sources */,
-				B56418AD11064E3700D1B038 /* CoreModelReadTests.m in Sources */,
-				B56418AF11064E5400D1B038 /* CoreModelCreateTests.m in Sources */,
-				B56418B111064E7100D1B038 /* CoreModelUpdateTests.m in Sources */,
-				B56418B411064E9B00D1B038 /* CoreModelResultsTests.m in Sources */,
 				B5A6614B110DF95400100C9E /* Song.m in Sources */,
 				B5A6615C110DF9CD00100C9E /* User.m in Sources */,
-				B556BB0D1118C33600D4570C /* CoreModelDestroyTests.m in Sources */,
 				B5EED656113E1AF6004DAE9C /* NSMutableArray+Core.m in Sources */,
 				B5EED657113E1AF6004DAE9C /* NSObject+Core.m in Sources */,
 				B5EED658113E1AF6004DAE9C /* NSSet+Core.m in Sources */,
@@ -539,6 +530,15 @@
 				B5EED6B4113E2009004DAE9C /* SBJsonParser.m in Sources */,
 				B5EED6B5113E2009004DAE9C /* SBJsonWriter.m in Sources */,
 				B5EED6B6113E2009004DAE9C /* Reachability.m in Sources */,
+				B5A9C39E1142AF950007B71C /* CoreResourceConfigurationTests.m in Sources */,
+				B5A9C39F1142AF950007B71C /* CoreResourceCoreDataTests.m in Sources */,
+				B5A9C3A01142AF950007B71C /* CoreResourceCreateTests.m in Sources */,
+				B5A9C3A11142AF950007B71C /* CoreResourceDestroyTests.m in Sources */,
+				B5A9C3A21142AF950007B71C /* CoreResourceReadTests.m in Sources */,
+				B5A9C3A31142AF950007B71C /* CoreResourceResultsTests.m in Sources */,
+				B5A9C3A41142AF950007B71C /* CoreResourceSerializationTests.m in Sources */,
+				B5A9C3A51142AF950007B71C /* CoreResourceUpdateTests.m in Sources */,
+				B5A9C3AA1142AFC30007B71C /* CoreResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

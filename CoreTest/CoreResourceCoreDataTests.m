@@ -1,5 +1,5 @@
 //
-//  CoreModelCoreDataTests.m
+//  CoreResourceCoreDataTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -11,10 +11,10 @@
 #import "Song.h"
 #import "User.h"
 
-@interface CoreModelCoreDataTests : CoreResourceTestCase {}
+@interface CoreResourceCoreDataTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelCoreDataTests
+@implementation CoreResourceCoreDataTests
 
 #pragma mark -
 #pragma mark Core Data

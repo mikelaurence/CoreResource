@@ -1,5 +1,5 @@
 //
-//  CoreModelUpdateTests.m
+//  CoreResourceUpdateTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -8,10 +8,10 @@
 
 #import "CoreResourceTestCase.h"
 
-@interface CoreModelUpdateTests : CoreResourceTestCase {}
+@interface CoreResourceUpdateTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelUpdateTests
+@implementation CoreResourceUpdateTests
 
 - (void) testUpdateWithDictionary {
     [self loadArtist:0];

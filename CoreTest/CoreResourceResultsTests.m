@@ -1,5 +1,5 @@
 //
-//  CoreModelResultsTests.m
+//  CoreResourceResultsTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -8,10 +8,10 @@
 
 #import "CoreResourceTestCase.h"
 
-@interface CoreModelResultsTests : CoreResourceTestCase {}
+@interface CoreResourceResultsTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelResultsTests
+@implementation CoreResourceResultsTests
 
 #pragma mark -
 #pragma mark Results Management

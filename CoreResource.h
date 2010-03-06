@@ -1,5 +1,5 @@
 //
-//  CoreModel.h
+//  CoreResource.h
 //  CoreResource
 //
 //  Created by Mike Laurence on 12/24/09.
@@ -17,7 +17,7 @@ typedef enum _Action {
     Destroy = 3
 } Action;
 
-@interface CoreModel : NSManagedObject {
+@interface CoreResource : NSManagedObject {
     ASIHTTPRequest* request;
 }
 
@@ -78,7 +78,7 @@ typedef enum _Action {
 + (id) create:(id)parameters;
 + (id) createWithDictionary:(NSDictionary*)dict;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreModel*)relatedObject;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject;
 - (void) updateWithDictionary:(NSDictionary*)dict;
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
 

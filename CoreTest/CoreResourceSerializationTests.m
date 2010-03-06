@@ -1,5 +1,5 @@
 //
-//  CoreModelSerializationTests.m
+//  CoreResourceSerializationTests.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 1/19/10.
@@ -10,10 +10,10 @@
 #import "User.h"
 
 
-@interface CoreModelSerializationTests : CoreResourceTestCase {}
+@interface CoreResourceSerializationTests : CoreResourceTestCase {}
 @end
 
-@implementation CoreModelSerializationTests
+@implementation CoreResourceSerializationTests
 
 - (void)setUpClass {
     [super setUpClass];

@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CoreModel.h"
+#import "CoreResource.h"
 
 @class Artist;
 
-@interface Song : CoreModel {
+@interface Song : CoreResource {
 }
 
 @property (nonatomic, retain) Artist * artist;

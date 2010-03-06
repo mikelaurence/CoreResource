@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CoreModel.h"
+#import "CoreResource.h"
 
 
-@interface User : CoreModel {
+@interface User : CoreResource {
 
 }
 

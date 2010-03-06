@@ -8,7 +8,7 @@
 
 #import "CoreRequest.h"
 
-@class CoreModel;
+@class CoreResource;
 
 @interface CoreResultsController : NSFetchedResultsController {
     Class entityClass;
@@ -21,10 +21,10 @@
 
 #pragma mark -
 #pragma mark Convenience fetch methods
-- (void) fetchForRelatedResource:(CoreModel*)resource withSort:(NSString*)sort;
-- (void) fetchForRelatedResource:(CoreModel*)resource withParameters:(id)parameters andSort:(NSString*)sort;
-- (void) fetchForResource:(CoreModel*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort;
-- (void) fetchForResource:(CoreModel*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort;
+- (void) fetchForRelatedResource:(CoreResource*)resource withSort:(NSString*)sort;
+- (void) fetchForRelatedResource:(CoreResource*)resource withParameters:(id)parameters andSort:(NSString*)sort;
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort;
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort;
 
 @end
 

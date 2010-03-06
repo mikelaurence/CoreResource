@@ -33,7 +33,7 @@
     return self;
 }
 
-- (CoreModel*) resource {
+- (CoreResource*) resource {
     return resources != nil && [resources count] > 0 ? [resources objectAtIndex:0] : nil;
 }
 
