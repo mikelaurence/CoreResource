@@ -68,7 +68,7 @@
 
 - (void) reset;
 - (void) prepare;
-- (float) height;
+- (NSNumber*) height;
 - (void) setPadding:(float)padding;
 
 - (UIView*) viewOfClass:(Class)clazz;

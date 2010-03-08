@@ -61,10 +61,10 @@
     needsPreparation = YES;
 }
 
-- (float) height {
+- (NSNumber*) height {
     if (needsPreparation)
         [self prepare];
-    return height;
+    return [NSNumber numberWithFloat:height];
 }
 
 - (void) setPadding:(float)padding {

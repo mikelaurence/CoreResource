@@ -65,6 +65,13 @@
     return [self hasResults] ? [self resultsCountForSection:section] : 1;
 }
 
+- (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
+    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell respondsToSelector:@selector(height)] ? 
+        [[cell performSelector:@selector(height)] floatValue] : 
+        tableView.rowHeight;
+}
+
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
     if ([self hasResults])
         return [self tableView:tableView resultCellForRowAtIndexPath:indexPath];

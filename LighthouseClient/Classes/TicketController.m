@@ -30,9 +30,11 @@ static UIFont *boldFont;
     return 4;
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
     UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return [cell isKindOfClass:[DynamicCell class]] ? [(DynamicCell*)cell height] : 60.0;
+    return [cell respondsToSelector:@selector(height)] ? 
+        [[cell performSelector:@selector(height)] floatValue] : 
+        tableView.rowHeight;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

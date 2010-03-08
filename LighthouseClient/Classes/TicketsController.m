@@ -36,11 +36,6 @@
 #pragma mark -
 #pragma mark Table View Methods
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return [cell isKindOfClass:[DynamicCell class]] ? [(DynamicCell*)cell height] : 60.0;
-}
-
 - (UITableViewCell*) tableView:(UITableView *)tableView resultCellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     static float defaultFontSize = 15.0;
