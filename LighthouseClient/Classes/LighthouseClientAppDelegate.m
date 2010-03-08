@@ -22,24 +22,15 @@
     self.coreManager = [[[CoreManager alloc] init] autorelease];
     coreManager.logLevel = 1;
     coreManager.remoteSiteURL = @"http://coreresource.lighthouseapp.com";
-    //coreManager.useBundleRequests = YES;
-    
-    // Environment-specific settings & actions
-    /*
-    if (PRODUCTION == 1) {
-        NSLog(@"===== RUNNING IN PRODUCTION MODE =====");
-    }
-    else {
-        coreManager.remoteSiteURL = @"http://localhost:4567";
-        [Ticket findAll:nil andNotify:self withSelector:@selector(mockCompleted:)];
-    }
-    */
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
     [window makeKeyAndVisible];
+
+    NSLog(@"Dict...");
+    NSLog(@"DICT: %@", $D(@"Key", @"Value", @"Key", @"Value"));
 
 	return YES;
 }

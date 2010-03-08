@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -282,13 +280,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>49</integer>
-									<integer>48</integer>
+									<integer>18</integer>
+									<integer>5</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 175}, {291, 875}}</string>
+							<string>{{0, 0}, {291, 875}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -318,12 +317,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LighthouseClient_Prefix.pch</string>
+								<string>CoreUtils.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LighthouseClient_Prefix.pch</string>
+										<string>CoreUtils.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B57DCE9E1144618D0063915D</string>
+										<string>B57DCEFE1144E0010063915D</string>
 										<key>history</key>
 										<array>
 											<string>B5A9C5901142C8190007B71C</string>
@@ -347,15 +348,18 @@
 											<string>B5A9C7031142E8BD0007B71C</string>
 											<string>B5A9C7691142FF420007B71C</string>
 											<string>B5A9C76B1142FF420007B71C</string>
-											<string>B5A9C76C1142FF420007B71C</string>
 											<string>B5A9C76D1142FF420007B71C</string>
 											<string>B57DCE871144570D0063915D</string>
 											<string>B57DCE8E114457290063915D</string>
 											<string>B57DCE971144579A0063915D</string>
-											<string>B57DCE981144579A0063915D</string>
-											<string>B57DCE991144579A0063915D</string>
 											<string>B57DCE9C1144618D0063915D</string>
-											<string>B57DCE9D1144618D0063915D</string>
+											<string>B57DCEBF1144DB370063915D</string>
+											<string>B57DCECE1144DC390063915D</string>
+											<string>B57DCEE71144DE910063915D</string>
+											<string>B57DCEE91144DE910063915D</string>
+											<string>B57DCEFB1144DF2B0063915D</string>
+											<string>B57DCEFC1144DF2B0063915D</string>
+											<string>B57DCEE81144DE910063915D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -553,6 +557,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>B57DCECA1144DB860063915D</string>
+		<string>B57DCECB1144DB860063915D</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5A9C3DF1142C2A30007B71C</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -575,14 +582,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TicketController.m</string>
+								<string>CoreUtils.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -599,6 +604,8 @@
 							<string>236pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -651,7 +658,7 @@
 			<key>WindowToolGUID</key>
 			<string>B5A9C3DF1142C2A30007B71C</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -793,14 +800,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DynamicCell.h</string>
+										<string></string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -821,6 +826,8 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -856,8 +863,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>B5A9C59A1142C8190007B71C</string>
-				<string>B5A9C59B1142C8190007B71C</string>
+				<string>B57DCEF01144DEB70063915D</string>
+				<string>B57DCEF11144DEB70063915D</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

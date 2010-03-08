@@ -9,7 +9,6 @@
 #import "TicketsController.h"
 #import "TicketController.h"
 #import "DynamicCell.h"
-#import "CoreUtils.h"
 
 
 @implementation TicketsController
@@ -17,7 +16,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [Ticket findAll];
-    [[self coreResultsController] fetch:[NSDictionary dictionaryWithObject:@"priority ASC" forKey:@"$sort"]];
+    [[self coreResultsController] fetch:$D(@"priority ASC", @"$sort")];
 }
 
 - (IBAction) refresh {
