@@ -15,6 +15,18 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		B57DD0491144F29A0063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0331144F29A0063915D /* CoreManager.m */; };
+		B57DD04A1144F29A0063915D /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0351144F29A0063915D /* CoreRequest.m */; };
+		B57DD04B1144F29A0063915D /* CoreResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0371144F29A0063915D /* CoreResource.m */; };
+		B57DD04C1144F29A0063915D /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0391144F29A0063915D /* CoreResult.m */; };
+		B57DD04D1144F29A0063915D /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD03B1144F29A0063915D /* CoreResultsController.m */; };
+		B57DD04E1144F29A0063915D /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD03D1144F29A0063915D /* CoreTableController.m */; };
+		B57DD04F1144F29A0063915D /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD03F1144F29A0063915D /* CoreUtils.m */; };
+		B57DD0501144F29A0063915D /* NSMutableArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0411144F29A0063915D /* NSMutableArray+Core.m */; };
+		B57DD0511144F29A0063915D /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0431144F29A0063915D /* NSObject+Core.m */; };
+		B57DD0521144F29A0063915D /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0451144F29A0063915D /* NSSet+Core.m */; };
+		B57DD0531144F29A0063915D /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0471144F29A0063915D /* NSString+InflectionSupport.m */; };
+		B57DD0541144F29A0063915D /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B57DD0481144F29A0063915D /* readme.md */; };
 		B5A9C4DB1142C2C30007B71C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4D71142C2C30007B71C /* SystemConfiguration.framework */; };
 		B5A9C4DC1142C2C30007B71C /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4D81142C2C30007B71C /* libz.1.2.3.dylib */; };
 		B5A9C4DD1142C2C30007B71C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4D91142C2C30007B71C /* CFNetwork.framework */; };
@@ -38,17 +50,6 @@
 		B5A9C5301142C3070007B71C /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C52F1142C3070007B71C /* Ticket.m */; };
 		B5A9C5321142C3240007B71C /* lighthouse.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5311142C3240007B71C /* lighthouse.xcdatamodel */; };
 		B5A9C5371142C3C50007B71C /* LighthouseResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5361142C3C50007B71C /* LighthouseResource.m */; };
-		B5A9C54F1142C4080007B71C /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C53A1142C4080007B71C /* CoreManager.m */; };
-		B5A9C5501142C4080007B71C /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C53C1142C4080007B71C /* CoreRequest.m */; };
-		B5A9C5511142C4080007B71C /* CoreResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C53E1142C4080007B71C /* CoreResource.m */; };
-		B5A9C5521142C4080007B71C /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5401142C4080007B71C /* CoreResult.m */; };
-		B5A9C5531142C4080007B71C /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5421142C4080007B71C /* CoreResultsController.m */; };
-		B5A9C5541142C4080007B71C /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5441142C4080007B71C /* CoreTableController.m */; };
-		B5A9C5551142C4080007B71C /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5461142C4080007B71C /* CoreUtils.m */; };
-		B5A9C5561142C4080007B71C /* NSMutableArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5481142C4080007B71C /* NSMutableArray+Core.m */; };
-		B5A9C5571142C4080007B71C /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54A1142C4080007B71C /* NSObject+Core.m */; };
-		B5A9C5581142C4080007B71C /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54C1142C4080007B71C /* NSSet+Core.m */; };
-		B5A9C5591142C4080007B71C /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C54E1142C4080007B71C /* NSString+InflectionSupport.m */; };
 		B5A9C5C11142CA880007B71C /* tickets.json in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C5341142C3B20007B71C /* tickets.json */; };
 		B5A9C6541142DB020007B71C /* TicketController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C6521142DB020007B71C /* TicketController.m */; };
 		B5A9C6551142DB020007B71C /* TicketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C6531142DB020007B71C /* TicketController.xib */; };
@@ -70,6 +71,29 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LighthouseClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LighthouseClient-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B57DD0321144F29A0063915D /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreManager.h; path = ../../CoreManager.h; sourceTree = SOURCE_ROOT; };
+		B57DD0331144F29A0063915D /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreManager.m; path = ../../CoreManager.m; sourceTree = SOURCE_ROOT; };
+		B57DD0341144F29A0063915D /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../../CoreRequest.h; sourceTree = SOURCE_ROOT; };
+		B57DD0351144F29A0063915D /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreRequest.m; path = ../../CoreRequest.m; sourceTree = SOURCE_ROOT; };
+		B57DD0361144F29A0063915D /* CoreResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResource.h; path = ../../CoreResource.h; sourceTree = SOURCE_ROOT; };
+		B57DD0371144F29A0063915D /* CoreResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResource.m; path = ../../CoreResource.m; sourceTree = SOURCE_ROOT; };
+		B57DD0381144F29A0063915D /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../../CoreResult.h; sourceTree = SOURCE_ROOT; };
+		B57DD0391144F29A0063915D /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../../CoreResult.m; sourceTree = SOURCE_ROOT; };
+		B57DD03A1144F29A0063915D /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResultsController.h; path = ../../CoreResultsController.h; sourceTree = SOURCE_ROOT; };
+		B57DD03B1144F29A0063915D /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResultsController.m; path = ../../CoreResultsController.m; sourceTree = SOURCE_ROOT; };
+		B57DD03C1144F29A0063915D /* CoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTableController.h; path = ../../CoreTableController.h; sourceTree = SOURCE_ROOT; };
+		B57DD03D1144F29A0063915D /* CoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTableController.m; path = ../../CoreTableController.m; sourceTree = SOURCE_ROOT; };
+		B57DD03E1144F29A0063915D /* CoreUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreUtils.h; path = ../../CoreUtils.h; sourceTree = SOURCE_ROOT; };
+		B57DD03F1144F29A0063915D /* CoreUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreUtils.m; path = ../../CoreUtils.m; sourceTree = SOURCE_ROOT; };
+		B57DD0401144F29A0063915D /* NSMutableArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Core.h"; path = "../../NSMutableArray+Core.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0411144F29A0063915D /* NSMutableArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Core.m"; path = "../../NSMutableArray+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0421144F29A0063915D /* NSObject+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Core.h"; path = "../../NSObject+Core.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0431144F29A0063915D /* NSObject+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Core.m"; path = "../../NSObject+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0441144F29A0063915D /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Core.h"; path = "../../NSSet+Core.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0451144F29A0063915D /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Core.m"; path = "../../NSSet+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0461144F29A0063915D /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+InflectionSupport.h"; path = "../../NSString+InflectionSupport.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0471144F29A0063915D /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+InflectionSupport.m"; path = "../../NSString+InflectionSupport.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0481144F29A0063915D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../../readme.md; sourceTree = SOURCE_ROOT; };
 		B5A9C4D71142C2C30007B71C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		B5A9C4D81142C2C30007B71C /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = /usr/local/lib/libz.1.2.3.dylib; sourceTree = "<absolute>"; };
 		B5A9C4D91142C2C30007B71C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -113,28 +137,6 @@
 		B5A9C5341142C3B20007B71C /* tickets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tickets.json; sourceTree = "<group>"; };
 		B5A9C5351142C3C50007B71C /* LighthouseResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LighthouseResource.h; sourceTree = "<group>"; };
 		B5A9C5361142C3C50007B71C /* LighthouseResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LighthouseResource.m; sourceTree = "<group>"; };
-		B5A9C5391142C4080007B71C /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreManager.h; path = ../CoreManager.h; sourceTree = SOURCE_ROOT; };
-		B5A9C53A1142C4080007B71C /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreManager.m; path = ../CoreManager.m; sourceTree = SOURCE_ROOT; };
-		B5A9C53B1142C4080007B71C /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../CoreRequest.h; sourceTree = SOURCE_ROOT; };
-		B5A9C53C1142C4080007B71C /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreRequest.m; path = ../CoreRequest.m; sourceTree = SOURCE_ROOT; };
-		B5A9C53D1142C4080007B71C /* CoreResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResource.h; path = ../CoreResource.h; sourceTree = SOURCE_ROOT; };
-		B5A9C53E1142C4080007B71C /* CoreResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResource.m; path = ../CoreResource.m; sourceTree = SOURCE_ROOT; };
-		B5A9C53F1142C4080007B71C /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../CoreResult.h; sourceTree = SOURCE_ROOT; };
-		B5A9C5401142C4080007B71C /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../CoreResult.m; sourceTree = SOURCE_ROOT; };
-		B5A9C5411142C4080007B71C /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResultsController.h; path = ../CoreResultsController.h; sourceTree = SOURCE_ROOT; };
-		B5A9C5421142C4080007B71C /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResultsController.m; path = ../CoreResultsController.m; sourceTree = SOURCE_ROOT; };
-		B5A9C5431142C4080007B71C /* CoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTableController.h; path = ../CoreTableController.h; sourceTree = SOURCE_ROOT; };
-		B5A9C5441142C4080007B71C /* CoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTableController.m; path = ../CoreTableController.m; sourceTree = SOURCE_ROOT; };
-		B5A9C5451142C4080007B71C /* CoreUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreUtils.h; path = ../CoreUtils.h; sourceTree = SOURCE_ROOT; };
-		B5A9C5461142C4080007B71C /* CoreUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreUtils.m; path = ../CoreUtils.m; sourceTree = SOURCE_ROOT; };
-		B5A9C5471142C4080007B71C /* NSMutableArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Core.h"; path = "../NSMutableArray+Core.h"; sourceTree = SOURCE_ROOT; };
-		B5A9C5481142C4080007B71C /* NSMutableArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Core.m"; path = "../NSMutableArray+Core.m"; sourceTree = SOURCE_ROOT; };
-		B5A9C5491142C4080007B71C /* NSObject+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Core.h"; path = "../NSObject+Core.h"; sourceTree = SOURCE_ROOT; };
-		B5A9C54A1142C4080007B71C /* NSObject+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Core.m"; path = "../NSObject+Core.m"; sourceTree = SOURCE_ROOT; };
-		B5A9C54B1142C4080007B71C /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Core.h"; path = "../NSSet+Core.h"; sourceTree = SOURCE_ROOT; };
-		B5A9C54C1142C4080007B71C /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Core.m"; path = "../NSSet+Core.m"; sourceTree = SOURCE_ROOT; };
-		B5A9C54D1142C4080007B71C /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+InflectionSupport.h"; path = "../NSString+InflectionSupport.h"; sourceTree = SOURCE_ROOT; };
-		B5A9C54E1142C4080007B71C /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+InflectionSupport.m"; path = "../NSString+InflectionSupport.m"; sourceTree = SOURCE_ROOT; };
 		B5A9C6511142DB020007B71C /* TicketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketController.h; sourceTree = "<group>"; };
 		B5A9C6521142DB020007B71C /* TicketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketController.m; sourceTree = "<group>"; };
 		B5A9C6531142DB020007B71C /* TicketController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketController.xib; sourceTree = "<group>"; };
@@ -244,7 +246,7 @@
 				B5A9C5161142C2E10007B71C /* Reachability */,
 			);
 			name = Libraries;
-			path = ../Libraries;
+			path = ../../Libraries;
 			sourceTree = SOURCE_ROOT;
 		};
 		B5A9C4E11142C2E10007B71C /* ASIHTTPRequest */ = {
@@ -337,28 +339,29 @@
 		B5A9C5381142C3F10007B71C /* CoreResource */ = {
 			isa = PBXGroup;
 			children = (
-				B5A9C5391142C4080007B71C /* CoreManager.h */,
-				B5A9C53A1142C4080007B71C /* CoreManager.m */,
-				B5A9C53B1142C4080007B71C /* CoreRequest.h */,
-				B5A9C53C1142C4080007B71C /* CoreRequest.m */,
-				B5A9C53D1142C4080007B71C /* CoreResource.h */,
-				B5A9C53E1142C4080007B71C /* CoreResource.m */,
-				B5A9C53F1142C4080007B71C /* CoreResult.h */,
-				B5A9C5401142C4080007B71C /* CoreResult.m */,
-				B5A9C5411142C4080007B71C /* CoreResultsController.h */,
-				B5A9C5421142C4080007B71C /* CoreResultsController.m */,
-				B5A9C5431142C4080007B71C /* CoreTableController.h */,
-				B5A9C5441142C4080007B71C /* CoreTableController.m */,
-				B5A9C5451142C4080007B71C /* CoreUtils.h */,
-				B5A9C5461142C4080007B71C /* CoreUtils.m */,
-				B5A9C5471142C4080007B71C /* NSMutableArray+Core.h */,
-				B5A9C5481142C4080007B71C /* NSMutableArray+Core.m */,
-				B5A9C5491142C4080007B71C /* NSObject+Core.h */,
-				B5A9C54A1142C4080007B71C /* NSObject+Core.m */,
-				B5A9C54B1142C4080007B71C /* NSSet+Core.h */,
-				B5A9C54C1142C4080007B71C /* NSSet+Core.m */,
-				B5A9C54D1142C4080007B71C /* NSString+InflectionSupport.h */,
-				B5A9C54E1142C4080007B71C /* NSString+InflectionSupport.m */,
+				B57DD0321144F29A0063915D /* CoreManager.h */,
+				B57DD0331144F29A0063915D /* CoreManager.m */,
+				B57DD0341144F29A0063915D /* CoreRequest.h */,
+				B57DD0351144F29A0063915D /* CoreRequest.m */,
+				B57DD0361144F29A0063915D /* CoreResource.h */,
+				B57DD0371144F29A0063915D /* CoreResource.m */,
+				B57DD0381144F29A0063915D /* CoreResult.h */,
+				B57DD0391144F29A0063915D /* CoreResult.m */,
+				B57DD03A1144F29A0063915D /* CoreResultsController.h */,
+				B57DD03B1144F29A0063915D /* CoreResultsController.m */,
+				B57DD03C1144F29A0063915D /* CoreTableController.h */,
+				B57DD03D1144F29A0063915D /* CoreTableController.m */,
+				B57DD03E1144F29A0063915D /* CoreUtils.h */,
+				B57DD03F1144F29A0063915D /* CoreUtils.m */,
+				B57DD0401144F29A0063915D /* NSMutableArray+Core.h */,
+				B57DD0411144F29A0063915D /* NSMutableArray+Core.m */,
+				B57DD0421144F29A0063915D /* NSObject+Core.h */,
+				B57DD0431144F29A0063915D /* NSObject+Core.m */,
+				B57DD0441144F29A0063915D /* NSSet+Core.h */,
+				B57DD0451144F29A0063915D /* NSSet+Core.m */,
+				B57DD0461144F29A0063915D /* NSString+InflectionSupport.h */,
+				B57DD0471144F29A0063915D /* NSString+InflectionSupport.m */,
+				B57DD0481144F29A0063915D /* readme.md */,
 			);
 			name = CoreResource;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				B5A9C6551142DB020007B71C /* TicketController.xib in Resources */,
 				B5A9C6F41142E6CF0007B71C /* icon-tickets.png in Resources */,
 				B5A9C7171142EA4D0007B71C /* Icon.png in Resources */,
+				B57DD0541144F29A0063915D /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,18 +455,18 @@
 				B5A9C5301142C3070007B71C /* Ticket.m in Sources */,
 				B5A9C5321142C3240007B71C /* lighthouse.xcdatamodel in Sources */,
 				B5A9C5371142C3C50007B71C /* LighthouseResource.m in Sources */,
-				B5A9C54F1142C4080007B71C /* CoreManager.m in Sources */,
-				B5A9C5501142C4080007B71C /* CoreRequest.m in Sources */,
-				B5A9C5511142C4080007B71C /* CoreResource.m in Sources */,
-				B5A9C5521142C4080007B71C /* CoreResult.m in Sources */,
-				B5A9C5531142C4080007B71C /* CoreResultsController.m in Sources */,
-				B5A9C5541142C4080007B71C /* CoreTableController.m in Sources */,
-				B5A9C5551142C4080007B71C /* CoreUtils.m in Sources */,
-				B5A9C5561142C4080007B71C /* NSMutableArray+Core.m in Sources */,
-				B5A9C5571142C4080007B71C /* NSObject+Core.m in Sources */,
-				B5A9C5581142C4080007B71C /* NSSet+Core.m in Sources */,
-				B5A9C5591142C4080007B71C /* NSString+InflectionSupport.m in Sources */,
 				B5A9C6541142DB020007B71C /* TicketController.m in Sources */,
+				B57DD0491144F29A0063915D /* CoreManager.m in Sources */,
+				B57DD04A1144F29A0063915D /* CoreRequest.m in Sources */,
+				B57DD04B1144F29A0063915D /* CoreResource.m in Sources */,
+				B57DD04C1144F29A0063915D /* CoreResult.m in Sources */,
+				B57DD04D1144F29A0063915D /* CoreResultsController.m in Sources */,
+				B57DD04E1144F29A0063915D /* CoreTableController.m in Sources */,
+				B57DD04F1144F29A0063915D /* CoreUtils.m in Sources */,
+				B57DD0501144F29A0063915D /* NSMutableArray+Core.m in Sources */,
+				B57DD0511144F29A0063915D /* NSObject+Core.m in Sources */,
+				B57DD0521144F29A0063915D /* NSSet+Core.m in Sources */,
+				B57DD0531144F29A0063915D /* NSString+InflectionSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +483,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LighthouseClient_Prefix.pch;
 				INFOPLIST_FILE = "LighthouseClient-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../Libraries/GHUnit\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = LighthouseClient;
 				SDKROOT = iphoneos3.1;
 			};
@@ -496,10 +497,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LighthouseClient_Prefix.pch;
 				INFOPLIST_FILE = "LighthouseClient-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../Libraries/GHUnit\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = LighthouseClient;
 				SDKROOT = iphoneos3.1;
 				VALIDATE_PRODUCT = YES;

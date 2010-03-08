@@ -21,19 +21,24 @@
 		B56852051100DD2000A4C816 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		B568524D1100E0AC00A4C816 /* CoreTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CoreTestAppDelegate.m */; };
 		B568524E1100E0AC00A4C816 /* ArtistCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ArtistCollectionController.m */; };
-		B56852501100E0AC00A4C816 /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */; };
-		B56852511100E0AC00A4C816 /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */; };
-		B56852521100E0AC00A4C816 /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04B10FFE05D00D57FCA /* CoreManager.m */; };
-		B56852531100E0AC00A4C816 /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */; };
-		B56852541100E0AC00A4C816 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC04F10FFE05D00D57FCA /* NSString+InflectionSupport.m */; };
-		B56852551100E0AC00A4C816 /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC05110FFE05D00D57FCA /* CoreTableController.m */; };
 		B56852611100E0AC00A4C816 /* CoreTest.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0D410FFE1E000D57FCA /* CoreTest.xcdatamodel */; };
 		B56852621100E0AC00A4C816 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC0D810FFE27600D57FCA /* Artist.m */; };
 		B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B568535B11010A6F00A4C816 /* TestHelpers.m */; };
-		B56853AD1101140300A4C816 /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B56853AC1101140300A4C816 /* CoreResult.m */; };
 		B56FDB5B111B3BDA00D4CEA7 /* artists.0.alternate-field-names.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FDB18111B37F100D4CEA7 /* artists.0.alternate-field-names.json */; };
 		B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FD902111B308900D4CEA7 /* artists.0.update.json */; };
 		B57DCF0D1144E0400063915D /* CoreUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCF0C1144E0400063915D /* CoreUtilsTests.m */; };
+		B57DD0091144F1F70063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF31144F1F70063915D /* CoreManager.m */; };
+		B57DD00A1144F1F70063915D /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF51144F1F70063915D /* CoreRequest.m */; };
+		B57DD00B1144F1F70063915D /* CoreResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF71144F1F70063915D /* CoreResource.m */; };
+		B57DD00C1144F1F70063915D /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF91144F1F70063915D /* CoreResult.m */; };
+		B57DD00D1144F1F70063915D /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFFB1144F1F70063915D /* CoreResultsController.m */; };
+		B57DD00E1144F1F70063915D /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFFD1144F1F70063915D /* CoreTableController.m */; };
+		B57DD00F1144F1F70063915D /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFFF1144F1F70063915D /* CoreUtils.m */; };
+		B57DD0101144F1F70063915D /* NSMutableArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0011144F1F70063915D /* NSMutableArray+Core.m */; };
+		B57DD0111144F1F70063915D /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0031144F1F70063915D /* NSObject+Core.m */; };
+		B57DD0121144F1F70063915D /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0051144F1F70063915D /* NSSet+Core.m */; };
+		B57DD0131144F1F70063915D /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0071144F1F70063915D /* NSString+InflectionSupport.m */; };
+		B57DD0141144F1F70063915D /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B57DD0081144F1F70063915D /* readme.md */; };
 		B5A6614B110DF95400100C9E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6614A110DF95400100C9E /* Song.m */; };
 		B5A6615C110DF9CD00100C9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6615B110DF9CD00100C9E /* User.m */; };
 		B5A9C39E1142AF950007B71C /* CoreResourceConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */; };
@@ -44,10 +49,6 @@
 		B5A9C3A31142AF950007B71C /* CoreResourceResultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */; };
 		B5A9C3A41142AF950007B71C /* CoreResourceSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */; };
 		B5A9C3A51142AF950007B71C /* CoreResourceUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */; };
-		B5A9C3AA1142AFC30007B71C /* CoreResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3A91142AFC30007B71C /* CoreResource.m */; };
-		B5EED656113E1AF6004DAE9C /* NSMutableArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED651113E1AF6004DAE9C /* NSMutableArray+Core.m */; };
-		B5EED657113E1AF6004DAE9C /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED653113E1AF6004DAE9C /* NSObject+Core.m */; };
-		B5EED658113E1AF6004DAE9C /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED655113E1AF6004DAE9C /* NSSet+Core.m */; };
 		B5EED6A6113E2009004DAE9C /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED677113E2009004DAE9C /* ASIAuthenticationDialog.m */; };
 		B5EED6A7113E2009004DAE9C /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED679113E2009004DAE9C /* ASIFormDataRequest.m */; };
 		B5EED6A8113E2009004DAE9C /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED67B113E2009004DAE9C /* ASIHTTPRequest.m */; };
@@ -85,16 +86,36 @@
 		B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceTestCase.m; sourceTree = "<group>"; };
 		B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResourceTestCase.h; sourceTree = "<group>"; };
 		B56851B81100D6BA00A4C816 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.json; sourceTree = "<group>"; };
-		B56851D81100D9E700A4C816 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../readme.md; sourceTree = SOURCE_ROOT; };
 		B56851F91100DD0500A4C816 /* CoreTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56852981100E3E800A4C816 /* GHLogicTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogicTests_Prefix.pch; sourceTree = "<group>"; };
 		B568535A11010A6F00A4C816 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
 		B568535B11010A6F00A4C816 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
-		B56853AB1101140300A4C816 /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../CoreResult.h; sourceTree = SOURCE_ROOT; };
-		B56853AC1101140300A4C816 /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../CoreResult.m; sourceTree = SOURCE_ROOT; };
 		B56FD902111B308900D4CEA7 /* artists.0.update.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.0.update.json; sourceTree = "<group>"; };
 		B56FDB18111B37F100D4CEA7 /* artists.0.alternate-field-names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "artists.0.alternate-field-names.json"; sourceTree = "<group>"; };
 		B57DCF0C1144E0400063915D /* CoreUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreUtilsTests.m; sourceTree = "<group>"; };
+		B57DCFF21144F1F70063915D /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreManager.h; sourceTree = "<group>"; };
+		B57DCFF31144F1F70063915D /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreManager.m; sourceTree = "<group>"; };
+		B57DCFF41144F1F70063915D /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreRequest.h; sourceTree = "<group>"; };
+		B57DCFF51144F1F70063915D /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreRequest.m; sourceTree = "<group>"; };
+		B57DCFF61144F1F70063915D /* CoreResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResource.h; sourceTree = "<group>"; };
+		B57DCFF71144F1F70063915D /* CoreResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResource.m; sourceTree = "<group>"; };
+		B57DCFF81144F1F70063915D /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResult.h; sourceTree = "<group>"; };
+		B57DCFF91144F1F70063915D /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResult.m; sourceTree = "<group>"; };
+		B57DCFFA1144F1F70063915D /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreResultsController.h; sourceTree = "<group>"; };
+		B57DCFFB1144F1F70063915D /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResultsController.m; sourceTree = "<group>"; };
+		B57DCFFC1144F1F70063915D /* CoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTableController.h; sourceTree = "<group>"; };
+		B57DCFFD1144F1F70063915D /* CoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTableController.m; sourceTree = "<group>"; };
+		B57DCFFE1144F1F70063915D /* CoreUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreUtils.h; sourceTree = "<group>"; };
+		B57DCFFF1144F1F70063915D /* CoreUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreUtils.m; sourceTree = "<group>"; };
+		B57DD0001144F1F70063915D /* NSMutableArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Core.h"; sourceTree = "<group>"; };
+		B57DD0011144F1F70063915D /* NSMutableArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Core.m"; sourceTree = "<group>"; };
+		B57DD0021144F1F70063915D /* NSObject+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Core.h"; sourceTree = "<group>"; };
+		B57DD0031144F1F70063915D /* NSObject+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Core.m"; sourceTree = "<group>"; };
+		B57DD0041144F1F70063915D /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Core.h"; sourceTree = "<group>"; };
+		B57DD0051144F1F70063915D /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Core.m"; sourceTree = "<group>"; };
+		B57DD0061144F1F70063915D /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
+		B57DD0071144F1F70063915D /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
+		B57DD0081144F1F70063915D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 		B5A66149110DF95400100C9E /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		B5A6614A110DF95400100C9E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		B5A6615A110DF9CD00100C9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -107,20 +128,6 @@
 		B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceResultsTests.m; sourceTree = "<group>"; };
 		B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceSerializationTests.m; sourceTree = "<group>"; };
 		B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceUpdateTests.m; sourceTree = "<group>"; };
-		B5A9C3A81142AFC30007B71C /* CoreResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResource.h; path = ../CoreResource.h; sourceTree = SOURCE_ROOT; };
-		B5A9C3A91142AFC30007B71C /* CoreResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResource.m; path = ../CoreResource.m; sourceTree = SOURCE_ROOT; };
-		B5BAC04610FFE05D00D57FCA /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../CoreRequest.h; sourceTree = SOURCE_ROOT; };
-		B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResultsController.m; path = ../CoreResultsController.m; sourceTree = SOURCE_ROOT; };
-		B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResultsController.h; path = ../CoreResultsController.h; sourceTree = SOURCE_ROOT; };
-		B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreRequest.m; path = ../CoreRequest.m; sourceTree = SOURCE_ROOT; };
-		B5BAC04B10FFE05D00D57FCA /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreManager.m; path = ../CoreManager.m; sourceTree = SOURCE_ROOT; };
-		B5BAC04C10FFE05D00D57FCA /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreManager.h; path = ../CoreManager.h; sourceTree = SOURCE_ROOT; };
-		B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreUtils.m; path = ../CoreUtils.m; sourceTree = SOURCE_ROOT; };
-		B5BAC04E10FFE05D00D57FCA /* CoreUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreUtils.h; path = ../CoreUtils.h; sourceTree = SOURCE_ROOT; };
-		B5BAC04F10FFE05D00D57FCA /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+InflectionSupport.m"; path = "../NSString+InflectionSupport.m"; sourceTree = SOURCE_ROOT; };
-		B5BAC05010FFE05D00D57FCA /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+InflectionSupport.h"; path = "../NSString+InflectionSupport.h"; sourceTree = SOURCE_ROOT; };
-		B5BAC05110FFE05D00D57FCA /* CoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTableController.m; path = ../CoreTableController.m; sourceTree = SOURCE_ROOT; };
-		B5BAC05210FFE05D00D57FCA /* CoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTableController.h; path = ../CoreTableController.h; sourceTree = SOURCE_ROOT; };
 		B5BAC09810FFE10700D57FCA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		B5BAC09910FFE10700D57FCA /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = /usr/local/lib/libz.1.2.3.dylib; sourceTree = "<absolute>"; };
 		B5BAC09A10FFE10700D57FCA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -128,12 +135,6 @@
 		B5BAC0D410FFE1E000D57FCA /* CoreTest.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = CoreTest.xcdatamodel; sourceTree = "<group>"; };
 		B5BAC0D710FFE27600D57FCA /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		B5BAC0D810FFE27600D57FCA /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
-		B5EED650113E1AF6004DAE9C /* NSMutableArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Core.h"; path = "../NSMutableArray+Core.h"; sourceTree = SOURCE_ROOT; };
-		B5EED651113E1AF6004DAE9C /* NSMutableArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Core.m"; path = "../NSMutableArray+Core.m"; sourceTree = SOURCE_ROOT; };
-		B5EED652113E1AF6004DAE9C /* NSObject+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Core.h"; path = "../NSObject+Core.h"; sourceTree = SOURCE_ROOT; };
-		B5EED653113E1AF6004DAE9C /* NSObject+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Core.m"; path = "../NSObject+Core.m"; sourceTree = SOURCE_ROOT; };
-		B5EED654113E1AF6004DAE9C /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Core.h"; path = "../NSSet+Core.h"; sourceTree = SOURCE_ROOT; };
-		B5EED655113E1AF6004DAE9C /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Core.m"; path = "../NSSet+Core.m"; sourceTree = SOURCE_ROOT; };
 		B5EED676113E2009004DAE9C /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		B5EED677113E2009004DAE9C /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		B5EED678113E2009004DAE9C /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
@@ -225,7 +226,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				B56851D81100D9E700A4C816 /* readme.md */,
 				B568503D1100D03C00A4C816 /* Tests */,
 				B56851B41100D66D00A4C816 /* Test Data */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -307,30 +307,32 @@
 		B5BAC04410FFE04600D57FCA /* CoreResource */ = {
 			isa = PBXGroup;
 			children = (
-				B5A9C3A81142AFC30007B71C /* CoreResource.h */,
-				B5A9C3A91142AFC30007B71C /* CoreResource.m */,
-				B56853AB1101140300A4C816 /* CoreResult.h */,
-				B56853AC1101140300A4C816 /* CoreResult.m */,
-				B5BAC04610FFE05D00D57FCA /* CoreRequest.h */,
-				B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */,
-				B5BAC04C10FFE05D00D57FCA /* CoreManager.h */,
-				B5BAC04B10FFE05D00D57FCA /* CoreManager.m */,
-				B5BAC04E10FFE05D00D57FCA /* CoreUtils.h */,
-				B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */,
-				B5BAC05210FFE05D00D57FCA /* CoreTableController.h */,
-				B5BAC05110FFE05D00D57FCA /* CoreTableController.m */,
-				B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */,
-				B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */,
-				B5BAC05010FFE05D00D57FCA /* NSString+InflectionSupport.h */,
-				B5BAC04F10FFE05D00D57FCA /* NSString+InflectionSupport.m */,
-				B5EED650113E1AF6004DAE9C /* NSMutableArray+Core.h */,
-				B5EED651113E1AF6004DAE9C /* NSMutableArray+Core.m */,
-				B5EED652113E1AF6004DAE9C /* NSObject+Core.h */,
-				B5EED653113E1AF6004DAE9C /* NSObject+Core.m */,
-				B5EED654113E1AF6004DAE9C /* NSSet+Core.h */,
-				B5EED655113E1AF6004DAE9C /* NSSet+Core.m */,
+				B57DCFF21144F1F70063915D /* CoreManager.h */,
+				B57DCFF31144F1F70063915D /* CoreManager.m */,
+				B57DCFF41144F1F70063915D /* CoreRequest.h */,
+				B57DCFF51144F1F70063915D /* CoreRequest.m */,
+				B57DCFF61144F1F70063915D /* CoreResource.h */,
+				B57DCFF71144F1F70063915D /* CoreResource.m */,
+				B57DCFF81144F1F70063915D /* CoreResult.h */,
+				B57DCFF91144F1F70063915D /* CoreResult.m */,
+				B57DCFFA1144F1F70063915D /* CoreResultsController.h */,
+				B57DCFFB1144F1F70063915D /* CoreResultsController.m */,
+				B57DCFFC1144F1F70063915D /* CoreTableController.h */,
+				B57DCFFD1144F1F70063915D /* CoreTableController.m */,
+				B57DCFFE1144F1F70063915D /* CoreUtils.h */,
+				B57DCFFF1144F1F70063915D /* CoreUtils.m */,
+				B57DD0001144F1F70063915D /* NSMutableArray+Core.h */,
+				B57DD0011144F1F70063915D /* NSMutableArray+Core.m */,
+				B57DD0021144F1F70063915D /* NSObject+Core.h */,
+				B57DD0031144F1F70063915D /* NSObject+Core.m */,
+				B57DD0041144F1F70063915D /* NSSet+Core.h */,
+				B57DD0051144F1F70063915D /* NSSet+Core.m */,
+				B57DD0061144F1F70063915D /* NSString+InflectionSupport.h */,
+				B57DD0071144F1F70063915D /* NSString+InflectionSupport.m */,
+				B57DD0081144F1F70063915D /* readme.md */,
 			);
 			name = CoreResource;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		B5BAC0D610FFE1EF00D57FCA /* Models */ = {
@@ -355,7 +357,7 @@
 				B5EED6A3113E2009004DAE9C /* Reachability */,
 			);
 			name = Libraries;
-			path = ../Libraries;
+			path = ../../Libraries;
 			sourceTree = SOURCE_ROOT;
 		};
 		B5EED675113E2009004DAE9C /* ASIHTTPRequest */ = {
@@ -399,7 +401,8 @@
 				B5EED693113E2009004DAE9C /* NSValue+GHValueFormatter.h */,
 				B5EED694113E2009004DAE9C /* RunTests.sh */,
 			);
-			path = GHUnit;
+			name = GHUnit;
+			path = ../Examples/CoreTest/GHUnit;
 			sourceTree = "<group>";
 		};
 		B5EED695113E2009004DAE9C /* JSON */ = {
@@ -490,6 +493,7 @@
 				B56FDB5B111B3BDA00D4CEA7 /* artists.0.alternate-field-names.json in Resources */,
 				B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */,
 				B5EED6AF113E2009004DAE9C /* RunTests.sh in Resources */,
+				B57DD0141144F1F70063915D /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,22 +506,12 @@
 			files = (
 				B568524D1100E0AC00A4C816 /* CoreTestAppDelegate.m in Sources */,
 				B568524E1100E0AC00A4C816 /* ArtistCollectionController.m in Sources */,
-				B56852501100E0AC00A4C816 /* CoreResultsController.m in Sources */,
-				B56852511100E0AC00A4C816 /* CoreRequest.m in Sources */,
-				B56852521100E0AC00A4C816 /* CoreManager.m in Sources */,
-				B56852531100E0AC00A4C816 /* CoreUtils.m in Sources */,
-				B56852541100E0AC00A4C816 /* NSString+InflectionSupport.m in Sources */,
-				B56852551100E0AC00A4C816 /* CoreTableController.m in Sources */,
 				B56852611100E0AC00A4C816 /* CoreTest.xcdatamodel in Sources */,
 				B56852621100E0AC00A4C816 /* Artist.m in Sources */,
 				B568535C11010A6F00A4C816 /* TestHelpers.m in Sources */,
-				B56853AD1101140300A4C816 /* CoreResult.m in Sources */,
 				B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */,
 				B5A6614B110DF95400100C9E /* Song.m in Sources */,
 				B5A6615C110DF9CD00100C9E /* User.m in Sources */,
-				B5EED656113E1AF6004DAE9C /* NSMutableArray+Core.m in Sources */,
-				B5EED657113E1AF6004DAE9C /* NSObject+Core.m in Sources */,
-				B5EED658113E1AF6004DAE9C /* NSSet+Core.m in Sources */,
 				B5EED6A6113E2009004DAE9C /* ASIAuthenticationDialog.m in Sources */,
 				B5EED6A7113E2009004DAE9C /* ASIFormDataRequest.m in Sources */,
 				B5EED6A8113E2009004DAE9C /* ASIHTTPRequest.m in Sources */,
@@ -541,8 +535,18 @@
 				B5A9C3A31142AF950007B71C /* CoreResourceResultsTests.m in Sources */,
 				B5A9C3A41142AF950007B71C /* CoreResourceSerializationTests.m in Sources */,
 				B5A9C3A51142AF950007B71C /* CoreResourceUpdateTests.m in Sources */,
-				B5A9C3AA1142AFC30007B71C /* CoreResource.m in Sources */,
 				B57DCF0D1144E0400063915D /* CoreUtilsTests.m in Sources */,
+				B57DD0091144F1F70063915D /* CoreManager.m in Sources */,
+				B57DD00A1144F1F70063915D /* CoreRequest.m in Sources */,
+				B57DD00B1144F1F70063915D /* CoreResource.m in Sources */,
+				B57DD00C1144F1F70063915D /* CoreResult.m in Sources */,
+				B57DD00D1144F1F70063915D /* CoreResultsController.m in Sources */,
+				B57DD00E1144F1F70063915D /* CoreTableController.m in Sources */,
+				B57DD00F1144F1F70063915D /* CoreUtils.m in Sources */,
+				B57DD0101144F1F70063915D /* NSMutableArray+Core.m in Sources */,
+				B57DD0111144F1F70063915D /* NSObject+Core.m in Sources */,
+				B57DD0121144F1F70063915D /* NSSet+Core.m in Sources */,
+				B57DD0131144F1F70063915D /* NSString+InflectionSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,10 +566,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "CoreTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Classes/GHUnit\"",
-					"\"$(SRCROOT)/../Libraries/GHUnit\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/GHUnit\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -593,10 +594,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "CoreTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Classes/GHUnit\"",
-					"\"$(SRCROOT)/../Libraries/GHUnit\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/GHUnit\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,

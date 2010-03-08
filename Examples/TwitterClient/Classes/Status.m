@@ -17,7 +17,7 @@
 @dynamic user;
 
 + (NSString*) remoteURLForCollectionAction:(Action)action {
-    return @"http://twitter.com/statuses/user_timeline.json?screen_name=mikelaurence";
+    return @"http://twitter.com/statuses/public_timeline";
 }
 
 + (NSString*) bundlePathForCollectionAction:(Action)action {

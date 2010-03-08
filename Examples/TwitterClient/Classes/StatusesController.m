@@ -24,15 +24,9 @@
     [Status findAllRemote];
 
     // Activate local & remote fetch of statuses
-    [[self coreResultsController] fetch:[NSDictionary dictionaryWithObjectsAndKeys:
+    [[self coreResultsController] fetch:$D(
         @"createdAt DESC", @"$sort", 
-        @"statusList", @"$template",
-        nil]];
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return [cell isKindOfClass:[DynamicCell class]] ? [(DynamicCell*)cell height] : 60.0;
+        @"statusList", @"$template")];
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath {
@@ -56,11 +50,6 @@
 
     return cell;
 }
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end
 

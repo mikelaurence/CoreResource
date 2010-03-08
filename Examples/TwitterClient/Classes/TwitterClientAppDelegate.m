@@ -22,7 +22,6 @@
 
     // Create & configure Core Manager
     coreManager = [[CoreManager alloc] init];
-    //coreManager.useBundleRequests = YES;
     coreManager.remoteSiteURL = @"twitter.com";
     coreManager.logLevel = 5;
     
