@@ -18,13 +18,14 @@
 
 - (void) fetch;
 - (void) fetch:(id)parameters;
+- (void) fetch:(id)parameters withSort:(id)sort;
 
 #pragma mark -
 #pragma mark Convenience fetch methods
-- (void) fetchForRelatedResource:(CoreResource*)resource withSort:(NSString*)sort;
-- (void) fetchForRelatedResource:(CoreResource*)resource withParameters:(id)parameters andSort:(NSString*)sort;
-- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort;
-- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort;
+- (void) fetchForRelatedResource:(CoreResource*)resource withSort:(id)sort;
+- (void) fetchForRelatedResource:(CoreResource*)resource withParameters:(id)parameters andSort:(id)sort;
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withSort:(id)sort;
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(id)sort;
 
 @end
 

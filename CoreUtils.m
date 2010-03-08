@@ -41,6 +41,8 @@
 + (NSArray*) sortDescriptorsFromParameters:(id)parameters {
     if ([parameters isKindOfClass:[NSString class]])
         return [self sortDescriptorsFromString:parameters];
+    if ([parameters isKindOfClass:[NSDictionary class]])
+        return [self sortDescriptorsFromParameters:[parameters objectForKey:@"$sort"]];
     else if ([parameters isKindOfClass:[NSArray class]])
         return parameters;
     return nil;
@@ -104,10 +106,8 @@
         if ([object isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *predicates = [NSMutableArray arrayWithCapacity:[object count]];
             for (NSString *key in object) {
-                [predicates addObject:
-                    [self equivalencyPredicateForKey:key]];
-                    //[[self equivalencyPredicateForKey:key andValue:[object objectForKey:key]] 
-                    //    predicateWithSubstitutionVariables:object]];
+                if (![key hasPrefix:@"$"])
+                    [predicates addObject:[self equivalencyPredicateForKey:key]];
             }
             
             return [NSCompoundPredicate andPredicateWithSubpredicates:predicates];

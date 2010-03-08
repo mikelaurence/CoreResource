@@ -20,12 +20,15 @@
 }
 
 - (void) fetch:(id)parameters {
+    id sort = [CoreUtils sortDescriptorsFromParameters:parameters];
+    [self fetch:parameters withSort:sort];
+}
 
-    // Generate throwaway fetch request so we can pull out the predicate/sort descriptors/etc.
-    // (since we can't just reassign the results controller fetch request)
-    NSFetchRequest* fetch = [entityClass performSelector:@selector(fetchRequest:) withObject:parameters];
-    self.fetchRequest.predicate = [fetch predicate];
-    [self.fetchRequest setSortDescriptors:[fetch sortDescriptors]];
+
+- (void) fetch:(id)parameters withSort:(id)sort {
+
+    self.fetchRequest.predicate = [CoreUtils predicateFromObject:parameters];
+    [self.fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromParameters:sort]];
 
     NSError *error = nil;
 	if (![self performFetch:&error]) {
@@ -38,24 +41,22 @@
 #pragma mark -
 #pragma mark Convenience fetch methods
 
-- (void) fetchForRelatedResource:(CoreResource*)resource withSort:(NSString*)sort {
+- (void) fetchForRelatedResource:(CoreResource*)resource withSort:(id)sort {
     [self fetchForRelatedResource:resource withParameters:nil andSort:sort];
 }
 
-- (void) fetchForRelatedResource:(CoreResource*)resource withParameters:(id)parameters andSort:(NSString*)sort {
+- (void) fetchForRelatedResource:(CoreResource*)resource withParameters:(id)parameters andSort:(id)sort {
     [self fetchForResource:resource 
         inRelationship:[NSStringFromClass([resource class]) decapitalize]
         withParameters:parameters
         andSort:sort];
 }
 
-- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withSort:(NSString*)sort {
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withSort:(id)sort {
     [self fetchForResource:resource inRelationship:relationshipName withParameters:nil andSort:sort];
 }
 
-- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(NSString*)sort {
-    // Configure sort
-    [self.fetchRequest setSortDescriptors:[CoreUtils sortDescriptorsFromString:sort]];
+- (void) fetchForResource:(CoreResource*)resource inRelationship:(NSString*)relationshipName withParameters:(id)parameters andSort:(id)sort {
 
     // Get relationship to related resource
     NSRelationshipDescription *relationship = [[entityClass performSelector:@selector(relationshipsByName)] objectForKey:relationshipName];
@@ -72,10 +73,8 @@
         relationshipPredicate;
 
     // Perform fetch using parent to generate predicate
-    [self fetch:fetchPredicate];
+    [self fetch:fetchPredicate withSort:[CoreUtils sortDescriptorsFromString:sort]];
 }
-
-
 
 
 
