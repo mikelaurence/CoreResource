@@ -14,10 +14,22 @@
 
 #define $D(...) [NSDictionary dictionaryWithObjectsAndKeys: __VA_ARGS__, nil]
 #define $A(...) [NSArray arrayWithObjects: __VA_ARGS__, nil]
-#define $S(...) [NSString stringWithFormat: __VA_ARGS__]
-#define $I(_X_) [NSNumber numberWithInt:_X_]
-#define $F(_X_) [NSNumber numberWithFloat:_X_]
-#define $B(_X_) ((_X_) ? (id)kCFBooleanTrue : (id)kCFBooleanFalse)
+#define $S(format, ...) [NSString stringWithFormat:format, ## __VA_ARGS__]
+#define $I(i) [NSNumber numberWithInt:i]
+#define $F(f) [NSNumber numberWithFloat:f]
+#define $B(b) ((b) ? (id)kCFBooleanTrue : (id)kCFBooleanFalse)
+
+#pragma mark -
+#pragma mark Misc macros
+#if DEBUG==1
+#define Log(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__, [NSString stringWithFormat:format, ## __VA_ARGS__]);
+#define StartTimer NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
+#define EndTimer(msg) NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; Log([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
+#else
+#define Log(format, ...)
+#define StartTimer
+#define EndTimer(msg)
+#endif
 
 #pragma mark -
 #pragma mark Generic utilities

@@ -336,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B57DCEFE1144E0010063915D</string>
+										<string>B57DCFCD1144E7510063915D</string>
 										<key>history</key>
 										<array>
 											<string>B5A9C5901142C8190007B71C</string>
@@ -560,9 +560,9 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>B57DCECA1144DB860063915D</string>
 		<string>B57DCECB1144DB860063915D</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5A9C3DF1142C2A30007B71C</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/LighthouseClient/LighthouseClient.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -658,7 +658,7 @@
 			<key>WindowToolGUID</key>
 			<string>B5A9C3DF1142C2A30007B71C</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -939,7 +939,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

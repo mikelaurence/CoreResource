@@ -33,6 +33,7 @@
 		B56853AD1101140300A4C816 /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B56853AC1101140300A4C816 /* CoreResult.m */; };
 		B56FDB5B111B3BDA00D4CEA7 /* artists.0.alternate-field-names.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FDB18111B37F100D4CEA7 /* artists.0.alternate-field-names.json */; };
 		B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FD902111B308900D4CEA7 /* artists.0.update.json */; };
+		B57DCF0D1144E0400063915D /* CoreUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCF0C1144E0400063915D /* CoreUtilsTests.m */; };
 		B5A6614B110DF95400100C9E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6614A110DF95400100C9E /* Song.m */; };
 		B5A6615C110DF9CD00100C9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6615B110DF9CD00100C9E /* User.m */; };
 		B5A9C39E1142AF950007B71C /* CoreResourceConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */; };
@@ -93,6 +94,7 @@
 		B56853AC1101140300A4C816 /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../CoreResult.m; sourceTree = SOURCE_ROOT; };
 		B56FD902111B308900D4CEA7 /* artists.0.update.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.0.update.json; sourceTree = "<group>"; };
 		B56FDB18111B37F100D4CEA7 /* artists.0.alternate-field-names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "artists.0.alternate-field-names.json"; sourceTree = "<group>"; };
+		B57DCF0C1144E0400063915D /* CoreUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreUtilsTests.m; sourceTree = "<group>"; };
 		B5A66149110DF95400100C9E /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		B5A6614A110DF95400100C9E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		B5A6615A110DF9CD00100C9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */,
 				B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */,
 				B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */,
+				B57DCF0C1144E0400063915D /* CoreUtilsTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -310,16 +313,16 @@
 				B56853AC1101140300A4C816 /* CoreResult.m */,
 				B5BAC04610FFE05D00D57FCA /* CoreRequest.h */,
 				B5BAC04A10FFE05D00D57FCA /* CoreRequest.m */,
-				B5BAC04B10FFE05D00D57FCA /* CoreManager.m */,
 				B5BAC04C10FFE05D00D57FCA /* CoreManager.h */,
-				B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */,
+				B5BAC04B10FFE05D00D57FCA /* CoreManager.m */,
 				B5BAC04E10FFE05D00D57FCA /* CoreUtils.h */,
-				B5BAC05110FFE05D00D57FCA /* CoreTableController.m */,
+				B5BAC04D10FFE05D00D57FCA /* CoreUtils.m */,
 				B5BAC05210FFE05D00D57FCA /* CoreTableController.h */,
-				B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */,
+				B5BAC05110FFE05D00D57FCA /* CoreTableController.m */,
 				B5BAC04910FFE05D00D57FCA /* CoreResultsController.h */,
-				B5BAC04F10FFE05D00D57FCA /* NSString+InflectionSupport.m */,
+				B5BAC04810FFE05D00D57FCA /* CoreResultsController.m */,
 				B5BAC05010FFE05D00D57FCA /* NSString+InflectionSupport.h */,
+				B5BAC04F10FFE05D00D57FCA /* NSString+InflectionSupport.m */,
 				B5EED650113E1AF6004DAE9C /* NSMutableArray+Core.h */,
 				B5EED651113E1AF6004DAE9C /* NSMutableArray+Core.m */,
 				B5EED652113E1AF6004DAE9C /* NSObject+Core.h */,
@@ -539,6 +542,7 @@
 				B5A9C3A41142AF950007B71C /* CoreResourceSerializationTests.m in Sources */,
 				B5A9C3A51142AF950007B71C /* CoreResourceUpdateTests.m in Sources */,
 				B5A9C3AA1142AFC30007B71C /* CoreResource.m in Sources */,
+				B57DCF0D1144E0400063915D /* CoreUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
