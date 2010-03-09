@@ -95,4 +95,12 @@
 										 withString:[[result substringWithRange:NSMakeRange(0,1)] uppercaseString]];
 }
 
+- (NSString *)singularize {
+    return [self hasSuffix:@"s"] ? [self substringToIndex:[self length] - 1] : self;
+}
+
+- (NSString *)pluralize {
+    return [self hasSuffix:@"s"] ? self : [self stringByAppendingString:@"s"];
+}
+
 @end

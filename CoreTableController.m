@@ -7,6 +7,7 @@
 //
 
 #import "CoreTableController.h"
+#import "NSString+InflectionSupport.h"
 
 
 @implementation CoreTableController;
@@ -17,7 +18,10 @@
 #pragma mark -
 #pragma mark Data methods
 
-- (Class) model { return nil; }
+- (Class) model { 
+    return NSClassFromString(
+        [[NSStringFromClass([self class]) stringByReplacingOccurrencesOfString:@"Controller" withString:@""] singularize]);
+}
 
 - (int) resultsSectionCount {
     return [[[self coreResultsController] sections] count];
@@ -49,6 +53,15 @@
 
 - (BOOL) hasNoResultsMessage {
     return [self noResultsMessage] != nil;
+}
+
+
+
+#pragma mark -
+#pragma mark View controller methods
+
+- (void) loadView {
+    self.view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
 }
 
 

@@ -43,4 +43,8 @@
  */
 - (NSString *)toClassName;
 
+- (NSString *)singularize;
+
+- (NSString *)pluralize;
+
 @end
