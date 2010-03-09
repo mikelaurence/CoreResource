@@ -61,13 +61,20 @@
 #pragma mark View controller methods
 
 - (void) loadView {
-    self.view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    UITableView* tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] autorelease];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    self.view = tableView;
 }
 
 
 
 #pragma mark -
 #pragma mark Table view methods
+
+- (UITableView*) tableView {
+    return (UITableView*)self.view;
+}
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return [self hasResults] ? [self resultsSectionCount] : 
@@ -126,7 +133,7 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController*)controller {
 
 	// In the simplest, most efficient, case, reload the table view.
-	[(UITableView*)self.view reloadData];
+	[[self tableView] reloadData];
 }
 
 

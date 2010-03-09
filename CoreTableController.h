@@ -29,6 +29,7 @@
 
 #pragma mark -
 #pragma mark Table view methods
+- (UITableView*) tableView;
 - (UITableViewCell*) tableView:(UITableView*)tableView resultCellForRowAtIndexPath:(NSIndexPath*)indexPath;
 - (UITableViewCell*) noResultsCellForTableView:(UITableView*)tableView;
 

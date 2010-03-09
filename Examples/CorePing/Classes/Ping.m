@@ -15,7 +15,8 @@
 @dynamic device; 
 @dynamic latitude; 
 @dynamic longitude; 
-@dynamic message; 
+@dynamic message;  
 @dynamic name;
+@dynamic resourceId;
 
 @end

@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSNumber *longitude; 
 @property (nonatomic, retain) NSString *message; 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *resourceId;
 
 @end
