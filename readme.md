@@ -1,15 +1,20 @@
-## Known Issues
+## Raison d'être
+Core Resource strives to provide local & remote resource management for Objective-C in as little code as possible.
 
-- HTTP Requests for individual models need to be stored statically in case the object is deallocated before the request completes
-- Relationship deserialization currently only works for bidirectional relationships
+## Resources
+### Portal
+- [Core Resource website](http://coreresource.org)
 
+### Documentation
+- [Quick Start](http://coreresource.org/quick_start)
+- [Tutorials](http://coreresource.org/tutorials)
+- [Documentation](http://coreresource.org/documentation)
 
-## Planned Features
+### Community
+- [Get Satisfaction: discussions & feature requests](http://getsatisfaction.com/coreresource)
+- [Lighthouse: issue tracking](http://coreresource.lighthouseapp.com)
 
-- Asynchronous image download helpers/views (probably centrally managed in case models deallocate before images finish downloading)
-
-
-## License
+### License
 
 (The MIT License)
 
