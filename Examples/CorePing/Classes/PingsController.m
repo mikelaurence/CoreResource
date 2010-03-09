@@ -16,6 +16,8 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void) loadView { [self loadTableView]; }
+
 - (void) viewWillAppear:(BOOL)animated {
     [Ping findAllRemote];
     [[self coreResultsController] fetchWithSort:@"created_at DESC"];

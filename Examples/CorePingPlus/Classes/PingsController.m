@@ -19,6 +19,8 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void) loadView { [self loadTableView]; }
+
 - (void) viewWillAppear:(BOOL)animated {
     [self refresh];
     [[self coreResultsController] fetchWithSort:@"created_at DESC"];

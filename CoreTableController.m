@@ -58,19 +58,14 @@
 
 
 #pragma mark -
-#pragma mark View controller methods
+#pragma mark Table view methods
 
-- (void) loadView {
+- (void) loadTableView {
     UITableView* tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] autorelease];
     tableView.dataSource = self;
     tableView.delegate = self;
     self.view = tableView;
 }
-
-
-
-#pragma mark -
-#pragma mark Table view methods
 
 - (UITableView*) tableView {
     return (UITableView*)self.view;
