@@ -255,7 +255,8 @@
         ];
         if (fetch == nil) {
             fetch = [self fetchRequestWithSort:nil andPredicate:
-                [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ = %@", [self localIdField], resourceId]]];
+                [[CoreUtils equivalencyPredicateForKey:[self localIdField]] predicateWithSubstitutionVariables:
+                    [NSDictionary dictionaryWithObject:resourceId forKey:[self localIdField]]]];
         }
         [fetch setFetchLimit:1];
 

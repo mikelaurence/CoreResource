@@ -12,4 +12,7 @@
 @interface PingsController : CoreTableController {
 }
 
+- (IBAction) refresh;
+- (IBAction) compose;
+
 @end

@@ -35,7 +35,6 @@ static CoreManager* _main;
         // Default date parser is ruby DateTime.to_s style parser
         self.defaultDateParser = [[[NSDateFormatter alloc] init] autorelease];
         [defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-        //[defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];
         
         self.modelProperties = [NSMutableDictionary dictionary];
         self.modelRelationships = [NSMutableDictionary dictionary];

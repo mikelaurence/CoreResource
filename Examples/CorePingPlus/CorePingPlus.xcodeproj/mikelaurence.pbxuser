@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* CorePingPlusAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 636}}";
-			sepNavSelRange = "{436, 0}";
-			sepNavVisRange = "{0, 518}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 680}}";
+			sepNavSelRange = "{229, 0}";
+			sepNavVisRange = "{0, 526}";
 		};
 	};
 	1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 1007}}";
-			sepNavSelRange = "{735, 0}";
-			sepNavVisRange = "{295, 705}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 950}}";
+			sepNavSelRange = "{359, 0}";
+			sepNavVisRange = "{210, 840}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* CorePingPlus */ = {
@@ -29,16 +29,16 @@
 	};
 	28C286DF0D94DF7D0034E888 /* PingsController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 636}}";
-			sepNavSelRange = "{242, 0}";
-			sepNavVisRange = "{0, 254}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 657}}";
+			sepNavSelRange = "{292, 0}";
+			sepNavVisRange = "{0, 299}";
 		};
 	};
 	28C286E00D94DF7D0034E888 /* PingsController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 680}}";
-			sepNavSelRange = "{293, 0}";
-			sepNavVisRange = "{0, 382}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 1254}}";
+			sepNavSelRange = "{563, 0}";
+			sepNavVisRange = "{41, 542}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -179,9 +179,13 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = CorePingPlus;
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	B5DF14381145F5420084407F /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -233,8 +237,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {809, 220}}",
-							"{{814, 0}, {425, 220}}",
+							"{{0, 0}, {809, 218}}",
+							"{{814, 0}, {425, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -357,16 +361,37 @@
 	};
 	B5F180F51146042400F836BD /* CoreManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2676, 3857}}";
-			sepNavSelRange = "{5563, 0}";
-			sepNavVisRange = "{5382, 643}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 4028}}";
+			sepNavSelRange = "{987, 24}";
+			sepNavVisRange = "{220, 1066}";
 		};
 	};
 	B5F180F91146042400F836BD /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1290, 13224}}";
-			sepNavSelRange = "{1972, 0}";
-			sepNavVisRange = "{1388, 799}";
+			sepNavIntBoundsRect = "{{0, 0}, {1516, 12122}}";
+			sepNavSelRange = "{7434, 0}";
+			sepNavVisRange = "{7486, 722}";
+		};
+	};
+	B5F180FB1146042400F836BD /* CoreResult.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 893}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 669}";
+		};
+	};
+	B5F180FC1146042400F836BD /* CoreResultsController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 680}}";
+			sepNavSelRange = "{346, 0}";
+			sepNavVisRange = "{0, 923}";
+		};
+	};
+	B5F180FD1146042400F836BD /* CoreResultsController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 2014}}";
+			sepNavSelRange = "{425, 0}";
+			sepNavVisRange = "{249, 840}";
 		};
 	};
 	B5F180FE1146042400F836BD /* CoreTableController.h */ = {
@@ -378,9 +403,16 @@
 	};
 	B5F180FF1146042400F836BD /* CoreTableController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 3496}}";
-			sepNavSelRange = "{3241, 0}";
-			sepNavVisRange = "{2485, 1549}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 3439}}";
+			sepNavSelRange = "{2659, 0}";
+			sepNavVisRange = "{2454, 1579}";
+		};
+	};
+	B5F181011146042400F836BD /* CoreUtils.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 2470}}";
+			sepNavSelRange = "{3755, 0}";
+			sepNavVisRange = "{3114, 1154}";
 		};
 	};
 	B5F181081146042400F836BD /* NSString+InflectionSupport.h */ = {
@@ -399,14 +431,14 @@
 	};
 	B5F1811D114608EE00F836BD /* Ping.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 636}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 680}}";
 			sepNavSelRange = "{572, 0}";
 			sepNavVisRange = "{0, 580}";
 		};
 	};
 	B5F1811E114608EE00F836BD /* Ping.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 636}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 657}}";
 			sepNavSelRange = "{158, 0}";
 			sepNavVisRange = "{0, 311}";
 		};
@@ -416,7 +448,7 @@
 		fRef = 1D3623240D0F684500981E51 /* CorePingPlusAppDelegate.h */;
 		name = "CorePingAppDelegate.h: 20";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 444;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 0;
@@ -451,7 +483,7 @@
 		fRef = 1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */;
 		name = "CorePingAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 598;
+		rLoc = 610;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 174;
@@ -543,7 +575,7 @@
 		fRef = 1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */;
 		name = "CorePingAppDelegate.m: 9";
 		rLen = 0;
-		rLoc = 166;
+		rLoc = 174;
 		rType = 0;
 		vrLen = 216;
 		vrLoc = 45;
@@ -563,7 +595,7 @@
 		fRef = B5F181081146042400F836BD /* NSString+InflectionSupport.h */;
 		name = "NSString+InflectionSupport.h: 46";
 		rLen = 0;
-		rLoc = 991;
+		rLoc = 1045;
 		rType = 0;
 		vrLen = 727;
 		vrLoc = 297;
@@ -583,7 +615,7 @@
 		fRef = 1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */;
 		name = "CorePingAppDelegate.m: 23";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 475;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 174;
@@ -593,7 +625,7 @@
 		fRef = B5F180FF1146042400F836BD /* CoreTableController.m */;
 		name = "CoreTableController.m: 65";
 		rLen = 0;
-		rLoc = 1680;
+		rLoc = 2218;
 		rType = 0;
 		vrLen = 943;
 		vrLoc = 1018;
@@ -613,7 +645,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* PingsController.m */;
 		name = "PingsController.m: 18";
 		rLen = 0;
-		rLoc = 374;
+		rLoc = 1580;
 		rType = 0;
 		vrLen = 254;
 		vrLoc = 0;
@@ -623,7 +655,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* PingsController.m */;
 		name = "PingsController.m: 14";
 		rLen = 0;
-		rLoc = 217;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 0;
@@ -633,7 +665,7 @@
 		fRef = 1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */;
 		name = "CorePingAppDelegate.m: 9";
 		rLen = 0;
-		rLoc = 166;
+		rLoc = 174;
 		rType = 0;
 		vrLen = 216;
 		vrLoc = 45;
@@ -643,7 +675,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* PingsController.m */;
 		name = "PingsController.m: 22";
 		rLen = 0;
-		rLoc = 373;
+		rLoc = 758;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 0;
@@ -653,7 +685,7 @@
 		fRef = 1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */;
 		name = "CorePingAppDelegate.m: 23";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 475;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 174;
@@ -673,7 +705,7 @@
 		fRef = B5F180F51146042400F836BD /* CoreManager.m */;
 		name = "CoreManager.m: 177";
 		rLen = 0;
-		rLoc = 5563;
+		rLoc = 5492;
 		rType = 0;
 		vrLen = 643;
 		vrLoc = 5382;
@@ -693,7 +725,7 @@
 		fRef = B5F180FF1146042400F836BD /* CoreTableController.m */;
 		name = "CoreTableController.m: 76";
 		rLen = 9;
-		rLoc = 1786;
+		rLoc = 2324;
 		rType = 0;
 		vrLen = 781;
 		vrLoc = 1018;
@@ -703,7 +735,7 @@
 		fRef = B5F180FF1146042400F836BD /* CoreTableController.m */;
 		name = "CoreTableController.m: 56";
 		rLen = 0;
-		rLoc = 1392;
+		rLoc = 1930;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 1019;
@@ -713,7 +745,7 @@
 		fRef = B5F180FF1146042400F836BD /* CoreTableController.m */;
 		name = "CoreTableController.m: 51";
 		rLen = 0;
-		rLoc = 1313;
+		rLoc = 1851;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 1019;
@@ -760,7 +792,7 @@
 		rLen = 0;
 		rLoc = 207;
 		rType = 0;
-		vrLen = 362;
+		vrLen = 311;
 		vrLoc = 0;
 	};
 	B5F1817D11462DDD00F836BD /* PBXTextBookmark */ = {
@@ -778,7 +810,7 @@
 		fRef = B5F180FF1146042400F836BD /* CoreTableController.m */;
 		name = "CoreTableController.m: 108";
 		rLen = 0;
-		rLoc = 3241;
+		rLoc = 3779;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 2485;
@@ -788,7 +820,7 @@
 		fRef = 1D3623240D0F684500981E51 /* CorePingPlusAppDelegate.h */;
 		name = "CorePingAppDelegate.h: 20";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 444;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 0;
@@ -798,7 +830,7 @@
 		fRef = 1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */;
 		name = "CorePingAppDelegate.m: 34";
 		rLen = 0;
-		rLoc = 735;
+		rLoc = 832;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 297;
@@ -818,7 +850,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* PingsController.m */;
 		name = "PingsController.m: 19";
 		rLen = 0;
-		rLoc = 293;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 0;
@@ -857,5 +889,33 @@
 		isa = XDModelBookmark;
 		fRef = B5F180BA1146035900F836BD /* corepingplus.xcdatamodel */;
 		fallbackIsa = PBXBookmark;
+	};
+	B5F181A61146338200F836BD /* NSDate+Helper.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 680}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 783}";
+		};
+	};
+	B5F181A71146338200F836BD /* NSDate+Helper.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 4199}}";
+			sepNavSelRange = "{992, 0}";
+			sepNavVisRange = "{723, 909}";
+		};
+	};
+	B5F1821F11463DD000F836BD /* PingController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 657}}";
+			sepNavSelRange = "{398, 20}";
+			sepNavVisRange = "{0, 425}";
+		};
+	};
+	B5F1822011463DD000F836BD /* PingController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 657}}";
+			sepNavSelRange = "{348, 46}";
+			sepNavVisRange = "{0, 403}";
+		};
 	};
 }

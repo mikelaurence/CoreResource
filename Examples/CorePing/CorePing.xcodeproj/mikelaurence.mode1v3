@@ -274,8 +274,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>10</integer>
+									<integer>7</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -310,12 +310,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>coreping.xcdatamodel</string>
+								<string>PingsController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,26 +325,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>coreping.xcdatamodel</string>
+										<string>PingsController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5F1818D11462FCC00F836BD</string>
+										<string>B5F1821A11463CA700F836BD</string>
 										<key>history</key>
 										<array>
-											<string>B5F18153114626C300F836BD</string>
-											<string>B5F18154114626C300F836BD</string>
-											<string>B5F18173114627DB00F836BD</string>
-											<string>B5F18174114627DB00F836BD</string>
-											<string>B5F1817811462D2E00F836BD</string>
-											<string>B5F1818011462F8900F836BD</string>
 											<string>B5F1818111462F8900F836BD</string>
 											<string>B5F1818211462F8900F836BD</string>
 											<string>B5F1818311462F8900F836BD</string>
-											<string>B5F1818411462F8900F836BD</string>
 											<string>B5F1818511462F8900F836BD</string>
 											<string>B5F1818611462F8900F836BD</string>
-											<string>B5F1818711462F8900F836BD</string>
+											<string>B5F18198114631AD00F836BD</string>
+											<string>B5F181A11146327D00F836BD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

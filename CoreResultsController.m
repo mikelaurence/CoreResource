@@ -19,6 +19,10 @@
     [self fetch:nil];
 }
 
+- (void) fetchWithSort:(id)sort {
+    [self fetch:nil withSort:sort];
+}
+
 - (void) fetch:(id)parameters {
     id sort = [CoreUtils sortDescriptorsFromParameters:parameters];
     [self fetch:parameters withSort:sort];

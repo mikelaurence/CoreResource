@@ -24,6 +24,7 @@
     // Instantiate CoreManager
     coreManager = [[CoreManager alloc] init]; 
     coreManager.remoteSiteURL = @"http://coreresource.org";
+    [coreManager.defaultDateParser setDateFormat:@"EEE MMM dd HH:mm:ss 'UTC' yyyy"];
 	
     // Set up window & main view
 	[window addSubview:[navigationController view]];

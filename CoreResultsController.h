@@ -17,6 +17,7 @@
 @property (nonatomic) Class entityClass;
 
 - (void) fetch;
+- (void) fetchWithSort:(id)sort;
 - (void) fetch:(id)parameters;
 - (void) fetch:(id)parameters withSort:(id)sort;
 

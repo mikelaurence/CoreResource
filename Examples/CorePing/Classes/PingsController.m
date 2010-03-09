@@ -18,7 +18,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [Ping findAllRemote];
-    [[self coreResultsController] fetch];
+    [[self coreResultsController] fetchWithSort:@"created_at DESC"];
 }
 
 

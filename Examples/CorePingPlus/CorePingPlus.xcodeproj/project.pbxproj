@@ -46,6 +46,10 @@
 		B5F181151146042400F836BD /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F181091146042400F836BD /* NSString+InflectionSupport.m */; };
 		B5F181161146042400F836BD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B5F1810A1146042400F836BD /* readme.md */; };
 		B5F1811F114608EE00F836BD /* Ping.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F1811E114608EE00F836BD /* Ping.m */; };
+		B5F181A91146338200F836BD /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F181A71146338200F836BD /* NSDate+Helper.m */; };
+		B5F181AA1146338200F836BD /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = B5F181A81146338200F836BD /* README.textile */; };
+		B5F1822211463DD000F836BD /* PingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F1822011463DD000F836BD /* PingController.m */; };
+		B5F1822311463DD000F836BD /* PingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F1822111463DD000F836BD /* PingController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +125,12 @@
 		B5F1810A1146042400F836BD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../../readme.md; sourceTree = SOURCE_ROOT; };
 		B5F1811D114608EE00F836BD /* Ping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ping.h; sourceTree = "<group>"; };
 		B5F1811E114608EE00F836BD /* Ping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ping.m; sourceTree = "<group>"; };
+		B5F181A61146338200F836BD /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		B5F181A71146338200F836BD /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		B5F181A81146338200F836BD /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		B5F1821F11463DD000F836BD /* PingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingController.h; sourceTree = "<group>"; };
+		B5F1822011463DD000F836BD /* PingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingController.m; sourceTree = "<group>"; };
+		B5F1822111463DD000F836BD /* PingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PingController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +158,13 @@
 				B5F180BC114603F500F836BD /* Libraries */,
 				1D3623240D0F684500981E51 /* CorePingPlusAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CorePingPlusAppDelegate.m */,
-				28C286DF0D94DF7D0034E888 /* PingsController.h */,
-				28C286E00D94DF7D0034E888 /* PingsController.m */,
 				B5F1811D114608EE00F836BD /* Ping.h */,
 				B5F1811E114608EE00F836BD /* Ping.m */,
+				28C286DF0D94DF7D0034E888 /* PingsController.h */,
+				28C286E00D94DF7D0034E888 /* PingsController.m */,
+				B5F1821F11463DD000F836BD /* PingController.h */,
+				B5F1822011463DD000F836BD /* PingController.m */,
+				B5F1822111463DD000F836BD /* PingController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 		B5F180BC114603F500F836BD /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B5F181A51146338200F836BD /* NSDate-Helper */,
 				B5F180BD114603F500F836BD /* ASIHTTPRequest */,
 				B5F180CB114603F500F836BD /* DynamicCell */,
 				B5F180CE114603F500F836BD /* JSON */,
@@ -309,6 +323,16 @@
 			name = CoreResource;
 			sourceTree = "<group>";
 		};
+		B5F181A51146338200F836BD /* NSDate-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B5F181A61146338200F836BD /* NSDate+Helper.h */,
+				B5F181A71146338200F836BD /* NSDate+Helper.m */,
+				B5F181A81146338200F836BD /* README.textile */,
+			);
+			path = "NSDate-Helper";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,6 +384,8 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				B5F181161146042400F836BD /* readme.md in Resources */,
+				B5F181AA1146338200F836BD /* README.textile in Resources */,
+				B5F1822311463DD000F836BD /* PingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +426,8 @@
 				B5F181141146042400F836BD /* NSSet+Core.m in Sources */,
 				B5F181151146042400F836BD /* NSString+InflectionSupport.m in Sources */,
 				B5F1811F114608EE00F836BD /* Ping.m in Sources */,
+				B5F181A91146338200F836BD /* NSDate+Helper.m in Sources */,
+				B5F1822211463DD000F836BD /* PingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
