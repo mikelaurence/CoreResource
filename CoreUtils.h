@@ -21,15 +21,9 @@
 
 #pragma mark -
 #pragma mark Misc macros
-#if DEBUG==1
 #define Log(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__, [NSString stringWithFormat:format, ## __VA_ARGS__]);
 #define StartTimer NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
 #define EndTimer(msg) NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; Log([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
-#else
-#define Log(format, ...)
-#define StartTimer
-#define EndTimer(msg)
-#endif
 
 #pragma mark -
 #pragma mark Generic utilities

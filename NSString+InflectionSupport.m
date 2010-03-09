@@ -10,6 +10,8 @@
 
 @implementation NSString (InflectionSupport)
 
+static NSMutableDictionary *cachedCamelized;
+
 - (NSCharacterSet *)capitals {
 	return [NSCharacterSet uppercaseLetterCharacterSet];
 }
@@ -71,7 +73,20 @@
 	
 	free(buffer);
 	return underscored;
-	
+}
+
+- (NSString*)camelizeCached {
+    if (cachedCamelized == nil)
+        cachedCamelized = [[NSMutableDictionary dictionary] retain];
+    else {
+        NSString* cached = [cachedCamelized objectForKey:self];
+        if (cached != nil)
+            return cached;
+    }
+    
+    NSString* camelized = [self camelize];
+    [cachedCamelized setObject:camelized forKey:self];
+    return camelized;
 }
 
 - (NSString *)titleize {

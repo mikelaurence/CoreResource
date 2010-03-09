@@ -29,7 +29,8 @@
  *
  *   [@"camel-case_string" camelize] //> @"camelCaseString"
  */
-- (NSString *)camelize;
+- (NSString*)camelize;
+- (NSString*)camelizeCached;
 
 /**
  * Return a copy of the string suitable for displaying in a title. Each word is downcased, with the first letter upcased.

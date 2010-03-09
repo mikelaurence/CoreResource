@@ -301,7 +301,7 @@
 							<real>281</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>47 76 1544 943 0 0 1680 1028 </string>
+						<string>61 74 1544 943 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5887D6F1146BF930033A7B3</string>
+										<string>B5887D7A1146BFD00033A7B3</string>
 										<key>history</key>
 										<array>
 											<string>B5F182491146443700F836BD</string>
@@ -360,7 +360,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1241, 708}}</string>
 								<key>RubberWindowFrame</key>
-								<string>47 76 1544 943 0 0 1680 1028 </string>
+								<string>61 74 1544 943 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -380,7 +380,7 @@
 								<key>Frame</key>
 								<string>{{0, 713}, {1241, 189}}</string>
 								<key>RubberWindowFrame</key>
-								<string>47 76 1544 943 0 0 1680 1028 </string>
+								<string>61 74 1544 943 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -550,7 +550,7 @@
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/CorePingPlus/CorePingPlus.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>47 76 1544 943 0 0 1680 1028 </string>
+	<string>61 74 1544 943 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
