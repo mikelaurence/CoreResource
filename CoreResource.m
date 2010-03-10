@@ -140,25 +140,28 @@
 }
 
 
-- (NSString*) serialize {
-    return [self serialize:nil];
+- (NSString*) toJson {
+    return [self toJson:nil];
 }
 
-- (NSString*) serialize:(id)options {
-    return [[[CoreSerializer serializerWithResource:self andOptions:options] serialize] JSONRepresentation];
+- (NSString*) toJson:(id)options {
+    NSMutableDictionary* mOptions = options != nil ? [options mutableCopy] : [NSMutableDictionary dictionary];
+    [mOptions setObject:$B(YES) forKey:@"$serializeDates"];
+    return [[self properties:mOptions] JSONRepresentation];
 }
 
 - (NSMutableDictionary*) properties {
     return [self properties:nil withoutObjects:nil];
 }
 
-- (NSMutableDictionary*) properties:(NSDictionary *)options {
+- (NSMutableDictionary*) properties:(NSDictionary*)options {
     return [self properties:options withoutObjects:nil];
 }
 
 - (NSMutableDictionary*) properties:(NSDictionary*)options withoutObjects:(NSMutableArray*)withouts {
     NSArray* only = [options objectForKey:@"$only"];
     NSArray* except = [options objectForKey:@"$except"];
+    BOOL serializeDates = [[options objectForKey:@"$serializeDates"] boolValue];
 
     if (withouts == nil)
         withouts = [NSMutableArray array];
@@ -183,8 +186,13 @@
                 value = [NSNull null];
 
             // For attributes, simply set the value
-            if ([prop isKindOfClass:[NSAttributeDescription class]])
+            if ([prop isKindOfClass:[NSAttributeDescription class]]) {
+                // Serialize dates if serializeDates is set
+                if ([value isKindOfClass:[NSDate class]] && serializeDates)
+                    value = [[[self class] dateParserForField:key] stringFromDate:value];
+            
                 [dict setObject:value forKey:key];
+            }
                 
             // For relationships, recursively branch off properties:ignoringObjects call
             else {
@@ -702,41 +710,6 @@
     coreResultsController.entityClass = self;
     return coreResultsController;
 }
-
-@end
-
-
-
-
-
-#pragma mark -
-#pragma mark Core Serializer
-
-@implementation CoreSerializer
-
-+ (CoreSerializer*) serializerWithResource:(CoreResource*)aResource andOptions:(NSDictionary*)someOptions {
-    return [[[CoreSerializer alloc] initWithResource:aResource] autorelease];
-}
-
-- (id) initWithResource:(CoreResource*)aResource andOptions:(NSDictionary*)someOptions {
-    if (self = [super init])
-        resource = [aResource retain];
-        options = [someOptions retain];
-        seenResources = [NSMutableArray array];
-    return self;
-}
-
-- (NSDictionary*) serialize {
-    return [resource serialize:options];
-}
-
-- (void) dealloc {
-    [seenResources release];
-    [options release];
-    [resource release];
-    [super dealloc];
-}
-
 
 @end
 

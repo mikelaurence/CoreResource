@@ -56,8 +56,8 @@ typedef enum _Action {
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
 + (NSArray*) deserializeFromString:(NSString*)serializedString;
 + (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection;
-- (NSString*) serialize;
-- (NSString*) serialize:(id)options;
+- (NSString*) toJson;
+- (NSString*) toJson:(id)options;
 - (NSMutableDictionary*) properties;
 - (NSMutableDictionary*) properties:(NSDictionary*)options;
 - (NSMutableDictionary*) properties:(NSDictionary*)options withoutObjects:(NSArray*)withouts;
@@ -134,22 +134,5 @@ typedef enum _Action {
 + (NSPredicate*) variablePredicateWithParameters:(id)parameters;
 + (CoreResultsController*) coreResultsControllerWithSort:(id)sorting andSectionKey:(NSString*)sectionKey;
 + (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
-
-@end
-
-
-#pragma mark -
-#pragma mark Serializer
-
-@interface CoreSerializer : NSObject {
-    CoreResource* resource;
-    NSMutableArray* seenResources;
-    NSDictionary* options;
-}
-
-+ (CoreSerializer*) serializerWithResource:(CoreResource*)aResource andOptions:(NSDictionary*)someOptions;
-- (id) initWithResource:(CoreResource *)aResource andOptions:(NSDictionary *)someOptions;
-
-- (NSDictionary*) serialize;
 
 @end

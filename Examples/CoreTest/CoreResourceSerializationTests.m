@@ -8,6 +8,7 @@
 
 #import "CoreResourceTestCase.h"
 #import "User.h"
+#import "JSON.h"
 
 
 @interface CoreResourceSerializationTests : CoreResourceTestCase {}
@@ -111,6 +112,18 @@ NOTE: Test should be re-written with a different model altogether to avoid confu
     GHAssertEquals((NSInteger) [songs count], 2, nil);
     GHAssertEqualStrings([[songs objectAtIndex:0] objectForKey:@"name"], @"Don't Make Me a Target", nil);
     GHAssertEqualStrings([[songs objectAtIndex:1] objectForKey:@"name"], @"You Got Yr. Cherry Bomb", nil);
+}
+
+- (void) testToJson {
+    Artist* secondArtist = [self loadArtist:1];
+    NSString* secondArtistJson = [secondArtist toJson];
+    NSDictionary* props = [secondArtistJson JSONValue];
+    GHAssertEquals((NSInteger) [props count], 6, nil);
+    GHAssertEquals([[props objectForKey:@"resourceId"] intValue], [secondArtist.resourceId intValue], nil);
+    GHAssertEqualStrings([props objectForKey:@"name"], secondArtist.name, nil);
+    GHAssertEqualStrings([props objectForKey:@"summary"], secondArtist.summary, nil);
+    GHAssertEqualStrings([props objectForKey:@"detail"], secondArtist.detail, nil);
+    GHAssertEqualStrings([props objectForKey:@"updatedAt"], [[Artist dateParser] stringFromDate:secondArtist.updatedAt], nil);
 }
 
 
