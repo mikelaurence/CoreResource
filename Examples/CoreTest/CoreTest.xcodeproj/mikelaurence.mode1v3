@@ -280,13 +280,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>1</integer>
+									<integer>33</integer>
+									<integer>28</integer>
+									<integer>22</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {317, 904}}</string>
+							<string>{{0, 52}, {317, 904}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -335,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5D9FCC511475CD900003855</string>
+										<string>B5D9FCD211475EB400003855</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -353,9 +354,7 @@
 											<string>B5887F9611471E180033A7B3</string>
 											<string>B5887F9711471E180033A7B3</string>
 											<string>B5887F9811471E180033A7B3</string>
-											<string>B5887FAB1147248F0033A7B3</string>
 											<string>B5887FBF1147260B0033A7B3</string>
-											<string>B5D9FC041147529C00003855</string>
 											<string>B5D9FC091147529C00003855</string>
 											<string>B5D9FC0B1147529C00003855</string>
 											<string>B5D9FC0C1147529C00003855</string>
@@ -375,7 +374,9 @@
 											<string>B5D9FC9711475AA900003855</string>
 											<string>B5D9FCBF11475CC000003855</string>
 											<string>B5D9FCC211475CD300003855</string>
-											<string>B5D9FCC311475CD300003855</string>
+											<string>B5D9FCCF11475EB400003855</string>
+											<string>B5D9FCD011475EB400003855</string>
+											<string>B5D9FCD111475EB400003855</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -602,7 +603,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Artist.m</string>
+								<string>CoreResource.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

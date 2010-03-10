@@ -17,11 +17,6 @@ typedef enum _Action {
     Destroy = 3
 } Action;
 
-#define $only [NSNumber numberWithInt:1]
-#define $except [NSNumber numberWithInt:2]
-#define $indent [NSNumber numberWithInt:3]
-#define $indentRoot [NSNumber numberWithInt:4]
-
 @interface CoreResource : NSManagedObject {
     ASIHTTPRequest* request;
 }

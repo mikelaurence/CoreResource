@@ -157,8 +157,8 @@
 }
 
 - (NSMutableDictionary*) properties:(NSDictionary*)options withoutObjects:(NSMutableArray*)withouts {
-    NSArray* only = [options objectForKey:$only];
-    NSArray* except = [options objectForKey:$except];
+    NSArray* only = [options objectForKey:@"$only"];
+    NSArray* except = [options objectForKey:@"$except"];
 
     if (withouts == nil)
         withouts = [NSMutableArray array];

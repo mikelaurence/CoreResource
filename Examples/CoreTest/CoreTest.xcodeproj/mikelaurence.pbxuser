@@ -242,6 +242,15 @@
 			B5D9FCC311475CD300003855 /* PBXTextBookmark */ = B5D9FCC311475CD300003855 /* PBXTextBookmark */;
 			B5D9FCC411475CD300003855 /* PBXTextBookmark */ = B5D9FCC411475CD300003855 /* PBXTextBookmark */;
 			B5D9FCC511475CD900003855 /* PBXTextBookmark */ = B5D9FCC511475CD900003855 /* PBXTextBookmark */;
+			B5D9FCC811475EAE00003855 /* PBXTextBookmark */ = B5D9FCC811475EAE00003855 /* PBXTextBookmark */;
+			B5D9FCC911475EAE00003855 /* PBXTextBookmark */ = B5D9FCC911475EAE00003855 /* PBXTextBookmark */;
+			B5D9FCCA11475EAE00003855 /* XCBuildMessageTextBookmark */ = B5D9FCCA11475EAE00003855 /* XCBuildMessageTextBookmark */;
+			B5D9FCCB11475EAE00003855 /* PBXTextBookmark */ = B5D9FCCB11475EAE00003855 /* PBXTextBookmark */;
+			B5D9FCCE11475EB300003855 /* PBXTextBookmark */ = B5D9FCCE11475EB300003855 /* PBXTextBookmark */;
+			B5D9FCCF11475EB400003855 /* PBXTextBookmark */ = B5D9FCCF11475EB400003855 /* PBXTextBookmark */;
+			B5D9FCD011475EB400003855 /* PBXTextBookmark */ = B5D9FCD011475EB400003855 /* PBXTextBookmark */;
+			B5D9FCD111475EB400003855 /* XCBuildMessageTextBookmark */ = B5D9FCD111475EB400003855 /* XCBuildMessageTextBookmark */;
+			B5D9FCD211475EB400003855 /* PBXTextBookmark */ = B5D9FCD211475EB400003855 /* PBXTextBookmark */;
 			B5DF13141145AF030084407F = B5DF13141145AF030084407F /* PBXTextBookmark */;
 			B5EED71D113E27D1004DAE9C = B5EED71D113E27D1004DAE9C /* PBXTextBookmark */;
 		};
@@ -540,16 +549,16 @@
 	};
 	B57DCFF61144F1F70063915D /* CoreResource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 3059}}";
-			sepNavSelRange = "{1976, 0}";
-			sepNavVisRange = "{1385, 1263}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 3078}}";
+			sepNavSelRange = "{319, 0}";
+			sepNavVisRange = "{42, 644}";
 		};
 	};
 	B57DCFF71144F1F70063915D /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1244, 13794}}";
-			sepNavSelRange = "{27117, 0}";
-			sepNavVisRange = "{9486, 1137}";
+			sepNavIntBoundsRect = "{{0, 0}, {876, 14174}}";
+			sepNavSelRange = "{4673, 0}";
+			sepNavVisRange = "{4342, 360}";
 		};
 	};
 	B57DCFFA1144F1F70063915D /* CoreResultsController.h */ = {
@@ -649,7 +658,7 @@
 		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
 		name = "CoreResource.h: 66";
 		rLen = 0;
-		rLoc = 1976;
+		rLoc = 1801;
 		rType = 0;
 		vrLen = 1263;
 		vrLoc = 1385;
@@ -714,7 +723,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 185";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5508;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 4671;
@@ -724,7 +733,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 186";
 		rLen = 0;
-		rLoc = 5501;
+		rLoc = 5507;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 4997;
@@ -813,9 +822,9 @@
 	};
 	B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 2489}}";
-			sepNavSelRange = "{4602, 0}";
-			sepNavVisRange = "{3867, 1419}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 2546}}";
+			sepNavSelRange = "{3814, 0}";
+			sepNavVisRange = "{2631, 1657}";
 		};
 	};
 	B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */ = {
@@ -1039,9 +1048,9 @@
 	};
 	B5BAC0D810FFE27600D57FCA /* Artist.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 523}}";
-			sepNavSelRange = "{367, 0}";
-			sepNavVisRange = "{0, 456}";
+			sepNavIntBoundsRect = "{{0, 0}, {932, 513}}";
+			sepNavSelRange = "{332, 0}";
+			sepNavVisRange = "{250, 206}";
 		};
 	};
 	B5D9FBCB1147440600003855 /* PBXTextBookmark */ = {
@@ -1049,7 +1058,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 186";
 		rLen = 0;
-		rLoc = 5501;
+		rLoc = 5507;
 		rType = 0;
 		vrLen = 1637;
 		vrLoc = 5039;
@@ -1266,7 +1275,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 299";
 		rLen = 0;
-		rLoc = 9485;
+		rLoc = 9491;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 9184;
@@ -1276,7 +1285,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 204";
 		rLen = 0;
-		rLoc = 6568;
+		rLoc = 6574;
 		rType = 0;
 		vrLen = 1339;
 		vrLoc = 5621;
@@ -1286,7 +1295,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 204";
 		rLen = 0;
-		rLoc = 6568;
+		rLoc = 6574;
 		rType = 0;
 		vrLen = 1339;
 		vrLoc = 5621;
@@ -1306,7 +1315,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 106";
 		rLen = 0;
-		rLoc = 4278;
+		rLoc = 4284;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3081;
@@ -1316,7 +1325,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 106";
 		rLen = 0;
-		rLoc = 4231;
+		rLoc = 4237;
 		rType = 0;
 		vrLen = 1579;
 		vrLoc = 2693;
@@ -1326,7 +1335,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 95";
 		rLen = 0;
-		rLoc = 3631;
+		rLoc = 3634;
 		rType = 0;
 		vrLen = 1579;
 		vrLoc = 2693;
@@ -1336,7 +1345,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 204";
 		rLen = 0;
-		rLoc = 6568;
+		rLoc = 6574;
 		rType = 0;
 		vrLen = 1338;
 		vrLoc = 5621;
@@ -1346,7 +1355,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 214";
 		rLen = 0;
-		rLoc = 6795;
+		rLoc = 6801;
 		rType = 0;
 		vrLen = 1241;
 		vrLoc = 5610;
@@ -1356,7 +1365,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 167";
 		rLen = 0;
-		rLoc = 4840;
+		rLoc = 4846;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 4404;
@@ -1366,7 +1375,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 116";
 		rLen = 0;
-		rLoc = 5344;
+		rLoc = 5350;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 2923;
@@ -1376,7 +1385,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 699";
 		rLen = 0;
-		rLoc = 27117;
+		rLoc = 27123;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 9486;
@@ -1723,7 +1732,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 113";
 		rLen = 0;
-		rLoc = 4796;
+		rLoc = 4802;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 3480;
@@ -2090,7 +2099,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 113";
 		rLen = 0;
-		rLoc = 4796;
+		rLoc = 4802;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 3480;
@@ -2608,7 +2617,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 112";
 		rLen = 0;
-		rLoc = 4729;
+		rLoc = 4735;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 3677;
@@ -2638,7 +2647,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 114";
 		rLen = 0;
-		rLoc = 4872;
+		rLoc = 4878;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 3677;
@@ -2648,7 +2657,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 110";
 		rLen = 0;
-		rLoc = 4571;
+		rLoc = 4577;
 		rType = 0;
 		vrLen = 1393;
 		vrLoc = 3677;
@@ -2658,7 +2667,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 110";
 		rLen = 0;
-		rLoc = 4571;
+		rLoc = 4577;
 		rType = 0;
 		vrLen = 1393;
 		vrLoc = 3677;
@@ -2688,7 +2697,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 110";
 		rLen = 0;
-		rLoc = 4571;
+		rLoc = 4577;
 		rType = 0;
 		vrLen = 1393;
 		vrLoc = 3677;
@@ -2738,7 +2747,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 110";
 		rLen = 0;
-		rLoc = 4571;
+		rLoc = 4577;
 		rType = 0;
 		vrLen = 1393;
 		vrLoc = 3677;
@@ -2748,7 +2757,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 112";
 		rLen = 0;
-		rLoc = 4729;
+		rLoc = 4735;
 		rType = 0;
 		vrLen = 1443;
 		vrLoc = 3724;
@@ -2758,7 +2767,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 111";
 		rLen = 0;
-		rLoc = 4602;
+		rLoc = 4608;
 		rType = 0;
 		vrLen = 1409;
 		vrLoc = 3812;
@@ -2768,7 +2777,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 111";
 		rLen = 0;
-		rLoc = 4602;
+		rLoc = 4608;
 		rType = 0;
 		vrLen = 1409;
 		vrLoc = 3812;
@@ -2818,7 +2827,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 111";
 		rLen = 0;
-		rLoc = 4602;
+		rLoc = 4608;
 		rType = 0;
 		vrLen = 1354;
 		vrLoc = 3867;
@@ -2828,7 +2837,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 110";
 		rLen = 0;
-		rLoc = 4602;
+		rLoc = 4608;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 3867;
@@ -2838,10 +2847,98 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 110";
 		rLen = 0;
-		rLoc = 4602;
+		rLoc = 4608;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 3867;
+	};
+	B5D9FCC811475EAE00003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5BAC0D810FFE27600D57FCA /* Artist.m */;
+		name = "Artist.m: 23";
+		rLen = 0;
+		rLoc = 332;
+		rType = 0;
+		vrLen = 206;
+		vrLoc = 250;
+	};
+	B5D9FCC911475EAE00003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
+		name = "CoreResourceSerializationTests.m: 88";
+		rLen = 0;
+		rLoc = 3338;
+		rType = 0;
+		vrLen = 466;
+		vrLoc = 3169;
+	};
+	B5D9FCCA11475EAE00003855 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'$only' undeclared (first use in this function)";
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 159;
+		rType = 1;
+	};
+	B5D9FCCB11475EAE00003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 161";
+		rLen = 0;
+		rLoc = 4673;
+		rType = 0;
+		vrLen = 360;
+		vrLoc = 4342;
+	};
+	B5D9FCCE11475EB300003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 161";
+		rLen = 0;
+		rLoc = 4673;
+		rType = 0;
+		vrLen = 360;
+		vrLoc = 4342;
+	};
+	B5D9FCCF11475EB400003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 699";
+		rLen = 0;
+		rLoc = 27123;
+		rType = 0;
+		vrLen = 1137;
+		vrLoc = 9486;
+	};
+	B5D9FCD011475EB400003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
+		name = "CoreResource.h: 18";
+		rLen = 0;
+		rLoc = 319;
+		rType = 0;
+		vrLen = 644;
+		vrLoc = 42;
+	};
+	B5D9FCD111475EB400003855 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'$only' undeclared (first use in this function)";
+		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 87;
+		rType = 1;
+	};
+	B5D9FCD211475EB400003855 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
+		name = "CoreResourceSerializationTests.m: 96";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 1657;
+		vrLoc = 2631;
 	};
 	B5DF13141145AF030084407F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
