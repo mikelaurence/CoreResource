@@ -13,6 +13,9 @@
 @implementation CoreTableController;
 
 @synthesize coreResultsController;
+@synthesize tableReloadTimer, tableReloadDelay;
+
+static float defaultTableReloadDelay = 0.25;
 
 
 #pragma mark -
@@ -126,11 +129,17 @@
 
 // Notifies the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController*)controller {
-
-	// In the simplest, most efficient, case, reload the table view.
-	[[self tableView] reloadData];
+    // Invalidate any existing table reload timer
+    [tableReloadTimer invalidate];
+    
+	// Set table reload delay to default if undefined
+    if (tableReloadDelay == nil)
+        self.tableReloadDelay = $F(defaultTableReloadDelay);
+    
+    // Begin a new timer to reload table data after tableReloadDelay
+    self.tableReloadTimer = [NSTimer scheduledTimerWithTimeInterval:[tableReloadDelay doubleValue] 
+        target:[self tableView] selector:@selector(reloadData) userInfo:nil repeats:NO];
 }
-
 
 
 #pragma mark -

@@ -12,9 +12,15 @@
 
 @interface CoreTableController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>  {
 	CoreResultsController *coreResultsController;
+    
+    NSTimer *tableReloadTimer;
+    NSNumber *tableReloadDelay;
 }
 
 @property (nonatomic, retain) CoreResultsController *coreResultsController;
+
+@property (nonatomic, retain) NSTimer *tableReloadTimer;
+@property (nonatomic, retain) NSNumber *tableReloadDelay;
 
 #pragma mark -
 #pragma mark Results methods
