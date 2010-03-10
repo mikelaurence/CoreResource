@@ -73,10 +73,6 @@ NOTE: Test should be re-written with a different model altogether to avoid confu
     Artist* firstArtist = [self loadArtist:0];
     NSDictionary* props = [firstArtist properties:nil];
     
-    NSLog(@"PROPS ====================================\n\n");
-    NSLog(@"%@", props);
-    NSLog(@"\n\nPROPS ====================================\n\n");
-    
     GHAssertEquals((NSInteger) [props count], 6, nil);
     GHAssertEquals([props objectForKey:@"resourceId"], firstArtist.resourceId, nil);
     GHAssertEquals([props objectForKey:@"name"], firstArtist.name, nil);
@@ -104,6 +100,17 @@ NOTE: Test should be re-written with a different model altogether to avoid confu
     GHAssertEquals([props objectForKey:@"updatedAt"], firstArtist.updatedAt, nil);
     GHAssertTrue([[props objectForKey:@"songs"] isKindOfClass:[NSArray class]], nil);
     GHAssertEquals((NSInteger) [[props objectForKey:@"songs"] count], 0, nil);
+}
+
+- (void) testPropertiesWithRelationshipsAndNoOptions {
+    Artist* secondArtist = [self loadArtist:1];
+    NSDictionary* props = [secondArtist properties];
+    GHAssertEquals((NSInteger) [props count], 6, nil);
+
+    NSArray* songs = [[props objectForKey:@"songs"] sortedArrayUsingFunction:ascendingSort context:@"name"];
+    GHAssertEquals((NSInteger) [songs count], 2, nil);
+    GHAssertEqualStrings([[songs objectAtIndex:0] objectForKey:@"name"], @"Don't Make Me a Target", nil);
+    GHAssertEqualStrings([[songs objectAtIndex:1] objectForKey:@"name"], @"You Got Yr. Cherry Bomb", nil);
 }
 
 

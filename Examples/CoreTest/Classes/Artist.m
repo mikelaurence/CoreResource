@@ -7,6 +7,7 @@
 //
 
 #import "Artist.h"
+#import "CoreUtils.h"
 
 
 @implementation Artist
@@ -17,5 +18,9 @@
 @dynamic songs;
 @dynamic summary;
 @dynamic updatedAt;
+
+- (NSArray*) sortedSongs {
+    return [[self.songs allObjects] sortedArrayUsingDescriptors:[CoreUtils sortDescriptorsFromString:@"name ASC"]];
+}
 
 @end

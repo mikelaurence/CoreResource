@@ -11,6 +11,9 @@
 
 @implementation Song
 
+@dynamic name;
+@dynamic resourceId;
+
 @dynamic artist;
 
 @end

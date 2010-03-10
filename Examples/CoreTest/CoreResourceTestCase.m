@@ -40,6 +40,19 @@
     artist.summary = [dict objectForKey:@"summary"];
     artist.detail = [dict objectForKey:@"detail"];
     artist.updatedAt = [[[CoreManager main] defaultDateParser] dateFromString:[dict objectForKey:@"updatedAt"]];
+    
+    NSDictionary* songsArray = [dict objectForKey:@"songs"];
+    NSMutableSet* songs = [NSMutableSet set];
+    if (songsArray) {
+        for (NSDictionary* dict in songsArray) {
+            Song* song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
+            song.resourceId = [dict objectForKey:@"id"];
+            song.name = [dict objectForKey:@"name"];
+            [songs addObject:song];
+        }
+        artist.songs = songs;
+    }
+    
     return artist;
 }
 
@@ -60,10 +73,23 @@
     GHAssertEqualStrings(artist.name, @"Spoon", nil);
     GHAssertEqualStrings(artist.summary, @"Spoon is an American indie rock band from Austin, Texas.", nil);
     GHAssertEquals([artist.resourceId intValue], 1, nil);
+    GHAssertEquals((NSInteger) [artist.songs count], 2, nil);
+    GHAssertEqualStrings(((Song*)[[artist sortedSongs] objectAtIndex:0]).name, @"Don't Make Me a Target", nil);
+    GHAssertEqualStrings(((Song*)[[artist sortedSongs] objectAtIndex:1]).name, @"You Got Yr. Cherry Bomb", nil);
 }
 
 - (void) performRequestsAsynchronously {
     [CoreManager main].bundleRequestDelay = 0.1;   // Add delay to request so it performs asynchronously
+}
+
+
+
+
+#pragma mark -
+#pragma mark Sorting
+
+NSInteger ascendingSort(id obj1, id obj2, void *key) {
+    return [[obj1 objectForKey:key] compare:[obj2 objectForKey:key]];
 }
 
 

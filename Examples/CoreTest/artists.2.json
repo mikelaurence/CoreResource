@@ -3,5 +3,15 @@
     "name": "Phoenix",
     "summary": "Phoenix is a Grammy nominated French alternative rock band.",
     "detail": "Phoenix is a Grammy nominated French alternative rock band started during their childhood by Thomas Mars, Deck D'Arcy, Christian Mazzalai and Laurent Brancowitz in the suburb of Versailles, in the same culture that produced late-'90s bands such as Air and Daft Punk.",
-    "updatedAt": "2009-12-26T11:00:00Z"
+    "updatedAt": "2009-12-26T11:00:00Z",
+    "songs": [
+        {
+            "id": 3,
+            "name": "Lisztomania"
+        },
+        {
+            "id": 4,
+            "name": "1901"
+        }
+    ]
 }

@@ -14,6 +14,9 @@
 @interface Song : CoreResource {
 }
 
-@property (nonatomic, retain) Artist * artist;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *resourceId;
+
+@property (nonatomic, retain) Artist *artist;
 
 @end

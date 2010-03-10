@@ -3,5 +3,15 @@
     "name": "Spoon",
     "summary": "Spoon is an American indie rock band from Austin, Texas.",
     "detail": "Spoon is an American indie rock band from Austin, Texas. The band is composed of Britt Daniel (vocals, guitar); Jim Eno (drums); Rob Pope (bass) and Eric Harvey (keyboard, guitar, percussion, backing vocals).",
-    "updatedAt": "2009-12-08T09:11:23Z"
+    "updatedAt": "2009-12-08T09:11:23Z",
+    "songs": [
+        {
+            "id": 1,
+            "name": "Don't Make Me a Target"
+        },
+        {
+            "id": 2,
+            "name": "You Got Yr. Cherry Bomb"
+        }
+    ]
 }

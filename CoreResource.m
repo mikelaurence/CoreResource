@@ -102,7 +102,6 @@
 }
 
 + (NSArray*) deserializeFromString:(NSString*)serializedString {
-    //NSLog(@"Serialized data: %@", serializedString);
     id deserialized = [serializedString JSONValue];
     if (deserialized != nil) {
         // Turn into array if not already one

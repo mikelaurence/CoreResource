@@ -11,13 +11,33 @@
         "name": "Spoon",
         "summary": "Spoon is an American indie rock band from Austin, Texas.",
         "detail": "Spoon is an American indie rock band from Austin, Texas. The band is composed of Britt Daniel (vocals, guitar); Jim Eno (drums); Rob Pope (bass) and Eric Harvey (keyboard, guitar, percussion, backing vocals).",
-        "updatedAt": "2009-12-08T09:11:23Z"
+        "updatedAt": "2009-12-08T09:11:23Z",
+        "songs": [
+            {
+                "id": 1,
+                "name": "Don't Make Me a Target"
+            },
+            {
+                "id": 2,
+                "name": "You Got Yr. Cherry Bomb"
+            }
+        ]
     },
     {
         "id": 2,
         "name": "Phoenix",
         "summary": "Phoenix is a Grammy nominated French alternative rock band.",
         "detail": "Phoenix is a Grammy nominated French alternative rock band started during their childhood by Thomas Mars, Deck D'Arcy, Christian Mazzalai and Laurent Brancowitz in the suburb of Versailles, in the same culture that produced late-'90s bands such as Air and Daft Punk.",
-        "updatedAt": "2009-12-26T11:00:00Z"
+        "updatedAt": "2009-12-26T11:00:00Z",
+        "songs": [
+            {
+                "id": 3,
+                "name": "Lisztomania"
+            },
+            {
+                "id": 4,
+                "name": "1901"
+            }
+        ]
     }
 ]

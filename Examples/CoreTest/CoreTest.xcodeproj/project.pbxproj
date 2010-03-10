@@ -276,8 +276,8 @@
 			children = (
 				B568535A11010A6F00A4C816 /* TestHelpers.h */,
 				B568535B11010A6F00A4C816 /* TestHelpers.m */,
-				B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */,
 				B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */,
+				B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */,
 				B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */,
 				B5A9C3971142AF950007B71C /* CoreResourceCoreDataTests.m */,
 				B5A9C3981142AF950007B71C /* CoreResourceCreateTests.m */,
