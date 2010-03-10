@@ -64,6 +64,11 @@
     [self validateSecondArtist:[sortedResources objectAtIndex:1]];
 }
 
+- (void) testProperties {
+    Artist* firstArtist = [self loadArtist:0];
+    NSDictionary* props = [firstArtist properties:nil];
+}
+
 /*
 - (void) testAlteredDataCollectionFromDeserializedCollection { GHFail(nil); }
 

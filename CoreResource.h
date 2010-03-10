@@ -17,6 +17,11 @@ typedef enum _Action {
     Destroy = 3
 } Action;
 
+#define $only [NSNumber numberWithInt:1]
+#define $except [NSNumber numberWithInt:2]
+#define $indent [NSNumber numberWithInt:3]
+#define $indentRoot [NSNumber numberWithInt:4]
+
 @interface CoreResource : NSManagedObject {
     ASIHTTPRequest* request;
 }
@@ -57,7 +62,10 @@ typedef enum _Action {
 + (NSArray*) deserializeFromString:(NSString*)serializedString;
 + (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection;
 - (NSString*) serialize;
-- (NSString*) serialize:(id)parameters;
+- (NSString*) serialize:(id)options;
+- (NSMutableDictionary*) properties;
+- (NSMutableDictionary*) properties:(NSDictionary*)options;
+- (NSMutableDictionary*) properties:(NSDictionary*)options withoutObjects:(NSArray*)withouts;
 
 
 #pragma mark -
@@ -70,6 +78,7 @@ typedef enum _Action {
 + (NSDictionary*) relationshipsByName;
 + (BOOL) hasRelationships;
 + (NSDictionary*) propertiesByName;
++ (NSDictionary*) attributesByName;
 + (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field inModel:(Class)modelClass;
 + (NSPropertyDescription*) propertyDescriptionForField:(NSString*)field;
 
@@ -131,6 +140,21 @@ typedef enum _Action {
 + (CoreResultsController*) coreResultsControllerWithSort:(id)sorting andSectionKey:(NSString*)sectionKey;
 + (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
 
-
 @end
 
+
+#pragma mark -
+#pragma mark Serializer
+
+@interface CoreSerializer : NSObject {
+    CoreResource* resource;
+    NSMutableArray* seenResources;
+    NSDictionary* options;
+}
+
++ (CoreSerializer*) serializerWithResource:(CoreResource*)aResource andOptions:(NSDictionary*)someOptions;
+- (id) initWithResource:(CoreResource *)aResource andOptions:(NSDictionary *)someOptions;
+
+- (NSDictionary*) serialize;
+
+@end

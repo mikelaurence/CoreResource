@@ -27,6 +27,7 @@
     
     NSMutableDictionary *modelProperties;
     NSMutableDictionary *modelRelationships;
+    NSMutableDictionary *modelAttributes;
     
     int logLevel;
 }
@@ -45,6 +46,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary *modelProperties;
 @property (nonatomic, retain) NSMutableDictionary *modelRelationships;
+@property (nonatomic, retain) NSMutableDictionary *modelAttributes;
 
 @property (nonatomic, assign) int logLevel;
 

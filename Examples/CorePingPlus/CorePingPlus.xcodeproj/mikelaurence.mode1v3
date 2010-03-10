@@ -276,7 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
+									<integer>29</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PingsController.m</string>
+								<string>PingController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PingsController.m</string>
+										<string>PingController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5887D7A1146BFD00033A7B3</string>
+										<string>B5887F591146FD8D0033A7B3</string>
 										<key>history</key>
 										<array>
 											<string>B5F182491146443700F836BD</string>
@@ -344,9 +344,9 @@
 											<string>B5F182511146443700F836BD</string>
 											<string>B5F182521146443700F836BD</string>
 											<string>B5F182531146443700F836BD</string>
-											<string>B5F182541146443700F836BD</string>
 											<string>B5887D6E1146BF930033A7B3</string>
-											<string>B5F182501146443700F836BD</string>
+											<string>B5887F531146FBBC0033A7B3</string>
+											<string>B5887F541146FBBC0033A7B3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -358,14 +358,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1241, 708}}</string>
+								<string>{{0, 0}, {1241, 704}}</string>
 								<key>RubberWindowFrame</key>
 								<string>61 74 1544 943 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>708pt</string>
+							<string>704pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -378,14 +378,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 713}, {1241, 189}}</string>
+								<string>{{0, 709}, {1241, 193}}</string>
 								<key>RubberWindowFrame</key>
 								<string>61 74 1544 943 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>189pt</string>
+							<string>193pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -404,9 +404,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B5887D701146BF930033A7B3</string>
+				<string>B5887F561146FBBC0033A7B3</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B5887D711146BF930033A7B3</string>
+				<string>B5887F571146FBBC0033A7B3</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -544,8 +544,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5F1812E114612FA00F836BD</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/CorePingPlus/CorePingPlus.xcodeproj</string>
 	</array>
@@ -627,7 +625,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B5F1812E114612FA00F836BD</string>
-				<string>B5887D721146BF930033A7B3</string>
+				<string>B5887F581146FBBC0033A7B3</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

@@ -36,9 +36,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* PingsController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1180, 1406}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1180, 1311}}";
 			sepNavSelRange = "{383, 0}";
-			sepNavVisRange = "{166, 748}";
+			sepNavVisRange = "{579, 1054}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -98,12 +98,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289849227;
-			PBXWorkspaceStateSaveDate = 289849227;
+			PBXPerProjectTemplateStateSaveDate = 289864620;
+			PBXWorkspaceStateSaveDate = 289864620;
 		};
 		perUserProjectItems = {
 			B5887D6E1146BF930033A7B3 /* PBXTextBookmark */ = B5887D6E1146BF930033A7B3 /* PBXTextBookmark */;
-			B5887D7A1146BFD00033A7B3 /* PBXTextBookmark */ = B5887D7A1146BFD00033A7B3 /* PBXTextBookmark */;
+			B5887F531146FBBC0033A7B3 /* PBXTextBookmark */ = B5887F531146FBBC0033A7B3 /* PBXTextBookmark */;
+			B5887F541146FBBC0033A7B3 /* PBXTextBookmark */ = B5887F541146FBBC0033A7B3 /* PBXTextBookmark */;
+			B5887F591146FD8D0033A7B3 /* PBXTextBookmark */ = B5887F591146FD8D0033A7B3 /* PBXTextBookmark */;
 			B5F182491146443700F836BD /* PlistBookmark */ = B5F182491146443700F836BD /* PlistBookmark */;
 			B5F1824A1146443700F836BD /* PBXTextBookmark */ = B5F1824A1146443700F836BD /* PBXTextBookmark */;
 			B5F1824B1146443700F836BD /* PBXTextBookmark */ = B5F1824B1146443700F836BD /* PBXTextBookmark */;
@@ -111,11 +113,9 @@
 			B5F1824D1146443700F836BD /* PBXTextBookmark */ = B5F1824D1146443700F836BD /* PBXTextBookmark */;
 			B5F1824E1146443700F836BD /* PBXTextBookmark */ = B5F1824E1146443700F836BD /* PBXTextBookmark */;
 			B5F1824F1146443700F836BD /* PBXTextBookmark */ = B5F1824F1146443700F836BD /* PBXTextBookmark */;
-			B5F182501146443700F836BD /* PBXTextBookmark */ = B5F182501146443700F836BD /* PBXTextBookmark */;
 			B5F182511146443700F836BD /* PBXTextBookmark */ = B5F182511146443700F836BD /* PBXTextBookmark */;
 			B5F182521146443700F836BD /* PBXTextBookmark */ = B5F182521146443700F836BD /* PBXTextBookmark */;
 			B5F182531146443700F836BD /* PBXTextBookmark */ = B5F182531146443700F836BD /* PBXTextBookmark */;
-			B5F182541146443700F836BD /* PBXTextBookmark */ = B5F182541146443700F836BD /* PBXTextBookmark */;
 		};
 		sourceControlManager = B5DF14381145F5420084407F /* Source Control */;
 		userBuildSettings = {
@@ -131,15 +131,35 @@
 		vrLen = 1202;
 		vrLoc = 645;
 	};
-	B5887D7A1146BFD00033A7B3 /* PBXTextBookmark */ = {
+	B5887F531146FBBC0033A7B3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28C286E00D94DF7D0034E888 /* PingsController.m */;
 		name = "PingsController.m: 22";
 		rLen = 0;
 		rLoc = 383;
 		rType = 0;
-		vrLen = 748;
-		vrLoc = 166;
+		vrLen = 1054;
+		vrLoc = 579;
+	};
+	B5887F541146FBBC0033A7B3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5F1822011463DD000F836BD /* PingController.m */;
+		name = "PingController.m: 33";
+		rLen = 0;
+		rLoc = 1022;
+		rType = 0;
+		vrLen = 1128;
+		vrLoc = 3;
+	};
+	B5887F591146FD8D0033A7B3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5F1822011463DD000F836BD /* PingController.m */;
+		name = "PingController.m: 23";
+		rLen = 0;
+		rLoc = 439;
+		rType = 0;
+		vrLen = 1092;
+		vrLoc = 44;
 	};
 	B5DF142E1145F5230084407F /* CorePingPlus */ = {
 		isa = PBXExecutable;
@@ -467,8 +487,8 @@
 	B5F1822011463DD000F836BD /* PingController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1180, 760}}";
-			sepNavSelRange = "{1022, 0}";
-			sepNavVisRange = "{24, 1107}";
+			sepNavSelRange = "{439, 0}";
+			sepNavVisRange = "{44, 1092}";
 		};
 	};
 	B5F182491146443700F836BD /* PlistBookmark */ = {
@@ -538,16 +558,6 @@
 		vrLen = 311;
 		vrLoc = 0;
 	};
-	B5F182501146443700F836BD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286E00D94DF7D0034E888 /* PingsController.m */;
-		name = "PingsController.m: 13";
-		rLen = 0;
-		rLoc = 259;
-		rType = 0;
-		vrLen = 766;
-		vrLoc = 166;
-	};
 	B5F182511146443700F836BD /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28C286DF0D94DF7D0034E888 /* PingsController.h */;
@@ -577,15 +587,5 @@
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 652;
-	};
-	B5F182541146443700F836BD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5F1822011463DD000F836BD /* PingController.m */;
-		name = "PingController.m: 33";
-		rLen = 0;
-		rLoc = 1022;
-		rType = 0;
-		vrLen = 1107;
-		vrLoc = 24;
 	};
 }

@@ -13,7 +13,7 @@
 
 @synthesize requestQueue;
 @synthesize remoteSiteURL, useBundleRequests, bundleRequestDelay, defaultDateParser;
-@synthesize modelProperties, modelRelationships;
+@synthesize modelProperties, modelRelationships, modelAttributes;
 @synthesize logLevel;
 
 #pragma mark -

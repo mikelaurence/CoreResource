@@ -145,9 +145,67 @@
     return [self serialize:nil];
 }
 
-- (NSString*) serialize:(id)parameters {
-    // Build dictionary
-    return nil;
+- (NSString*) serialize:(id)options {
+    return [[[CoreSerializer serializerWithResource:self andOptions:options] serialize] JSONRepresentation];
+}
+
+- (NSMutableDictionary*) properties {
+    return [self properties:nil withoutObjects:nil];
+}
+
+- (NSMutableDictionary*) properties:(NSDictionary *)options {
+    return [self properties:options withoutObjects:nil];
+}
+
+- (NSMutableDictionary*) properties:(NSDictionary*)options withoutObjects:(NSMutableArray*)withouts {
+    NSArray* only = [options objectForKey:$only];
+    NSArray* except = [options objectForKey:$except];
+
+    if (withouts == nil)
+        withouts = [NSMutableArray array];
+    [withouts addObject:self];
+    
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    
+    // If indent option is set, "indent" this object's nesting within a named dictionary
+    /*
+    if ([options objectForKey:$indent]) {
+        NSMutableDictionary* indentDict = [NSMutableDictionary dictionary];
+        [dict setObject:indentDict forKey:key];
+        dict = indentDict;
+    }
+    */
+    
+    for (NSPropertyDescription* prop in [[[self class] entityDescription] properties]) {
+        NSString* key = prop.name;
+        if ((only == nil || [only containsObject:key]) && (except == nil || ![except containsObject:key])) {
+            id value = [self valueForKey:key];
+        
+            // For attributes, simply set the value
+            if ([prop isKindOfClass:[NSAttributeDescription class]])
+                [dict setObject:value forKey:key];
+                
+            // For relationships, recursively branch off properties:ignoringObjects call
+            else {
+                NSRelationshipDescription* rel = (NSRelationshipDescription*)prop;
+                if ([rel isToMany]) {
+                    NSSet* relResources = value;
+                    NSMutableArray* relArray = [NSMutableArray arrayWithCapacity:[relResources count]];
+                    for (CoreResource* resource in relResources) {
+                        // Only add objects which are not part of the withouts array
+                        // (most importantly, ignore objects that have been previously added)
+                        if (![withouts containsObject:resource])
+                            [relArray addObject:[resource properties:options withoutObjects:withouts]];
+                    }
+                }
+                else {
+                    if (![withouts containsObject:value])
+                        [dict setObject:value forKey:key];
+                }
+            }
+        }
+    }
+    return dict;
 }
 
 
@@ -184,6 +242,16 @@
 
 + (BOOL) hasRelationships {
     return [[self relationshipsByName] count] > 0;
+}
+
++ (NSDictionary*) attributesByName {
+    NSDictionary* attr = [[[CoreManager main] modelAttributes] objectForKey:self];
+    if (attr == nil) {
+        // Cache properties dictionary if not yet extant
+        attr = [[self entityDescription] attributesByName];
+        [[[CoreManager main] modelAttributes] setObject:attr forKey:self];
+    }
+    return attr;
 }
 
 + (NSDictionary*) propertiesByName {
@@ -632,6 +700,41 @@
     coreResultsController.entityClass = self;
     return coreResultsController;
 }
+
+@end
+
+
+
+
+
+#pragma mark -
+#pragma mark Core Serializer
+
+@implementation CoreSerializer
+
++ (CoreSerializer*) serializerWithResource:(CoreResource*)aResource andOptions:(NSDictionary*)someOptions {
+    return [[[CoreSerializer alloc] initWithResource:aResource] autorelease];
+}
+
+- (id) initWithResource:(CoreResource*)aResource andOptions:(NSDictionary*)someOptions {
+    if (self = [super init])
+        resource = [aResource retain];
+        options = [someOptions retain];
+        seenResources = [NSMutableArray array];
+    return self;
+}
+
+- (NSDictionary*) serialize {
+    return [resource serialize:options];
+}
+
+- (void) dealloc {
+    [seenResources release];
+    [options release];
+    [resource release];
+    [super dealloc];
+}
+
 
 @end
 

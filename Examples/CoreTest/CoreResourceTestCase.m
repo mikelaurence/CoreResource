@@ -32,7 +32,7 @@
     [self loadArtist:2];
 }
 
-- (void) loadArtist:(int)index {
+- (Artist*) loadArtist:(int)index {
     Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
     NSDictionary* dict = [self artistData:index];
     artist.resourceId = [dict objectForKey:@"id"];
@@ -40,6 +40,7 @@
     artist.summary = [dict objectForKey:@"summary"];
     artist.detail = [dict objectForKey:@"detail"];
     artist.updatedAt = [[[CoreManager main] defaultDateParser] dateFromString:[dict objectForKey:@"updatedAt"]];
+    return artist;
 }
 
 - (NSArray*) allLocalArtists {
