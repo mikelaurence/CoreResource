@@ -325,32 +325,15 @@
     // Get remote ID
     id resourceId = [dict objectForKey:[self remoteIdField]];
     
-    // If there is an ID, attempt to find existing record by using ById fetch template
+    // If there is an ID, attempt to find existing record
     if (resourceId != nil) {
-        NSFetchRequest* fetch = [[[self coreManager] managedObjectModel] 
-            fetchRequestFromTemplateWithName:[NSString stringWithFormat:@"%@ById", self] 
-            substitutionVariables:[NSDictionary dictionaryWithObject:resourceId forKey:@"id"]
-        ];
-        if (fetch == nil) {
-            fetch = [self fetchRequestWithSort:nil andPredicate:
-                [[CoreUtils equivalencyPredicateForKey:[self localIdField]] predicateWithSubstitutionVariables:
-                    [NSDictionary dictionaryWithObject:resourceId forKey:[self localIdField]]]];
-        }
-        [fetch setFetchLimit:1];
+        CoreResult* findResult = [self findLocal:resourceId];
 
-        NSError* fetchError = nil;
-        NSMutableArray* fetchResults = [[[[self coreManager] managedObjectContext] executeFetchRequest:fetch error:&fetchError] mutableCopy];
-
-        if (fetchError == nil) {
-            // If there is a result, check to see whether we should update it or not
-            if ([fetchResults count] > 0) {
-                CoreResource *existingObject = [fetchResults objectAtIndex:0];
-                [existingObject updateWithDictionary:dict];
-                return existingObject;
-            }
-        }
-        else {
-            NSLog(@"Error in fetching with dictionary %@ for update comparison: %@", dict, [fetchError localizedDescription]);
+        // If there is a result, check to see whether we should update it or not
+        if ([findResult resourceCount] == 1) {
+            CoreResource *existingObject = [findResult resource];
+            [existingObject updateWithDictionary:dict];
+            return existingObject;
         }
     }
     
@@ -515,7 +498,7 @@
 }
 
 + (CoreResult*) findLocal:(id)resourceId {
-    return [self findAllLocal:[NSString stringWithFormat:@"%@ = %@", [self localIdField], resourceId]];
+    return [self findAllLocal:$D(resourceId, [self localIdField], $S(@"find%@", NSStringFromClass(self)), @"$template")];
 }
 
 + (CoreResult*) findAllLocal {
