@@ -180,7 +180,9 @@
         NSString* key = prop.name;
         if ((only == nil || [only containsObject:key]) && (except == nil || ![except containsObject:key])) {
             id value = [self valueForKey:key];
-        
+            if (value == nil)
+                value = [NSNull null];
+
             // For attributes, simply set the value
             if ([prop isKindOfClass:[NSAttributeDescription class]])
                 [dict setObject:value forKey:key];
@@ -197,6 +199,7 @@
                         if (![withouts containsObject:resource])
                             [relArray addObject:[resource properties:options withoutObjects:withouts]];
                     }
+                    [dict setObject:relArray forKey:key];
                 }
                 else {
                     if (![withouts containsObject:value])

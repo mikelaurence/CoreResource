@@ -20,8 +20,4 @@
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSDate * updatedAt;
 
-@property (nonatomic, retain) NSString * theDetail;
-@property (nonatomic, retain) NSString * theName;
-@property (nonatomic, retain) NSString * theSummary;
-
 @end

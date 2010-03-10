@@ -23,6 +23,10 @@
 #pragma mark -
 #pragma mark Tests - Serialization
 
+/*
+
+NOTE: Test should be re-written with a different model altogether to avoid confusion.
+
 - (void) testLocalNameForRemoteField { 
     // Override Artist's localNameForRemoteField method using this class as a source
     SwizzleMethod([Artist class], @selector(localNameForRemoteField:), [self class], @selector(localNameForRemoteField:), NO);
@@ -34,6 +38,7 @@
     // Revert Artist's localNameForRemoteField method
     SwizzleMethod([Artist class], @selector(localNameForRemoteField:), [User class], @selector(localNameForRemoteField:), NO);
 }
+*/
 
 /*
 - (void) testRemoteNameForLocalField { GHFail(nil); }
@@ -64,10 +69,43 @@
     [self validateSecondArtist:[sortedResources objectAtIndex:1]];
 }
 
-- (void) testProperties {
+- (void) testPropertiesWithNoOptions {
     Artist* firstArtist = [self loadArtist:0];
     NSDictionary* props = [firstArtist properties:nil];
+    
+    NSLog(@"PROPS ====================================\n\n");
+    NSLog(@"%@", props);
+    NSLog(@"\n\nPROPS ====================================\n\n");
+    
+    GHAssertEquals((NSInteger) [props count], 6, nil);
+    GHAssertEquals([props objectForKey:@"resourceId"], firstArtist.resourceId, nil);
+    GHAssertEquals([props objectForKey:@"name"], firstArtist.name, nil);
+    GHAssertEquals([props objectForKey:@"summary"], firstArtist.summary, nil);
+    GHAssertEquals([props objectForKey:@"detail"], firstArtist.detail, nil);
+    GHAssertEquals([props objectForKey:@"updatedAt"], firstArtist.updatedAt, nil);
+    GHAssertTrue([[props objectForKey:@"songs"] isKindOfClass:[NSArray class]], nil);
+    GHAssertEquals((NSInteger) [[props objectForKey:@"songs"] count], 0, nil);
 }
+
+- (void) testPropertiesWithOnlyOption {
+    Artist* firstArtist = [self loadArtist:0];
+    NSDictionary* props = [firstArtist properties:$D($A(@"name", @"summary"), $only)];
+    GHAssertEquals((NSInteger) [props count], 2, nil);
+    GHAssertEquals([props objectForKey:@"name"], firstArtist.name, nil);
+    GHAssertEquals([props objectForKey:@"summary"], firstArtist.summary, nil);
+}
+
+- (void) testPropertiesWithExceptOption {
+    Artist* firstArtist = [self loadArtist:0];
+    NSDictionary* props = [firstArtist properties:$D($A(@"detail", @"name"), $except)];
+    GHAssertEquals((NSInteger) [props count], 4, nil);
+    GHAssertEquals([props objectForKey:@"resourceId"], firstArtist.resourceId, nil);
+    GHAssertEquals([props objectForKey:@"summary"], firstArtist.summary, nil);
+    GHAssertEquals([props objectForKey:@"updatedAt"], firstArtist.updatedAt, nil);
+    GHAssertTrue([[props objectForKey:@"songs"] isKindOfClass:[NSArray class]], nil);
+    GHAssertEquals((NSInteger) [[props objectForKey:@"songs"] count], 0, nil);
+}
+
 
 /*
 - (void) testAlteredDataCollectionFromDeserializedCollection { GHFail(nil); }
@@ -94,6 +132,7 @@
 }
 */
 
+/*
 + (NSString*) localNameForRemoteField:(NSString*)name {
     NSString* alt = [[NSDictionary dictionaryWithObjectsAndKeys:
         @"theName", @"name",
@@ -102,6 +141,7 @@
         objectForKey:name];
     return alt != nil ? alt : name;
 }
+*/
 
 
 @end

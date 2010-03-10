@@ -20,7 +20,7 @@
 - (NSString*) artistDataJSON:(NSString*)file;
 - (NSDictionary*) artistData:(int)index;
 - (void) loadAllArtists;
-- (void) loadArtist:(int)index;
+- (Artist*) loadArtist:(int)index;
 - (NSArray*) allLocalArtists;
 - (void) validateFirstArtist:(Artist*)artist;
 - (void) validateSecondArtist:(Artist*)artist;
