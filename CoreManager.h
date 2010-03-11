@@ -25,6 +25,7 @@
 
     NSDateFormatter *defaultDateParser;
     
+    NSMutableDictionary *entityDescriptions;
     NSMutableDictionary *modelProperties;
     NSMutableDictionary *modelRelationships;
     NSMutableDictionary *modelAttributes;
@@ -44,6 +45,7 @@
 
 @property (nonatomic, retain) NSDateFormatter *defaultDateParser;
 
+@property (nonatomic, retain) NSMutableDictionary *entityDescriptions;
 @property (nonatomic, retain) NSMutableDictionary *modelProperties;
 @property (nonatomic, retain) NSMutableDictionary *modelRelationships;
 @property (nonatomic, retain) NSMutableDictionary *modelAttributes;

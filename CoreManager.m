@@ -13,7 +13,7 @@
 
 @synthesize requestQueue;
 @synthesize remoteSiteURL, useBundleRequests, bundleRequestDelay, defaultDateParser;
-@synthesize modelProperties, modelRelationships, modelAttributes;
+@synthesize entityDescriptions, modelProperties, modelRelationships, modelAttributes;
 @synthesize logLevel;
 
 #pragma mark -
@@ -36,6 +36,7 @@ static CoreManager* _main;
         self.defaultDateParser = [[[NSDateFormatter alloc] init] autorelease];
         [defaultDateParser setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
         
+        self.entityDescriptions = [NSMutableDictionary dictionary];
         self.modelProperties = [NSMutableDictionary dictionary];
         self.modelRelationships = [NSMutableDictionary dictionary];
         

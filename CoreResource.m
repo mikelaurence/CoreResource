@@ -237,7 +237,12 @@
 }
 
 + (NSEntityDescription*) entityDescription {
-    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:[[self coreManager] managedObjectContext]];
+    NSEntityDescription* entity = [[[self coreManager] entityDescriptions] objectForKey:self];
+    if (entity == nil) {
+        entity = [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:[[self coreManager] managedObjectContext]];
+        [[[self coreManager] entityDescriptions] setObject:entity forKey:self];
+    }
+    return entity;
 }
 
 + (NSDictionary*) relationshipsByName {
