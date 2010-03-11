@@ -12,6 +12,7 @@
 @implementation Ticket
 
 @dynamic assignedUserName;
+@dynamic closed;
 @dynamic createdAt;
 @dynamic creatorName;
 @dynamic latestBody;

@@ -13,10 +13,16 @@
 
 @implementation TicketsController
 
+static BOOL firstTimeViewing = YES;
+
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [Ticket findAll];
-    [[self coreResultsController] fetch:$D(@"priority ASC", @"$sort")];
+    [[self coreResultsController] fetch:$D(@"priority ASC", @"$sort", $B(FALSE), @"closed")];
+    
+    if (firstTimeViewing) {
+        firstTimeViewing = NO;
+        [Ticket findAllRemote];
+    }
 }
 
 - (IBAction) refresh {
