@@ -84,16 +84,6 @@
 
 
 
-
-#pragma mark -
-#pragma mark Sorting
-
-NSInteger ascendingSort(id obj1, id obj2, void *key) {
-    return [[obj1 objectForKey:key] compare:[obj2 objectForKey:key]];
-}
-
-
-
 #pragma mark -
 #pragma mark GHUnit Configuration
 

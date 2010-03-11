@@ -266,6 +266,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>B5A9C5331142C3A30007B71C</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>B5A9C5381142C3F10007B71C</string>
 								<string>B5A9C52D1142C2F40007B71C</string>
 								<string>B5A9C4E01142C2E10007B71C</string>
 								<string>B5A9C4EF1142C2E10007B71C</string>
@@ -279,8 +280,10 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>46</integer>
-									<integer>45</integer>
+									<integer>20</integer>
+									<integer>5</integer>
+									<integer>4</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -321,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LighthouseClient_Prefix.pch</string>
+								<string>NSArray+Core.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LighthouseClient_Prefix.pch</string>
+										<string>NSArray+Core.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5F1821911463CA500F836BD</string>
+										<string>B5727EAA11495F770067D774</string>
 										<key>history</key>
 										<array>
 											<string>B5A9C5901142C8190007B71C</string>
@@ -350,7 +353,14 @@
 											<string>B57DCE9C1144618D0063915D</string>
 											<string>B57DCECE1144DC390063915D</string>
 											<string>B57DCEE91144DE910063915D</string>
-											<string>B57DD0691144F2DB0063915D</string>
+											<string>B5727EA211495F770067D774</string>
+											<string>B5727EA311495F770067D774</string>
+											<string>B5727EA411495F770067D774</string>
+											<string>B5727EA511495F770067D774</string>
+											<string>B5727EA611495F770067D774</string>
+											<string>B5727EA711495F770067D774</string>
+											<string>B5727EA811495F770067D774</string>
+											<string>B5727EA911495F770067D774</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -362,14 +372,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1322, 690}}</string>
+								<string>{{0, 0}, {1322, 685}}</string>
 								<key>RubberWindowFrame</key>
 								<string>44 82 1635 934 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>690pt</string>
+							<string>685pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -382,14 +392,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 695}, {1322, 198}}</string>
+								<string>{{0, 690}, {1322, 203}}</string>
 								<key>RubberWindowFrame</key>
 								<string>44 82 1635 934 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>198pt</string>
+							<string>203pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -408,9 +418,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B5F1820E11463C9900F836BD</string>
+				<string>B5727EAB11495F770067D774</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B5F1820F11463C9900F836BD</string>
+				<string>B5727EAC11495F770067D774</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -548,8 +558,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5A9C3DF1142C2A30007B71C</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/LighthouseClient/LighthouseClient.xcodeproj</string>
 	</array>
@@ -631,7 +639,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B5A9C3DF1142C2A30007B71C</string>
-				<string>B5F1821011463C9900F836BD</string>
+				<string>B5727EAD11495F770067D774</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

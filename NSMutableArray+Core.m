@@ -6,9 +6,22 @@
 //
 
 #import "NSMutableArray+Core.h"
+#import "NSArray+Core.h"
 
 
 @implementation NSMutableArray (Core)
+
+#pragma mark -
+#pragma mark Sorting
+
+- (void) sortUsingKey:(id)key ascending:(BOOL)ascending {
+    [self sortUsingFunction:ascending ? ascendingSort : descendingSort context:key];
+}
+
+
+
+#pragma mark -
+#pragma mark Padding
 
 - (void) padToSize:(int)size {
     [self padToSize:size withObject:[NSNull null]];
