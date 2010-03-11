@@ -28,6 +28,7 @@
 		B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FD902111B308900D4CEA7 /* artists.0.update.json */; };
 		B5727E4111495C320067D774 /* NSArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E4011495C320067D774 /* NSArray+Core.m */; };
 		B5727E5311495D8D0067D774 /* NSArrayCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E5211495D8D0067D774 /* NSArrayCategoryTests.m */; };
+		B5727FC211498C460067D774 /* CoreDataBenchmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727FC111498C460067D774 /* CoreDataBenchmarks.m */; };
 		B57DCF0D1144E0400063915D /* CoreUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCF0C1144E0400063915D /* CoreUtilsTests.m */; };
 		B57DD0091144F1F70063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF31144F1F70063915D /* CoreManager.m */; };
 		B57DD00A1144F1F70063915D /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF51144F1F70063915D /* CoreRequest.m */; };
@@ -97,6 +98,7 @@
 		B5727E3F11495C320067D774 /* NSArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Core.h"; sourceTree = "<group>"; };
 		B5727E4011495C320067D774 /* NSArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Core.m"; sourceTree = "<group>"; };
 		B5727E5211495D8D0067D774 /* NSArrayCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCategoryTests.m; sourceTree = "<group>"; };
+		B5727FC111498C460067D774 /* CoreDataBenchmarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataBenchmarks.m; sourceTree = "<group>"; };
 		B57DCF0C1144E0400063915D /* CoreUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreUtilsTests.m; sourceTree = "<group>"; };
 		B57DCFF21144F1F70063915D /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreManager.h; sourceTree = "<group>"; };
 		B57DCFF31144F1F70063915D /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreManager.m; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */,
 				B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */,
 				B57DCF0C1144E0400063915D /* CoreUtilsTests.m */,
+				B5727FC111498C460067D774 /* CoreDataBenchmarks.m */,
 				B5727E5211495D8D0067D774 /* NSArrayCategoryTests.m */,
 			);
 			name = Tests;
@@ -557,6 +560,7 @@
 				B57DD0131144F1F70063915D /* NSString+InflectionSupport.m in Sources */,
 				B5727E4111495C320067D774 /* NSArray+Core.m in Sources */,
 				B5727E5311495D8D0067D774 /* NSArrayCategoryTests.m in Sources */,
+				B5727FC211498C460067D774 /* CoreDataBenchmarks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
