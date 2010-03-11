@@ -303,8 +303,8 @@
 }
 
 + (id) createWithDictionary:(NSDictionary*)dict {
-    CoreResource *newObject = [[[self alloc] initWithEntity:[self entityDescription] 
-        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]] autorelease];
+    CoreResource *newObject = [[self alloc] initWithEntity:[self entityDescription] 
+        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
     [newObject updateWithDictionary:dict];
     
     // Log creation
@@ -316,6 +316,7 @@
     
     // Call didCreate for user-specified create hooks
     [newObject didCreate];
+    [newObject release]; // Newly inserted objects are retained by the context, so no autorelease necessary
     
     return newObject;
 }
