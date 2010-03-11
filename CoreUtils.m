@@ -11,6 +11,10 @@
 
 @implementation CoreUtils
 
+static NSTimeInterval globalStopwatch;
++ (void) resetStopwatch { globalStopwatch = [NSDate timeIntervalSinceReferenceDate]; }
++ (NSTimeInterval) stopwatchTime { return [NSDate timeIntervalSinceReferenceDate] - globalStopwatch; }
+
 + (BOOL) runningInSimulator {
     #if TARGET_IPHONE_SIMULATOR
     return YES;

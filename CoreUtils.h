@@ -26,6 +26,14 @@
 #define EndTimer(msg) NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; Log([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
 
 #pragma mark -
+#pragma mark Global stopwatch
++ (void) resetStopwatch;
++ (NSTimeInterval) stopwatchTime;
+#define ResetStopwatch [CoreUtils resetStopwatch];
+#define LogStopwatch(msg) Log($S(@"%@ Stopwatch = %f", msg, [CoreUtils stopwatchTime]));
+
+
+#pragma mark -
 #pragma mark Generic utilities
 + (BOOL) runningInSimulator;
 
