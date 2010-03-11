@@ -398,10 +398,6 @@
             return;
     }
 
-    // Mutable-ize dictionary if necessary
-    if (![dict isKindOfClass:[NSMutableDictionary class]])
-        dict = [dict mutableCopy];
-
     // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
     
