@@ -107,6 +107,7 @@
 			B5727F2411496F980067D774 /* PBXTextBookmark */ = B5727F2411496F980067D774 /* PBXTextBookmark */;
 			B5727F2511496F980067D774 /* PBXTextBookmark */ = B5727F2511496F980067D774 /* PBXTextBookmark */;
 			B5727F73114977B70067D774 /* PBXTextBookmark */ = B5727F73114977B70067D774 /* PBXTextBookmark */;
+			B5727F76114978870067D774 /* PBXTextBookmark */ = B5727F76114978870067D774 /* PBXTextBookmark */;
 			B57DCF331144E28A0063915D = B57DCF331144E28A0063915D /* PBXTextBookmark */;
 			B57DCF351144E28A0063915D = B57DCF351144E28A0063915D /* PlistBookmark */;
 			B57DCF6E1144E4240063915D = B57DCF6E1144E4240063915D /* PBXTextBookmark */;
@@ -451,6 +452,16 @@
 		vrLen = 1057;
 		vrLoc = 9662;
 	};
+	B5727F76114978870067D774 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 458";
+		rLen = 0;
+		rLoc = 17594;
+		rType = 0;
+		vrLen = 1282;
+		vrLoc = 16381;
+	};
 	B57DCF0C1144E0400063915D /* CoreUtilsTests.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1007}}";
@@ -520,9 +531,9 @@
 	};
 	B57DCFF71144F1F70063915D /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 13528}}";
-			sepNavSelRange = "{10604, 0}";
-			sepNavVisRange = "{9662, 1057}";
+			sepNavIntBoundsRect = "{{0, 0}, {1244, 12787}}";
+			sepNavSelRange = "{17594, 0}";
+			sepNavVisRange = "{16381, 1282}";
 		};
 	};
 	B57DCFFA1144F1F70063915D /* CoreResultsController.h */ = {

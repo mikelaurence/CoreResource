@@ -26,4 +26,17 @@ NSInteger descendingSort(id obj1, id obj2, void *key) {
     return [[obj2 objectForKey:key] compare:[obj1 objectForKey:key]];
 }
 
+
+#pragma mark -
+#pragma mark Mapping
+
+- (NSDictionary*) dictionaryMappedByKey:(id)key {
+    NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithCapacity:[self count]];
+    for (id obj in self)
+        [dict setObject:obj forKey:[obj valueForKey:key]];
+    return dict;
+}
+
+
+
 @end

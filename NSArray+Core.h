@@ -12,9 +12,13 @@
 
 #pragma mark -
 #pragma mark Sorting
-
 - (NSArray*) sortedArrayUsingKey:(id)key ascending:(BOOL)ascending;
 NSInteger ascendingSort(id obj1, id obj2, void *key);
 NSInteger descendingSort(id obj1, id obj2, void *key);
+
+#pragma mark -
+#pragma mark Mapping
+- (NSDictionary*) dictionaryMappedByKey:(id)key;
+
 
 @end
