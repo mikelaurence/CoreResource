@@ -28,7 +28,6 @@
 		B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */ = {isa = PBXBuildFile; fileRef = B56FD902111B308900D4CEA7 /* artists.0.update.json */; };
 		B5727E4111495C320067D774 /* NSArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E4011495C320067D774 /* NSArray+Core.m */; };
 		B5727E5311495D8D0067D774 /* NSArrayCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E5211495D8D0067D774 /* NSArrayCategoryTests.m */; };
-		B5727FC211498C460067D774 /* CoreDataBenchmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727FC111498C460067D774 /* CoreDataBenchmarks.m */; };
 		B57DCF0D1144E0400063915D /* CoreUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCF0C1144E0400063915D /* CoreUtilsTests.m */; };
 		B57DD0091144F1F70063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF31144F1F70063915D /* CoreManager.m */; };
 		B57DD00A1144F1F70063915D /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DCFF51144F1F70063915D /* CoreRequest.m */; };
@@ -52,6 +51,7 @@
 		B5A9C3A31142AF950007B71C /* CoreResourceResultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */; };
 		B5A9C3A41142AF950007B71C /* CoreResourceSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */; };
 		B5A9C3A51142AF950007B71C /* CoreResourceUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */; };
+		B5E78AC71149AD1A006C73CE /* MiscBenchmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */; };
 		B5EED6A6113E2009004DAE9C /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED677113E2009004DAE9C /* ASIAuthenticationDialog.m */; };
 		B5EED6A7113E2009004DAE9C /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED679113E2009004DAE9C /* ASIFormDataRequest.m */; };
 		B5EED6A8113E2009004DAE9C /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EED67B113E2009004DAE9C /* ASIHTTPRequest.m */; };
@@ -98,7 +98,6 @@
 		B5727E3F11495C320067D774 /* NSArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Core.h"; sourceTree = "<group>"; };
 		B5727E4011495C320067D774 /* NSArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Core.m"; sourceTree = "<group>"; };
 		B5727E5211495D8D0067D774 /* NSArrayCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCategoryTests.m; sourceTree = "<group>"; };
-		B5727FC111498C460067D774 /* CoreDataBenchmarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataBenchmarks.m; sourceTree = "<group>"; };
 		B57DCF0C1144E0400063915D /* CoreUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreUtilsTests.m; sourceTree = "<group>"; };
 		B57DCFF21144F1F70063915D /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreManager.h; sourceTree = "<group>"; };
 		B57DCFF31144F1F70063915D /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreManager.m; sourceTree = "<group>"; };
@@ -142,6 +141,7 @@
 		B5BAC0D410FFE1E000D57FCA /* CoreTest.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = CoreTest.xcdatamodel; sourceTree = "<group>"; };
 		B5BAC0D710FFE27600D57FCA /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		B5BAC0D810FFE27600D57FCA /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiscBenchmarks.m; sourceTree = "<group>"; };
 		B5EED676113E2009004DAE9C /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		B5EED677113E2009004DAE9C /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		B5EED678113E2009004DAE9C /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
@@ -294,8 +294,8 @@
 				B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */,
 				B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */,
 				B57DCF0C1144E0400063915D /* CoreUtilsTests.m */,
-				B5727FC111498C460067D774 /* CoreDataBenchmarks.m */,
 				B5727E5211495D8D0067D774 /* NSArrayCategoryTests.m */,
+				B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -560,7 +560,7 @@
 				B57DD0131144F1F70063915D /* NSString+InflectionSupport.m in Sources */,
 				B5727E4111495C320067D774 /* NSArray+Core.m in Sources */,
 				B5727E5311495D8D0067D774 /* NSArrayCategoryTests.m in Sources */,
-				B5727FC211498C460067D774 /* CoreDataBenchmarks.m in Sources */,
+				B5E78AC71149AD1A006C73CE /* MiscBenchmarks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

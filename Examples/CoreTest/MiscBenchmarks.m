@@ -1,5 +1,5 @@
 //
-//  CoreDataBenchmarks.m
+//  MiscBenchmarks.m
 //  CoreTest
 //
 //  Created by Mike Laurence on 3/11/10.
@@ -9,7 +9,7 @@
 
 #import "CoreResourceTestCase.h"
 
-@interface CoreDataBenchmarks : CoreResourceTestCase {
+@interface MiscBenchmarks : CoreResourceTestCase {
     // Cached pointers
     Artist* artist;
     NSString* value;
@@ -19,7 +19,7 @@
 }
 @end
 
-@implementation CoreDataBenchmarks
+@implementation MiscBenchmarks
 
 #define ITERATE for (int i = 0; i < 1000000; i++)
 
