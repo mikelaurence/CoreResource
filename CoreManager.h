@@ -10,10 +10,11 @@
 
 @interface CoreManager : NSObject {
     NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;	    
+    NSManagedObjectContext *managedObjectContext;
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
     
     NSOperationQueue *requestQueue;
+    NSOperationQueue *deserialzationQueue;
     
     NSString *remoteSiteURL;
     
@@ -38,6 +39,7 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (nonatomic, retain) NSOperationQueue *requestQueue;
+@property (nonatomic, retain) NSOperationQueue *deserialzationQueue;
 
 @property (nonatomic, retain) NSString *remoteSiteURL;
 @property (nonatomic, assign) BOOL useBundleRequests;

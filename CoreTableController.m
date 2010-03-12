@@ -129,6 +129,7 @@ static float defaultTableReloadDelay = 0.25;
 
 // Notifies the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController*)controller {
+
     // Invalidate any existing table reload timer
     [tableReloadTimer invalidate];
     

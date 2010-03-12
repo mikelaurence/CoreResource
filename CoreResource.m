@@ -10,6 +10,7 @@
 #import "CoreUtils.h"
 #import "CoreRequest.h"
 #import "CoreResult.h"
+#import "CoreDeserializer.h"
 #import "JSON.h"
 #import "NSString+InflectionSupport.h"
 
@@ -576,6 +577,16 @@
 }
 
 + (void) findRemoteDidFinish:(CoreRequest*)request {
+    
+    CoreDeserializer* deserializer = [[CoreDeserializer alloc] init];
+    deserializer.resourceClass = self;
+    deserializer.json = [request responseString];
+    deserializer.target = request.coreDelegate;
+    deserializer.action = request.coreSelector;
+    [[[self coreManager] deserialzationQueue] addOperation:deserializer];
+    [deserializer release];
+
+    /*
     NSArray* resources = [self deserializeFromString:[request responseString]];
     //[[self coreManager] save]; // TO-DO: Optional save after request?
     
@@ -585,6 +596,7 @@
         result.resources = resources;
         [request.coreDelegate performSelector:request.coreSelector withObject:result];
     }
+    */
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {

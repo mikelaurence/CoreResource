@@ -15,6 +15,7 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		B5712BA7114A187A0005F0B5 /* CoreDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */; };
 		B5727E9F11495F550067D774 /* NSArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E9E11495F550067D774 /* NSArray+Core.m */; };
 		B57DD0491144F29A0063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0331144F29A0063915D /* CoreManager.m */; };
 		B57DD04A1144F29A0063915D /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0351144F29A0063915D /* CoreRequest.m */; };
@@ -72,6 +73,8 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LighthouseClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LighthouseClient-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDeserializer.m; path = ../../CoreDeserializer.m; sourceTree = SOURCE_ROOT; };
+		B5712BA6114A187A0005F0B5 /* CoreDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDeserializer.h; path = ../../CoreDeserializer.h; sourceTree = SOURCE_ROOT; };
 		B5727E9D11495F550067D774 /* NSArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Core.h"; path = "../../NSArray+Core.h"; sourceTree = SOURCE_ROOT; };
 		B5727E9E11495F550067D774 /* NSArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Core.m"; path = "../../NSArray+Core.m"; sourceTree = SOURCE_ROOT; };
 		B57DD0321144F29A0063915D /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreManager.h; path = ../../CoreManager.h; sourceTree = SOURCE_ROOT; };
@@ -350,6 +353,8 @@
 				B57DD0371144F29A0063915D /* CoreResource.m */,
 				B57DD0381144F29A0063915D /* CoreResult.h */,
 				B57DD0391144F29A0063915D /* CoreResult.m */,
+				B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */,
+				B5712BA6114A187A0005F0B5 /* CoreDeserializer.h */,
 				B57DD03A1144F29A0063915D /* CoreResultsController.h */,
 				B57DD03B1144F29A0063915D /* CoreResultsController.m */,
 				B57DD03C1144F29A0063915D /* CoreTableController.h */,
@@ -473,6 +478,7 @@
 				B57DD0521144F29A0063915D /* NSSet+Core.m in Sources */,
 				B57DD0531144F29A0063915D /* NSString+InflectionSupport.m in Sources */,
 				B5727E9F11495F550067D774 /* NSArray+Core.m in Sources */,
+				B5712BA7114A187A0005F0B5 /* CoreDeserializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
