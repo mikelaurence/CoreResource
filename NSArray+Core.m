@@ -30,6 +30,19 @@ NSInteger descendingSort(id obj1, id obj2, void *key) {
 #pragma mark -
 #pragma mark Mapping
 
+- (NSArray*) arrayMappedBySelector:(SEL)selector {
+    return [self arrayMappedBySelector:selector withObject:nil];
+}
+
+- (NSArray*) arrayMappedBySelector:(SEL)selector withObject:(id)object {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+    for (id obj in self) {
+        if ([obj respondsToSelector:selector])
+            [array addObject:[obj performSelector:selector withObject:object]];
+    }
+    return array;
+}
+
 - (NSDictionary*) dictionaryMappedByKey:(id)key {
     NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithCapacity:[self count]];
     for (id obj in self)
