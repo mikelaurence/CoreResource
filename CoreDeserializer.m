@@ -13,6 +13,8 @@
 
 @implementation CoreDeserializer
 
+static NSArray* allowedFormats;
+
 @synthesize source, format, coreManager, resourceClass;
 @synthesize target, action;
 
@@ -29,7 +31,7 @@
         name:NSManagedObjectContextDidSaveNotification 
         object:managedObjectContext];
         
-    //NSArray* resources = [resourceClass performSelector:@selector(deserializeFromString:) withObject:json];
+    NSArray* resources;// = [resourceClass performSelector:@selector(deserializeFromString:) withObject:json];
     
     // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
     NSError *error = nil;
@@ -66,8 +68,9 @@
 
 - (NSString*) sourceString {
     if (sourceString == nil) {
-        sourceString = [[[source isKindOfClass:[NSString class]] ? source : [source get:@selector(responseString)] 
-            stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] retain];
+        NSString* rawString = [source isKindOfClass:[NSString class]] ? source : [source get:@selector(responseString)];
+        sourceString = [[rawString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] retain];
+    }
     return sourceString;
 }
 
@@ -80,37 +83,34 @@
     if (format != nil)
         return format;
 
-    static NSArray* allowedFormats = $A(@"json", @"xml");
-
-    NSString* dFormat = nil;
+    if (allowedFormats == nil)
+        allowedFormats = [$A(@"json", @"xml") retain];
     
     // Attempt to determine format using response content type
-    if (dFormat == nil)
-        dFormat = [self formatFromHeader:@"Content-Type" inDictionary:@selector(responseHeaders);
+    if (format == nil)
+        format = [self formatFromHeader:@"Content-Type" inDictionary:@selector(responseHeaders)];
         
     // Attempt to determine format using request accept header
-    if (dFormat == nil)
-        dFormat = [self formatFromHeader:@"Accept" inDictionary:@selector(requestHeaders);
+    if (format == nil)
+        format = [self formatFromHeader:@"Accept" inDictionary:@selector(requestHeaders)];
         
     // Attempt to determine format using URL extension
-    if (dFormat == nil) {
+    if (format == nil) {
         NSURL *url = [source get:@selector(url)];
         if (url != nil)
-            dFormat = [self allowedFormatsFromString:[url relativePath]];
+            format = [self allowedFormatsFromString:[url relativePath]];
     }
     
     // Attempt to determine format by looking at first content character
-    if (dFormat == nil) {
-        NSString *trimmedSourceString = [[self sourceString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        NSString *firstContentChar = [trimmedSourceString
-        NSRange firstContentRange = [sourceString rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"{[<"]];
-        if (firstContentRange.location != NSNotFound) {
-            NSString* firstContentChar = [sourceString substringWithRange:firstContentRange];
-            if ([firstContentChar isE
-        }
+    if (format == nil) {
+        NSString* firstContentChar = [[self sourceString] substringToIndex:0];
+        if ([firstContentChar isEqualToString:@"<"])
+            return @"xml";
+        if ([firstContentChar isEqualToString:@"{"] || [firstContentChar isEqualToString:@"["])
+            return @"json";
     }
     
-    return dFormat;
+    return format;
 }
 
 - (NSString*) formatFromHeader:(NSString*)header inDictionary:(SEL)dictionarySelector {
