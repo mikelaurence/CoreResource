@@ -264,10 +264,10 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>B568503D1100D03C00A4C816</string>
 								<string>B56851B41100D66D00A4C816</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>B5EED674113E2009004DAE9C</string>
-								<string>B5EED675113E2009004DAE9C</string>
 								<string>B5BAC04410FFE04600D57FCA</string>
 								<string>B5BAC0D610FFE1EF00D57FCA</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
@@ -280,14 +280,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>34</integer>
-									<integer>28</integer>
-									<integer>9</integer>
+									<integer>39</integer>
+									<integer>30</integer>
+									<integer>24</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 80}, {317, 904}}</string>
+							<string>{{0, 449}, {317, 904}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -306,7 +306,7 @@
 							<real>317</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>1749 47 1533 963 1680 -30 1920 1080 </string>
+						<string>1766 36 1533 963 1680 -30 1920 1080 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -324,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResource.m</string>
+								<string>CoreDeserializer.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreResource.m</string>
+										<string>CoreDeserializer.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5CFC397114F10EA00952A08</string>
+										<string>B5CFC43A114F58CB00952A08</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -348,7 +348,6 @@
 											<string>B5A9C3A61142AF9F0007B71C</string>
 											<string>B57DCF331144E28A0063915D</string>
 											<string>B57DCF351144E28A0063915D</string>
-											<string>B5DF13141145AF030084407F</string>
 											<string>B5D9FC091147529C00003855</string>
 											<string>B5D9FC0B1147529C00003855</string>
 											<string>B5D9FC0C1147529C00003855</string>
@@ -366,7 +365,6 @@
 											<string>B5D9FC9611475AA900003855</string>
 											<string>B5D9FC9711475AA900003855</string>
 											<string>B52381A11148549900AB02EB</string>
-											<string>B5727E7311495F280067D774</string>
 											<string>B5727FAC114985800067D774</string>
 											<string>B572801A1149954B0067D774</string>
 											<string>B572801B1149954B0067D774</string>
@@ -378,13 +376,16 @@
 											<string>B5712BC7114A19AC0005F0B5</string>
 											<string>B574C431114EEFB80022471D</string>
 											<string>B574C432114EEFB80022471D</string>
-											<string>B574C433114EEFB80022471D</string>
 											<string>B574C434114EEFB80022471D</string>
 											<string>B574C435114EEFB80022471D</string>
-											<string>B574C436114EEFB80022471D</string>
-											<string>B574C437114EEFB80022471D</string>
-											<string>B574C438114EEFB80022471D</string>
-											<string>B574C445114EEFD50022471D</string>
+											<string>B5CFC41A114F4F6400952A08</string>
+											<string>B5CFC41B114F4F6400952A08</string>
+											<string>B5CFC41C114F4F6400952A08</string>
+											<string>B5CFC41E114F4F6400952A08</string>
+											<string>B5CFC420114F4F6400952A08</string>
+											<string>B5CFC431114F504600952A08</string>
+											<string>B5CFC438114F58CB00952A08</string>
+											<string>B5CFC439114F58CB00952A08</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -398,7 +399,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1194, 869}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1749 47 1533 963 1680 -30 1920 1080 </string>
+								<string>1766 36 1533 963 1680 -30 1920 1080 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -418,7 +419,7 @@
 								<key>Frame</key>
 								<string>{{0, 874}, {1194, 48}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1749 47 1533 963 1680 -30 1920 1080 </string>
+								<string>1766 36 1533 963 1680 -30 1920 1080 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -582,11 +583,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B5BAC03F10FFE02400D57FCA</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/CoreTest/CoreTest.xcodeproj</string>
+		<string>B5BAC03F10FFE02400D57FCA</string>
 	</array>
 	<key>WindowString</key>
-	<string>1749 47 1533 963 1680 -30 1920 1080 </string>
+	<string>1766 36 1533 963 1680 -30 1920 1080 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -607,7 +610,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CoreDeserializer.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -616,7 +619,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {844, 217}}</string>
 								<key>RubberWindowFrame</key>
-								<string>671 124 844 768 0 0 1680 1028 </string>
+								<string>671 142 844 768 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -624,6 +627,8 @@
 							<string>217pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -640,7 +645,7 @@
 								<key>Frame</key>
 								<string>{{0, 222}, {844, 505}}</string>
 								<key>RubberWindowFrame</key>
-								<string>671 124 844 768 0 0 1680 1028 </string>
+								<string>671 142 844 768 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -672,11 +677,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>671 124 844 768 0 0 1680 1028 </string>
+			<string>671 142 844 768 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>B5BAC03F10FFE02400D57FCA</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -785,13 +790,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>B5712BB8114A18D20005F0B5</string>
+				<string>B5CFC3FF114F3D1B00952A08</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>B5712BB9114A18D20005F0B5</string>
-				<string>B5712BBA114A18D20005F0B5</string>
-				<string>B5712BBB114A18D20005F0B5</string>
-				<string>B5712BBC114A18D20005F0B5</string>
-				<string>B5712BBD114A18D20005F0B5</string>
+				<string>B5CFC400114F3D1B00952A08</string>
+				<string>B5CFC401114F3D1B00952A08</string>
+				<string>B5CFC402114F3D1B00952A08</string>
+				<string>B5CFC403114F3D1B00952A08</string>
+				<string>B5CFC404114F3D1B00952A08</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -947,7 +952,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>B5712B5D114A0AE90005F0B5</string>
+				<string>B5CFC405114F3D1B00952A08</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

@@ -13,9 +13,14 @@
 @interface CoreDeserializer : NSOperation {
     id source;
     NSString *sourceString;
+    Class resourceClass;
     NSString *format;
     CoreManager *coreManager;
-    Class resourceClass;
+    NSManagedObjectContext *managedObjectContext;
+    
+    // Results
+    NSError *error;
+    NSArray *resources;
     
     // Target
     id target;
@@ -23,9 +28,9 @@
 }
 
 @property (nonatomic, retain) id source;
+@property (nonatomic, assign) Class resourceClass;
 @property (nonatomic, retain) NSString* format;
 @property (nonatomic, retain) CoreManager *coreManager;
-@property (nonatomic, assign) Class resourceClass;
 
 @property (nonatomic, retain) id target;
 @property (nonatomic, assign) SEL action;

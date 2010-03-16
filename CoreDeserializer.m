@@ -9,13 +9,14 @@
 #import "CoreDeserializer.h"
 #import "CoreResult.h"
 #import "NSObject+Core.h"
+#import "SBJsonParser.h"
 
 
 @implementation CoreDeserializer
 
 static NSArray* allowedFormats;
 
-@synthesize source, format, coreManager, resourceClass;
+@synthesize source, resourceClass, format, coreManager;
 @synthesize target, action;
 
 
@@ -29,11 +30,8 @@ static NSArray* allowedFormats;
 
 
 - (void) main {
-    NSError *error = nil;
-    NSArray *resources = nil;
-        
     // Use format to change deserialization class and convert serialized string into resources
-    Class newClass = NSClassFromString($S(@"Core%@Deserializer", [[self format] uppercaseString]));
+    Class newClass = [resourceClass performSelector:@selector(deserializerClassForFormat:) withObject:[self format]];
     if (newClass != nil) {
 
         // Change runtime class (in order to capture correct resourcesFromString method)
@@ -44,14 +42,14 @@ static NSArray* allowedFormats;
             coreManager = [resourceClass performSelector:@selector(coreManager)];
 
         // Create "scratchpad" object context; we will merge this context into the main context once deserialization is complete
-        NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] init];
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
         [managedObjectContext setPersistentStoreCoordinator:[coreManager persistentStoreCoordinator]];
         [[NSNotificationCenter defaultCenter] addObserver:self 
             selector:@selector(contextDidSave:) 
             name:NSManagedObjectContextDidSaveNotification 
             object:managedObjectContext];
             
-        resources = [self resourcesFromString:[self sourceString]];
+        resources = [[self resourcesFromString:[self sourceString]] retain];
         
         // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
         [managedObjectContext save:&error];
@@ -61,7 +59,7 @@ static NSArray* allowedFormats;
             name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
     }
     else {
-        error = [[NSError alloc] initWithDomain:$S(@"Couldn't deserialize with format '%@'", format) code:0 userInfo:nil];
+        error = [[[NSError alloc] initWithDomain:$S(@"Couldn't deserialize with format '%@'", format) code:0 userInfo:nil] retain];
     }
         
     // Perform action on target if possible
@@ -172,6 +170,9 @@ static NSArray* allowedFormats;
     [sourceString release];
     [format release];
     [coreManager release];
+    [managedObjectContext release];
+    [error release];
+    [resources release];
     [target release];
     [super dealloc];
 }
@@ -187,6 +188,37 @@ static NSArray* allowedFormats;
 
 - (NSArray*) resourcesFromString:(NSString*)string {
 
+    // Deserialize JSON
+    SBJsonParser *jsonParser = [SBJsonParser new];
+    id jsonCollection = [jsonParser objectWithString:string];
+    if (jsonCollection == nil) { // Record error and return if JSON parsing failed
+        error = [[[NSError alloc] initWithDomain:$S(@"JSON parsing failed: %@", [jsonParser errorTrace]) code:0 userInfo:nil] retain];
+        return nil;
+    }
+
+    // Get base resource element from deserialized collection (*configuration point)
+    jsonCollection = [resourceClass performSelector:@selector(resourceCollectionFromJSONCollection:withParent:) 
+        withObject:jsonCollection withObject:nil];
+
+    // Turn collection into array if not already one
+    NSArray* jsonArray = [jsonCollection isKindOfClass:[NSDictionary class]] ? jsonCollection : $A(jsonCollection);
+
+    if (jsonArray != nil) {
+        NSMutableArray *jsonResources = [NSMutableArray arrayWithCapacity:[jsonArray count]]; // Container for deserialized resources
+        if (coreManager.logLevel > 1)
+            NSLog(@"Deserializing %@ %@", [NSNumber numberWithInt:[jsonArray count]], [resourceClass performSelector:@selector(remoteCollectionName)]);
+
+        for (id jsonElement in jsonArray) {
+            id properties = [resourceClass performSelector:@selector(resourcePropertiesFromJSONElement:withParent:)
+                    withObject:jsonElement withObject:nil];
+            id resource = [resourceClass performSelector:@selector(createOrUpdateWithDictionary:inContext:)
+                withObject:properties withObject:managedObjectContext];
+            if (resource != nil)
+                [jsonResources addObject:resource];
+        }
+        return jsonResources;
+    }
+    
     return nil;
 }
 

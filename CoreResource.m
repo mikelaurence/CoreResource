@@ -102,26 +102,8 @@
     return [self dateParser];
 }
 
-+ (NSArray*) deserializeFromString:(NSString*)serializedString {
-    id deserialized = [serializedString JSONValue];
-    if (deserialized != nil) {
-        // Turn into array if not already one
-        if ([deserialized isKindOfClass:[NSDictionary class]])
-            deserialized = [NSArray arrayWithObject:deserialized];
-
-        NSArray* data = [self dataCollectionFromDeserializedCollection:deserialized];
-        if (data != nil) {
-            NSLog(@"Deserializing %@ %@", [NSNumber numberWithInt:[data count]], [self remoteCollectionName]);
-            NSMutableArray *objs = [NSMutableArray arrayWithCapacity:[(NSArray*)data count]];
-            for (NSMutableDictionary *dict in (NSArray*)data) {
-                id obj = [self createOrUpdateWithDictionary:dict];
-                if (obj != nil)
-                    [objs addObject:obj];
-            }
-            return objs;
-        }
-    }
-    return nil;
++ (Class) deserializerClassForFormat:(NSString*)format {
+    return NSClassFromString($S(@"Core%@Deserializer", [format uppercaseString]));
 }
 
 /**
@@ -138,6 +120,10 @@
 */
 + (NSArray*) dataCollectionFromDeserializedCollection:(id)deserializedCollection {
     return deserializedCollection;
+}
+
++ (id) resourceElementFromJSONCollection:(id)collection withParent:(id)parent {
+    return collection;
 }
 
 
@@ -309,8 +295,12 @@
 }
 
 + (id) createWithDictionary:(NSDictionary*)dict {
+    return [self createWithDictionary:dict inContext:[self managedObjectContext]];
+}
+
++ (id) createWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context {
     CoreResource *newObject = [[self alloc] initWithEntity:[self entityDescription] 
-        insertIntoManagedObjectContext:[[self coreManager] managedObjectContext]];
+        insertIntoManagedObjectContext:context];
     [newObject updateWithDictionary:dict];
     
     // Log creation
@@ -328,6 +318,10 @@
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict {
+    return [self createOrUpdateWithDictionary:dict inContext:[self managedObjectContext]];
+}
+
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context {
     
     // Get remote ID
     id resourceId = [dict objectForKey:[self remoteIdField]];
@@ -345,7 +339,7 @@
     }
     
     // Otherwise, no existing record found, so create a new object
-    return [self createWithDictionary:dict];
+    return [self createWithDictionary:dict inContext:context];
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject {

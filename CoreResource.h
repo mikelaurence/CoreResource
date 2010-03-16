@@ -54,8 +54,11 @@ typedef enum _Action {
 + (NSString*) updatedAtField;
 + (NSDateFormatter*) dateParser;
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
-+ (NSArray*) deserializeFromString:(NSString*)serializedString;
-+ (NSArray*) dataCollectionFromDeserializedCollection:(NSMutableArray*)deserializedCollection;
+
++ (Class) deserializerClassForFormat:(NSString*)format;
++ (id) resourceCollectionFromJSONCollection:(id)jsonCollection withParent:(id)parent;
++ (id) resourcePropertiesFromJSONElement:(id)jsonElement withParent:(id)parent;
+
 - (NSString*) toJson;
 - (NSString*) toJson:(id)options;
 - (NSMutableDictionary*) properties;
@@ -83,7 +86,9 @@ typedef enum _Action {
 
 + (id) create:(id)parameters;
 + (id) createWithDictionary:(NSDictionary*)dict;
++ (id) createWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject;
 - (void) updateWithDictionary:(NSDictionary*)dict;
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
