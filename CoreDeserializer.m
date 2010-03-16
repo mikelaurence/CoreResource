@@ -18,6 +18,16 @@ static NSArray* allowedFormats;
 @synthesize source, format, coreManager, resourceClass;
 @synthesize target, action;
 
+
+- (id) initWithSource:(id)sourceObj andResourceClass:(Class)clazz {
+    if (self = [super init]) {
+        self.source = sourceObj;
+        self.resourceClass = clazz;
+    }
+    return self;
+}
+
+
 - (void) main {
     // Get Core Manager from resource class if it hasn't been defined yet
     if (coreManager == nil)
@@ -31,7 +41,7 @@ static NSArray* allowedFormats;
         name:NSManagedObjectContextDidSaveNotification 
         object:managedObjectContext];
         
-    NSArray* resources;// = [resourceClass performSelector:@selector(deserializeFromString:) withObject:json];
+    NSArray* resources = nil;// = [resourceClass performSelector:@selector(deserializeFromString:) withObject:json];
     
     // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
     NSError *error = nil;

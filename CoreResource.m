@@ -577,26 +577,14 @@
 }
 
 + (void) findRemoteDidFinish:(CoreRequest*)request {
-    
+    // Create and enqueue deserializer in non-blocking thread
     CoreDeserializer* deserializer = [[CoreDeserializer alloc] init];
+    deserializer.source = request;
     deserializer.resourceClass = self;
-    deserializer.json = [request responseString];
     deserializer.target = request.coreDelegate;
     deserializer.action = request.coreSelector;
     [[[self coreManager] deserialzationQueue] addOperation:deserializer];
     [deserializer release];
-
-    /*
-    NSArray* resources = [self deserializeFromString:[request responseString]];
-    //[[self coreManager] save]; // TO-DO: Optional save after request?
-    
-    // Notify core delegate of request (if any)
-    if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {
-        CoreResult* result = [[[CoreResult alloc] init] autorelease];
-        result.resources = resources;
-        [request.coreDelegate performSelector:request.coreSelector withObject:result];
-    }
-    */
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {

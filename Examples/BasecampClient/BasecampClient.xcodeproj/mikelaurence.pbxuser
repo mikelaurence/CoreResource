@@ -1,57 +1,43 @@
 // !$*UTF8*$!
 {
-	1D3623240D0F684500981E51 /* LighthouseClientAppDelegate.h */ = {
+	1D3623240D0F684500981E51 /* BasecampClientAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 608}}";
-			sepNavSelRange = "{469, 0}";
-			sepNavVisRange = "{0, 611}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 617}}";
+			sepNavSelRange = "{132, 0}";
+			sepNavVisRange = "{0, 605}";
 		};
 	};
-	1D3623250D0F684500981E51 /* LighthouseClientAppDelegate.m */ = {
+	1D3623250D0F684500981E51 /* BasecampClientAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 950}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 1007}}";
 			sepNavSelRange = "{967, 0}";
-			sepNavVisRange = "{200, 992}";
+			sepNavVisRange = "{236, 892}";
 		};
 	};
-	1D6058900D05DD3D006BFB54 /* LighthouseClient */ = {
+	1D6058900D05DD3D006BFB54 /* BasecampClient */ = {
 		activeExec = 0;
 		executables = (
-			B5A9C3CC1142C29F0007B71C /* LighthouseClient */,
+			B5A9C3CC1142C29F0007B71C /* BasecampClient */,
 		);
 	};
-	28216C950DB411BC00E5133A /* TicketsController.h */ = {
+	28A0AB4B0D9B1048005BE974 /* BasecampClient_Prefix.pch */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 583}}";
-			sepNavSelRange = "{283, 0}";
-			sepNavVisRange = "{0, 290}";
-		};
-	};
-	28216C960DB411BC00E5133A /* TicketsController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 1919}}";
-			sepNavSelRange = "{232, 0}";
-			sepNavVisRange = "{0, 695}";
-		};
-	};
-	28A0AB4B0D9B1048005BE974 /* LighthouseClient_Prefix.pch */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 653}}";
-			sepNavSelRange = "{260, 0}";
-			sepNavVisRange = "{0, 261}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 623}}";
+			sepNavSelRange = "{257, 0}";
+			sepNavVisRange = "{0, 257}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
-		activeExecutable = B5A9C3CC1142C29F0007B71C /* LighthouseClient */;
+		activeExecutable = B5A9C3CC1142C29F0007B71C /* BasecampClient */;
 		activeSDKPreference = iphonesimulator3.1;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* LighthouseClient */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* BasecampClient */;
 		addToTargets = (
-			1D6058900D05DD3D006BFB54 /* LighthouseClient */,
+			1D6058900D05DD3D006BFB54 /* BasecampClient */,
 		);
 		codeSenseManager = B5A9C3E21142C2A30007B71C /* Code sense */;
 		executables = (
-			B5A9C3CC1142C29F0007B71C /* LighthouseClient */,
+			B5A9C3CC1142C29F0007B71C /* BasecampClient */,
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
@@ -98,12 +84,10 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 290120970;
-			PBXWorkspaceStateSaveDate = 290120970;
+			PBXPerProjectTemplateStateSaveDate = 290405336;
+			PBXWorkspaceStateSaveDate = 290405336;
 		};
 		perUserProjectItems = {
-			B5712BAC114A18CD0005F0B5 /* PBXTextBookmark */ = B5712BAC114A18CD0005F0B5 /* PBXTextBookmark */;
-			B5727EA211495F770067D774 /* PBXTextBookmark */ = B5727EA211495F770067D774 /* PBXTextBookmark */;
 			B5727EA311495F770067D774 /* PBXTextBookmark */ = B5727EA311495F770067D774 /* PBXTextBookmark */;
 			B5727EA411495F770067D774 /* PBXTextBookmark */ = B5727EA411495F770067D774 /* PBXTextBookmark */;
 			B5727EA511495F770067D774 /* PBXTextBookmark */ = B5727EA511495F770067D774 /* PBXTextBookmark */;
@@ -111,25 +95,21 @@
 			B5727EA711495F770067D774 /* PBXTextBookmark */ = B5727EA711495F770067D774 /* PBXTextBookmark */;
 			B5727EA811495F770067D774 /* PBXTextBookmark */ = B5727EA811495F770067D774 /* PBXTextBookmark */;
 			B572EE4F114AE6BD002AD061 /* PBXTextBookmark */ = B572EE4F114AE6BD002AD061 /* PBXTextBookmark */;
-			B572EE50114AE6BD002AD061 /* PBXTextBookmark */ = B572EE50114AE6BD002AD061 /* PBXTextBookmark */;
-			B572EE51114AE6BD002AD061 /* PBXTextBookmark */ = B572EE51114AE6BD002AD061 /* PBXTextBookmark */;
-			B57DCE871144570D0063915D /* PlistBookmark */ = B57DCE871144570D0063915D /* PlistBookmark */;
-			B57DCE9C1144618D0063915D /* PBXTextBookmark */ = B57DCE9C1144618D0063915D /* PBXTextBookmark */;
-			B57DCECE1144DC390063915D /* PBXTextBookmark */ = B57DCECE1144DC390063915D /* PBXTextBookmark */;
-			B5A9C5901142C8190007B71C /* PBXTextBookmark */ = B5A9C5901142C8190007B71C /* PBXTextBookmark */;
-			B5A9C5AE1142CA410007B71C /* PBXTextBookmark */ = B5A9C5AE1142CA410007B71C /* PBXTextBookmark */;
-			B5A9C7031142E8BD0007B71C /* PBXTextBookmark */ = B5A9C7031142E8BD0007B71C /* PBXTextBookmark */;
-			B5A9C7691142FF420007B71C /* PBXTextBookmark */ = B5A9C7691142FF420007B71C /* PBXTextBookmark */;
-			B5A9C76D1142FF420007B71C /* PBXTextBookmark */ = B5A9C76D1142FF420007B71C /* PBXTextBookmark */;
+			B5AFAE10114E178B00DB8DB3 /* PBXTextBookmark */ = B5AFAE10114E178B00DB8DB3 /* PBXTextBookmark */;
+			B5AFAE11114E178B00DB8DB3 /* PBXTextBookmark */ = B5AFAE11114E178B00DB8DB3 /* PBXTextBookmark */;
+			B5CFC3DE114F3BD200952A08 /* PBXBookmark */ = B5CFC3DE114F3BD200952A08 /* PBXBookmark */;
+			B5CFC3DF114F3BD200952A08 /* PBXTextBookmark */ = B5CFC3DF114F3BD200952A08 /* PBXTextBookmark */;
+			B5CFC3E0114F3BD200952A08 /* PBXTextBookmark */ = B5CFC3E0114F3BD200952A08 /* PBXTextBookmark */;
+			B5CFC3E1114F3BD200952A08 /* PlistBookmark */ = B5CFC3E1114F3BD200952A08 /* PlistBookmark */;
+			B5CFC3E2114F3BD200952A08 /* XDModelBookmark */ = B5CFC3E2114F3BD200952A08 /* XDModelBookmark */;
+			B5CFC3E3114F3BD200952A08 /* PBXTextBookmark */ = B5CFC3E3114F3BD200952A08 /* PBXTextBookmark */;
+			B5CFC3E4114F3BD200952A08 /* PBXTextBookmark */ = B5CFC3E4114F3BD200952A08 /* PBXTextBookmark */;
+			B5CFC3E5114F3BD200952A08 /* PBXTextBookmark */ = B5CFC3E5114F3BD200952A08 /* PBXTextBookmark */;
+			B5CFC3E7114F3BD200952A08 /* PBXTextBookmark */ = B5CFC3E7114F3BD200952A08 /* PBXTextBookmark */;
+			B5CFC3F8114F3BEC00952A08 /* PBXTextBookmark */ = B5CFC3F8114F3BEC00952A08 /* PBXTextBookmark */;
 			B5E78C421149B9A0006C73CE /* PBXTextBookmark */ = B5E78C421149B9A0006C73CE /* PBXTextBookmark */;
-			B5E78C431149B9A0006C73CE /* PBXTextBookmark */ = B5E78C431149B9A0006C73CE /* PBXTextBookmark */;
 			B5E78C441149B9A0006C73CE /* PBXTextBookmark */ = B5E78C441149B9A0006C73CE /* PBXTextBookmark */;
-			B5E78C451149B9A0006C73CE /* PBXTextBookmark */ = B5E78C451149B9A0006C73CE /* PBXTextBookmark */;
 			B5E78C461149B9A0006C73CE /* PBXTextBookmark */ = B5E78C461149B9A0006C73CE /* PBXTextBookmark */;
-			B5E78C471149B9A0006C73CE /* XDModelBookmark */ = B5E78C471149B9A0006C73CE /* XDModelBookmark */;
-			B5E78C481149B9A0006C73CE /* PBXTextBookmark */ = B5E78C481149B9A0006C73CE /* PBXTextBookmark */;
-			B5E78C491149B9A0006C73CE /* PBXTextBookmark */ = B5E78C491149B9A0006C73CE /* PBXTextBookmark */;
-			B5E78C4A1149B9A0006C73CE /* PBXTextBookmark */ = B5E78C4A1149B9A0006C73CE /* PBXTextBookmark */;
 		};
 		sourceControlManager = B5A9C3E11142C2A30007B71C /* Source Control */;
 		userBuildSettings = {
@@ -137,9 +117,9 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 446}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 623}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 360}";
+			sepNavVisRange = "{0, 358}";
 		};
 	};
 	B5712BA6114A187A0005F0B5 /* CoreDeserializer.h */ = {
@@ -148,16 +128,6 @@
 			sepNavSelRange = "{184, 0}";
 			sepNavVisRange = "{0, 530}";
 		};
-	};
-	B5712BAC114A18CD0005F0B5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28216C960DB411BC00E5133A /* TicketsController.m */;
-		name = "TicketsController.m: 13";
-		rLen = 0;
-		rLoc = 232;
-		rType = 0;
-		vrLen = 695;
-		vrLoc = 0;
 	};
 	B5727E9D11495F550067D774 /* NSArray+Core.h */ = {
 		uiCtxt = {
@@ -172,16 +142,6 @@
 			sepNavSelRange = "{162, 0}";
 			sepNavVisRange = "{0, 667}";
 		};
-	};
-	B5727EA211495F770067D774 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28A0AB4B0D9B1048005BE974 /* LighthouseClient_Prefix.pch */;
-		name = "LighthouseClient_Prefix.pch: 10";
-		rLen = 0;
-		rLoc = 260;
-		rType = 0;
-		vrLen = 261;
-		vrLoc = 0;
 	};
 	B5727EA311495F770067D774 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -253,69 +213,18 @@
 		vrLen = 530;
 		vrLoc = 0;
 	};
-	B572EE50114AE6BD002AD061 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B57DD0371144F29A0063915D /* CoreResource.m */;
-		name = "CoreResource.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 624;
-		vrLoc = 0;
-	};
-	B572EE51114AE6BD002AD061 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B57DD0371144F29A0063915D /* CoreResource.m */;
-		name = "CoreResource.m: 125";
-		rLen = 0;
-		rLoc = 3434;
-		rType = 0;
-		vrLen = 1066;
-		vrLoc = 3362;
-	};
-	B57DCE871144570D0063915D /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* LighthouseClient-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/mikelaurence/Projects/CoreResource/LighthouseClient/LighthouseClient-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
-	B57DCE9C1144618D0063915D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5A9C6521142DB020007B71C /* TicketController.m */;
-		name = "TicketController.m: 21";
-		rLen = 0;
-		rLoc = 442;
-		rType = 0;
-		vrLen = 1114;
-		vrLoc = 202;
-	};
-	B57DCECE1144DC390063915D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* LighthouseClientAppDelegate.m */;
-		name = "LighthouseClientAppDelegate.m: 33";
-		rLen = 0;
-		rLoc = 967;
-		rType = 0;
-		vrLen = 992;
-		vrLoc = 200;
-	};
 	B57DD0351144F29A0063915D /* CoreRequest.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1261, 912}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1097}";
+			sepNavVisRange = "{0, 1095}";
 		};
 	};
 	B57DD0371144F29A0063915D /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 14440}}";
-			sepNavSelRange = "{3434, 0}";
-			sepNavVisRange = "{3362, 1066}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 13984}}";
+			sepNavSelRange = "{142, 0}";
+			sepNavVisRange = "{0, 661}";
 		};
 	};
 	B57DD03F1144F29A0063915D /* CoreUtils.m */ = {
@@ -360,7 +269,7 @@
 			sepNavVisRange = "{0, 351}";
 		};
 	};
-	B5A9C3CC1142C29F0007B71C /* LighthouseClient */ = {
+	B5A9C3CC1142C29F0007B71C /* BasecampClient */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
 		);
@@ -383,7 +292,7 @@
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
-		name = LighthouseClient;
+		name = BasecampClient;
 		savedGlobals = {
 		};
 		showTypeColumn = 0;
@@ -441,26 +350,12 @@
 			sepNavVisRange = "{2210, 428}";
 		};
 	};
-	B5A9C52E1142C3070007B71C /* Ticket.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 625}}";
-			sepNavSelRange = "{354, 0}";
-			sepNavVisRange = "{0, 816}";
-		};
-	};
-	B5A9C52F1142C3070007B71C /* Ticket.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 665}}";
-			sepNavSelRange = "{225, 0}";
-			sepNavVisRange = "{16, 494}";
-		};
-	};
-	B5A9C5311142C3240007B71C /* lighthouse.xcdatamodel */ = {
+	B5A9C5311142C3240007B71C /* basecamp.xcdatamodel */ = {
 		uiCtxt = {
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
 					_indexOfSelectedPane = 0;
-					_indexOfSelectedView = 1;
+					_indexOfSelectedView = 0;
 				};
 				UIContextForEntityArea = {
 					_indexOfSelectedView = 0;
@@ -502,7 +397,7 @@
 						isCollapsed = yes;
 						sizes = (
 							"{{0, 0}, {1320, 220}}",
-							"{{0, 225}, {1320, 438}}",
+							"{{0, 225}, {1320, 413}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -609,93 +504,132 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-329, 0}, {1305, 423}}";
+				"xdesign model diagram view visible rect key" = "{{-329, 9}, {1305, 398}}";
 			};
 		};
 	};
-	B5A9C5341142C3B20007B71C /* tickets.json */ = {
+	B5A9C5351142C3C50007B71C /* BasecampResource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {6452, 3344}}";
-			sepNavSelRange = "{11653, 0}";
-			sepNavVisRange = "{8532, 2825}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 623}}";
+			sepNavSelRange = "{232, 0}";
+			sepNavVisRange = "{0, 241}";
 		};
 	};
-	B5A9C5351142C3C50007B71C /* LighthouseResource.h */ = {
+	B5A9C5361142C3C50007B71C /* BasecampResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1261, 648}}";
-			sepNavSelRange = "{207, 0}";
-			sepNavVisRange = "{0, 266}";
+			sepNavIntBoundsRect = "{{0, 0}, {1261, 684}}";
+			sepNavSelRange = "{154, 0}";
+			sepNavVisRange = "{3, 865}";
 		};
 	};
-	B5A9C5361142C3C50007B71C /* LighthouseResource.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 684}}";
-			sepNavSelRange = "{221, 0}";
-			sepNavVisRange = "{92, 808}";
-		};
+	B5AFAE10114E178B00DB8DB3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DD0351144F29A0063915D /* CoreRequest.m */;
+		name = "CoreRequest.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1095;
+		vrLoc = 0;
 	};
-	B5A9C5901142C8190007B71C /* PBXTextBookmark */ = {
+	B5AFAE11114E178B00DB8DB3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DD0371144F29A0063915D /* CoreResource.m */;
+		name = "CoreResource.m: 8";
+		rLen = 0;
+		rLoc = 142;
+		rType = 0;
+		vrLen = 661;
+		vrLoc = 0;
+	};
+	B5CFC3DE114F3BD200952A08 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = B5A9C7161142EA4D0007B71C /* Icon.png */;
+	};
+	B5CFC3DF114F3BD200952A08 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C5351142C3C50007B71C /* BasecampResource.h */;
+		name = "BasecampResource.h: 14";
+		rLen = 0;
+		rLoc = 232;
+		rType = 0;
+		vrLen = 241;
+		vrLoc = 0;
+	};
+	B5CFC3E0114F3BD200952A08 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C5361142C3C50007B71C /* BasecampResource.m */;
+		name = "BasecampResource.m: 9";
+		rLen = 0;
+		rLoc = 154;
+		rType = 0;
+		vrLen = 865;
+		vrLoc = 3;
+	};
+	B5CFC3E1114F3BD200952A08 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* BasecampClient-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/mikelaurence/Projects/CoreResource/Examples/BasecampClient/BasecampClient-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	B5CFC3E2114F3BD200952A08 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = B5A9C5311142C3240007B71C /* basecamp.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+	};
+	B5CFC3E3114F3BD200952A08 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 1";
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 360;
+		vrLen = 358;
 		vrLoc = 0;
 	};
-	B5A9C5AE1142CA410007B71C /* PBXTextBookmark */ = {
+	B5CFC3E4114F3BD200952A08 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* LighthouseClientAppDelegate.h */;
-		name = "LighthouseClientAppDelegate.h: 20";
+		fRef = 28A0AB4B0D9B1048005BE974 /* BasecampClient_Prefix.pch */;
+		name = "BasecampClient_Prefix.pch: 11";
 		rLen = 0;
-		rLoc = 469;
+		rLoc = 257;
 		rType = 0;
-		vrLen = 611;
+		vrLen = 257;
 		vrLoc = 0;
 	};
-	B5A9C6511142DB020007B71C /* TicketController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 583}}";
-			sepNavSelRange = "{341, 0}";
-			sepNavVisRange = "{0, 397}";
-		};
-	};
-	B5A9C6521142DB020007B71C /* TicketController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 1805}}";
-			sepNavSelRange = "{1002, 0}";
-			sepNavVisRange = "{665, 507}";
-		};
-	};
-	B5A9C7031142E8BD0007B71C /* PBXTextBookmark */ = {
+	B5CFC3E5114F3BD200952A08 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 28216C950DB411BC00E5133A /* TicketsController.h */;
-		name = "TicketsController.h: 16";
+		fRef = 1D3623250D0F684500981E51 /* BasecampClientAppDelegate.m */;
+		name = "BasecampClientAppDelegate.m: 33";
 		rLen = 0;
-		rLoc = 283;
+		rLoc = 967;
 		rType = 0;
-		vrLen = 290;
+		vrLen = 892;
+		vrLoc = 236;
+	};
+	B5CFC3E7114F3BD200952A08 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* BasecampClientAppDelegate.h */;
+		name = "BasecampClientAppDelegate.h: 12";
+		rLen = 0;
+		rLoc = 203;
+		rType = 0;
+		vrLen = 605;
 		vrLoc = 0;
 	};
-	B5A9C7691142FF420007B71C /* PBXTextBookmark */ = {
+	B5CFC3F8114F3BEC00952A08 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = B5A9C5361142C3C50007B71C /* LighthouseResource.m */;
-		name = "LighthouseResource.m: 13";
+		fRef = 1D3623240D0F684500981E51 /* BasecampClientAppDelegate.h */;
+		name = "BasecampClientAppDelegate.h: 6";
 		rLen = 0;
-		rLoc = 221;
+		rLoc = 132;
 		rType = 0;
-		vrLen = 808;
-		vrLoc = 92;
-	};
-	B5A9C76D1142FF420007B71C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5A9C6511142DB020007B71C /* TicketController.h */;
-		name = "TicketController.h: 15";
-		rLen = 0;
-		rLoc = 341;
-		rType = 0;
-		vrLen = 397;
+		vrLen = 605;
 		vrLoc = 0;
 	};
 	B5E78C421149B9A0006C73CE /* PBXTextBookmark */ = {
@@ -708,16 +642,6 @@
 		vrLen = 506;
 		vrLoc = 0;
 	};
-	B5E78C431149B9A0006C73CE /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5A9C5341142C3B20007B71C /* tickets.json */;
-		name = "tickets.json: 149";
-		rLen = 0;
-		rLoc = 11653;
-		rType = 0;
-		vrLen = 2825;
-		vrLoc = 8532;
-	};
 	B5E78C441149B9A0006C73CE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B5A9C4E71142C2E10007B71C /* ASIHTTPRequest.m */;
@@ -726,16 +650,6 @@
 		rLoc = 0;
 		rType = 0;
 		vrLen = 1221;
-		vrLoc = 0;
-	};
-	B5E78C451149B9A0006C73CE /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B57DD0351144F29A0063915D /* CoreRequest.m */;
-		name = "CoreRequest.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1097;
 		vrLoc = 0;
 	};
 	B5E78C461149B9A0006C73CE /* PBXTextBookmark */ = {
@@ -747,40 +661,5 @@
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 0;
-	};
-	B5E78C471149B9A0006C73CE /* XDModelBookmark */ = {
-		isa = XDModelBookmark;
-		fRef = B5A9C5311142C3240007B71C /* lighthouse.xcdatamodel */;
-		fallbackIsa = PBXBookmark;
-	};
-	B5E78C481149B9A0006C73CE /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5A9C5351142C3C50007B71C /* LighthouseResource.h */;
-		name = "LighthouseResource.h: 10";
-		rLen = 0;
-		rLoc = 207;
-		rType = 0;
-		vrLen = 266;
-		vrLoc = 0;
-	};
-	B5E78C491149B9A0006C73CE /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5A9C52E1142C3070007B71C /* Ticket.h */;
-		name = "Ticket.h: 17";
-		rLen = 0;
-		rLoc = 354;
-		rType = 0;
-		vrLen = 816;
-		vrLoc = 0;
-	};
-	B5E78C4A1149B9A0006C73CE /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B5A9C52F1142C3070007B71C /* Ticket.m */;
-		name = "Ticket.m: 15";
-		rLen = 0;
-		rLoc = 225;
-		rType = 0;
-		vrLen = 494;
-		vrLoc = 16;
 	};
 }

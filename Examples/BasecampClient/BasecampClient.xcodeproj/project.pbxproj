@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* BasecampClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BasecampClientAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		B5712BA7114A187A0005F0B5 /* CoreDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */; };
+		B5727E9F11495F550067D774 /* NSArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E9E11495F550067D774 /* NSArray+Core.m */; };
+		B57DD0491144F29A0063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0331144F29A0063915D /* CoreManager.m */; };
+		B57DD04A1144F29A0063915D /* CoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0351144F29A0063915D /* CoreRequest.m */; };
+		B57DD04B1144F29A0063915D /* CoreResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0371144F29A0063915D /* CoreResource.m */; };
+		B57DD04C1144F29A0063915D /* CoreResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0391144F29A0063915D /* CoreResult.m */; };
+		B57DD04D1144F29A0063915D /* CoreResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD03B1144F29A0063915D /* CoreResultsController.m */; };
+		B57DD04E1144F29A0063915D /* CoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD03D1144F29A0063915D /* CoreTableController.m */; };
+		B57DD04F1144F29A0063915D /* CoreUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD03F1144F29A0063915D /* CoreUtils.m */; };
+		B57DD0501144F29A0063915D /* NSMutableArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0411144F29A0063915D /* NSMutableArray+Core.m */; };
+		B57DD0511144F29A0063915D /* NSObject+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0431144F29A0063915D /* NSObject+Core.m */; };
+		B57DD0521144F29A0063915D /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0451144F29A0063915D /* NSSet+Core.m */; };
+		B57DD0531144F29A0063915D /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0471144F29A0063915D /* NSString+InflectionSupport.m */; };
+		B57DD0541144F29A0063915D /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B57DD0481144F29A0063915D /* readme.md */; };
+		B5A9C4DB1142C2C30007B71C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4D71142C2C30007B71C /* SystemConfiguration.framework */; };
+		B5A9C4DC1142C2C30007B71C /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4D81142C2C30007B71C /* libz.1.2.3.dylib */; };
+		B5A9C4DD1142C2C30007B71C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4D91142C2C30007B71C /* CFNetwork.framework */; };
+		B5A9C4DE1142C2C30007B71C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9C4DA1142C2C30007B71C /* CoreData.framework */; };
+		B5A9C5191142C2E10007B71C /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4E31142C2E10007B71C /* ASIAuthenticationDialog.m */; };
+		B5A9C51A1142C2E10007B71C /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4E51142C2E10007B71C /* ASIFormDataRequest.m */; };
+		B5A9C51B1142C2E10007B71C /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4E71142C2E10007B71C /* ASIHTTPRequest.m */; };
+		B5A9C51C1142C2E10007B71C /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4EA1142C2E10007B71C /* ASIInputStream.m */; };
+		B5A9C51D1142C2E10007B71C /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4EC1142C2E10007B71C /* ASINetworkQueue.m */; };
+		B5A9C51E1142C2E10007B71C /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4EE1142C2E10007B71C /* ASINSStringAdditions.m */; };
+		B5A9C51F1142C2E10007B71C /* DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C4F11142C2E10007B71C /* DynamicCell.m */; };
+		B5A9C5241142C2E10007B71C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5071142C2E10007B71C /* NSObject+SBJSON.m */; };
+		B5A9C5251142C2E10007B71C /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5091142C2E10007B71C /* NSString+SBJSON.m */; };
+		B5A9C5261142C2E10007B71C /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C50B1142C2E10007B71C /* SBJSON.m */; };
+		B5A9C5271142C2E10007B71C /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C50D1142C2E10007B71C /* SBJsonBase.m */; };
+		B5A9C5281142C2E10007B71C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C50F1142C2E10007B71C /* SBJsonParser.m */; };
+		B5A9C5291142C2E10007B71C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5111142C2E10007B71C /* SBJsonWriter.m */; };
+		B5A9C52A1142C2E10007B71C /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5141142C2E10007B71C /* NSDate+Helper.m */; };
+		B5A9C52B1142C2E10007B71C /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C5151142C2E10007B71C /* README.textile */; };
+		B5A9C52C1142C2E10007B71C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5181142C2E10007B71C /* Reachability.m */; };
+		B5A9C5321142C3240007B71C /* basecamp.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5311142C3240007B71C /* basecamp.xcdatamodel */; };
+		B5A9C5371142C3C50007B71C /* BasecampResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C5361142C3C50007B71C /* BasecampResource.m */; };
+		B5A9C7171142EA4D0007B71C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A9C7161142EA4D0007B71C /* Icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* BasecampClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasecampClientAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* BasecampClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasecampClientAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* BasecampClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasecampClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* BasecampClient_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasecampClient_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* BasecampClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BasecampClient-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDeserializer.m; path = ../../CoreDeserializer.m; sourceTree = SOURCE_ROOT; };
+		B5712BA6114A187A0005F0B5 /* CoreDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDeserializer.h; path = ../../CoreDeserializer.h; sourceTree = SOURCE_ROOT; };
+		B5727E9D11495F550067D774 /* NSArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Core.h"; path = "../../NSArray+Core.h"; sourceTree = SOURCE_ROOT; };
+		B5727E9E11495F550067D774 /* NSArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Core.m"; path = "../../NSArray+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0321144F29A0063915D /* CoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreManager.h; path = ../../CoreManager.h; sourceTree = SOURCE_ROOT; };
+		B57DD0331144F29A0063915D /* CoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreManager.m; path = ../../CoreManager.m; sourceTree = SOURCE_ROOT; };
+		B57DD0341144F29A0063915D /* CoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreRequest.h; path = ../../CoreRequest.h; sourceTree = SOURCE_ROOT; };
+		B57DD0351144F29A0063915D /* CoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreRequest.m; path = ../../CoreRequest.m; sourceTree = SOURCE_ROOT; };
+		B57DD0361144F29A0063915D /* CoreResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResource.h; path = ../../CoreResource.h; sourceTree = SOURCE_ROOT; };
+		B57DD0371144F29A0063915D /* CoreResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResource.m; path = ../../CoreResource.m; sourceTree = SOURCE_ROOT; };
+		B57DD0381144F29A0063915D /* CoreResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResult.h; path = ../../CoreResult.h; sourceTree = SOURCE_ROOT; };
+		B57DD0391144F29A0063915D /* CoreResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResult.m; path = ../../CoreResult.m; sourceTree = SOURCE_ROOT; };
+		B57DD03A1144F29A0063915D /* CoreResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreResultsController.h; path = ../../CoreResultsController.h; sourceTree = SOURCE_ROOT; };
+		B57DD03B1144F29A0063915D /* CoreResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreResultsController.m; path = ../../CoreResultsController.m; sourceTree = SOURCE_ROOT; };
+		B57DD03C1144F29A0063915D /* CoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTableController.h; path = ../../CoreTableController.h; sourceTree = SOURCE_ROOT; };
+		B57DD03D1144F29A0063915D /* CoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTableController.m; path = ../../CoreTableController.m; sourceTree = SOURCE_ROOT; };
+		B57DD03E1144F29A0063915D /* CoreUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreUtils.h; path = ../../CoreUtils.h; sourceTree = SOURCE_ROOT; };
+		B57DD03F1144F29A0063915D /* CoreUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreUtils.m; path = ../../CoreUtils.m; sourceTree = SOURCE_ROOT; };
+		B57DD0401144F29A0063915D /* NSMutableArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Core.h"; path = "../../NSMutableArray+Core.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0411144F29A0063915D /* NSMutableArray+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Core.m"; path = "../../NSMutableArray+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0421144F29A0063915D /* NSObject+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Core.h"; path = "../../NSObject+Core.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0431144F29A0063915D /* NSObject+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Core.m"; path = "../../NSObject+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0441144F29A0063915D /* NSSet+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Core.h"; path = "../../NSSet+Core.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0451144F29A0063915D /* NSSet+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Core.m"; path = "../../NSSet+Core.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0461144F29A0063915D /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+InflectionSupport.h"; path = "../../NSString+InflectionSupport.h"; sourceTree = SOURCE_ROOT; };
+		B57DD0471144F29A0063915D /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+InflectionSupport.m"; path = "../../NSString+InflectionSupport.m"; sourceTree = SOURCE_ROOT; };
+		B57DD0481144F29A0063915D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../../readme.md; sourceTree = SOURCE_ROOT; };
+		B5A9C4D71142C2C30007B71C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		B5A9C4D81142C2C30007B71C /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = /usr/local/lib/libz.1.2.3.dylib; sourceTree = "<absolute>"; };
+		B5A9C4D91142C2C30007B71C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B5A9C4DA1142C2C30007B71C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B5A9C4E21142C2E10007B71C /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		B5A9C4E31142C2E10007B71C /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		B5A9C4E41142C2E10007B71C /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		B5A9C4E51142C2E10007B71C /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		B5A9C4E61142C2E10007B71C /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		B5A9C4E71142C2E10007B71C /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		B5A9C4E81142C2E10007B71C /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		B5A9C4E91142C2E10007B71C /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		B5A9C4EA1142C2E10007B71C /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		B5A9C4EB1142C2E10007B71C /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		B5A9C4EC1142C2E10007B71C /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		B5A9C4ED1142C2E10007B71C /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSStringAdditions.h; sourceTree = "<group>"; };
+		B5A9C4EE1142C2E10007B71C /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
+		B5A9C4F01142C2E10007B71C /* DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicCell.h; sourceTree = "<group>"; };
+		B5A9C4F11142C2E10007B71C /* DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicCell.m; sourceTree = "<group>"; };
+		B5A9C5051142C2E10007B71C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		B5A9C5061142C2E10007B71C /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		B5A9C5071142C2E10007B71C /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		B5A9C5081142C2E10007B71C /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		B5A9C5091142C2E10007B71C /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		B5A9C50A1142C2E10007B71C /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		B5A9C50B1142C2E10007B71C /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		B5A9C50C1142C2E10007B71C /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		B5A9C50D1142C2E10007B71C /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		B5A9C50E1142C2E10007B71C /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		B5A9C50F1142C2E10007B71C /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		B5A9C5101142C2E10007B71C /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		B5A9C5111142C2E10007B71C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		B5A9C5131142C2E10007B71C /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		B5A9C5141142C2E10007B71C /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		B5A9C5151142C2E10007B71C /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		B5A9C5171142C2E10007B71C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B5A9C5181142C2E10007B71C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B5A9C5311142C3240007B71C /* basecamp.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = basecamp.xcdatamodel; sourceTree = "<group>"; };
+		B5A9C5351142C3C50007B71C /* BasecampResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasecampResource.h; sourceTree = "<group>"; };
+		B5A9C5361142C3C50007B71C /* BasecampResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasecampResource.m; sourceTree = "<group>"; };
+		B5A9C7161142EA4D0007B71C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				B5A9C4DB1142C2C30007B71C /* SystemConfiguration.framework in Frameworks */,
+				B5A9C4DC1142C2C30007B71C /* libz.1.2.3.dylib in Frameworks */,
+				B5A9C4DD1142C2C30007B71C /* CFNetwork.framework in Frameworks */,
+				B5A9C4DE1142C2C30007B71C /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C5381142C3F10007B71C /* CoreResource */,
+				B5A9C4E01142C2E10007B71C /* Libraries */,
+				B5A9C52D1142C2F40007B71C /* Models */,
+				1D3623240D0F684500981E51 /* BasecampClientAppDelegate.h */,
+				1D3623250D0F684500981E51 /* BasecampClientAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* BasecampClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* LighthouseClient */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C7161142EA4D0007B71C /* Icon.png */,
+				B5A9C5331142C3A30007B71C /* Mocks */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = LighthouseClient;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* BasecampClient_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				B5A9C5311142C3240007B71C /* basecamp.xcdatamodel */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C6F21142E6CF0007B71C /* images */,
+				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* BasecampClient-Info.plist */,
+			);
+			name = "Resources-iPhone";
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C4D71142C2C30007B71C /* SystemConfiguration.framework */,
+				B5A9C4D81142C2C30007B71C /* libz.1.2.3.dylib */,
+				B5A9C4D91142C2C30007B71C /* CFNetwork.framework */,
+				B5A9C4DA1142C2C30007B71C /* CoreData.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5A9C4E01142C2E10007B71C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C4E11142C2E10007B71C /* ASIHTTPRequest */,
+				B5A9C4EF1142C2E10007B71C /* DynamicCell */,
+				B5A9C5041142C2E10007B71C /* JSON */,
+				B5A9C5121142C2E10007B71C /* NSDate-Helper */,
+				B5A9C5161142C2E10007B71C /* Reachability */,
+			);
+			name = Libraries;
+			path = ../../Libraries;
+			sourceTree = SOURCE_ROOT;
+		};
+		B5A9C4E11142C2E10007B71C /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C4E21142C2E10007B71C /* ASIAuthenticationDialog.h */,
+				B5A9C4E31142C2E10007B71C /* ASIAuthenticationDialog.m */,
+				B5A9C4E41142C2E10007B71C /* ASIFormDataRequest.h */,
+				B5A9C4E51142C2E10007B71C /* ASIFormDataRequest.m */,
+				B5A9C4E61142C2E10007B71C /* ASIHTTPRequest.h */,
+				B5A9C4E71142C2E10007B71C /* ASIHTTPRequest.m */,
+				B5A9C4E81142C2E10007B71C /* ASIHTTPRequestConfig.h */,
+				B5A9C4E91142C2E10007B71C /* ASIInputStream.h */,
+				B5A9C4EA1142C2E10007B71C /* ASIInputStream.m */,
+				B5A9C4EB1142C2E10007B71C /* ASINetworkQueue.h */,
+				B5A9C4EC1142C2E10007B71C /* ASINetworkQueue.m */,
+				B5A9C4ED1142C2E10007B71C /* ASINSStringAdditions.h */,
+				B5A9C4EE1142C2E10007B71C /* ASINSStringAdditions.m */,
+			);
+			path = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		B5A9C4EF1142C2E10007B71C /* DynamicCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C4F01142C2E10007B71C /* DynamicCell.h */,
+				B5A9C4F11142C2E10007B71C /* DynamicCell.m */,
+			);
+			path = DynamicCell;
+			sourceTree = "<group>";
+		};
+		B5A9C5041142C2E10007B71C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C5051142C2E10007B71C /* JSON.h */,
+				B5A9C5061142C2E10007B71C /* NSObject+SBJSON.h */,
+				B5A9C5071142C2E10007B71C /* NSObject+SBJSON.m */,
+				B5A9C5081142C2E10007B71C /* NSString+SBJSON.h */,
+				B5A9C5091142C2E10007B71C /* NSString+SBJSON.m */,
+				B5A9C50A1142C2E10007B71C /* SBJSON.h */,
+				B5A9C50B1142C2E10007B71C /* SBJSON.m */,
+				B5A9C50C1142C2E10007B71C /* SBJsonBase.h */,
+				B5A9C50D1142C2E10007B71C /* SBJsonBase.m */,
+				B5A9C50E1142C2E10007B71C /* SBJsonParser.h */,
+				B5A9C50F1142C2E10007B71C /* SBJsonParser.m */,
+				B5A9C5101142C2E10007B71C /* SBJsonWriter.h */,
+				B5A9C5111142C2E10007B71C /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		B5A9C5121142C2E10007B71C /* NSDate-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C5131142C2E10007B71C /* NSDate+Helper.h */,
+				B5A9C5141142C2E10007B71C /* NSDate+Helper.m */,
+				B5A9C5151142C2E10007B71C /* README.textile */,
+			);
+			path = "NSDate-Helper";
+			sourceTree = "<group>";
+		};
+		B5A9C5161142C2E10007B71C /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C5171142C2E10007B71C /* Reachability.h */,
+				B5A9C5181142C2E10007B71C /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		B5A9C52D1142C2F40007B71C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9C5351142C3C50007B71C /* BasecampResource.h */,
+				B5A9C5361142C3C50007B71C /* BasecampResource.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B5A9C5331142C3A30007B71C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
+		B5A9C5381142C3F10007B71C /* CoreResource */ = {
+			isa = PBXGroup;
+			children = (
+				B57DD0321144F29A0063915D /* CoreManager.h */,
+				B57DD0331144F29A0063915D /* CoreManager.m */,
+				B57DD0341144F29A0063915D /* CoreRequest.h */,
+				B57DD0351144F29A0063915D /* CoreRequest.m */,
+				B57DD0361144F29A0063915D /* CoreResource.h */,
+				B57DD0371144F29A0063915D /* CoreResource.m */,
+				B57DD0381144F29A0063915D /* CoreResult.h */,
+				B57DD0391144F29A0063915D /* CoreResult.m */,
+				B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */,
+				B5712BA6114A187A0005F0B5 /* CoreDeserializer.h */,
+				B57DD03A1144F29A0063915D /* CoreResultsController.h */,
+				B57DD03B1144F29A0063915D /* CoreResultsController.m */,
+				B57DD03C1144F29A0063915D /* CoreTableController.h */,
+				B57DD03D1144F29A0063915D /* CoreTableController.m */,
+				B57DD03E1144F29A0063915D /* CoreUtils.h */,
+				B57DD03F1144F29A0063915D /* CoreUtils.m */,
+				B5727E9D11495F550067D774 /* NSArray+Core.h */,
+				B5727E9E11495F550067D774 /* NSArray+Core.m */,
+				B57DD0401144F29A0063915D /* NSMutableArray+Core.h */,
+				B57DD0411144F29A0063915D /* NSMutableArray+Core.m */,
+				B57DD0421144F29A0063915D /* NSObject+Core.h */,
+				B57DD0431144F29A0063915D /* NSObject+Core.m */,
+				B57DD0441144F29A0063915D /* NSSet+Core.h */,
+				B57DD0451144F29A0063915D /* NSSet+Core.m */,
+				B57DD0461144F29A0063915D /* NSString+InflectionSupport.h */,
+				B57DD0471144F29A0063915D /* NSString+InflectionSupport.m */,
+				B57DD0481144F29A0063915D /* readme.md */,
+			);
+			name = CoreResource;
+			sourceTree = "<group>";
+		};
+		B5A9C6F21142E6CF0007B71C /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* BasecampClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BasecampClient" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasecampClient;
+			productName = LighthouseClient;
+			productReference = 1D6058910D05DD3D006BFB54 /* BasecampClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BasecampClient" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* LighthouseClient */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* BasecampClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
+				B5A9C52B1142C2E10007B71C /* README.textile in Resources */,
+				B5A9C7171142EA4D0007B71C /* Icon.png in Resources */,
+				B57DD0541144F29A0063915D /* readme.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* BasecampClientAppDelegate.m in Sources */,
+				B5A9C5191142C2E10007B71C /* ASIAuthenticationDialog.m in Sources */,
+				B5A9C51A1142C2E10007B71C /* ASIFormDataRequest.m in Sources */,
+				B5A9C51B1142C2E10007B71C /* ASIHTTPRequest.m in Sources */,
+				B5A9C51C1142C2E10007B71C /* ASIInputStream.m in Sources */,
+				B5A9C51D1142C2E10007B71C /* ASINetworkQueue.m in Sources */,
+				B5A9C51E1142C2E10007B71C /* ASINSStringAdditions.m in Sources */,
+				B5A9C51F1142C2E10007B71C /* DynamicCell.m in Sources */,
+				B5A9C5241142C2E10007B71C /* NSObject+SBJSON.m in Sources */,
+				B5A9C5251142C2E10007B71C /* NSString+SBJSON.m in Sources */,
+				B5A9C5261142C2E10007B71C /* SBJSON.m in Sources */,
+				B5A9C5271142C2E10007B71C /* SBJsonBase.m in Sources */,
+				B5A9C5281142C2E10007B71C /* SBJsonParser.m in Sources */,
+				B5A9C5291142C2E10007B71C /* SBJsonWriter.m in Sources */,
+				B5A9C52A1142C2E10007B71C /* NSDate+Helper.m in Sources */,
+				B5A9C52C1142C2E10007B71C /* Reachability.m in Sources */,
+				B5A9C5321142C3240007B71C /* basecamp.xcdatamodel in Sources */,
+				B5A9C5371142C3C50007B71C /* BasecampResource.m in Sources */,
+				B57DD0491144F29A0063915D /* CoreManager.m in Sources */,
+				B57DD04A1144F29A0063915D /* CoreRequest.m in Sources */,
+				B57DD04B1144F29A0063915D /* CoreResource.m in Sources */,
+				B57DD04C1144F29A0063915D /* CoreResult.m in Sources */,
+				B57DD04D1144F29A0063915D /* CoreResultsController.m in Sources */,
+				B57DD04E1144F29A0063915D /* CoreTableController.m in Sources */,
+				B57DD04F1144F29A0063915D /* CoreUtils.m in Sources */,
+				B57DD0501144F29A0063915D /* NSMutableArray+Core.m in Sources */,
+				B57DD0511144F29A0063915D /* NSObject+Core.m in Sources */,
+				B57DD0521144F29A0063915D /* NSSet+Core.m in Sources */,
+				B57DD0531144F29A0063915D /* NSString+InflectionSupport.m in Sources */,
+				B5727E9F11495F550067D774 /* NSArray+Core.m in Sources */,
+				B5712BA7114A187A0005F0B5 /* CoreDeserializer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BasecampClient_Prefix.pch;
+				INFOPLIST_FILE = "BasecampClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = BasecampClient;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BasecampClient_Prefix.pch;
+				INFOPLIST_FILE = "BasecampClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = BasecampClient;
+				SDKROOT = iphoneos3.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BasecampClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BasecampClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

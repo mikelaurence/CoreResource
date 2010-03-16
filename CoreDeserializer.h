@@ -30,6 +30,8 @@
 @property (nonatomic, retain) id target;
 @property (nonatomic, assign) SEL action;
 
+- (id) initWithSource:(id)source andResourceClass:(Class)clazz;
+
 #pragma mark -
 #pragma mark Format determination
 - (NSString*) formatFromHeader:(NSString*)header inDictionary:(SEL)dictionarySelector;

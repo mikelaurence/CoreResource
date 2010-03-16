@@ -335,16 +335,16 @@
 	};
 	B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 2679}}";
-			sepNavSelRange = "{3192, 0}";
-			sepNavVisRange = "{155, 1797}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 2850}}";
+			sepNavSelRange = "{525, 0}";
+			sepNavVisRange = "{329, 1825}";
 		};
 	};
 	B5712B54114A0AD00005F0B5 /* CoreDeserializer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 813}}";
-			sepNavSelRange = "{877, 0}";
-			sepNavVisRange = "{0, 885}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 837}}";
+			sepNavSelRange = "{768, 0}";
+			sepNavVisRange = "{0, 950}";
 		};
 	};
 	B5712BC7114A19AC0005F0B5 /* PBXTextBookmark */ = {
@@ -383,7 +383,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 111";
 		rLen = 0;
-		rLoc = 4600;
+		rLoc = 6357;
 		rType = 0;
 		vrLen = 1748;
 		vrLoc = 3744;
@@ -523,7 +523,7 @@
 		fRef = B5712B54114A0AD00005F0B5 /* CoreDeserializer.h */;
 		name = "CoreDeserializer.h: 36";
 		rLen = 0;
-		rLoc = 877;
+		rLoc = 942;
 		rType = 0;
 		vrLen = 885;
 		vrLoc = 0;
@@ -533,7 +533,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 95";
 		rLen = 0;
-		rLoc = 3192;
+		rLoc = 3394;
 		rType = 0;
 		vrLen = 1797;
 		vrLoc = 155;
@@ -627,9 +627,9 @@
 	};
 	B57DCFF71144F1F70063915D /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 13661}}";
-			sepNavSelRange = "{21769, 0}";
-			sepNavVisRange = "{21209, 1613}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 14307}}";
+			sepNavSelRange = "{4386, 0}";
+			sepNavVisRange = "{3376, 1522}";
 		};
 	};
 	B57DCFF91144F1F70063915D /* CoreResult.m */ = {
@@ -781,9 +781,9 @@
 	};
 	B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 3173}}";
-			sepNavSelRange = "{4600, 0}";
-			sepNavVisRange = "{3744, 1748}";
+			sepNavIntBoundsRect = "{{0, 0}, {1164, 4009}}";
+			sepNavSelRange = "{1367, 0}";
+			sepNavVisRange = "{2001, 1881}";
 		};
 	};
 	B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */ = {
@@ -1176,16 +1176,16 @@
 	};
 	B5EED67A113E2009004DAE9C /* ASIHTTPRequest.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2116, 13794}}";
-			sepNavSelRange = "{20105, 0}";
-			sepNavVisRange = "{19214, 1865}";
+			sepNavIntBoundsRect = "{{0, 0}, {1468, 13889}}";
+			sepNavSelRange = "{31039, 0}";
+			sepNavVisRange = "{24824, 1838}";
 		};
 	};
 	B5EED67B113E2009004DAE9C /* ASIHTTPRequest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1636, 71155}}";
-			sepNavSelRange = "{134184, 0}";
-			sepNavVisRange = "{133031, 1144}";
+			sepNavIntBoundsRect = "{{0, 0}, {2684, 71858}}";
+			sepNavSelRange = "{137046, 0}";
+			sepNavVisRange = "{136362, 1365}";
 		};
 	};
 	B5EED67C113E2009004DAE9C /* ASIHTTPRequestConfig.h */ = {
