@@ -29,27 +29,40 @@ static NSArray* allowedFormats;
 
 
 - (void) main {
-    // Get Core Manager from resource class if it hasn't been defined yet
-    if (coreManager == nil)
-        coreManager = [resourceClass performSelector:@selector(coreManager)];
-
-    // Create "scratchpad" object context; we will merge this context into the main context once deserialization is complete
-    NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [managedObjectContext setPersistentStoreCoordinator:[coreManager persistentStoreCoordinator]];
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-        selector:@selector(contextDidSave:) 
-        name:NSManagedObjectContextDidSaveNotification 
-        object:managedObjectContext];
-        
-    NSArray* resources = nil;// = [resourceClass performSelector:@selector(deserializeFromString:) withObject:json];
-    
-    // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
     NSError *error = nil;
-    [managedObjectContext save:&error];
+    NSArray *resources = nil;
         
-    // Remove context save observer
-    [[NSNotificationCenter defaultCenter] removeObserver:self 
-        name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
+    // Use format to change deserialization class and convert serialized string into resources
+    Class newClass = NSClassFromString($S(@"Core%@Deserializer", [[self format] uppercaseString]));
+    if (newClass != nil) {
+
+        // Change runtime class (in order to capture correct resourcesFromString method)
+        self->isa = newClass;
+            
+        // Get Core Manager from resource class if it hasn't been defined yet
+        if (coreManager == nil)
+            coreManager = [resourceClass performSelector:@selector(coreManager)];
+
+        // Create "scratchpad" object context; we will merge this context into the main context once deserialization is complete
+        NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator:[coreManager persistentStoreCoordinator]];
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+            selector:@selector(contextDidSave:) 
+            name:NSManagedObjectContextDidSaveNotification 
+            object:managedObjectContext];
+            
+        resources = [self resourcesFromString:[self sourceString]];
+        
+        // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
+        [managedObjectContext save:&error];
+            
+        // Remove context save observer
+        [[NSNotificationCenter defaultCenter] removeObserver:self 
+            name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
+    }
+    else {
+        error = [[NSError alloc] initWithDomain:$S(@"Couldn't deserialize with format '%@'", format) code:0 userInfo:nil];
+    }
         
     // Perform action on target if possible
     if (target && action && [target respondsToSelector:action]) {
@@ -143,6 +156,15 @@ static NSArray* allowedFormats;
 
 
 #pragma mark -
+#pragma mark Deserialization
+
+/**
+    Override in subclasses
+*/
+- (NSArray*) resourcesFromString:(NSString*)string { return nil; }
+
+
+#pragma mark -
 #pragma mark Lifecycle end
 
 - (void) dealloc {
@@ -155,3 +177,29 @@ static NSArray* allowedFormats;
 }
 
 @end
+
+
+
+#pragma mark -
+#pragma mark Format deserializers
+
+@implementation CoreJSONDeserializer
+
+- (NSArray*) resourcesFromString:(NSString*)string {
+
+    return nil;
+}
+
+@end
+
+
+@implementation CoreXMLDeserializer
+
+- (NSArray*) resourcesFromString:(NSString*)string {
+
+    return nil;
+}
+
+@end
+
+

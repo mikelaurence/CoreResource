@@ -33,9 +33,20 @@
 - (id) initWithSource:(id)source andResourceClass:(Class)clazz;
 
 #pragma mark -
+#pragma mark Source
+- (NSString*) sourceString;
+
+#pragma mark -
 #pragma mark Format determination
 - (NSString*) formatFromHeader:(NSString*)header inDictionary:(SEL)dictionarySelector;
 - (NSString*) allowedFormatsFromString:(NSString*)string;
 
+#pragma mark -
+#pragma mark Deserialization
+- (NSArray*) resourcesFromString:(NSString*)string;
 
 @end
+
+
+@interface CoreJSONDeserializer : CoreDeserializer @end
+@interface CoreXMLDeserializer : CoreDeserializer @end
