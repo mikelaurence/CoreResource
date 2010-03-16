@@ -284,14 +284,15 @@
 #pragma mark Create
 
 + (id) create:(id)parameters {
-	id newObject = [self createWithDictionary:parameters];
+    return [self create:parameters withOptions:nil];
+}
 
-    // Set createdAt timestamp if possible
-    SEL createdAtSel = NSSelectorFromString([self createdAtField]);
-    if ([newObject respondsToSelector:createdAtSel])
-        [newObject setValue:[NSDate date] forKey:[self createdAtField]];
++ (id) create:(id)parameters withOptions:(NSDictionary*)options {
+	id resources = [parameters isKindOfClass:[NSArray class]] ?
+        [self createWithArray:parameters andOptions:options] :
+        [self createWithDictionary:parameters andOptions:options];
         
-    return newObject;
+    return resources;
 }
 
 + (id) createWithArray:(NSArray*)array {
@@ -324,6 +325,14 @@
         
     // Update new object with properties
     [newObject updateWithDictionary:dict andOptions:options];
+    
+    // Set createdAt timestamp if possible (and not prohibited in options)
+    id doTimestamp = [options objectForKey:@"timestamp"];
+    if (doTimestamp == nil || [doTimestamp boolValue] == YES) {
+        SEL createdAtSel = NSSelectorFromString([self createdAtField]);
+        if ([newObject respondsToSelector:createdAtSel])
+            [newObject setValue:[NSDate date] forKey:[self createdAtField]];
+    }
     
     // Log creation
     if ([[self class] coreManager].logLevel > 1) {

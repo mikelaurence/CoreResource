@@ -118,6 +118,11 @@
 			B560DFB8115025E900BE843A /* PBXTextBookmark */ = B560DFB8115025E900BE843A /* PBXTextBookmark */;
 			B560DFB9115025E900BE843A /* PBXTextBookmark */ = B560DFB9115025E900BE843A /* PBXTextBookmark */;
 			B560DFBA115025E900BE843A /* PBXTextBookmark */ = B560DFBA115025E900BE843A /* PBXTextBookmark */;
+			B560DFBB11503FCC00BE843A /* PBXTextBookmark */ = B560DFBB11503FCC00BE843A /* PBXTextBookmark */;
+			B560DFBC11503FCC00BE843A /* PBXTextBookmark */ = B560DFBC11503FCC00BE843A /* PBXTextBookmark */;
+			B560DFBD11503FCC00BE843A /* PBXTextBookmark */ = B560DFBD11503FCC00BE843A /* PBXTextBookmark */;
+			B560DFBE11503FCC00BE843A /* PBXTextBookmark */ = B560DFBE11503FCC00BE843A /* PBXTextBookmark */;
+			B560DFBF11503FCC00BE843A /* PBXTextBookmark */ = B560DFBF11503FCC00BE843A /* PBXTextBookmark */;
 			B56418C1110650D800D1B038 = B56418C1110650D800D1B038 /* PBXTextBookmark */;
 			B56851741100D26100A4C816 = B56851741100D26100A4C816 /* PBXTextBookmark */;
 			B56FDEC1111B981000D4CEA7 = B56FDEC1111B981000D4CEA7 /* PBXTextBookmark */;
@@ -213,7 +218,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 211";
 		rLen = 0;
-		rLoc = 7056;
+		rLoc = 7139;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 5724;
@@ -223,7 +228,7 @@
 		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
 		name = "CoreResource.h: 89";
 		rLen = 0;
-		rLoc = 2822;
+		rLoc = 2887;
 		rType = 0;
 		vrLen = 1704;
 		vrLoc = 1768;
@@ -233,7 +238,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 339";
 		rLen = 0;
-		rLoc = 11634;
+		rLoc = 12067;
 		rType = 0;
 		vrLen = 1820;
 		vrLoc = 10339;
@@ -243,7 +248,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 209";
 		rLen = 0;
-		rLoc = 6783;
+		rLoc = 6866;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 5724;
@@ -253,7 +258,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 199";
 		rLen = 0;
-		rLoc = 6399;
+		rLoc = 6482;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 5672;
@@ -263,7 +268,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 339";
 		rLen = 0;
-		rLoc = 11634;
+		rLoc = 12067;
 		rType = 0;
 		vrLen = 2381;
 		vrLoc = 13632;
@@ -293,7 +298,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 227";
 		rLen = 0;
-		rLoc = 7554;
+		rLoc = 7637;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 6441;
@@ -303,7 +308,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 227";
 		rLen = 0;
-		rLoc = 7554;
+		rLoc = 7637;
 		rType = 0;
 		vrLen = 1939;
 		vrLoc = 5665;
@@ -313,7 +318,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 241";
 		rLen = 0;
-		rLoc = 7710;
+		rLoc = 7793;
 		rType = 0;
 		vrLen = 1597;
 		vrLoc = 6441;
@@ -323,7 +328,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 216";
 		rLen = 0;
-		rLoc = 7080;
+		rLoc = 7163;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 5891;
@@ -333,7 +338,7 @@
 		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
 		name = "CoreResource.h: 88";
 		rLen = 0;
-		rLoc = 2639;
+		rLoc = 2704;
 		rType = 0;
 		vrLen = 1662;
 		vrLoc = 1790;
@@ -343,7 +348,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 339";
 		rLen = 0;
-		rLoc = 11634;
+		rLoc = 12067;
 		rType = 0;
 		vrLen = 2363;
 		vrLoc = 13632;
@@ -353,7 +358,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 308";
 		rLen = 0;
-		rLoc = 9958;
+		rLoc = 9977;
 		rType = 0;
 		vrLen = 1546;
 		vrLoc = 9080;
@@ -363,7 +368,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 294";
 		rLen = 0;
-		rLoc = 9473;
+		rLoc = 9492;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 8538;
@@ -373,7 +378,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 216";
 		rLen = 0;
-		rLoc = 7080;
+		rLoc = 7163;
 		rType = 0;
 		vrLen = 1817;
 		vrLoc = 5953;
@@ -403,7 +408,7 @@
 		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
 		name = "CoreResource.h: 88";
 		rLen = 0;
-		rLoc = 2639;
+		rLoc = 2704;
 		rType = 0;
 		vrLen = 1662;
 		vrLoc = 1790;
@@ -433,7 +438,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 532";
 		rLen = 0;
-		rLoc = 19763;
+		rLoc = 20196;
 		rType = 0;
 		vrLen = 1606;
 		vrLoc = 19079;
@@ -467,6 +472,56 @@
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 125;
+	};
+	B560DFBB11503FCC00BE843A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5712B54114A0AD00005F0B5 /* CoreDeserializer.h */;
+		name = "CoreDeserializer.h: 17";
+		rLen = 0;
+		rLoc = 568;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 0;
+	};
+	B560DFBC11503FCC00BE843A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
+		name = "CoreDeserializer.m: 207";
+		rLen = 0;
+		rLoc = 6521;
+		rType = 0;
+		vrLen = 1399;
+		vrLoc = 5589;
+	};
+	B560DFBD11503FCC00BE843A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 349";
+		rLen = 0;
+		rLoc = 11603;
+		rType = 0;
+		vrLen = 1515;
+		vrLoc = 9080;
+	};
+	B560DFBE11503FCC00BE843A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
+		name = "CoreResource.h: 88";
+		rLen = 0;
+		rLoc = 2663;
+		rType = 0;
+		vrLen = 1668;
+		vrLoc = 1824;
+	};
+	B560DFBF11503FCC00BE843A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
+		name = "CoreResource.h: 98";
+		rLen = 0;
+		rLoc = 3320;
+		rType = 0;
+		vrLen = 1681;
+		vrLoc = 2032;
 	};
 	B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {
 		uiCtxt = {
@@ -621,16 +676,16 @@
 	};
 	B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1220, 4579}}";
-			sepNavSelRange = "{5716, 0}";
-			sepNavVisRange = "{0, 1161}";
+			sepNavIntBoundsRect = "{{0, 0}, {1220, 4769}}";
+			sepNavSelRange = "{6521, 0}";
+			sepNavVisRange = "{5589, 1399}";
 		};
 	};
 	B5712B54114A0AD00005F0B5 /* CoreDeserializer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 1330}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1235}}";
 			sepNavSelRange = "{568, 0}";
-			sepNavVisRange = "{125, 1348}";
+			sepNavVisRange = "{0, 1301}";
 		};
 	};
 	B5712BC7114A19AC0005F0B5 /* PBXTextBookmark */ = {
@@ -843,16 +898,16 @@
 	};
 	B57DCFF61144F1F70063915D /* CoreResource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1220, 2793}}";
-			sepNavSelRange = "{2639, 0}";
-			sepNavVisRange = "{1790, 1662}";
+			sepNavIntBoundsRect = "{{0, 0}, {1220, 2812}}";
+			sepNavSelRange = "{3320, 0}";
+			sepNavVisRange = "{2032, 1681}";
 		};
 	};
 	B57DCFF71144F1F70063915D /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 13623}}";
-			sepNavSelRange = "{19763, 0}";
-			sepNavVisRange = "{19079, 1606}";
+			sepNavIntBoundsRect = "{{0, 0}, {1228, 14307}}";
+			sepNavSelRange = "{11603, 0}";
+			sepNavVisRange = "{9080, 1515}";
 		};
 	};
 	B57DCFF81144F1F70063915D /* CoreResult.h */ = {
@@ -1267,7 +1322,7 @@
 		fRef = B57DCFF61144F1F70063915D /* CoreResource.h */;
 		name = "CoreResource.h: 89";
 		rLen = 0;
-		rLoc = 2846;
+		rLoc = 2911;
 		rType = 0;
 		vrLen = 1605;
 		vrLoc = 1790;
@@ -1277,7 +1332,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 304";
 		rLen = 0;
-		rLoc = 10687;
+		rLoc = 11120;
 		rType = 0;
 		vrLen = 1540;
 		vrLoc = 9080;
@@ -1297,7 +1352,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 214";
 		rLen = 0;
-		rLoc = 7299;
+		rLoc = 7382;
 		rType = 0;
 		vrLen = 1855;
 		vrLoc = 5671;
@@ -1307,7 +1362,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 211";
 		rLen = 0;
-		rLoc = 7056;
+		rLoc = 7139;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 5724;

@@ -202,7 +202,8 @@ static NSArray* allowedFormats;
 - (id) resourcesFromJSONData:(id)jsonData {
 
     id resourceData = [self resourceDataFromJSONData:jsonData];
-    return [resourceClass performSelector:@selector(create:
+    return [resourceClass performSelector:@selector(create:withOptions:)
+        withObject:resourceData withObject:$D($B(NO), @"timestamp")];
 
     // Turn collection into array if not already one
     NSArray* jsonArray = [jsonCollection isKindOfClass:[NSDictionary class]] ? jsonCollection : $A(jsonCollection);

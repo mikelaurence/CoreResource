@@ -85,6 +85,7 @@ typedef enum _Action {
 #pragma mark Create
 
 + (id) create:(id)parameters;
++ (id) create:(id)parameters withOptions:(NSDictionary*)options;
 + (id) createWithArray:(NSArray*)array;
 + (id) createWithArray:(NSArray *)array andOptions:(NSDictionary*)options;
 + (id) createWithDictionary:(NSDictionary*)dict;
