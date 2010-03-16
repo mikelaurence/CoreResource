@@ -7,6 +7,7 @@
 //
 
 #import "CoreResourceTestCase.h"
+#import "CoreDeserializer.h"
 #import "User.h"
 #import "JSON.h"
 
@@ -23,6 +24,41 @@
 
 #pragma mark -
 #pragma mark Tests - Serialization
+
+- (void) testDeserializerFormatByContentType {
+    // Test "Content-Type" header determination
+    CoreRequest* req1 = [[CoreRequest alloc] init];
+    [req1 performSelector:@selector(setResponseHeaders:) withObject:$D(@"application/json", @"Content-Type")];
+    CoreDeserializer* cd1 = [[CoreDeserializer alloc] initWithSource:req1 andResourceClass:[Artist class]];
+    GHAssertEqualStrings(cd1.format, @"json", nil);
+}
+
+- (void) testDeserializerFormatByAcceptHeader {
+    // Test "Accept" header determination
+    CoreRequest* req2 = [[CoreRequest alloc] init];
+    [req2 setRequestHeaders:$D(@"application/xml", @"Accept")];
+    CoreDeserializer* cd2 = [[CoreDeserializer alloc] initWithSource:req2 andResourceClass:[Artist class]];
+    GHAssertEqualStrings(cd2.format, @"xml", nil);
+}
+    
+- (void) testDeserializerFormatByURL {
+    // Test URL determination
+    CoreRequest* req3 = [[CoreRequest alloc] initWithURL:[NSURL URLWithString:@"http://coreresource.org/pings.json"]];
+    [req3 setRequestHeaders:$D(@"application/json", @"Accept")];
+    CoreDeserializer* cd3 = [[CoreDeserializer alloc] initWithSource:req3 andResourceClass:[Artist class]];
+    GHAssertEqualStrings(cd3.format, @"json", nil);
+}
+
+- (void) testDeserializerFormatByStringContent {
+    // Test JSON string determination
+    CoreDeserializer* cd4 = [[CoreDeserializer alloc] initWithSource:@" \n[{\"title\":\"value\"}]\n" andResourceClass:[Artist class]];
+    GHAssertEqualStrings(cd4.format, @"json", nil);
+    
+    // Test XML string determination
+    CoreDeserializer* cd5 = [[CoreDeserializer alloc] initWithSource:@" <artist><title>Value</title></artist>" andResourceClass:[Artist class]];
+    GHAssertEqualStrings(cd5.format, @"xml", nil);
+}
+
 
 /*
 
@@ -50,6 +86,7 @@ NOTE: Test should be re-written with a different model altogether to avoid confu
 
 */
 
+/*
 - (void) testDeserializeFromString {
     [self loadAllArtists];
     
@@ -125,6 +162,7 @@ NOTE: Test should be re-written with a different model altogether to avoid confu
     GHAssertEqualStrings([props objectForKey:@"detail"], secondArtist.detail, nil);
     GHAssertEqualStrings([props objectForKey:@"updatedAt"], [[Artist dateParser] stringFromDate:secondArtist.updatedAt], nil);
 }
+*/
 
 
 /*
