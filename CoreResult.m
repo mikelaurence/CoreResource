@@ -15,15 +15,10 @@
 @synthesize resources;
 @synthesize error;
 
-- (id) initWithResource:(id)resource {
+- (id) initWithResources:(id)theResources {
     if (self = [super init])
-        self.resources = [NSArray arrayWithObject:resource];
-    return self;
-}
-
-- (id) initWithResources:(NSArray*)resourceArray {
-    if (self = [super init])
-        self.resources = resourceArray;
+        self.resources = [theResources isKindOfClass:[NSArray class]] ? 
+            theResources : [NSArray arrayWithObject:theResources];
     return self;
 }
 

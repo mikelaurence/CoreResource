@@ -294,14 +294,36 @@
     return newObject;
 }
 
-+ (id) createWithDictionary:(NSDictionary*)dict {
-    return [self createWithDictionary:dict inContext:[self managedObjectContext]];
++ (id) createWithArray:(NSArray*)array {
+    return [self createWithArray:array andOptions:nil];
 }
 
-+ (id) createWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context {
++ (id) createWithArray:(NSArray*)array andOptions:(NSDictionary*)options {
+    NSMutableArray *resources = [NSMutableArray arrayWithCapacity:[array count]]; // Container for resources
+
+    // Iterate through JSON elements and attempt to create/update resources for each
+    for (id item in array)
+        [resources addObject:[self createWithDictionary:item andOptions:options]];
+
+    return jsonResources;
+}
+
++ (id) createWithDictionary:(NSDictionary*)dict {
+    return [self createWithDictionary:dict andOptions:nil];
+}
+
++ (id) createWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options {
+    // Get managed object context from options or just use default
+    NSManagedObjectContext* context = [options objectForKey:@"context"];
+    if (context == nil)
+        context = [self managedObjectContext];
+
+    // Insert new managed object into context
     CoreResource *newObject = [[self alloc] initWithEntity:[self entityDescription] 
         insertIntoManagedObjectContext:context];
-    [newObject updateWithDictionary:dict];
+        
+    // Update new object with properties
+    [newObject updateWithDictionary:dict andOptions:options];
     
     // Log creation
     if ([[self class] coreManager].logLevel > 1) {
@@ -318,10 +340,10 @@
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict {
-    return [self createOrUpdateWithDictionary:dict inContext:[self managedObjectContext]];
+    return [self createOrUpdateWithDictionary:dict andOptions:nil];
 }
 
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context {
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options {
     
     // Get remote ID
     id resourceId = [dict objectForKey:[self remoteIdField]];
@@ -333,13 +355,13 @@
         // If there is a result, check to see whether we should update it or not
         if ([findResult resourceCount] == 1) {
             CoreResource *existingObject = [findResult resource];
-            [existingObject updateWithDictionary:dict];
+            [existingObject updateWithDictionary:dict andOptions:options];
             return existingObject;
         }
     }
     
     // Otherwise, no existing record found, so create a new object
-    return [self createWithDictionary:dict inContext:context];
+    return [self createWithDictionary:dict andOptions:options];
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject {

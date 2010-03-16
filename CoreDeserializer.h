@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "CoreManager.h"
 
-
+/**
+    The job of CoreDeserializers is to transform serialized resource strings into 
+    CoreResource-formatted collections (nested arrays & dictionaries). They do pass
+    actual resources to their targets at the time of completion, but the generation
+    of said resources is handed off to individual CoreResource classes, where
+    customized domain logic is better placed. This also allows for direct creates
+    and updates using property dictionaries and such, much like in ActiveRecord
+    where you can call #update_attributes with a hash.
+*/
 @interface CoreDeserializer : NSOperation {
     id source;
     NSString *sourceString;
@@ -20,7 +28,7 @@
     
     // Results
     NSError *error;
-    NSArray *resources;
+    id resources;
     
     // Target
     id target;

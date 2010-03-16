@@ -159,7 +159,7 @@ static NSArray* allowedFormats;
 /**
     Override in subclasses
 */
-- (NSArray*) resourcesFromString:(NSString*)string { return nil; }
+- (id) resourcesFromString:(NSString*)string { return nil; }
 
 
 #pragma mark -
@@ -186,19 +186,23 @@ static NSArray* allowedFormats;
 
 @implementation CoreJSONDeserializer
 
-- (NSArray*) resourcesFromString:(NSString*)string {
+- (id) resourcesFromString:(NSString*)string {
 
     // Deserialize JSON
     SBJsonParser *jsonParser = [SBJsonParser new];
-    id jsonCollection = [jsonParser objectWithString:string];
-    if (jsonCollection == nil) { // Record error and return if JSON parsing failed
+    id jsonData = [jsonParser objectWithString:string];
+    if (jsonData == nil) { // Record error and return if JSON parsing failed
         error = [[[NSError alloc] initWithDomain:$S(@"JSON parsing failed: %@", [jsonParser errorTrace]) code:0 userInfo:nil] retain];
         return nil;
     }
+    
+    return [self resourcesFromJSONData:jsonData];
+}
 
-    // Get base resource element from deserialized collection (*configuration point)
-    jsonCollection = [resourceClass performSelector:@selector(resourceCollectionFromJSONCollection:withParent:) 
-        withObject:jsonCollection withObject:nil];
+- (id) resourcesFromJSONData:(id)jsonData {
+
+    id resourceData = [self resourceDataFromJSONData:jsonData];
+    return [resourceClass performSelector:@selector(create:
 
     // Turn collection into array if not already one
     NSArray* jsonArray = [jsonCollection isKindOfClass:[NSDictionary class]] ? jsonCollection : $A(jsonCollection);
@@ -208,11 +212,12 @@ static NSArray* allowedFormats;
         if (coreManager.logLevel > 1)
             NSLog(@"Deserializing %@ %@", [NSNumber numberWithInt:[jsonArray count]], [resourceClass performSelector:@selector(remoteCollectionName)]);
 
+        // Iterate through JSON elements and attempt to create/update resources for each
         for (id jsonElement in jsonArray) {
             id properties = [resourceClass performSelector:@selector(resourcePropertiesFromJSONElement:withParent:)
                     withObject:jsonElement withObject:nil];
-            id resource = [resourceClass performSelector:@selector(createOrUpdateWithDictionary:inContext:)
-                withObject:properties withObject:managedObjectContext];
+            id resource = [resourceClass performSelector:@selector(createOrUpdateWithDictionary:andOptions:)
+                withObject:properties withObject:$D(managedObjectContext, @"context")];
             if (resource != nil)
                 [jsonResources addObject:resource];
         }
@@ -229,6 +234,9 @@ static NSArray* allowedFormats;
 
 - (NSArray*) resourcesFromString:(NSString*)string {
 
+    // Deserialize XML
+    NSXMLDocument *doc = [[[NSXMLDocument alloc] initWithData:data options:NSXMLDocumentTidyXML error:&parseError] autorelease];
+    
     return nil;
 }
 

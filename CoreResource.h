@@ -85,10 +85,12 @@ typedef enum _Action {
 #pragma mark Create
 
 + (id) create:(id)parameters;
++ (id) createWithArray:(NSArray*)array;
++ (id) createWithArray:(NSArray *)array andOptions:(NSDictionary*)options;
 + (id) createWithDictionary:(NSDictionary*)dict;
-+ (id) createWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context;
++ (id) createWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict inContext:(NSManagedObjectContext*)context;
++ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options;
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject;
 - (void) updateWithDictionary:(NSDictionary*)dict;
 - (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
