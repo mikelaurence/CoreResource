@@ -18,7 +18,7 @@
     NSDictionary* updateDict = [[self artistDataJSON:@"artists.0.update"] JSONValue];
     
     Artist* artist = (Artist*)[[Artist findLocal:[NSNumber numberWithInt:0]] resource];
-    [artist updateWithDictionary:updateDict];
+    [artist update:updateDict];
     
     GHAssertEqualStrings(artist.name, @"Peter B. Gabriel", nil);
     GHAssertEqualStrings(artist.summary, @"Peter Brian Gabriel is a musician and songwriter.", nil);

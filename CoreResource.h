@@ -56,8 +56,8 @@ typedef enum _Action {
 + (NSDateFormatter*) dateParserForField:(NSString*)field;
 
 + (Class) deserializerClassForFormat:(NSString*)format;
-+ (id) resourceCollectionFromJSONCollection:(id)jsonCollection withParent:(id)parent;
-+ (id) resourcePropertiesFromJSONElement:(id)jsonElement withParent:(id)parent;
+//+ (id) resourceCollectionFromJSONCollection:(id)jsonCollection withParent:(id)parent;
+//+ (id) resourcePropertiesFromJSONElement:(id)jsonElement withParent:(id)parent;
 
 - (NSString*) toJson;
 - (NSString*) toJson:(id)options;
@@ -83,28 +83,17 @@ typedef enum _Action {
 
 #pragma mark -
 #pragma mark Create
+
 + (id) create:(id)parameters;
 + (id) create:(id)parameters withOptions:(NSDictionary*)options;
 + (id) createOrUpdate:(id)parameters;
 + (id) createOrUpdate:(id)parameters withOptions:(NSDictionary*)options;
-- (id) update:(NSDictionary*)dict;
-- (id) update:(NSDictionary*)dict withOptions:(NSDictionary*)options;
+- (void) update:(NSDictionary*)dict;
+- (void) update:(NSDictionary*)dict withOptions:(NSDictionary*)options;
 - (BOOL) shouldUpdateWith:(NSDictionary*)dict;
 + (NSDictionary*) defaultCreateOptions;
 + (NSDictionary*) defaultCreateOrUpdateOptions;
 + (NSDictionary*) defaultUpdateOptions;
-
-/*
-+ (id) createWithArray:(NSArray*)array;
-+ (id) createWithArray:(NSArray *)array andOptions:(NSDictionary*)options;
-+ (id) createWithDictionary:(NSDictionary*)dict;
-+ (id) createWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options;
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict;
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options;
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject;
-- (void) updateWithDictionary:(NSDictionary*)dict;
-- (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict;
-*/
 
 - (void) didCreate;
 

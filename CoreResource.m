@@ -334,7 +334,7 @@
 }
 
 + (id) createOrUpdate:(id)parameters {
-    return [self createOrUpdate:parameters andOptions:[self defaultCreateOrUpdateOptions]];
+    return [self createOrUpdate:parameters withOptions:[self defaultCreateOrUpdateOptions]];
 }
 
 + (id) createOrUpdate:(id)parameters withOptions:(NSDictionary*)options {
@@ -385,28 +385,6 @@
     return nil;
 }
 
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject {
-    id object = [self createOrUpdateWithDictionary:dict];
-    
-    // If object was created/updated successfully, link relationship
-    if (object) {
-        if ([relationship isToMany]) {
-            // If a dual toMany relationship, use the add method to link the relationship (TODO)
-            if ([[relationship inverseRelationship] isToMany])
-                NSLog(@"Dual to-many relationships not yet supported");
-            
-            // Otherwise, this is only toMany on this end, so we can just set the object normally on the other end
-            else
-                [relatedObject setValue:object forKey:[[relationship inverseRelationship] name]];
-        }
-        // If a singular relationship, just set the object here
-        else
-            [object setValue:relatedObject forKey:[relationship name]];
-        
-    }
-    return object;
-}
-
 
 /**
     Determines whether or not an existing (local) record should be updated with data from the provided dictionary
@@ -431,7 +409,7 @@
 }
 
 - (void) update:(NSDictionary*)dict {
-    [self update:dictionary withOptions:[[self class] defaultUpdateOptions]];
+    [self update:dict withOptions:[[self class] defaultUpdateOptions]];
 }
 
 - (void) update:(NSDictionary*)dict withOptions:(NSDictionary*)options {
@@ -475,7 +453,7 @@
                 // If an array, create an array of resources from the contents
                 else if ([value isKindOfClass:[NSArray class]]) {
                     newRelatedResources = [NSMutableSet setWithCapacity:[value count]];
-                    for (id *item in value)
+                    for (id item in value)
                         [newRelatedResources addObject:[relationshipClass createOrUpdate:item withOptions:options]];
                 }
                 // Otherwise, if the value is a resource itself, use it directly

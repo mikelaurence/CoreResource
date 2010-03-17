@@ -212,7 +212,11 @@ static NSArray* allowedFormats;
 
 - (id) resourceDataFromJSONData:(id)jsonData {
 
+    return jsonData;
+
     // COLLAPSE JSON
+
+    /*
 
     // Turn collection into array if not already one
     NSArray* jsonArray = [jsonData isKindOfClass:[NSDictionary class]] ? jsonData : $A(jsonData);
@@ -235,6 +239,7 @@ static NSArray* allowedFormats;
     }
     
     return nil;
+    */
 }
 
 @end
