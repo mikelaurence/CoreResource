@@ -20,13 +20,11 @@
 }
 
 - (id) initWithSource:(id)theSource andResources:(id)theResources {
-    NSLog(@"Initting CoreResult");
+    NSLog(@"RESULT: %@ %%", theSource, theResources);
     if (self = [super init]) {
-        NSLog(@"Setting up CoreResult");
         self.source = theSource;
         self.resources = [theResources isKindOfClass:[NSArray class]] ? 
             theResources : [NSArray arrayWithObject:theResources];
-        NSLog(@"Resources set: %i %i", [theResources count], [self.resources count]);
     }
     NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
     return self;

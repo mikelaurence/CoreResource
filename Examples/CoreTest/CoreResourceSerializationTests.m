@@ -17,10 +17,6 @@
 
 @implementation CoreResourceSerializationTests
 
-- (void)setUpClass {
-    [super setUpClass];
-}
-
 
 #pragma mark -
 #pragma mark Tests - Serialization

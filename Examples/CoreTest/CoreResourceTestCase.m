@@ -94,14 +94,14 @@
     coreManager.useBundleRequests = YES;
 }
 
+- (void) setUp {
+    for (Artist* artist in [self allLocalArtists])
+        [[artist managedObjectContext] deleteObject:artist];
+}
+
 - (void) tearDownClass {
     [coreManager release];
     //coreManager = nil;
-}
-
-- (void)tearDown {
-    for (Artist* artist in [self allLocalArtists])
-        [[artist managedObjectContext] deleteObject:artist];
 }
 
 

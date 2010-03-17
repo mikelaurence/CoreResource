@@ -51,9 +51,7 @@ static NSArray* allowedFormats;
         resources = [[self resourcesFromString:[self sourceString]] retain];
 
         // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
-        NSLog(@"Will save");
         [managedObjectContext save:&error];
-        NSLog(@"Did save");
             
         // Remove context save observer
         [[NSNotificationCenter defaultCenter] removeObserver:self 
@@ -61,52 +59,35 @@ static NSArray* allowedFormats;
     }
     else {
         error = [[[NSError alloc] initWithDomain:$S(@"Couldn't deserialize with format '%@'", format) code:0 userInfo:nil] retain];
+        [self performSelectorOnMainThread:@selector(notify) withObject:nil waitUntilDone:NO];
+        
+        // Log error if level is high enough
+        if (coreManager.logLevel > 3)
+            NSLog(@"CoreDeserializer error: %@", [error description]);
     }
-
-    NSLog(@"Done deserializing.");
-
-    /*
-    // Perform action on target if possible
-    if (target && action && [target respondsToSelector:action]) {
-        NSLog(@"Creating result with count %i", [resources count]);
-        CoreResult *result = error != nil ?
-            [[CoreResult alloc] initWithSource:source andResources:resources] :
-            [[CoreResult alloc] initWithError:error];
-                          
-        // Perform on main thread, since UI updates are very likely in delegate calls
-        NSLog(@"Will perform selector: %i, %@", [result resourceCount], [source url]);
-        [target performSelectorOnMainThread:action withObject:result waitUntilDone:NO];
-        NSLog(@"Did perform selector %i", [result resourceCount]);
-        [result release];
-    }
-    */
-    
-    // Log error if desired
-    if (error != nil && coreManager.logLevel > 3)
-        NSLog(@"CoreDeserializer error: %@", [error description]);
 }
 
 
 /**
     When the context saves, send a message to our Core Manager to merge in the updated data
 */
-- (void)contextDidSave:(NSNotification*)notification {
-    NSLog(@"===> contextDidSave");
+- (void) contextDidSave:(NSNotification*)notification {
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];
         
+    [self performSelectorOnMainThread:@selector(notify) withObject:nil waitUntilDone:NO];
+}
+
+- (void) notify {
     // Perform action on target if possible
     if (target && action && [target respondsToSelector:action]) {
-        NSLog(@"Creating result with count %i", [resources count]);
-        CoreResult *result = error != nil ?
+        CoreResult *result = error == nil ?
             [[CoreResult alloc] initWithSource:source andResources:resources] :
             [[CoreResult alloc] initWithError:error];
                           
         // Perform on main thread, since UI updates are very likely in delegate calls
-        NSLog(@"Will perform selector: %i, %@", [result resourceCount], [source url]);
-        [target performSelectorOnMainThread:action withObject:result waitUntilDone:NO];
-        NSLog(@"Did perform selector %i", [result resourceCount]);
+        [target performSelector:action withObject:result];
         [result release];
     }
 }
