@@ -36,6 +36,7 @@
 }
 
 @property (nonatomic, retain) id source;
+@property (nonatomic, readonly) NSString* sourceString;
 @property (nonatomic, assign) Class resourceClass;
 @property (nonatomic, retain) NSString* format;
 @property (nonatomic, retain) CoreManager *coreManager;

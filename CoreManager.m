@@ -160,6 +160,7 @@ static CoreManager* _main;
 
 
 - (void) mergeContext:(NSNotification*)notification {
+    NSLog(@"=======> MERGING CONTEXT");
     NSAssert([NSThread mainThread], @"Must be on the main thread!");
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
 }

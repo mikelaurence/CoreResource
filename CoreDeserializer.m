@@ -16,7 +16,7 @@
 
 static NSArray* allowedFormats;
 
-@synthesize source, resourceClass, format, coreManager;
+@synthesize source, sourceString, resourceClass, format, coreManager;
 @synthesize target, action;
 
 
@@ -67,9 +67,15 @@ static NSArray* allowedFormats;
         CoreResult *result = error != nil ?
             [[CoreResult alloc] initWithResources:resources] :
             [[CoreResult alloc] initWithError:error];
-        [target performSelector:action withObject:result];
+            
+        // Perform on main thread, since UI updates are very likely in delegate calls
+        [target performSelectorOnMainThread:action withObject:result waitUntilDone:NO];
         [result release];
     }
+    
+    // Log error if desired
+    if (error != nil && coreManager.logLevel > 3)
+        NSLog(@"CoreDeserializer error: %@", [error description]);
 }
 
 
@@ -77,24 +83,24 @@ static NSArray* allowedFormats;
     When the context saves, send a message to our Core Manager to merge in the updated data
 */
 - (void)contextDidSave:(NSNotification*)notification {
+    NSLog(@"======> contextDidSave");
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];
 }
 
 
-
 #pragma mark -
 #pragma mark Source
 
+/**
+    Retrieves serialized string from source (since source could be a request, string, etc.)
+*/
 - (NSString*) sourceString {
-    if (sourceString == nil) {
-        NSString* rawString = [source isKindOfClass:[NSString class]] ? source : [source get:@selector(responseString)];
-        sourceString = [[rawString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] retain];
-    }
+    NSString* rawSourceString = [source isKindOfClass:[NSString class]] ? source : [source get:@selector(responseString)];
+    sourceString = [[rawSourceString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] retain];
     return sourceString;
 }
-
 
 
 #pragma mark -
@@ -124,14 +130,14 @@ static NSArray* allowedFormats;
     
     // Attempt to determine format by looking at first content character
     if (format == nil) {
-        NSString* firstContentChar = [[self sourceString] substringToIndex:0];
+        NSString* firstContentChar = [[self sourceString] substringToIndex:1];
         if ([firstContentChar isEqualToString:@"<"])
             return @"xml";
         if ([firstContentChar isEqualToString:@"{"] || [firstContentChar isEqualToString:@"["])
             return @"json";
     }
     
-    return format;
+    return [format retain];
 }
 
 - (NSString*) formatFromHeader:(NSString*)header inDictionary:(SEL)dictionarySelector {
@@ -166,8 +172,8 @@ static NSArray* allowedFormats;
 #pragma mark Lifecycle end
 
 - (void) dealloc {
-    [source release];
     [sourceString release];
+    [source release];
     [format release];
     [coreManager release];
     [managedObjectContext release];

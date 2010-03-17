@@ -136,7 +136,7 @@
     [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(completeTestFindRemoteAndNotify:)];
 }
 
-- (void) testFindAllRemote {  
+- (void) testFindAllRemote {
     [Artist findAllRemote];
 
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);

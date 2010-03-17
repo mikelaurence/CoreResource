@@ -643,9 +643,7 @@
 
 + (void) findRemoteDidFinish:(CoreRequest*)request {
     // Create and enqueue deserializer in non-blocking thread
-    CoreDeserializer* deserializer = [[CoreDeserializer alloc] init];
-    deserializer.source = request;
-    deserializer.resourceClass = self;
+    CoreDeserializer* deserializer = [[CoreDeserializer alloc] initWithSource:request andResourceClass:self];
     deserializer.target = request.coreDelegate;
     deserializer.action = request.coreSelector;
     [[[self coreManager] deserialzationQueue] addOperation:deserializer];
