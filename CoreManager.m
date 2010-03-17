@@ -8,6 +8,7 @@
 
 #import "CoreManager.h"
 #import "Reachability.h"
+#import "Artist.h"
 
 @implementation CoreManager
 
@@ -125,8 +126,9 @@ static CoreManager* _main;
 
 - (void) mergeContext:(NSNotification*)notification {
     NSAssert([NSThread mainThread], @"Must be on the main thread!");
+    NSLog(@"=======> PRE MERGED CONTEXT %@: ART: %i", managedObjectContext, [[Artist findAllLocal] resourceCount]);
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-    NSLog(@"=======> MERGED CONTEXT");
+    NSLog(@"=======> MERGED CONTEXT %@: ART: %i", managedObjectContext, [[Artist findAllLocal] resourceCount]);
 }
 
 
@@ -145,6 +147,10 @@ static CoreManager* _main;
 #pragma mark Memory management
 
 - (void)dealloc {
+    // If this is the global "main" manager, nullify it
+    if (self == _main)
+        _main = nil;
+
     [modelProperties release];
     [modelRelationships release];
 

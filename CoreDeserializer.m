@@ -28,6 +28,8 @@ static NSArray* allowedFormats;
 
 
 - (void) main {
+    NSLog(@"===> CoreDeserializer operating");
+
     // Use format to change deserialization class and convert serialized string into resources
     Class newClass = [resourceClass performSelector:@selector(deserializerClassForFormat:) withObject:[self format]];
     if (newClass != nil) {
@@ -47,9 +49,11 @@ static NSArray* allowedFormats;
             object:managedObjectContext];
             
         resources = [[self resourcesFromString:[self sourceString]] retain];
-        
+
         // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
+        NSLog(@"Will save");
         [managedObjectContext save:&error];
+        NSLog(@"Did save");
             
         // Remove context save observer
         [[NSNotificationCenter defaultCenter] removeObserver:self 
@@ -58,17 +62,24 @@ static NSArray* allowedFormats;
     else {
         error = [[[NSError alloc] initWithDomain:$S(@"Couldn't deserialize with format '%@'", format) code:0 userInfo:nil] retain];
     }
-        
+
+    NSLog(@"Done deserializing.");
+
+    /*
     // Perform action on target if possible
     if (target && action && [target respondsToSelector:action]) {
+        NSLog(@"Creating result with count %i", [resources count]);
         CoreResult *result = error != nil ?
-            [[CoreResult alloc] initWithResources:resources] :
+            [[CoreResult alloc] initWithSource:source andResources:resources] :
             [[CoreResult alloc] initWithError:error];
-            
+                          
         // Perform on main thread, since UI updates are very likely in delegate calls
+        NSLog(@"Will perform selector: %i, %@", [result resourceCount], [source url]);
         [target performSelectorOnMainThread:action withObject:result waitUntilDone:NO];
+        NSLog(@"Did perform selector %i", [result resourceCount]);
         [result release];
     }
+    */
     
     // Log error if desired
     if (error != nil && coreManager.logLevel > 3)
@@ -80,9 +91,24 @@ static NSArray* allowedFormats;
     When the context saves, send a message to our Core Manager to merge in the updated data
 */
 - (void)contextDidSave:(NSNotification*)notification {
+    NSLog(@"===> contextDidSave");
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];
+        
+    // Perform action on target if possible
+    if (target && action && [target respondsToSelector:action]) {
+        NSLog(@"Creating result with count %i", [resources count]);
+        CoreResult *result = error != nil ?
+            [[CoreResult alloc] initWithSource:source andResources:resources] :
+            [[CoreResult alloc] initWithError:error];
+                          
+        // Perform on main thread, since UI updates are very likely in delegate calls
+        NSLog(@"Will perform selector: %i, %@", [result resourceCount], [source url]);
+        [target performSelectorOnMainThread:action withObject:result waitUntilDone:NO];
+        NSLog(@"Did perform selector %i", [result resourceCount]);
+        [result release];
+    }
 }
 
 
@@ -158,10 +184,12 @@ static NSArray* allowedFormats;
 #pragma mark -
 #pragma mark Deserialization
 
-/**
-    Override in subclasses
-*/
 - (id) resourcesFromString:(NSString*)string { return nil; }
+
+- (NSArray*) resourcesFromCollection:(id)collection {
+    return [resourceClass performSelector:@selector(create:withOptions:)
+        withObject:collection withObject:$D(managedObjectContext, @"context", $B(NO), @"timestamp")];
+}
 
 
 #pragma mark -
@@ -204,14 +232,13 @@ static NSArray* allowedFormats;
 
 - (id) resourcesFromJSONData:(id)jsonData {
     // Convert raw JSON to resource data parsable by CoreResource create/update methods
-    id resourceData = [self resourceDataFromJSONData:jsonData];
+    id resourceCollection = [self resourceCollectionFromJSONData:jsonData];
     
     // Create/update resources
-    return [resourceClass performSelector:@selector(create:withOptions:)
-        withObject:resourceData withObject:$D($B(NO), @"timestamp")];
+    return [self resourcesFromCollection:resourceCollection];
 }        
 
-- (id) resourceDataFromJSONData:(id)jsonData {
+- (id) resourceCollectionFromJSONData:(id)jsonData {
 
     return jsonData;
 

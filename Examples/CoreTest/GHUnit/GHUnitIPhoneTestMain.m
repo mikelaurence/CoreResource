@@ -17,7 +17,7 @@ void exceptionHandler(NSException *exception) {
 }
 
 int main(int argc, char *argv[]) {
-	NSLog(@"Running GHUnit main");
+	
 	/*!
 	 For debugging:
 	 Go into the "Get Info" contextual menu of your (test) executable (inside the "Executables" group in the left panel of XCode). 
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
 	if (getenv("GHUNIT_CLI")) {
 		retVal = [GHTestRunner run];
 	} else {
-		retVal = UIApplicationMain(argc, argv, nil, @"CoreTestAppDelegate");
+		retVal = UIApplicationMain(argc, argv, nil, @"GHUnitIPhoneAppDelegate");
 	}
 	[pool release];
 	return retVal;

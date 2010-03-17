@@ -14,7 +14,7 @@
 @implementation CoreResourceReadTests
 
 - (void) setUp {
-    [CoreManager main].bundleRequestDelay = 0;
+    coreManager.bundleRequestDelay = 0;
     [super setUp];
 }
 
@@ -84,14 +84,19 @@
 - (void) testFindAllParameterizedWithLocalHits { GHFail(nil); }
 */
 
-- (void) testFindAllAndNotify { 
+- (void) testFindAllAndNotify {
+    NSLog(@"===> testFindAllAndNotify");
     [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindAllAndNotify:)];
+    NSLog(@"===> preFindAll");
     [Artist findAll:nil andNotify:self withSelector:@selector(completeTestFindAllAndNotify:)];
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
+    NSLog(@"===> postFindAll");
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:3.0];
 }
 
 - (void) completeTestFindAllAndNotify:(CoreResult*)result {
+    NSLog(@"===> completeTestFindAllAndNotify");
+    NSLog(@"RESULT resources: %@", [result resources]);
     GHAssertEquals([result resourceCount], 3, nil);
     [self validateFirstArtist:[[result resources] objectAtIndex:0]];
     [self validateSecondArtist:[[result resources] objectAtIndex:1]];

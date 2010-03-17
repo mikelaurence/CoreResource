@@ -13,6 +13,7 @@
 #import "CoreResult.h"
 
 @interface CoreResourceTestCase : GHAsyncTestCase {
+    CoreManager *coreManager;
     NSMutableDictionary* delegatesCalled;
 }
 

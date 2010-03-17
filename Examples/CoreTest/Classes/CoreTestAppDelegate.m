@@ -13,16 +13,12 @@
 
 @synthesize window;
 @synthesize navigationController;
-@synthesize coreManager;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-
-    self.coreManager = [[CoreManager alloc] init];
-    NSLog(@"Created Core Manager: %@", [CoreManager main]);
 
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
@@ -40,7 +36,6 @@
 #pragma mark Memory management
 
 - (void)dealloc {
-    [coreManager release];
 	[navigationController release];
 	[window release];
 	[super dealloc];

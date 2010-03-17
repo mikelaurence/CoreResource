@@ -12,14 +12,10 @@
 @interface CoreTestAppDelegate : GHUnitIPhoneAppDelegate {
     UIWindow *window;
     UINavigationController *navigationController;
-    
-    CoreManager *coreManager;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
-
-@property (nonatomic, retain) CoreManager *coreManager;
 
 @end
 

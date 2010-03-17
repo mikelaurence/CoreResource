@@ -101,18 +101,20 @@ typedef enum _Action {
 #pragma mark -
 #pragma mark Read
 
-+ (CoreResult*) find:(id)recordId;
-+ (CoreResult*) find:(id)recordId andNotify:(id)del withSelector:(SEL)selector;
++ (CoreResult*) find:(id)resourceId;
++ (CoreResult*) find:(id)resourceId andNotify:(id)del withSelector:(SEL)selector;
 + (CoreResult*) findAll;
 + (CoreResult*) findAll:(id)parameters;
 + (CoreResult*) findAll:(id)parameters andNotify:(id)del withSelector:(SEL)selector;
 
-+ (CoreResult*) findLocal:(id)recordId;
++ (CoreResult*) findLocal:(id)resourceId;
++ (CoreResult*) findLocal:(id)resourceId inContext:(NSManagedObjectContext*)context;
 + (CoreResult*) findAllLocal;
++ (CoreResult*) findAllLocal:(id)parameters inContext:(NSManagedObjectContext*)context;
 + (CoreResult*) findAllLocal:(id)parameters;
 
-+ (void) findRemote:(id)recordId;
-+ (void) findRemote:(id)recordId andNotify:(id)del withSelector:(SEL)selector;
++ (void) findRemote:(id)resourceId;
++ (void) findRemote:(id)resourceId andNotify:(id)del withSelector:(SEL)selector;
 + (void) findAllRemote;
 + (void) findAllRemote:(id)parameters;
 + (void) findAllRemote:(id)parameters andNotify:(id)del withSelector:(SEL)selector;

@@ -57,13 +57,24 @@
 
 #pragma mark -
 #pragma mark Deserialization
+
+/**
+    Generates resources from a serialized string.
+    Must be overriden in subclasses to accomodate different formats, etc.
+*/
 - (NSArray*) resourcesFromString:(NSString*)string;
+
+/**
+    Generates resources from CoreResource-formatted data collections
+    (basically just hands off generation to the root resource class, with a few specific options)
+*/
+- (NSArray*) resourcesFromCollection:(id)collection;
 
 @end
 
 @interface CoreJSONDeserializer : CoreDeserializer 
 - (id) resourcesFromJSONData:(id)jsonData;
-- (id) resourceDataFromJSONData:(id)jsonData;
+- (id) resourceCollectionFromJSONData:(id)jsonData;
 @end
 
 #ifdef DDXMLDocument

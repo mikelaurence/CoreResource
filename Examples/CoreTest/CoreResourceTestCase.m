@@ -33,19 +33,19 @@
 }
 
 - (Artist*) loadArtist:(int)index {
-    Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
+    Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[coreManager managedObjectContext]];
     NSDictionary* dict = [self artistData:index];
     artist.resourceId = [dict objectForKey:@"id"];
     artist.name = [dict objectForKey:@"name"];
     artist.summary = [dict objectForKey:@"summary"];
     artist.detail = [dict objectForKey:@"detail"];
-    artist.updatedAt = [[[CoreManager main] defaultDateParser] dateFromString:[dict objectForKey:@"updatedAt"]];
+    artist.updatedAt = [[coreManager defaultDateParser] dateFromString:[dict objectForKey:@"updatedAt"]];
     
     NSDictionary* songsArray = [dict objectForKey:@"songs"];
     NSMutableSet* songs = [NSMutableSet set];
     if (songsArray) {
         for (NSDictionary* dict in songsArray) {
-            Song* song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:[[CoreManager main] managedObjectContext]];
+            Song* song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:[coreManager managedObjectContext]];
             song.resourceId = [dict objectForKey:@"id"];
             song.name = [dict objectForKey:@"name"];
             [songs addObject:song];
@@ -79,7 +79,7 @@
 }
 
 - (void) performRequestsAsynchronously {
-    [CoreManager main].bundleRequestDelay = 0.1;   // Add delay to request so it performs asynchronously
+    coreManager.bundleRequestDelay = 0.1;   // Add delay to request so it performs asynchronously
 }
 
 
@@ -89,7 +89,14 @@
 
 - (void) setUpClass {
     self.delegatesCalled = [NSMutableDictionary dictionary];
-    [CoreManager main].useBundleRequests = YES;
+
+    coreManager = [[CoreManager alloc] init];
+    coreManager.useBundleRequests = YES;
+}
+
+- (void) tearDownClass {
+    [coreManager release];
+    //coreManager = nil;
 }
 
 - (void)tearDown {

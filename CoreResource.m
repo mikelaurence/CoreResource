@@ -299,6 +299,7 @@
     }
     else {
         // Get managed object context from options or just use default
+        NSLog(@"options: %@", options);
         NSManagedObjectContext* context = [options objectForKey:@"context"];
         if (context == nil)
             context = [self managedObjectContext];
@@ -357,7 +358,7 @@
         
         // If there is an ID, attempt to find existing record
         if (resourceId != nil) {
-            CoreResult* findResult = [self findLocal:resourceId];
+            CoreResult* findResult = [self findLocal:resourceId inContext:[options objectForKey:@"context"]];
 
             // If there is a result, update it (if necessary) instead of creating it
             if ([findResult resourceCount] == 1) {
@@ -566,7 +567,12 @@
 }
 
 + (CoreResult*) findLocal:(id)resourceId {
-    return [self findAllLocal:$D(resourceId, [self localIdField], $S(@"find%@", NSStringFromClass(self)), @"$template")];
+    return [self findLocal:resourceId inContext:nil];
+}
+
++ (CoreResult*) findLocal:(id)resourceId inContext:(NSManagedObjectContext*)context {
+    return [self findAllLocal:$D(resourceId, [self localIdField], $S(@"find%@", NSStringFromClass(self)), @"$template")
+        inContext:context != nil ? context : [self managedObjectContext]];
 }
 
 + (CoreResult*) findAllLocal {
@@ -574,12 +580,19 @@
 }
 
 + (CoreResult*) findAllLocal:(id)parameters {
+    return [self findAllLocal:parameters inContext:nil];
+}
+
++ (CoreResult*) findAllLocal:(id)parameters inContext:(NSManagedObjectContext*)context {
+    if (context == nil)
+        context = [self managedObjectContext];
+
     // Generate (or get templated) fetch request
     NSFetchRequest* fetch = [self fetchRequest:parameters];
     NSError* error = nil;
     
     // Perform fetch
-    NSArray* resources = [[self managedObjectContext] executeFetchRequest:fetch error:&error];
+    NSArray* resources = [context executeFetchRequest:fetch error:&error];
 
     CoreResult* result = [[[CoreResult alloc] initWithResources:resources] autorelease];
     if (error != nil)
@@ -642,6 +655,7 @@
 }
 
 + (void) findRemoteDidFinish:(CoreRequest*)request {
+    NSLog(@"===> findRemoteDidFinish");
     // Create and enqueue deserializer in non-blocking thread
     CoreDeserializer* deserializer = [[CoreDeserializer alloc] initWithSource:request andResourceClass:self];
     deserializer.target = request.coreDelegate;
@@ -651,6 +665,7 @@
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
+    NSLog(@"===> findRemoteDidFail");
     // Notify core delegate (if extant) of failure
     if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {
         CoreResult* result = [[[CoreResult alloc] initWithError:[request error]] autorelease];

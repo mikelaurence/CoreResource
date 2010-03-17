@@ -11,6 +11,8 @@
 		B556BBFB1118DA0E00D4570C /* artists.0.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA11118D42900D4570C /* artists.0.json */; };
 		B556BBFC1118DA1200D4570C /* artists.1.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA21118D44900D4570C /* artists.1.json */; };
 		B556BBFD1118DA1500D4570C /* artists.2.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA31118D44F00D4570C /* artists.2.json */; };
+		B55D26EC11514F25004F83F6 /* TestScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = B55D26EB11514F25004F83F6 /* TestScript.sh */; };
+		B55D26EE11514FEC004F83F6 /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = B55D26ED11514FEC004F83F6 /* RunTests.sh */; };
 		B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */; };
 		B56851FF1100DD2000A4C816 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09810FFE10700D57FCA /* SystemConfiguration.framework */; };
 		B56852001100DD2000A4C816 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09910FFE10700D57FCA /* libz.1.2.3.dylib */; };
@@ -87,6 +89,8 @@
 		B556BBA11118D42900D4570C /* artists.0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.0.json; sourceTree = "<group>"; };
 		B556BBA21118D44900D4570C /* artists.1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.1.json; sourceTree = "<group>"; };
 		B556BBA31118D44F00D4570C /* artists.2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.2.json; sourceTree = "<group>"; };
+		B55D26EB11514F25004F83F6 /* TestScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = TestScript.sh; sourceTree = "<group>"; };
+		B55D26ED11514FEC004F83F6 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		B560DF781150088B00BE843A /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
 		B560DF791150088B00BE843A /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
 		B560DF7A1150088B00BE843A /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B55D26ED11514FEC004F83F6 /* RunTests.sh */,
+				B55D26EB11514F25004F83F6 /* TestScript.sh */,
 				B568503D1100D03C00A4C816 /* Tests */,
 				B56851B41100D66D00A4C816 /* Test Data */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -493,6 +499,7 @@
 				B56851F51100DD0500A4C816 /* Resources */,
 				B56851F61100DD0500A4C816 /* Sources */,
 				B56851F71100DD0500A4C816 /* Frameworks */,
+				B55D26E21151343E004F83F6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -543,10 +550,28 @@
 				B56FDBA2111B3F6100D4CEA7 /* artists.0.update.json in Resources */,
 				B5EED6AF113E2009004DAE9C /* RunTests.sh in Resources */,
 				B57DD0141144F1F70063915D /* readme.md in Resources */,
+				B55D26EC11514F25004F83F6 /* TestScript.sh in Resources */,
+				B55D26EE11514FEC004F83F6 /* RunTests.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B55D26E21151343E004F83F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh TestScript.sh";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B56851F61100DD0500A4C816 /* Sources */ = {
