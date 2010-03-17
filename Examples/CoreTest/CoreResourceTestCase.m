@@ -87,8 +87,6 @@
 #pragma mark -
 #pragma mark GHUnit Configuration
 
-- (BOOL)shouldRunOnMainThread { return NO; }
-
 - (void) setUpClass {
     self.delegatesCalled = [NSMutableDictionary dictionary];
     [CoreManager main].useBundleRequests = YES;

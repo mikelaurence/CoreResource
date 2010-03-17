@@ -9,8 +9,7 @@
 #import "CoreDeserializer.h"
 #import "CoreResult.h"
 #import "NSObject+Core.h"
-#import "SBJsonParser.h"
-
+#import "Artist.h"
 
 @implementation CoreDeserializer
 
@@ -18,7 +17,6 @@ static NSArray* allowedFormats;
 
 @synthesize source, sourceString, resourceClass, format, coreManager;
 @synthesize target, action;
-
 
 - (id) initWithSource:(id)sourceObj andResourceClass:(Class)clazz {
     if (self = [super init]) {
@@ -33,10 +31,9 @@ static NSArray* allowedFormats;
     // Use format to change deserialization class and convert serialized string into resources
     Class newClass = [resourceClass performSelector:@selector(deserializerClassForFormat:) withObject:[self format]];
     if (newClass != nil) {
-
         // Change runtime class (in order to capture correct resourcesFromString method)
         self->isa = newClass;
-            
+        
         // Get Core Manager from resource class if it hasn't been defined yet
         if (coreManager == nil)
             coreManager = [resourceClass performSelector:@selector(coreManager)];
@@ -83,7 +80,6 @@ static NSArray* allowedFormats;
     When the context saves, send a message to our Core Manager to merge in the updated data
 */
 - (void)contextDidSave:(NSNotification*)notification {
-    NSLog(@"======> contextDidSave");
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];
@@ -190,7 +186,6 @@ static NSArray* allowedFormats;
 #pragma mark -
 #pragma mark Format deserializers
 
-#ifdef SBJsonParser
 
 @implementation CoreJSONDeserializer
 
@@ -250,7 +245,6 @@ static NSArray* allowedFormats;
 
 @end
 
-#endif
 
 #ifdef DDXMLDocument
 

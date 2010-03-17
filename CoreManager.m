@@ -11,6 +11,7 @@
 
 @implementation CoreManager
 
+@synthesize persistentStoreCoordinator, managedObjectContext, managedObjectModel;
 @synthesize requestQueue, deserialzationQueue;
 @synthesize remoteSiteURL, useBundleRequests, bundleRequestDelay, defaultDateParser;
 @synthesize entityDescriptions, modelProperties, modelRelationships, modelAttributes;
@@ -45,6 +46,24 @@ static CoreManager* _main;
         bundleRequestDelay = 0;
         
         logLevel = 1;
+        
+        // ===== Core Data initialization ===== //
+        
+        // Create primary managed object model
+        managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
+        
+        // Create persistent store coordinator
+        NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"application.sqlite"]];        
+        NSError *error = nil;
+        persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
+        if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
+            NSLog(@"Unresolved error in persistent store creation %@, %@", error, [error userInfo]);
+            abort();
+        }
+        
+        // Create primary managed object context
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator:persistentStoreCoordinator];        
     }
     return self;
 }
@@ -78,13 +97,11 @@ static CoreManager* _main;
     NSLog(@"Failed to save to data store: %@", [error localizedDescription]);
     NSArray* detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
     if(detailedErrors != nil && [detailedErrors count] > 0) {
-            for(NSError* detailedError in detailedErrors) {
-                    NSLog(@"  DetailedError: %@", [detailedError userInfo]);
-            }
+        for(NSError* detailedError in detailedErrors)
+                NSLog(@"  DetailedError: %@", [detailedError userInfo]);
     }
-    else {
-            NSLog(@"  %@", [error userInfo]);
-    }
+    else
+        NSLog(@"  %@", [error userInfo]);
 }
 
 
@@ -105,64 +122,11 @@ static CoreManager* _main;
     }
 }
 
-/**
- Returns the managed object context for the application.
- If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
- */
-- (NSManagedObjectContext*) managedObjectContext {
-	
-    if (managedObjectContext != nil)
-        return managedObjectContext;
-	
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil) {
-        managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [managedObjectContext setPersistentStoreCoordinator: coordinator];
-    }
-    return managedObjectContext;
-}
-
-
-/**
- Returns the managed object model for the application.
- If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
- */
-- (NSManagedObjectModel *)managedObjectModel {
-	
-    if (managedObjectModel != nil)
-        return managedObjectModel;
-
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
-    return managedObjectModel;
-}
-
-
-/**
- Returns the persistent store coordinator for the application.
- If the coordinator doesn't already exist, it is created and the application's store added to it.
- */
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-	
-    if (persistentStoreCoordinator != nil)
-        return persistentStoreCoordinator;
-	
-    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"WaitsOnIphone.sqlite"]];
-	
-	NSError *error = nil;
-    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-    }    
-	
-    return persistentStoreCoordinator;
-}
-
 
 - (void) mergeContext:(NSNotification*)notification {
-    NSLog(@"=======> MERGING CONTEXT");
     NSAssert([NSThread mainThread], @"Must be on the main thread!");
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    NSLog(@"=======> MERGED CONTEXT");
 }
 
 

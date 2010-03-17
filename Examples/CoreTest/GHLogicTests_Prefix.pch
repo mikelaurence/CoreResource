@@ -15,5 +15,6 @@
     #import "CoreUtils.h"
     #import "GHUnit.h"
     #import "TestHelpers.h"
+    #import "SBJSON.h"
     #import "NSString+SBJSON.h"
 #endif

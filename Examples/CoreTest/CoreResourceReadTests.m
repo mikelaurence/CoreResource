@@ -18,6 +18,8 @@
     [super setUp];
 }
 
+- (BOOL)shouldRunOnMainThread { return YES; }
+
 #pragma mark -
 #pragma mark Read
 

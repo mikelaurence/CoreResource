@@ -61,12 +61,10 @@
 
 @end
 
-#ifdef SBJsonParser
 @interface CoreJSONDeserializer : CoreDeserializer 
 - (id) resourcesFromJSONData:(id)jsonData;
 - (id) resourceDataFromJSONData:(id)jsonData;
 @end
-#endif
 
 #ifdef DDXMLDocument
 @interface CoreXMLDeserializer : CoreDeserializer 
