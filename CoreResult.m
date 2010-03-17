@@ -11,14 +11,20 @@
 
 @implementation CoreResult
 
-@synthesize request;
+@synthesize source;
 @synthesize resources;
 @synthesize error;
 
 - (id) initWithResources:(id)theResources {
-    if (self = [super init])
+    return [self initWithSource:nil andResources:theResources];
+}
+
+- (id) initWithSource:(id)theSource andResources:(id)theResources {
+    if (self = [super init]) {
+        self.source = theSource;
         self.resources = [theResources isKindOfClass:[NSArray class]] ? 
             theResources : [NSArray arrayWithObject:theResources];
+    }
     return self;
 }
 
@@ -38,6 +44,14 @@
 
 - (int) resourceCount {
     return resources != nil ? [resources count] : 0;
+}
+
+
+- (void) dealloc {
+    [source release];
+    [resources release];
+    [error release];
+    [super dealloc];
 }
 
 @end

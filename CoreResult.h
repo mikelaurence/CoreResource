@@ -12,16 +12,17 @@
 @class CoreResource;
 
 @interface CoreResult : NSObject {
-    CoreRequest* request;
+    id source;
     NSArray* resources;
     NSError* error;
 }
 
-@property (nonatomic, retain) CoreRequest* request;
+@property (nonatomic, retain) id source;
 @property (nonatomic, retain) NSArray* resources;
 @property (nonatomic, retain) NSError* error;
 
 - (id) initWithResources:(id)resources;
+- (id) initWithSource:(id)source andResources:(id)resources;
 - (id) initWithError:(NSError*)error;
 
 /*
