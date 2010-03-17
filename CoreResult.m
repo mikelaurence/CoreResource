@@ -20,7 +20,6 @@
 }
 
 - (id) initWithSource:(id)theSource andResources:(id)theResources {
-    NSLog(@"RESULT: %@ %%", theSource, theResources);
     if (self = [super init]) {
         self.source = theSource;
         self.resources = [theResources isKindOfClass:[NSArray class]] ? 

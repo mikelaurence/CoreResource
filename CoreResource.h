@@ -112,6 +112,9 @@ typedef enum _Action {
 + (CoreResult*) findAllLocal;
 + (CoreResult*) findAllLocal:(id)parameters inContext:(NSManagedObjectContext*)context;
 + (CoreResult*) findAllLocal:(id)parameters;
++ (int) countLocal;
++ (int) countLocal:(id)parameters;
++ (int) countLocal:(id)parameters inContext:(NSManagedObjectContext*)context;
 
 + (void) findRemote:(id)resourceId;
 + (void) findRemote:(id)resourceId andNotify:(id)del withSelector:(SEL)selector;

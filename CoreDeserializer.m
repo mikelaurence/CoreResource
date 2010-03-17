@@ -28,8 +28,6 @@ static NSArray* allowedFormats;
 
 
 - (void) main {
-    NSLog(@"===> CoreDeserializer operating");
-
     // Use format to change deserialization class and convert serialized string into resources
     Class newClass = [resourceClass performSelector:@selector(deserializerClassForFormat:) withObject:[self format]];
     if (newClass != nil) {
@@ -47,7 +45,7 @@ static NSArray* allowedFormats;
             selector:@selector(contextDidSave:) 
             name:NSManagedObjectContextDidSaveNotification 
             object:managedObjectContext];
-            
+
         resources = [[self resourcesFromString:[self sourceString]] retain];
 
         // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)

@@ -12,14 +12,16 @@
 #import "JSON.h"
 
 
-@interface CoreResourceSerializationTests : CoreResourceTestCase {}
+@interface CoreResourceSerializationTests : CoreResourceTestCase {
+    NSManagedObjectContext *testContext;
+}
 @end
 
 @implementation CoreResourceSerializationTests
 
 
 #pragma mark -
-#pragma mark Tests - Serialization
+#pragma mark Format
 
 - (void) testDeserializerFormatByContentType {
     // Test "Content-Type" header determination
@@ -53,6 +55,51 @@
     // Test XML string determination
     CoreDeserializer* cd5 = [[CoreDeserializer alloc] initWithSource:@" <artist><title>Value</title></artist>" andResourceClass:[Artist class]];
     GHAssertEqualStrings(cd5.format, @"xml", nil);
+}
+
+
+#pragma mark Managed Object Contexts
+
+- (void) testDeserializationContextWorkflow {
+
+    [Artist create:[self artistData:0]]; // Create in default context
+    GHAssertEquals((NSInteger) [Artist countLocal], 1, nil); // Count default context
+
+    // Create new context
+    [coreManager save];
+    testContext = [[NSManagedObjectContext alloc] init];
+    [testContext setPersistentStoreCoordinator:coreManager.persistentStoreCoordinator];
+    GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 1, nil); // Count new context
+    
+    [Artist create:[self artistData:1]]; // Create in default context
+    GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Default context
+    GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 1, nil); // New context
+    
+    [Artist create:[self artistData:2] withOptions:$D(testContext, @"context")]; // Create in new context
+    GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Count default context
+    GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Count new context
+    
+    // Register for save notification
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+        selector:@selector(contextDidSave:) 
+        name:NSManagedObjectContextDidSaveNotification 
+        object:testContext];
+        
+    // Save new context
+    NSError *error = nil;
+    [testContext save:&error];
+}
+
+- (void) contextDidSave:(NSNotification*)notification {
+    GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Count default context
+    GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Count new context
+    
+    // Merge new context into old
+    [coreManager.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    GHAssertEquals((NSInteger) [Artist countLocal], 3, nil); // Count default context
+    GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Count new context
+    
+    [testContext release];
 }
 
 

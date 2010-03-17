@@ -67,6 +67,8 @@
     
     CoreResult* result = [Artist findAll];
     GHAssertEquals((NSInteger) [result resourceCount], 2, nil);
+    
+    [NSThread sleepForTimeInterval:0.1];
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
 }
  
@@ -76,6 +78,8 @@
     
     CoreResult* result = [Artist findAll];
     GHAssertEquals((NSInteger) [result resourceCount], 3, nil);
+    
+    [NSThread sleepForTimeInterval:0.1];
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
 }
 
@@ -85,18 +89,13 @@
 */
 
 - (void) testFindAllAndNotify {
-    NSLog(@"===> testFindAllAndNotify");
     [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindAllAndNotify:)];
-    NSLog(@"===> preFindAll");
     [Artist findAll:nil andNotify:self withSelector:@selector(completeTestFindAllAndNotify:)];
-    NSLog(@"===> postFindAll");
-    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:3.0];
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
 }
 
 - (void) completeTestFindAllAndNotify:(CoreResult*)result {
-    NSLog(@"===> completeTestFindAllAndNotify");
-    NSLog(@"RESULT resources: %@", [result resources]);
     GHAssertEquals([result resourceCount], 3, nil);
     [self validateFirstArtist:[[result resources] objectAtIndex:0]];
     [self validateSecondArtist:[[result resources] objectAtIndex:1]];
@@ -126,6 +125,8 @@
 
 - (void) testFindRemote {
     [Artist findRemote:[NSNumber numberWithInt:1]];
+    [NSThread sleepForTimeInterval:0.1];
+
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 1, nil);
     [self validateSecondArtist:(Artist*)[[self allLocalArtists] lastObject]];
 }
@@ -145,6 +146,7 @@
 
 - (void) testFindAllRemote {
     [Artist findAllRemote];
+    [NSThread sleepForTimeInterval:0.1];
 
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
     [self validateFirstArtist:[[self allLocalArtists] objectAtIndex:0]];

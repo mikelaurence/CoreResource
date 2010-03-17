@@ -673,6 +673,27 @@
     }
 }
 
++ (int) countLocal {
+    return [self countLocal:nil];
+}
+
++ (int) countLocal:(id)parameters {
+    return [self countLocal:parameters inContext:nil];
+}
+
++ (int) countLocal:(id)parameters inContext:(NSManagedObjectContext*)context {
+    if (context == nil)
+        context = [self managedObjectContext];
+        
+    // Generate (or get templated) fetch request
+    NSFetchRequest* fetch = [self fetchRequest:parameters];
+    NSError* error = nil;
+    
+    // Perform count
+    return [context countForFetchRequest:fetch error:&error];
+}
+
+
 
 #pragma mark -
 #pragma mark Delete

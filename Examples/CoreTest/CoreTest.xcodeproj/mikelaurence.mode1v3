@@ -280,14 +280,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>38</integer>
-									<integer>28</integer>
-									<integer>26</integer>
+									<integer>14</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {317, 904}}</string>
+							<string>{{0, 67}, {317, 904}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -324,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreDeserializer.m</string>
+								<string>CoreResourceSerializationTests.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreDeserializer.m</string>
+										<string>CoreResourceSerializationTests.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B55D2899115182F8004F83F6</string>
+										<string>B55D28EA115195CA004F83F6</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -392,21 +391,21 @@
 											<string>B55D27D511516845004F83F6</string>
 											<string>B55D281511517519004F83F6</string>
 											<string>B55D282911517709004F83F6</string>
-											<string>B55D284411517BF2004F83F6</string>
-											<string>B55D284811517CF1004F83F6</string>
-											<string>B55D284A11517CF1004F83F6</string>
-											<string>B55D285A11517E62004F83F6</string>
-											<string>B55D286711517FA5004F83F6</string>
-											<string>B55D286811517FA5004F83F6</string>
 											<string>B55D286911517FA5004F83F6</string>
 											<string>B55D286A11517FA5004F83F6</string>
 											<string>B55D286B11517FA5004F83F6</string>
 											<string>B55D286C11517FA5004F83F6</string>
-											<string>B55D286D11517FA5004F83F6</string>
 											<string>B55D286E11517FA5004F83F6</string>
-											<string>B55D286F11517FA5004F83F6</string>
 											<string>B55D287611517FC7004F83F6</string>
-											<string>B55D286611517FA5004F83F6</string>
+											<string>B55D28AD11518B94004F83F6</string>
+											<string>B55D28B411518D6B004F83F6</string>
+											<string>B55D28BE11518FED004F83F6</string>
+											<string>B55D28BF11518FED004F83F6</string>
+											<string>B55D28C011518FED004F83F6</string>
+											<string>B55D28C211518FED004F83F6</string>
+											<string>B55D28C311518FED004F83F6</string>
+											<string>B55D28E21151934A004F83F6</string>
+											<string>B55D28E31151934A004F83F6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
