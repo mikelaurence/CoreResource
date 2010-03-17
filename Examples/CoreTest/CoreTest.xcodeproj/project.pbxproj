@@ -11,12 +11,6 @@
 		B556BBFB1118DA0E00D4570C /* artists.0.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA11118D42900D4570C /* artists.0.json */; };
 		B556BBFC1118DA1200D4570C /* artists.1.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA21118D44900D4570C /* artists.1.json */; };
 		B556BBFD1118DA1500D4570C /* artists.2.json in Resources */ = {isa = PBXBuildFile; fileRef = B556BBA31118D44F00D4570C /* artists.2.json */; };
-		B560DF861150088B00BE843A /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B560DF7A1150088B00BE843A /* DDXMLDocument.m */; };
-		B560DF871150088B00BE843A /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B560DF7C1150088B00BE843A /* DDXMLElement.m */; };
-		B560DF881150088B00BE843A /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B560DF7E1150088B00BE843A /* DDXMLElementAdditions.m */; };
-		B560DF891150088B00BE843A /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B560DF801150088B00BE843A /* DDXMLNode.m */; };
-		B560DF8A1150088B00BE843A /* DDXMLTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = B560DF831150088B00BE843A /* DDXMLTesting.m */; };
-		B560DF8B1150088B00BE843A /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B560DF851150088B00BE843A /* NSStringAdditions.m */; };
 		B56418A411064CBB00D1B038 /* CoreResourceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */; };
 		B56851FF1100DD2000A4C816 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09810FFE10700D57FCA /* SystemConfiguration.framework */; };
 		B56852001100DD2000A4C816 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BAC09910FFE10700D57FCA /* libz.1.2.3.dylib */; };
@@ -103,8 +97,6 @@
 		B560DF7F1150088B00BE843A /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
 		B560DF801150088B00BE843A /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
 		B560DF811150088B00BE843A /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
-		B560DF821150088B00BE843A /* DDXMLTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLTesting.h; sourceTree = "<group>"; };
-		B560DF831150088B00BE843A /* DDXMLTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLTesting.m; sourceTree = "<group>"; };
 		B560DF841150088B00BE843A /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		B560DF851150088B00BE843A /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreResourceTestCase.m; sourceTree = "<group>"; };
@@ -314,8 +306,6 @@
 				B560DF7F1150088B00BE843A /* DDXMLNode.h */,
 				B560DF801150088B00BE843A /* DDXMLNode.m */,
 				B560DF811150088B00BE843A /* DDXMLPrivate.h */,
-				B560DF821150088B00BE843A /* DDXMLTesting.h */,
-				B560DF831150088B00BE843A /* DDXMLTesting.m */,
 				B560DF841150088B00BE843A /* NSStringAdditions.h */,
 				B560DF851150088B00BE843A /* NSStringAdditions.m */,
 			);
@@ -610,12 +600,6 @@
 				B5727E5311495D8D0067D774 /* NSArrayCategoryTests.m in Sources */,
 				B5E78AC71149AD1A006C73CE /* MiscBenchmarks.m in Sources */,
 				B5712B55114A0AD00005F0B5 /* CoreDeserializer.m in Sources */,
-				B560DF861150088B00BE843A /* DDXMLDocument.m in Sources */,
-				B560DF871150088B00BE843A /* DDXMLElement.m in Sources */,
-				B560DF881150088B00BE843A /* DDXMLElementAdditions.m in Sources */,
-				B560DF891150088B00BE843A /* DDXMLNode.m in Sources */,
-				B560DF8A1150088B00BE843A /* DDXMLTesting.m in Sources */,
-				B560DF8B1150088B00BE843A /* NSStringAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +621,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/GHUnit\"";
 				OTHER_LDFLAGS = (
+					"-lxml2",
 					"-framework",
 					Foundation,
 					"-framework",
@@ -665,6 +650,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/GHUnit\"";
 				OTHER_LDFLAGS = (
+					"-lxml2",
 					"-framework",
 					Foundation,
 					"-framework",

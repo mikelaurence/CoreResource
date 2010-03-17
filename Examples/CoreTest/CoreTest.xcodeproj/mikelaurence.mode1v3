@@ -268,6 +268,7 @@
 								<string>B56851B41100D66D00A4C816</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>B5EED674113E2009004DAE9C</string>
+								<string>B560DF771150088B00BE843A</string>
 								<string>B5BAC04410FFE04600D57FCA</string>
 								<string>B5BAC0D610FFE1EF00D57FCA</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
@@ -280,14 +281,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>36</integer>
-									<integer>31</integer>
+									<integer>53</integer>
+									<integer>43</integer>
 									<integer>24</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 229}, {317, 904}}</string>
+							<string>{{0, 265}, {317, 904}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -324,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResource.h</string>
+								<string>CoreDeserializer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreResource.h</string>
+										<string>CoreDeserializer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B560DFBF11503FCC00BE843A</string>
+										<string>B560DFFF1150598400BE843A</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -385,10 +386,17 @@
 											<string>B560DFB3115025E900BE843A</string>
 											<string>B560DFB5115025E900BE843A</string>
 											<string>B560DFB6115025E900BE843A</string>
-											<string>B560DFBB11503FCC00BE843A</string>
-											<string>B560DFBC11503FCC00BE843A</string>
-											<string>B560DFBD11503FCC00BE843A</string>
-											<string>B560DFBE11503FCC00BE843A</string>
+											<string>B560DFC71150454700BE843A</string>
+											<string>B560DFCB1150577200BE843A</string>
+											<string>B560DFCC1150577200BE843A</string>
+											<string>B560DFDD115058BA00BE843A</string>
+											<string>B560DFDE115058BA00BE843A</string>
+											<string>B560DFDF115058BA00BE843A</string>
+											<string>B560DFFA1150598400BE843A</string>
+											<string>B560DFFB1150598400BE843A</string>
+											<string>B560DFFC1150598400BE843A</string>
+											<string>B560DFFD1150598400BE843A</string>
+											<string>B560DFFE1150598400BE843A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -612,7 +620,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CoreDeserializer.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -621,7 +629,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {844, 217}}</string>
 								<key>RubberWindowFrame</key>
-								<string>740 186 844 768 0 0 1680 1028 </string>
+								<string>681 172 844 768 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -629,6 +637,8 @@
 							<string>217pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -645,7 +655,7 @@
 								<key>Frame</key>
 								<string>{{0, 222}, {844, 505}}</string>
 								<key>RubberWindowFrame</key>
-								<string>740 186 844 768 0 0 1680 1028 </string>
+								<string>681 172 844 768 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -677,7 +687,7 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>740 186 844 768 0 0 1680 1028 </string>
+			<string>681 172 844 768 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>B5BAC03F10FFE02400D57FCA</string>
 			<key>WindowToolIsVisible</key>

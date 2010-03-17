@@ -184,6 +184,8 @@ static NSArray* allowedFormats;
 #pragma mark -
 #pragma mark Format deserializers
 
+#ifdef SBJsonParser
+
 @implementation CoreJSONDeserializer
 
 - (id) resourcesFromString:(NSString*)string {
@@ -200,13 +202,20 @@ static NSArray* allowedFormats;
 }
 
 - (id) resourcesFromJSONData:(id)jsonData {
-
+    // Convert raw JSON to resource data parsable by CoreResource create/update methods
     id resourceData = [self resourceDataFromJSONData:jsonData];
+    
+    // Create/update resources
     return [resourceClass performSelector:@selector(create:withOptions:)
         withObject:resourceData withObject:$D($B(NO), @"timestamp")];
+}        
+
+- (id) resourceDataFromJSONData:(id)jsonData {
+
+    // COLLAPSE JSON
 
     // Turn collection into array if not already one
-    NSArray* jsonArray = [jsonCollection isKindOfClass:[NSDictionary class]] ? jsonCollection : $A(jsonCollection);
+    NSArray* jsonArray = [jsonData isKindOfClass:[NSDictionary class]] ? jsonData : $A(jsonData);
 
     if (jsonArray != nil) {
         NSMutableArray *jsonResources = [NSMutableArray arrayWithCapacity:[jsonArray count]]; // Container for deserialized resources
@@ -230,17 +239,21 @@ static NSArray* allowedFormats;
 
 @end
 
+#endif
+
+#ifdef DDXMLDocument
 
 @implementation CoreXMLDeserializer
 
 - (NSArray*) resourcesFromString:(NSString*)string {
 
     // Deserialize XML
-    NSXMLDocument *doc = [[[NSXMLDocument alloc] initWithData:data options:NSXMLDocumentTidyXML error:&parseError] autorelease];
+    DDXMLDocument *doc = [[DDXMLDocument alloc] initWithXMLString:string options:0 error:&error];
     
     return nil;
 }
 
 @end
 
+#endif
 

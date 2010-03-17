@@ -11,6 +11,9 @@
 
 @interface NSSet (Core)
 
+- (NSSet*) intersection:(NSSet*)otherSet;
+- (NSSet*) difference:(NSSet*)otherSet;
+
 - (id) objectOfClass:(Class)clazz;
 
 @end

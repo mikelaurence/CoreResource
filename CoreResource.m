@@ -13,6 +13,7 @@
 #import "CoreDeserializer.h"
 #import "JSON.h"
 #import "NSString+InflectionSupport.h"
+#import "NSSet+Core.h"
 
 @implementation CoreResource
 
@@ -284,93 +285,104 @@
 #pragma mark Create
 
 + (id) create:(id)parameters {
-    return [self create:parameters withOptions:nil];
+    return [self create:parameters withOptions:[self defaultCreateOptions]];
 }
 
 + (id) create:(id)parameters withOptions:(NSDictionary*)options {
-	id resources = [parameters isKindOfClass:[NSArray class]] ?
-        [self createWithArray:parameters andOptions:options] :
-        [self createWithDictionary:parameters andOptions:options];
-        
-    return resources;
-}
+    if ([parameters isKindOfClass:[NSArray class]]) {
+        // Iterate through items and attempt to create resources for each
+        NSMutableArray *resources = [NSMutableArray arrayWithCapacity:[parameters count]];
+        for (id item in parameters)
+            [resources addObject:[self create:item withOptions:options]];
 
-+ (id) createWithArray:(NSArray*)array {
-    return [self createWithArray:array andOptions:nil];
-}
-
-+ (id) createWithArray:(NSArray*)array andOptions:(NSDictionary*)options {
-    NSMutableArray *resources = [NSMutableArray arrayWithCapacity:[array count]]; // Container for resources
-
-    // Iterate through JSON elements and attempt to create/update resources for each
-    for (id item in array)
-        [resources addObject:[self createWithDictionary:item andOptions:options]];
-
-    return jsonResources;
-}
-
-+ (id) createWithDictionary:(NSDictionary*)dict {
-    return [self createWithDictionary:dict andOptions:nil];
-}
-
-+ (id) createWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options {
-    // Get managed object context from options or just use default
-    NSManagedObjectContext* context = [options objectForKey:@"context"];
-    if (context == nil)
-        context = [self managedObjectContext];
-
-    // Insert new managed object into context
-    CoreResource *newObject = [[self alloc] initWithEntity:[self entityDescription] 
-        insertIntoManagedObjectContext:context];
-        
-    // Update new object with properties
-    [newObject updateWithDictionary:dict andOptions:options];
-    
-    // Set createdAt timestamp if possible (and not prohibited in options)
-    id doTimestamp = [options objectForKey:@"timestamp"];
-    if (doTimestamp == nil || [doTimestamp boolValue] == YES) {
-        SEL createdAtSel = NSSelectorFromString([self createdAtField]);
-        if ([newObject respondsToSelector:createdAtSel])
-            [newObject setValue:[NSDate date] forKey:[self createdAtField]];
+        return resources;
     }
-    
-    // Log creation
-    if ([[self class] coreManager].logLevel > 1) {
-        NSLog(@"Created new %@", self, [newObject valueForKey:[self localIdField]]);
-        if ([[self class] coreManager].logLevel > 4)
-            NSLog(@"=> %@", newObject);
-    }
-    
-    // Call didCreate for user-specified create hooks
-    [newObject didCreate];
-    [newObject release]; // Newly inserted objects are retained by the context, so no autorelease necessary
-    
-    return newObject;
-}
+    else {
+        // Get managed object context from options or just use default
+        NSManagedObjectContext* context = [options objectForKey:@"context"];
+        if (context == nil)
+            context = [self managedObjectContext];
 
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict {
-    return [self createOrUpdateWithDictionary:dict andOptions:nil];
-}
-
-+ (id) createOrUpdateWithDictionary:(NSDictionary*)dict andOptions:(NSDictionary*)options {
-    
-    // Get remote ID
-    id resourceId = [dict objectForKey:[self remoteIdField]];
-    
-    // If there is an ID, attempt to find existing record
-    if (resourceId != nil) {
-        CoreResult* findResult = [self findLocal:resourceId];
-
-        // If there is a result, check to see whether we should update it or not
-        if ([findResult resourceCount] == 1) {
-            CoreResource *existingObject = [findResult resource];
-            [existingObject updateWithDictionary:dict andOptions:options];
-            return existingObject;
+        // Insert new managed object into context
+        CoreResource *resource = [[self alloc] initWithEntity:[self entityDescription] 
+            insertIntoManagedObjectContext:context];
+            
+        // Update new object with properties
+        [resource update:parameters withOptions:options];
+        
+        // Set createdAt timestamp if possible (and not prohibited in options)
+        id doTimestamp = [options objectForKey:@"timestamp"];
+        if (doTimestamp == nil || [doTimestamp boolValue] == YES) {
+            SEL createdAtSel = NSSelectorFromString([self createdAtField]);
+            if ([resource respondsToSelector:createdAtSel])
+                [resource setValue:[NSDate date] forKey:[self createdAtField]];
         }
+        
+        // Log creation
+        if ([[self class] coreManager].logLevel > 1) {
+            NSLog(@"Created new %@", self, [resource valueForKey:[self localIdField]]);
+            if ([[self class] coreManager].logLevel > 4)
+                NSLog(@"=> %@", resource);
+        }
+        
+        // Call didCreate for user-specified create hooks
+        [resource didCreate];
+        [resource release]; // Newly inserted objects are retained by the context, so no autorelease necessary
+        
+        return resource;
+    }
+}
+
++ (id) createOrUpdate:(id)parameters {
+    return [self createOrUpdate:parameters andOptions:[self defaultCreateOrUpdateOptions]];
+}
+
++ (id) createOrUpdate:(id)parameters withOptions:(NSDictionary*)options {
+    // If parameters are just a resource of this class, return it untouched
+    if ([parameters isKindOfClass:self])
+        return parameters;
+
+    else if ([parameters isKindOfClass:[NSArray class]]) {
+        // Iterate through items and attempt to create or update resources for each
+        NSMutableArray *resources = [NSMutableArray arrayWithCapacity:[parameters count]];
+        for (id item in parameters)
+            [resources addObject:[self createOrUpdate:item withOptions:options]];
+
+        return resources;
     }
     
-    // Otherwise, no existing record found, so create a new object
-    return [self createWithDictionary:dict andOptions:options];
+    else if ([parameters isKindOfClass:[NSDictionary class]]) {
+        // Get remote ID
+        id resourceId = [parameters objectForKey:[self remoteIdField]];
+        
+        // If there is an ID, attempt to find existing record
+        if (resourceId != nil) {
+            CoreResult* findResult = [self findLocal:resourceId];
+
+            // If there is a result, update it (if necessary) instead of creating it
+            if ([findResult resourceCount] == 1) {
+                CoreResource *existingResource = [findResult resource];
+                
+                // Determine whether this object needs to be updated (relationships will still be checked no matter what)
+                BOOL shouldUpdate = [existingResource shouldUpdateWith:parameters];
+                if (shouldUpdate) {
+                    [existingResource update:parameters withOptions:options];
+                }
+                else {
+                    if ([[self class] coreManager].logLevel > 1)
+                        NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", 
+                            [existingResource class], [existingResource valueForKey:[[existingResource class] localIdField]]);
+                }
+
+                return existingResource;
+            }
+        }
+        
+        // Otherwise, no existing record found, so create a new object
+        return [self create:parameters withOptions:options];
+    }
+    
+    return nil;
 }
 
 + (id) createOrUpdateWithDictionary:(NSDictionary*)dict andRelationship:(NSRelationshipDescription*)relationship toObject:(CoreResource*)relatedObject {
@@ -401,7 +413,7 @@
     (presumably retrieved from a remote source.) The most likely determinant would be if the new data is newer
     than the object, which by default is determined through the field returned by [self updatedAtField]
 */
-- (BOOL) shouldUpdateWithDictionary:(NSDictionary*)dict {
+- (BOOL) shouldUpdateWith:(NSDictionary*)dict {
     SEL updatedAtSel = NSSelectorFromString([[self class] updatedAtField]);
     if ([self respondsToSelector:updatedAtSel]) {
         NSDate *updatedAt = (NSDate*)[self performSelector:updatedAtSel];
@@ -418,17 +430,11 @@
     return YES;
 }
 
-- (void) updateWithDictionary:(NSDictionary*)dict {
+- (void) update:(NSDictionary*)dict {
+    [self update:dictionary withOptions:[[self class] defaultUpdateOptions]];
+}
 
-    // Determine whether this object needs to be updated (relationships will still be checked no matter what)
-    BOOL shouldUpdateRoot = [self shouldUpdateWithDictionary:dict];
-    if (!shouldUpdateRoot) {
-        if ([[self class] coreManager].logLevel > 1)
-            NSLog(@"Skipping update of %@ with id %@ because it is already up-to-date", [self class], [self valueForKey:[[self class] localIdField]]);
-        // If we won't be updating the root object and there are no relationships, cancel out for efficiency's sake
-        if (![[self class] hasRelationships])
-            return;
-    }
+- (void) update:(NSDictionary*)dict withOptions:(NSDictionary*)options {
 
     // Loop through and apply fields in dictionary (if they exist on the object)
     for (NSString* field in [dict allKeys]) {
@@ -447,25 +453,76 @@
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
             
-            // If property is a relationship, do some cascading object creation/updation (occurs regardless of shouldUpdateRoot)
+            // If property is a relationship, do some cascading object creation/updation
             if ([propertyDescription isKindOfClass:[NSRelationshipDescription class]]) {
-                Class relationshipClass = NSClassFromString([[(NSRelationshipDescription*)propertyDescription destinationEntity] managedObjectClassName]);
-                NSRelationshipDescription* inverseRelationship = [(NSRelationshipDescription*)propertyDescription inverseRelationship];
+
+                // Get relationship class from core data info
+                NSRelationshipDescription *relationshipDescription = (NSRelationshipDescription*)propertyDescription;
+                Class relationshipClass = NSClassFromString([[relationshipDescription destinationEntity] managedObjectClassName]);
+                id newRelatedResources;
+                id existingRelatedResources = [self valueForKey:field];
+
+                // Get relationship options
+                NSDictionary* relationshipOptions = [options objectForKey:relationshipClass];
+
+
+                // ===== Get related resources from value ===== //
+                                
+                // If the value is a dictionary, use it to create or update an resource
+                if ([value isKindOfClass:[NSDictionary class]])
+                    newRelatedResources = [relationshipClass createOrUpdate:value withOptions:options];
                 
-                // Create/update relationship resource(s) and link to this resource
-                if ([value isKindOfClass:relationshipClass]) {
-                    [self setValue:value forKey:localField];
-                }
-                else if ([value isKindOfClass:[NSDictionary class]])
-                    [relationshipClass createOrUpdateWithDictionary:value andRelationship:inverseRelationship toObject:self];
+                // If an array, create an array of resources from the contents
                 else if ([value isKindOfClass:[NSArray class]]) {
-                    for (NSDictionary *dict in value)
-                        [relationshipClass createOrUpdateWithDictionary:dict andRelationship:inverseRelationship toObject:self];
+                    newRelatedResources = [NSMutableSet setWithCapacity:[value count]];
+                    for (id *item in value)
+                        [newRelatedResources addObject:[relationshipClass createOrUpdate:item withOptions:options]];
+                }
+                // Otherwise, if the value is a resource itself, use it directly
+                else if ([value isKindOfClass:relationshipClass])
+                    newRelatedResources = value;
+                
+                
+                // ===== Apply related resources to self ===== //
+                
+                NSString *rule = [relationshipOptions objectForKey:@"rule"];
+                
+                // To-many relationships
+                if ([relationshipDescription isToMany]) {
+                    
+                    // If rule is to add, append new objects to existing
+                    if ([rule isEqualToString:@"append"])
+                        [self setValue:[existingRelatedResources setByAddingObjectsFromSet:newRelatedResources] forKey:field];
+
+                    // If relationship rule is destroy, destroy all old resources that aren't in the new set
+                    else if ([rule isEqualToString:@"destroy"]) {
+                        NSSet* danglers = [existingRelatedResources difference:newRelatedResources];
+                        for (id dangler in danglers)
+                            [dangler destroyLocal];
+                    }
+                    
+                    // Default action is to replace the set with no further reprecussions (old resources will still persist)
+                    else
+                        [self setValue:newRelatedResources forKey:field];
+                }
+                
+                // Singular relationships
+                else {
+                    // Only process if the new value is different from the current value
+                    if (![newRelatedResources isEqual:existingRelatedResources]) {
+                        
+                        // Set new value
+                        [self setValue:newRelatedResources forKey:field];
+                        
+                        // If relationship rule is destroy, get rid of the old resource
+                        if ([rule isEqualToString:@"destroy"])
+                            [existingRelatedResources destroyLocal];
+                    }
                 }
             }
             
             // If it's an attribute, just assign the value to the object (unless the object is up-to-date)
-            else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]] && shouldUpdateRoot) {                
+            else if ([propertyDescription isKindOfClass:[NSAttributeDescription class]]) {                
                 
                 if ([[self class] coreManager].logLevel > 4)
                     NSLog(@"[%@] Setting remote field: %@, local field: %@, value: %@", [self class], field, localField, value);
@@ -494,6 +551,11 @@
 */
 - (void) didCreate {}
 
++ (NSDictionary*) defaultCreateOptions { return nil; }
+
++ (NSDictionary*) defaultCreateOrUpdateOptions { return [self defaultCreateOptions]; }
+
++ (NSDictionary*) defaultUpdateOptions { return nil; }
 
 
 #pragma mark -
