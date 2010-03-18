@@ -11,7 +11,7 @@
 
 @class CoreResource;
 
-@interface CoreResult : NSObject {
+@interface CoreResult : NSObject <NSFastEnumeration> {
     id source;
     NSArray* resources;
     NSError* error;

@@ -48,6 +48,19 @@
 }
 
 
+
+#pragma mark -
+#pragma mark Fast enumeration
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState*)state objects:(id*)stackbuf count:(NSUInteger)len {
+    return [resources countByEnumeratingWithState:state objects:stackbuf count:len];
+}
+
+
+
+#pragma mark -
+#pragma mark Lifecycle end
+
 - (void) dealloc {
     [source release];
     [resources release];
