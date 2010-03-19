@@ -98,11 +98,13 @@
 - (void) setUp {
     for (Artist* artist in [Artist findAllLocal])
         [artist destroyLocal];
+    for (Song* song in [Song findAllLocal])
+        [song destroyLocal];
 }
 
 - (void) tearDownClass {
     [coreManager release];
-    //coreManager = nil;
+    coreManager = nil;
 }
 
 

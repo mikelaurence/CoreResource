@@ -18,7 +18,7 @@
     [super setUp];
 }
 
-- (BOOL)shouldRunOnMainThread { return YES; }
+- (BOOL)shouldRunOnMainThread { return NO; }
 
 #pragma mark -
 #pragma mark Read
@@ -112,7 +112,6 @@
 
 - (void) testFindAllLocal {
     [self loadAllArtists];
-    
     CoreResult* result = [Artist findAllLocal];
     GHAssertEquals((NSInteger) [result resourceCount], 3, nil);
     // Sort results by ID manually so we can validate
@@ -156,7 +155,12 @@
 - (void) testFindAllRemoteAndNotify {
     [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindAllRemoteAndNotify:)];
+    @try {
     [Artist findAllRemote:nil andNotify:self withSelector:@selector(completeTestFindAllRemoteAndNotify:)];
+    }
+    @catch (NSException *exception) {
+                            NSLog(@"EXCEPTION: Caught %@: %@", [exception name], [exception reason]);
+                        }
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
 }
 

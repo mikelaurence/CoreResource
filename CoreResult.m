@@ -25,8 +25,8 @@
 
 - (id) initWithSource:(id)theSource andResources:(id)theResources {
     if (self = [super init]) {
-        self.source = theSource;
-        self.resources = theResources;
+        source = [theSource retain];
+        resources = [theResources retain];
     }
     NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
     return self;
@@ -34,17 +34,18 @@
 
 - (id) initWithError:(NSError*)theError {
     if (self = [super init])
-        self.error = theError;
+        error = [theError retain];
     return self;
 }
 
 - (void) faultResourcesWithContext:(NSManagedObjectContext*)context {
-    self.faultContext = context;
+    faultContext = [context retain];
     
     // Set resourceIds array and release resources; when the resources are next requested, they 
     // will be re-fetched from the fault context
     resourceIds = [[ToArray(resources) arrayMappedBySelector:@selector(objectID)] retain];
-    self.resources = nil;
+    [resources release];
+    resources = nil;
 }
 
 - (CoreResource*) resource {
@@ -53,7 +54,7 @@
 
 - (NSArray*) resources {
     if (resources == nil && resourceIds != nil && faultContext != nil) {
-        self.resources = [NSMutableArray arrayWithCapacity:[resourceIds count]];
+        resources = [[NSMutableArray arrayWithCapacity:[resourceIds count]] retain];
         for (NSManagedObjectID *objId in resourceIds)
             [(NSMutableArray*)resources addObject:[faultContext objectWithID:objId]];
     }

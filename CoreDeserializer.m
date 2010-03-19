@@ -31,15 +31,13 @@ static NSArray* allowedFormats;
     // Use format to change deserialization class and convert serialized string into resources
     Class newClass = [resourceClass performSelector:@selector(deserializerClassForFormat:) withObject:[self format]];
     if (newClass != nil) {
-        // Change runtime class (in order to capture correct resourcesFromString method)
-        self->isa = newClass;
         
         // Get Core Manager from resource class if it hasn't been defined yet
         if (coreManager == nil)
-            coreManager = [resourceClass performSelector:@selector(coreManager)];
+            coreManager = [[resourceClass performSelector:@selector(coreManager)] retain];
 
         // Create "scratchpad" object context; we will merge this context into the main context once deserialization is complete
-        managedObjectContext = [coreManager newContext];
+        managedObjectContext = [[coreManager newContext] retain];
         [[NSNotificationCenter defaultCenter] addObserver:self 
             selector:@selector(contextDidSave:) 
             name:NSManagedObjectContextDidSaveNotification 
@@ -49,19 +47,19 @@ static NSArray* allowedFormats;
 
         // Attempt to save object context; if there's an error, it will be placed in the CoreResult (which is sent to the target)
         [managedObjectContext save:&error];
+        
+        [self performSelectorOnMainThread:@selector(notify) withObject:nil waitUntilDone:NO];
             
         // Remove context save observer
         [[NSNotificationCenter defaultCenter] removeObserver:self 
             name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
+            
+        return;
     }
-    else {
-        error = [[[NSError alloc] initWithDomain:$S(@"Couldn't deserialize with format '%@'", format) code:0 userInfo:nil] retain];
-        [self performSelectorOnMainThread:@selector(notify) withObject:nil waitUntilDone:NO];
-        
-        // Log error if level is high enough
-        if (coreManager.logLevel > 3)
-            NSLog(@"CoreDeserializer error: %@", [error description]);
-    }
+
+    // Log error if level is high enough
+    if (error != nil && coreManager.logLevel > 3)
+        NSLog(@"CoreDeserializer error: %@", [error description]);
 }
 
 
@@ -73,8 +71,6 @@ static NSArray* allowedFormats;
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];
-        
-    [self performSelectorOnMainThread:@selector(notify) withObject:nil waitUntilDone:NO];
 }
 
 - (void) notify {

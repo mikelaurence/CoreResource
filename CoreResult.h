@@ -20,11 +20,11 @@
     NSManagedObjectContext *faultContext;
 }
 
-@property (nonatomic, retain) id source;
-@property (nonatomic, retain) NSArray* resources;
-@property (nonatomic, retain) NSError* error;
+@property (nonatomic, retain, readonly) id source;
+@property (nonatomic, retain, readonly) NSArray* resources;
+@property (nonatomic, retain, readonly) NSError* error;
 
-@property (nonatomic, retain) NSManagedObjectContext *faultContext;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *faultContext;
 
 - (id) initWithResources:(id)resources;
 - (id) initWithSource:(id)source andResources:(id)resources;

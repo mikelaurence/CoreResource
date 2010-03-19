@@ -457,23 +457,17 @@
                 // Otherwise, if the value is a resource itself, use it directly
                 else if ([value isKindOfClass:relationshipClass])
                     newRelatedResources = value;
-                
-                NSLog(@"RELATED RES %@: %@", [newRelatedResources class], newRelatedResources);
+
                 // ===== Apply related resources to self ===== //
                 
                 NSString *rule = [relationshipOptions objectForKey:@"rule"];
                 
                 // To-many relationships
                 if ([relationshipDescription isToMany]) {
-                
-                    NSLog(@"==============");
-                    NSLog(@"MY CONTEXT: %@", [self managedObjectContext]);
-                    for (NSManagedObject* obj in newRelatedResources)
-                        NSLog(@"RELATED CONTEXT: %@", [obj managedObjectContext]);
                     
                     // If rule is to add, append new objects to existing
                     if ([rule isEqualToString:@"append"])
-                        [self setValue:[existingRelatedResources setByAddingObjectsFromSet:newRelatedResources] forKey:field];
+                        newRelatedResources = [existingRelatedResources setByAddingObjectsFromSet:newRelatedResources];
 
                     // If relationship rule is destroy, destroy all old resources that aren't in the new set
                     else if ([rule isEqualToString:@"destroy"]) {
@@ -483,16 +477,7 @@
                     }
                     
                     // Default action is to replace the set with no further reprecussions (old resources will still persist)
-                    else {
-                        NSLog(@"SIMPLE: %@", field);
-                        @try {
-                        [self setValue:newRelatedResources forKey:field];
-                        }
-                        @catch (NSException *exception) {
-                            NSLog(@"EXCEPTION: Caught %@: %@", [exception name], [exception reason]);
-                        }
-                        NSLog(@"SIMPLE: %@", [self valueForKey:field]);
-                    }
+                    [self setValue:newRelatedResources forKey:field];
                 }
                 
                 // Singular relationships
@@ -607,9 +592,9 @@
     for (NSManagedObject* obj in resources)
         NSLog(@"RESULT CONTEXT %@", [obj managedObjectContext]);
 
-    CoreResult* result = [[[CoreResult alloc] initWithResources:resources] autorelease];
-    if (error != nil)
-        result.error = error;
+    CoreResult* result = error == nil ?
+        [[[CoreResult alloc] initWithResources:resources] autorelease] :
+        [[[CoreResult alloc] initWithError:error] autorelease];
     return result;
 }
 
@@ -670,11 +655,14 @@
 + (void) findRemoteDidFinish:(CoreRequest*)request {
     NSLog(@"===> findRemoteDidFinish");
     // Create and enqueue deserializer in non-blocking thread
-    CoreDeserializer* deserializer = [[CoreDeserializer alloc] initWithSource:request andResourceClass:self];
+    CoreDeserializer* deserializer = [[CoreJSONDeserializer alloc] initWithSource:request andResourceClass:self];
     deserializer.target = request.coreDelegate;
     deserializer.action = request.coreSelector;
     [[[self coreManager] deserialzationQueue] addOperation:deserializer];
     [deserializer release];
+    NSLog(@"===> done with findRemoteDidFinish (queue: %@, operations: %@)", 
+        [[self coreManager] deserialzationQueue], [[[self coreManager] deserialzationQueue] operations] );
+    //[[[self coreManager] deserialzationQueue] waitUntilAllOperationsAreFinished];
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
