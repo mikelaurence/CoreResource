@@ -280,13 +280,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
+									<integer>7</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {317, 904}}</string>
+							<string>{{0, 8}, {317, 904}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResourceReadTests.m</string>
+								<string>CoreResourceTestCase.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreResourceReadTests.m</string>
+										<string>CoreResourceTestCase.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B580140F11535CB900DA5921</string>
+										<string>B580142A11535DFC00DA5921</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -392,22 +392,22 @@
 											<string>B58011A911532C6D00DA5921</string>
 											<string>B58011AA11532C6D00DA5921</string>
 											<string>B58011AB11532C6D00DA5921</string>
-											<string>B580122611533B8300DA5921</string>
 											<string>B58012BE1153436600DA5921</string>
 											<string>B580134A11534EEC00DA5921</string>
 											<string>B58013841153522B00DA5921</string>
 											<string>B5801390115352FB00DA5921</string>
 											<string>B58013B4115355A400DA5921</string>
 											<string>B58013BC115355F500DA5921</string>
-											<string>B58013CF1153576700DA5921</string>
 											<string>B58013D01153576700DA5921</string>
 											<string>B58013E0115358C100DA5921</string>
-											<string>B58013EC11535A8B00DA5921</string>
-											<string>B58013F811535BAA00DA5921</string>
 											<string>B58013FF11535BEF00DA5921</string>
-											<string>B580140711535C3100DA5921</string>
-											<string>B580140A11535C4700DA5921</string>
-											<string>B580140B11535C4700DA5921</string>
+											<string>B580141511535D2D00DA5921</string>
+											<string>B580141611535D2D00DA5921</string>
+											<string>B580141C11535D6300DA5921</string>
+											<string>B580141D11535D6300DA5921</string>
+											<string>B580141E11535D6300DA5921</string>
+											<string>B580142811535DFC00DA5921</string>
+											<string>B580142911535DFC00DA5921</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

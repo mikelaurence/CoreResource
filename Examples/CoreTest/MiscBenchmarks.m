@@ -24,6 +24,7 @@
 #define ITERATE for (int i = 0; i < 1000000; i++)
 
 - (void) setUp {
+    [super setUp];
     artist = [[self loadArtist:0] retain];
     readKey = [@"name" retain];
     readSel = @selector(name);

@@ -12,6 +12,8 @@
 
 @synthesize delegatesCalled;
 
+static int dbInc = 0;
+
 #pragma mark -
 #pragma mark Convenience methods
 
@@ -96,7 +98,7 @@
 #pragma mark GHUnit Configuration
 
 - (void) setUp {
-    coreManager = [[CoreManager alloc] initWithOptions:$D($S(@"db-%i.sqlite", [NSDate timeIntervalSinceReferenceDate]), @"dbName")];
+    coreManager = [[CoreManager alloc] initWithOptions:$D($S(@"db-%i-%i.sqlite", [NSDate timeIntervalSinceReferenceDate], dbInc++), @"dbName")];
     coreManager.logLevel = 2;
     coreManager.useBundleRequests = YES;
 }
@@ -104,6 +106,7 @@
 - (void) tearDown {
     [coreManager release];
     coreManager = nil;
+    [NSThread sleepForTimeInterval:0.1];
 }
 
 
