@@ -478,7 +478,7 @@
                     }
                     
                     // Default action is to replace the set with no further reprecussions (old resources will still persist)
-                    [self setValue:newRelatedResources forKey:field];
+                    [self setValue:newRelatedResources forKey:localField];
                 }
                 
                 // Singular relationships
@@ -487,7 +487,7 @@
                     if (![newRelatedResources isEqual:existingRelatedResources]) {
                         
                         // Set new value
-                        [self setValue:newRelatedResources forKey:field];
+                        [self setValue:newRelatedResources forKey:localField];
                         
                         // If relationship rule is destroy, get rid of the old resource
                         if ([rule isEqualToString:@"destroy"])
