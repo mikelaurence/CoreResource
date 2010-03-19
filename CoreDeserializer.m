@@ -67,7 +67,6 @@ static NSArray* allowedFormats;
     When the context saves, send a message to our Core Manager to merge in the updated data
 */
 - (void) contextDidSave:(NSNotification*)notification {
-    NSLog(@"contextDidSave");
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];

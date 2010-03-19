@@ -358,7 +358,9 @@
         // If there is an ID, attempt to find existing record
         if (resourceId != nil) {
             CoreResult* findResult = [self findLocal:resourceId inContext:[options objectForKey:@"context"]];
-            NSLog(@"FIND %@ [#%@] in context %@ (FOUND %i)", self, resourceId, [options objectForKey:@"context"], [findResult resourceCount]);
+            
+            if ([self coreManager].logLevel > 2)
+                NSLog(@"Find %@ [#%@] in context %@ (found %i)", self, resourceId, [options objectForKey:@"context"], [findResult resourceCount]);
 
             // If there is a result, update it (if necessary) instead of creating it
             if ([findResult resourceCount] == 1) {
@@ -586,10 +588,7 @@
     NSError* error = nil;
     
     // Perform fetch
-    NSLog(@"FETCH IN CONTEXT %@", context);
     NSArray* resources = [context executeFetchRequest:fetch error:&error];
-    for (NSManagedObject* obj in resources)
-        NSLog(@"RESULT CONTEXT %@", [obj managedObjectContext]);
 
     CoreResult* result = error == nil ?
         [[[CoreResult alloc] initWithResources:resources] autorelease] :
@@ -652,7 +651,6 @@
 }
 
 + (void) findRemoteDidFinish:(CoreRequest*)request {
-    NSLog(@"===> findRemoteDidFinish");
     // Create and enqueue deserializer in non-blocking thread
     CoreDeserializer* deserializer = [[CoreJSONDeserializer alloc] initWithSource:request andResourceClass:self];
     deserializer.target = request.coreDelegate;

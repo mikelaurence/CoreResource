@@ -139,7 +139,7 @@ static CoreManager* _main;
 - (void) mergeContext:(NSNotification*)notification {
     NSAssert([NSThread mainThread], @"Must be on the main thread!");
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-    NSLog(@"\n\nMerged context, now has contents:\n\n %@ \n\n", [[Artist findAllLocal] resources]);
+    //NSLog(@"\n\nMerged context, now has contents:\n\n %@ \n\n", [[Artist findAllLocal] resources]);
 }
 
 

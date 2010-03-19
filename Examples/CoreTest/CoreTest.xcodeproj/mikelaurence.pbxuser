@@ -568,6 +568,22 @@
 			B58014B01153680700DA5921 /* PBXTextBookmark */ = B58014B01153680700DA5921 /* PBXTextBookmark */;
 			B58014B11153685900DA5921 /* PBXTextBookmark */ = B58014B11153685900DA5921 /* PBXTextBookmark */;
 			B58014B21153685900DA5921 /* PBXTextBookmark */ = B58014B21153685900DA5921 /* PBXTextBookmark */;
+			B58014B3115368A500DA5921 /* PBXTextBookmark */ = B58014B3115368A500DA5921 /* PBXTextBookmark */;
+			B58014B4115368A500DA5921 /* PBXTextBookmark */ = B58014B4115368A500DA5921 /* PBXTextBookmark */;
+			B58014B5115368A500DA5921 /* PBXTextBookmark */ = B58014B5115368A500DA5921 /* PBXTextBookmark */;
+			B58014B6115368A500DA5921 /* PBXTextBookmark */ = B58014B6115368A500DA5921 /* PBXTextBookmark */;
+			B58014B7115368B400DA5921 /* PBXTextBookmark */ = B58014B7115368B400DA5921 /* PBXTextBookmark */;
+			B58014B8115368B400DA5921 /* PBXTextBookmark */ = B58014B8115368B400DA5921 /* PBXTextBookmark */;
+			B58014B9115368B400DA5921 /* PBXTextBookmark */ = B58014B9115368B400DA5921 /* PBXTextBookmark */;
+			B58014BA115368DF00DA5921 /* PBXTextBookmark */ = B58014BA115368DF00DA5921 /* PBXTextBookmark */;
+			B58014BB115368DF00DA5921 /* PBXTextBookmark */ = B58014BB115368DF00DA5921 /* PBXTextBookmark */;
+			B58014BC115368DF00DA5921 /* PBXTextBookmark */ = B58014BC115368DF00DA5921 /* PBXTextBookmark */;
+			B58014BF1153691D00DA5921 /* PBXTextBookmark */ = B58014BF1153691D00DA5921 /* PBXTextBookmark */;
+			B58014C01153691D00DA5921 /* PBXTextBookmark */ = B58014C01153691D00DA5921 /* PBXTextBookmark */;
+			B58014C11153691D00DA5921 /* PBXTextBookmark */ = B58014C11153691D00DA5921 /* PBXTextBookmark */;
+			B58014C21153693500DA5921 /* PBXTextBookmark */ = B58014C21153693500DA5921 /* PBXTextBookmark */;
+			B58014C31153696400DA5921 /* PBXTextBookmark */ = B58014C31153696400DA5921 /* PBXTextBookmark */;
+			B58014C41153697600DA5921 /* PBXTextBookmark */ = B58014C41153697600DA5921 /* PBXTextBookmark */;
 			B5A9C3A61142AF9F0007B71C = B5A9C3A61142AF9F0007B71C /* PBXTextBookmark */;
 			B5B2606F1152934C005399C5 = B5B2606F1152934C005399C5 /* PBXTextBookmark */;
 			B5B2607A115293D6005399C5 = B5B2607A115293D6005399C5 /* PBXTextBookmark */;
@@ -978,7 +994,7 @@
 	B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1236, 2299}}";
-			sepNavSelRange = "{3832, 0}";
+			sepNavSelRange = "{4222, 0}";
 			sepNavVisRange = "{2495, 1734}";
 		};
 	};
@@ -1103,9 +1119,9 @@
 	};
 	B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {844, 5149}}";
-			sepNavSelRange = "{2392, 14}";
-			sepNavVisRange = "{2410, 262}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 4997}}";
+			sepNavSelRange = "{2379, 0}";
+			sepNavVisRange = "{1541, 1610}";
 		};
 	};
 	B5712B54114A0AD00005F0B5 /* CoreDeserializer.h */ = {
@@ -1202,9 +1218,9 @@
 	};
 	B57DCFF31144F1F70063915D /* CoreManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1172, 3420}}";
-			sepNavSelRange = "{4751, 0}";
-			sepNavVisRange = "{4441, 1002}";
+			sepNavIntBoundsRect = "{{0, 0}, {1172, 3534}}";
+			sepNavSelRange = "{4656, 0}";
+			sepNavVisRange = "{4154, 1147}";
 		};
 	};
 	B57DCFF41144F1F70063915D /* CoreRequest.h */ = {
@@ -1230,9 +1246,9 @@
 	};
 	B57DCFF71144F1F70063915D /* CoreResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 15428}}";
-			sepNavSelRange = "{25127, 0}";
-			sepNavVisRange = "{24699, 1687}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 15219}}";
+			sepNavSelRange = "{24313, 0}";
+			sepNavVisRange = "{23640, 1655}";
 		};
 	};
 	B57DCFF81144F1F70063915D /* CoreResult.h */ = {
@@ -1517,7 +1533,7 @@
 		isa = PBXTextBookmark;
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		rLen = 7;
-		rLoc = 4691;
+		rLoc = 4693;
 		rType = 0;
 	};
 	B58011A511532C6300DA5921 /* PBXTextBookmark */ = {
@@ -1525,7 +1541,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 138";
 		rLen = 7;
-		rLoc = 4691;
+		rLoc = 4693;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 4315;
@@ -1761,7 +1777,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 138";
 		rLen = 0;
-		rLoc = 4666;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3747;
@@ -1772,7 +1788,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 478;
+		rLoc = 480;
 		rType = 1;
 	};
 	B58011B311532C8B00DA5921 /* PBXTextBookmark */ = {
@@ -1780,7 +1796,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 484";
 		rLen = 0;
-		rLoc = 18417;
+		rLoc = 18483;
 		rType = 0;
 		vrLen = 640;
 		vrLoc = 18371;
@@ -1790,7 +1806,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 138";
 		rLen = 7;
-		rLoc = 4691;
+		rLoc = 4693;
 		rType = 0;
 		vrLen = 279;
 		vrLoc = 4712;
@@ -1810,7 +1826,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 484";
 		rLen = 0;
-		rLoc = 18464;
+		rLoc = 18530;
 		rType = 0;
 		vrLen = 2388;
 		vrLoc = 17761;
@@ -1870,7 +1886,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 599";
 		rLen = 0;
-		rLoc = 22555;
+		rLoc = 22577;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 22047;
@@ -1880,7 +1896,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 472";
 		rLen = 0;
-		rLoc = 17574;
+		rLoc = 17640;
 		rType = 0;
 		vrLen = 2520;
 		vrLoc = 16295;
@@ -1890,7 +1906,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 605";
 		rLen = 0;
-		rLoc = 22555;
+		rLoc = 22577;
 		rType = 0;
 		vrLen = 1426;
 		vrLoc = 22180;
@@ -1900,7 +1916,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 606";
 		rLen = 0;
-		rLoc = 22579;
+		rLoc = 22601;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 22180;
@@ -1910,7 +1926,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 610";
 		rLen = 0;
-		rLoc = 22835;
+		rLoc = 22748;
 		rType = 0;
 		vrLen = 1641;
 		vrLoc = 22826;
@@ -1930,7 +1946,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 86";
 		rLen = 0;
-		rLoc = 2957;
+		rLoc = 2927;
 		rType = 0;
 		vrLen = 1608;
 		vrLoc = 2031;
@@ -2059,7 +2075,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 491";
 		rLen = 0;
-		rLoc = 18466;
+		rLoc = 18532;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 17066;
@@ -2119,7 +2135,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 677";
 		rLen = 0;
-		rLoc = 25712;
+		rLoc = 25585;
 		rType = 0;
 		vrLen = 1895;
 		vrLoc = 24915;
@@ -2129,7 +2145,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 86";
 		rLen = 0;
-		rLoc = 2957;
+		rLoc = 2927;
 		rType = 0;
 		vrLen = 1614;
 		vrLoc = 2025;
@@ -2159,7 +2175,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 677";
 		rLen = 0;
-		rLoc = 25712;
+		rLoc = 25585;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 24915;
@@ -2169,7 +2185,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 663";
 		rLen = 0;
-		rLoc = 24947;
+		rLoc = 24860;
 		rType = 0;
 		vrLen = 1857;
 		vrLoc = 25000;
@@ -2179,7 +2195,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 678";
 		rLen = 0;
-		rLoc = 25711;
+		rLoc = 25584;
 		rType = 0;
 		vrLen = 1721;
 		vrLoc = 25193;
@@ -2189,7 +2205,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 679";
 		rLen = 0;
-		rLoc = 25712;
+		rLoc = 25585;
 		rType = 0;
 		vrLen = 1774;
 		vrLoc = 25222;
@@ -2199,7 +2215,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 677";
 		rLen = 0;
-		rLoc = 25500;
+		rLoc = 25373;
 		rType = 0;
 		vrLen = 1747;
 		vrLoc = 25287;
@@ -2209,7 +2225,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 677";
 		rLen = 0;
-		rLoc = 25500;
+		rLoc = 25373;
 		rType = 0;
 		vrLen = 1800;
 		vrLoc = 25287;
@@ -2219,7 +2235,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 679";
 		rLen = 0;
-		rLoc = 25709;
+		rLoc = 25582;
 		rType = 0;
 		vrLen = 1765;
 		vrLoc = 25348;
@@ -2229,7 +2245,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 680";
 		rLen = 0;
-		rLoc = 25712;
+		rLoc = 25585;
 		rType = 0;
 		vrLen = 1792;
 		vrLoc = 25380;
@@ -2239,7 +2255,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 476";
 		rLen = 0;
-		rLoc = 18228;
+		rLoc = 18294;
 		rType = 0;
 		vrLen = 2111;
 		vrLoc = 17048;
@@ -2329,7 +2345,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 78";
 		rLen = 0;
-		rLoc = 2540;
+		rLoc = 2510;
 		rType = 0;
 		vrLen = 1788;
 		vrLoc = 1772;
@@ -2339,7 +2355,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 73";
 		rLen = 0;
-		rLoc = 2409;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 1942;
 		vrLoc = 584;
@@ -2359,7 +2375,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 476";
 		rLen = 0;
-		rLoc = 18228;
+		rLoc = 18294;
 		rType = 0;
 		vrLen = 2111;
 		vrLoc = 17048;
@@ -2369,7 +2385,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 658";
 		rLen = 0;
-		rLoc = 25259;
+		rLoc = 25132;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 24391;
@@ -2379,7 +2395,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 658";
 		rLen = 0;
-		rLoc = 25259;
+		rLoc = 25132;
 		rType = 0;
 		vrLen = 1861;
 		vrLoc = 24391;
@@ -2419,7 +2435,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 489";
 		rLen = 0;
-		rLoc = 18417;
+		rLoc = 18483;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 18348;
@@ -2439,7 +2455,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 138";
 		rLen = 7;
-		rLoc = 4691;
+		rLoc = 4693;
 		rType = 0;
 		vrLen = 231;
 		vrLoc = 4858;
@@ -2448,7 +2464,7 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 	};
 	B580125611533E3200DA5921 /* PBXTextBookmark */ = {
@@ -2456,7 +2472,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 89";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 3165;
@@ -2466,7 +2482,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 95";
 		rLen = 0;
-		rLoc = 3155;
+		rLoc = 3125;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 2445;
@@ -2656,7 +2672,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 143";
 		rLen = 0;
-		rLoc = 4858;
+		rLoc = 4828;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 4201;
@@ -2706,7 +2722,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 84";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 231;
 		vrLoc = 2904;
@@ -2775,7 +2791,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 84";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 231;
 		vrLoc = 2937;
@@ -2805,7 +2821,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 589";
 		rLen = 0;
-		rLoc = 22511;
+		rLoc = 22577;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 21992;
@@ -2815,7 +2831,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 177";
 		rLen = 0;
-		rLoc = 5936;
+		rLoc = 5906;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 5456;
@@ -2835,7 +2851,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 80";
 		rLen = 0;
-		rLoc = 2778;
+		rLoc = 2748;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 1724;
@@ -2875,7 +2891,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 80";
 		rLen = 0;
-		rLoc = 2778;
+		rLoc = 2748;
 		rType = 0;
 		vrLen = 1573;
 		vrLoc = 1715;
@@ -2885,7 +2901,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 182";
 		rLen = 0;
-		rLoc = 6050;
+		rLoc = 6020;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 5561;
@@ -2895,7 +2911,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 182";
 		rLen = 0;
-		rLoc = 6050;
+		rLoc = 6020;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 5595;
@@ -2936,7 +2952,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 595;
+		rLoc = 594;
 		rType = 1;
 	};
 	B58012F41153469200DA5921 /* PBXTextBookmark */ = {
@@ -2944,7 +2960,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 596";
 		rLen = 0;
-		rLoc = 22853;
+		rLoc = 22766;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 22332;
@@ -2954,7 +2970,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 84";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 208;
 		vrLoc = 3080;
@@ -2964,7 +2980,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 596";
 		rLen = 0;
-		rLoc = 22853;
+		rLoc = 22766;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 22332;
@@ -2974,7 +2990,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 84";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 208;
 		vrLoc = 3080;
@@ -3014,7 +3030,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 154";
 		rLen = 0;
-		rLoc = 5035;
+		rLoc = 5037;
 		rType = 0;
 		vrLen = 1226;
 		vrLoc = 4216;
@@ -3054,7 +3070,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 596";
 		rLen = 0;
-		rLoc = 22853;
+		rLoc = 22766;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 22332;
@@ -3064,7 +3080,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 84";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 208;
 		vrLoc = 3080;
@@ -3181,7 +3197,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 154";
 		rLen = 0;
-		rLoc = 5035;
+		rLoc = 5037;
 		rType = 0;
 		vrLen = 914;
 		vrLoc = 4559;
@@ -3261,7 +3277,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 596";
 		rLen = 0;
-		rLoc = 22853;
+		rLoc = 22766;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 22332;
@@ -3478,16 +3494,16 @@
 	B58013791153519500DA5921 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 	};
 	B580137A1153519500DA5921 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 315;
 		vrLoc = 2229;
@@ -3515,8 +3531,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 315;
 		vrLoc = 2229;
@@ -3526,7 +3542,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
 		rLen = 0;
-		rLoc = 2409;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 1746;
 		vrLoc = 1541;
@@ -3585,8 +3601,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 290;
 		vrLoc = 2224;
@@ -3666,7 +3682,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 597";
 		rLen = 0;
-		rLoc = 22917;
+		rLoc = 22830;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 21844;
@@ -3755,8 +3771,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 290;
 		vrLoc = 2224;
@@ -3966,7 +3982,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 597";
 		rLen = 0;
-		rLoc = 22917;
+		rLoc = 22830;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 21844;
@@ -4086,7 +4102,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 167";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 5629;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 4942;
@@ -4096,7 +4112,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 167";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 5629;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 4942;
@@ -4426,7 +4442,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 634";
 		rLen = 0;
-		rLoc = 24223;
+		rLoc = 24136;
 		rType = 0;
 		vrLen = 1862;
 		vrLoc = 22977;
@@ -4436,7 +4452,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 651";
 		rLen = 0;
-		rLoc = 25053;
+		rLoc = 24966;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 24025;
@@ -4456,7 +4472,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 611";
 		rLen = 0;
-		rLoc = 23546;
+		rLoc = 23459;
 		rType = 0;
 		vrLen = 1742;
 		vrLoc = 22675;
@@ -4476,7 +4492,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 616";
 		rLen = 0;
-		rLoc = 23812;
+		rLoc = 23725;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 22939;
@@ -4486,7 +4502,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 616";
 		rLen = 0;
-		rLoc = 23812;
+		rLoc = 23725;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 22939;
@@ -4546,7 +4562,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 616";
 		rLen = 0;
-		rLoc = 23812;
+		rLoc = 23725;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 22939;
@@ -4556,7 +4572,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 662";
 		rLen = 0;
-		rLoc = 25529;
+		rLoc = 25402;
 		rType = 0;
 		vrLen = 1725;
 		vrLoc = 24699;
@@ -4566,7 +4582,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 662";
 		rLen = 0;
-		rLoc = 25529;
+		rLoc = 25402;
 		rType = 0;
 		vrLen = 1725;
 		vrLoc = 24699;
@@ -4596,7 +4612,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 142";
 		rLen = 0;
-		rLoc = 4749;
+		rLoc = 4751;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 3884;
@@ -4616,7 +4632,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 142";
 		rLen = 0;
-		rLoc = 4749;
+		rLoc = 4751;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 3884;
@@ -4626,7 +4642,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 142";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4737;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3981;
@@ -4636,7 +4652,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 143";
 		rLen = 0;
-		rLoc = 4751;
+		rLoc = 4753;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3981;
@@ -4656,7 +4672,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 77";
 		rLen = 0;
-		rLoc = 2561;
+		rLoc = 2531;
 		rType = 0;
 		vrLen = 1414;
 		vrLoc = 1938;
@@ -4666,7 +4682,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 82";
 		rLen = 0;
-		rLoc = 2893;
+		rLoc = 2863;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 1938;
@@ -4706,7 +4722,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 82";
 		rLen = 0;
-		rLoc = 2893;
+		rLoc = 2863;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 1938;
@@ -4716,7 +4732,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 83";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 1938;
@@ -4726,7 +4742,7 @@
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 83";
 		rLen = 0;
-		rLoc = 2958;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 1938;
@@ -4806,7 +4822,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 2125;
@@ -4836,7 +4852,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 2125;
@@ -4866,7 +4882,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 660";
 		rLen = 0;
-		rLoc = 25443;
+		rLoc = 25316;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 24641;
@@ -5166,7 +5182,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 660";
 		rLen = 0;
-		rLoc = 25443;
+		rLoc = 25316;
 		rType = 0;
 		vrLen = 1680;
 		vrLoc = 24641;
@@ -5236,7 +5252,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 617";
 		rLen = 0;
-		rLoc = 23854;
+		rLoc = 23767;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 22486;
@@ -5304,8 +5320,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 196;
 		vrLoc = 2410;
@@ -5484,7 +5500,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 617";
 		rLen = 0;
-		rLoc = 23854;
+		rLoc = 23767;
 		rType = 0;
 		vrLen = 1568;
 		vrLoc = 22460;
@@ -5494,7 +5510,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 655";
 		rLen = 0;
-		rLoc = 25127;
+		rLoc = 25022;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 24604;
@@ -5504,7 +5520,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 655";
 		rLen = 0;
-		rLoc = 25127;
+		rLoc = 25022;
 		rType = 0;
 		vrLen = 1687;
 		vrLoc = 24699;
@@ -5584,7 +5600,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 119";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1707;
 		vrLoc = 2675;
@@ -5594,7 +5610,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 118";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1595;
 		vrLoc = 2675;
@@ -5604,7 +5620,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 118";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1595;
 		vrLoc = 2675;
@@ -5653,8 +5669,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 196;
 		vrLoc = 2410;
@@ -5744,7 +5760,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 118";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 0;
@@ -5783,8 +5799,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 262;
 		vrLoc = 2410;
@@ -5803,8 +5819,8 @@
 		isa = PBXTextBookmark;
 		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
 		name = "CoreDeserializer.m: 70";
-		rLen = 14;
-		rLoc = 2392;
+		rLen = 0;
+		rLoc = 2379;
 		rType = 0;
 		vrLen = 262;
 		vrLoc = 2410;
@@ -5824,7 +5840,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 118";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 0;
@@ -5834,7 +5850,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 118";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 2521;
@@ -5844,7 +5860,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 118";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1749;
 		vrLoc = 2521;
@@ -5854,7 +5870,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 117";
 		rLen = 0;
-		rLoc = 4220;
+		rLoc = 4221;
 		rType = 0;
 		vrLen = 1734;
 		vrLoc = 2495;
@@ -5874,7 +5890,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 143";
 		rLen = 0;
-		rLoc = 4751;
+		rLoc = 4753;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3981;
@@ -5884,7 +5900,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 143";
 		rLen = 0;
-		rLoc = 4751;
+		rLoc = 4753;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 2509;
@@ -5894,7 +5910,7 @@
 		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
 		name = "CoreManager.m: 143";
 		rLen = 0;
-		rLoc = 4751;
+		rLoc = 4753;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 4441;
@@ -5905,6 +5921,166 @@
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
 		rLoc = 3832;
+		rType = 0;
+		vrLen = 1734;
+		vrLoc = 2495;
+	};
+	B58014B3115368A500DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 81";
+		rLen = 0;
+		rLoc = 2698;
+		rType = 0;
+		vrLen = 1700;
+		vrLoc = 731;
+	};
+	B58014B4115368A500DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 590";
+		rLen = 0;
+		rLoc = 22653;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 21863;
+	};
+	B58014B5115368A500DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
+		name = "CoreDeserializer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1420;
+		vrLoc = 0;
+	};
+	B58014B6115368A500DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
+		name = "CoreDeserializer.m: 69";
+		rLen = 0;
+		rLoc = 2379;
+		rType = 0;
+		vrLen = 1610;
+		vrLoc = 1541;
+	};
+	B58014B7115368B400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5712B53114A0AD00005F0B5 /* CoreDeserializer.m */;
+		name = "CoreDeserializer.m: 69";
+		rLen = 0;
+		rLoc = 2379;
+		rType = 0;
+		vrLen = 1610;
+		vrLoc = 1541;
+	};
+	B58014B8115368B400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
+		name = "CoreManager.m: 143";
+		rLen = 0;
+		rLoc = 4753;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 4439;
+	};
+	B58014B9115368B400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
+		name = "CoreManager.m: 142";
+		rLen = 0;
+		rLoc = 4656;
+		rType = 0;
+		vrLen = 1147;
+		vrLoc = 4154;
+	};
+	B58014BA115368DF00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF31144F1F70063915D /* CoreManager.m */;
+		name = "CoreManager.m: 142";
+		rLen = 0;
+		rLoc = 4656;
+		rType = 0;
+		vrLen = 1147;
+		vrLoc = 4154;
+	};
+	B58014BB115368DF00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 590";
+		rLen = 0;
+		rLoc = 22653;
+		rType = 0;
+		vrLen = 1673;
+		vrLoc = 21777;
+	};
+	B58014BC115368DF00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 653";
+		rLen = 0;
+		rLoc = 25022;
+		rType = 0;
+		vrLen = 1655;
+		vrLoc = 23640;
+	};
+	B58014BF1153691D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
+		name = "CoreResource.m: 634";
+		rLen = 0;
+		rLoc = 24313;
+		rType = 0;
+		vrLen = 1655;
+		vrLoc = 23640;
+	};
+	B58014C01153691D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 81";
+		rLen = 0;
+		rLoc = 2698;
+		rType = 0;
+		vrLen = 1698;
+		vrLoc = 733;
+	};
+	B58014C11153691D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 122";
+		rLen = 0;
+		rLoc = 4222;
+		rType = 0;
+		vrLen = 1670;
+		vrLoc = 2675;
+	};
+	B58014C21153693500DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 119";
+		rLen = 0;
+		rLoc = 4221;
+		rType = 0;
+		vrLen = 1668;
+		vrLoc = 2675;
+	};
+	B58014C31153696400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 120";
+		rLen = 0;
+		rLoc = 4221;
+		rType = 0;
+		vrLen = 1564;
+		vrLoc = 2821;
+	};
+	B58014C41153697600DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 118";
+		rLen = 0;
+		rLoc = 4222;
 		rType = 0;
 		vrLen = 1734;
 		vrLoc = 2495;
@@ -6181,7 +6357,7 @@
 		fRef = B57DCFF71144F1F70063915D /* CoreResource.m */;
 		name = "CoreResource.m: 472";
 		rLen = 0;
-		rLoc = 17726;
+		rLoc = 17792;
 		rType = 0;
 		vrLen = 2319;
 		vrLoc = 17092;
