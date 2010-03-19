@@ -440,7 +440,7 @@
                 NSRelationshipDescription *relationshipDescription = (NSRelationshipDescription*)propertyDescription;
                 Class relationshipClass = NSClassFromString([[relationshipDescription destinationEntity] managedObjectClassName]);
                 id newRelatedResources;
-                id existingRelatedResources = [self valueForKey:field];
+                id existingRelatedResources = [self valueForKey:localField];
 
                 // Get relationship options
                 NSDictionary* relationshipOptions = [options objectForKey:relationshipClass];
