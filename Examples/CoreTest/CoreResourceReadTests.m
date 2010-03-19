@@ -13,20 +13,19 @@
 
 @implementation CoreResourceReadTests
 
-- (void) setUp {
-    coreManager.bundleRequestDelay = 0;
-    [super setUp];
-}
 
 - (BOOL)shouldRunOnMainThread { return YES; }
 
 #pragma mark -
 #pragma mark Read
 
+
 - (void) testFindWithoutLocalHit {
     GHAssertFalse([[Artist find:[NSNumber numberWithInt:0]] hasAnyResources], @"Find should not immediately return an object if the object doesn't yet exist");
-    [NSThread sleepForTimeInterval:0.1];
-    
+    [self performSelector:@selector(completeTestFindWithoutLocalHit) withObject:nil afterDelay:0.1];
+}
+
+- (void) completeTestFindWithoutLocalHit {
     // Verify existance of artist after find call
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 1, nil);
     [self validateFirstArtist:[[self allLocalArtists] objectAtIndex:0]];
@@ -40,7 +39,6 @@
 }
 
 - (void) testFindAndNotify {
-    [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindAndNotify:)];
     [Artist find:[NSNumber numberWithInt:0] andNotify:self withSelector:@selector(completeTestFindAndNotify:)];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
@@ -54,8 +52,10 @@
 
 - (void) testFindAllWithoutLocalHits { 
     GHAssertFalse([[Artist findAll] hasAnyResources], @"Find all should not immediately any objects if the objects don't yet exist");
-    [NSThread sleepForTimeInterval:0.1];
-    
+    [self performSelector:@selector(completeTestFindAllWithoutLocalHits) withObject:nil afterDelay:0.1];
+}
+
+- (void) completeTestFindAllWithoutLocalHits {    
     // Verify existance of artists after find call
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
     [self validateFirstArtist:[[self allLocalArtists] objectAtIndex:0]];
@@ -69,8 +69,10 @@
     
     CoreResult* result = [Artist findAll];
     GHAssertEquals((NSInteger) [result resourceCount], 2, nil);
-    
-    [NSThread sleepForTimeInterval:0.1];
+    [self performSelector:@selector(completeTestFindAllWithSomeLocalHits) withObject:nil afterDelay:0.1];
+}
+
+- (void) completeTestFindAllWithSomeLocalHits {
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
 }
  
@@ -91,7 +93,6 @@
 */
 
 - (void) testFindAllAndNotify {
-    [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindAllAndNotify:)];
     [Artist findAll:nil andNotify:self withSelector:@selector(completeTestFindAllAndNotify:)];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
@@ -126,14 +127,15 @@
 
 - (void) testFindRemote {
     [Artist findRemote:[NSNumber numberWithInt:1]];
-    [NSThread sleepForTimeInterval:0.1];
+    [self performSelector:@selector(completeTestFindRemote) withObject:nil afterDelay:0.1];
+}
 
+- (void) completeTestFindRemote {
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 1, nil);
     [self validateSecondArtist:(Artist*)[[self allLocalArtists] lastObject]];
 }
 
 - (void) testFindRemoteAndNotify { 
-    [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindRemoteAndNotify:)];
     [Artist findRemote:[NSNumber numberWithInt:0] andNotify:self withSelector:@selector(completeTestFindRemoteAndNotify:)];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
@@ -147,22 +149,18 @@
 
 - (void) testFindAllRemote {
     [Artist findAllRemote];
-    [NSThread sleepForTimeInterval:0.1];
+    [self performSelector:@selector(completeTestFindAllRemote) withObject:nil afterDelay:0.1];
+}
 
+- (void) completeTestFindAllRemote {
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
     [self validateFirstArtist:[[self allLocalArtists] objectAtIndex:0]];
     [self validateSecondArtist:[[self allLocalArtists] objectAtIndex:1]];
 }
 
 - (void) testFindAllRemoteAndNotify {
-    [self performRequestsAsynchronously];
     [self prepare:@selector(completeTestFindAllRemoteAndNotify:)];
-    @try {
     [Artist findAllRemote:nil andNotify:self withSelector:@selector(completeTestFindAllRemoteAndNotify:)];
-    }
-    @catch (NSException *exception) {
-                            NSLog(@"EXCEPTION: Caught %@: %@", [exception name], [exception reason]);
-                        }
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:1.0];
 }
 

@@ -30,8 +30,6 @@
 - (void) validateFirstArtist:(Artist*)artist;
 - (void) validateSecondArtist:(Artist*)artist;
 
-- (void) performRequestsAsynchronously;
-
 #pragma mark -
 #pragma mark Sorting
 NSInteger ascendingSort(id obj1, id obj2, void *key);

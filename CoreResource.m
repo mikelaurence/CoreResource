@@ -664,7 +664,6 @@
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
-    NSLog(@"===> findRemoteDidFail");
     // Notify core delegate (if extant) of failure
     if (request.coreDelegate && request.coreSelector && [request.coreDelegate respondsToSelector:request.coreSelector]) {
         CoreResult* result = [[[CoreResult alloc] initWithError:[request error]] autorelease];

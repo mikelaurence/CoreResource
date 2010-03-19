@@ -23,7 +23,6 @@
 
     if (parseError == nil) {
         if (didFinishSelector && ![self isCancelled] && [delegate respondsToSelector:didFinishSelector]) {
-            //NSLog(@"FINISH %@ %@ %@", bundleDataPath, delegate, NSStringFromSelector(didFinishSelector));
             if ([CoreManager main].bundleRequestDelay == 0)
                 [delegate performSelector:didFinishSelector withObject:self];
             else {

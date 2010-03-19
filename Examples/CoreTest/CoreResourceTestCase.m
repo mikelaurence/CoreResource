@@ -12,7 +12,7 @@
 
 @synthesize delegatesCalled;
 
-static int dbInc = 0;
+static int dbInc = 1;
 
 #pragma mark -
 #pragma mark Convenience methods
@@ -98,19 +98,18 @@ static int dbInc = 0;
     GHAssertEqualStrings(((Song*)[[artist sortedSongs] objectAtIndex:1]).name, @"You Got Yr. Cherry Bomb", nil);
 }
 
-- (void) performRequestsAsynchronously {
-    coreManager.bundleRequestDelay = 0.1;   // Add delay to request so it performs asynchronously
-}
-
 
 
 #pragma mark -
 #pragma mark GHUnit Configuration
 
 - (void) setUp {
-    coreManager = [[CoreManager alloc] initWithOptions:$D($S(@"db-%i-%i.sqlite", [NSDate timeIntervalSinceReferenceDate], dbInc++), @"dbName")];
+    NSString *dbName = $S(@"db-%i-%i.sqlite", [NSDate timeIntervalSinceReferenceDate], dbInc++);
+    NSLog(@"\n\nCreating core manager with DB named '%@'\n\n", dbName);
+    coreManager = [[CoreManager alloc] initWithOptions:$D(dbName, @"dbName")];
     coreManager.logLevel = 2;
     coreManager.useBundleRequests = YES;
+    coreManager.bundleRequestDelay = 0.01;
 }
 
 - (void) tearDown {
