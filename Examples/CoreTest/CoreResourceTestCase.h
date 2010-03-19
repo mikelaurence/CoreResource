@@ -23,7 +23,9 @@
 - (NSDictionary*) artistData:(int)index;
 - (void) loadAllArtists;
 - (Artist*) loadArtist:(int)index;
+- (Artist*) loadArtist:(int)index andSave:(BOOL)shouldSave;
 - (Artist*) loadArtist:(int)index inContext:(NSManagedObjectContext*)context;
+- (Artist*) loadArtist:(int)index andSave:(BOOL)shouldSave inContext:(NSManagedObjectContext*)context;
 - (NSArray*) allLocalArtists;
 - (void) validateFirstArtist:(Artist*)artist;
 - (void) validateSecondArtist:(Artist*)artist;

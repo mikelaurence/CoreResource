@@ -38,7 +38,15 @@ static int dbInc = 0;
     return [self loadArtist:index inContext:[coreManager managedObjectContext]];
 }
 
+- (Artist*) loadArtist:(int)index andSave:(BOOL)shouldSave {
+    return [self loadArtist:index andSave:shouldSave inContext:[coreManager managedObjectContext]];
+}
+
 - (Artist*) loadArtist:(int)index inContext:(NSManagedObjectContext*)context {
+    return [self loadArtist:index andSave:YES inContext:context];
+}
+
+- (Artist*) loadArtist:(int)index andSave:(BOOL)shouldSave inContext:(NSManagedObjectContext*)context {
     Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:context];
     NSDictionary* dict = [self artistData:index];
     artist.resourceId = [dict objectForKey:@"id"];
@@ -59,8 +67,10 @@ static int dbInc = 0;
         artist.songs = songs;
     }
     
-    NSError *error = nil;
-    [context save:&error];
+    if (shouldSave) {
+        NSError *error = nil;
+        [context save:&error];
+    }
     
     return artist;
 }

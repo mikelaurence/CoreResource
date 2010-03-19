@@ -63,7 +63,7 @@
 
 - (void) testDeserializationContextWorkflow {
 
-    [self loadArtist:0]; // Create in default context
+    [self loadArtist:0 andSave:NO]; // Create in default context
     GHAssertEquals((NSInteger) [Artist countLocal], 1, nil); // Default context should have Artist A
 
     // Create test context
@@ -71,11 +71,11 @@
     testContext = [[coreManager newContext] retain];
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 1, nil); // Test context should be the same as the default
     
-    [self loadArtist:1]; // Create in default context
+    [self loadArtist:1 andSave:NO]; // Create in default context
     GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Default context should now have A & B
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 1, nil); // Test context should only have A
     
-    [self loadArtist:2 inContext:testContext]; // Create in test context
+    [self loadArtist:2 andSave:NO inContext:testContext]; // Create in test context
     GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Default context should still only A & B
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Test context should now have A & C
     

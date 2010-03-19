@@ -474,6 +474,18 @@
 			B580142811535DFC00DA5921 /* PBXTextBookmark */ = B580142811535DFC00DA5921 /* PBXTextBookmark */;
 			B580142911535DFC00DA5921 /* PBXTextBookmark */ = B580142911535DFC00DA5921 /* PBXTextBookmark */;
 			B580142A11535DFC00DA5921 /* PBXTextBookmark */ = B580142A11535DFC00DA5921 /* PBXTextBookmark */;
+			B580142D11535F3100DA5921 /* PBXTextBookmark */ = B580142D11535F3100DA5921 /* PBXTextBookmark */;
+			B580142E11535F3100DA5921 /* PBXTextBookmark */ = B580142E11535F3100DA5921 /* PBXTextBookmark */;
+			B580142F11535F3100DA5921 /* PBXTextBookmark */ = B580142F11535F3100DA5921 /* PBXTextBookmark */;
+			B580143011535F3100DA5921 /* PBXTextBookmark */ = B580143011535F3100DA5921 /* PBXTextBookmark */;
+			B580143111535F3100DA5921 /* PBXTextBookmark */ = B580143111535F3100DA5921 /* PBXTextBookmark */;
+			B580143211535F3D00DA5921 /* PBXTextBookmark */ = B580143211535F3D00DA5921 /* PBXTextBookmark */;
+			B580143511535F7400DA5921 /* PBXTextBookmark */ = B580143511535F7400DA5921 /* PBXTextBookmark */;
+			B580143611535F7400DA5921 /* PBXTextBookmark */ = B580143611535F7400DA5921 /* PBXTextBookmark */;
+			B580143711535F7400DA5921 /* PBXTextBookmark */ = B580143711535F7400DA5921 /* PBXTextBookmark */;
+			B580143A11535F9D00DA5921 /* PBXTextBookmark */ = B580143A11535F9D00DA5921 /* PBXTextBookmark */;
+			B580143B11535F9D00DA5921 /* PBXTextBookmark */ = B580143B11535F9D00DA5921 /* PBXTextBookmark */;
+			B580143C11535F9D00DA5921 /* PBXTextBookmark */ = B580143C11535F9D00DA5921 /* PBXTextBookmark */;
 			B5A9C3A61142AF9F0007B71C = B5A9C3A61142AF9F0007B71C /* PBXTextBookmark */;
 			B5B2606F1152934C005399C5 = B5B2606F1152934C005399C5 /* PBXTextBookmark */;
 			B5B2607A115293D6005399C5 = B5B2607A115293D6005399C5 /* PBXTextBookmark */;
@@ -883,16 +895,16 @@
 	};
 	B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1236, 2147}}";
-			sepNavSelRange = "{3674, 0}";
-			sepNavVisRange = "{2302, 1591}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 2413}}";
+			sepNavSelRange = "{1118, 0}";
+			sepNavVisRange = "{733, 1698}";
 		};
 	};
 	B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 807}}";
-			sepNavSelRange = "{667, 0}";
-			sepNavVisRange = "{0, 929}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 784}}";
+			sepNavSelRange = "{649, 0}";
+			sepNavVisRange = "{0, 1092}";
 		};
 	};
 	B56851651100D1E600A4C816 /* Cocoa.h */ = {
@@ -978,7 +990,7 @@
 	};
 	B568535B11010A6F00A4C816 /* TestHelpers.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1236, 807}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1236, 784}}";
 			sepNavSelRange = "{7, 0}";
 			sepNavVisRange = "{0, 775}";
 		};
@@ -1885,7 +1897,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 52";
 		rLen = 0;
-		rLoc = 1969;
+		rLoc = 2306;
 		rType = 0;
 		vrLen = 2138;
 		vrLoc = 851;
@@ -1895,7 +1907,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 96";
 		rLen = 0;
-		rLoc = 3583;
+		rLoc = 3616;
 		rType = 0;
 		vrLen = 2354;
 		vrLoc = 8107;
@@ -2005,7 +2017,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 52";
 		rLen = 0;
-		rLoc = 1969;
+		rLoc = 2306;
 		rType = 0;
 		vrLen = 2287;
 		vrLoc = 815;
@@ -2195,7 +2207,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 104";
 		rLen = 0;
-		rLoc = 3770;
+		rLoc = 4143;
 		rType = 0;
 		vrLen = 1266;
 		vrLoc = 2546;
@@ -2205,7 +2217,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 102";
 		rLen = 0;
-		rLoc = 3770;
+		rLoc = 4143;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 2544;
@@ -2422,7 +2434,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 102";
 		rLen = 0;
-		rLoc = 3770;
+		rLoc = 4143;
 		rType = 0;
 		vrLen = 1276;
 		vrLoc = 2486;
@@ -2432,7 +2444,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 3825;
+		rLoc = 4198;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 2544;
@@ -2442,7 +2454,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 3825;
+		rLoc = 4198;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 2544;
@@ -2532,7 +2544,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 93";
 		rLen = 0;
-		rLoc = 3536;
+		rLoc = 3909;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 2544;
@@ -2622,7 +2634,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 63";
 		rLen = 0;
-		rLoc = 2452;
+		rLoc = 2825;
 		rType = 0;
 		vrLen = 1601;
 		vrLoc = 1828;
@@ -2811,7 +2823,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 63";
 		rLen = 0;
-		rLoc = 2452;
+		rLoc = 2825;
 		rType = 0;
 		vrLen = 1667;
 		vrLoc = 1792;
@@ -2821,7 +2833,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 3820;
+		rLoc = 4193;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 2486;
@@ -2900,7 +2912,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 93";
 		rLen = 0;
-		rLoc = 3536;
+		rLoc = 3909;
 		rType = 0;
 		vrLen = 1471;
 		vrLoc = 2314;
@@ -2910,7 +2922,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 93";
 		rLen = 0;
-		rLoc = 3536;
+		rLoc = 3909;
 		rType = 0;
 		vrLen = 1593;
 		vrLoc = 2314;
@@ -2930,7 +2942,7 @@
 		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
 		name = "CoreResourceTestCase.h: 36";
 		rLen = 0;
-		rLoc = 923;
+		rLoc = 1086;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 0;
@@ -2940,7 +2952,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 90";
 		rLen = 0;
-		rLoc = 3536;
+		rLoc = 3909;
 		rType = 0;
 		vrLen = 1477;
 		vrLoc = 2486;
@@ -2950,7 +2962,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3559;
+		rLoc = 3932;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 2544;
@@ -2989,7 +3001,7 @@
 		isa = PBXTextBookmark;
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		rLen = 0;
-		rLoc = 3820;
+		rLoc = 4193;
 		rType = 0;
 	};
 	B580130D1153476700DA5921 /* PBXTextBookmark */ = {
@@ -2997,7 +3009,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 109";
 		rLen = 0;
-		rLoc = 3820;
+		rLoc = 4193;
 		rType = 0;
 		vrLen = 108;
 		vrLoc = 3857;
@@ -3017,7 +3029,7 @@
 		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
 		name = "CoreResourceTestCase.h: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 0;
@@ -3027,7 +3039,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 93";
 		rLen = 0;
-		rLoc = 3537;
+		rLoc = 3910;
 		rType = 0;
 		vrLen = 1422;
 		vrLoc = 2547;
@@ -3037,7 +3049,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 94";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 2544;
@@ -3047,7 +3059,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 101";
 		rLen = 0;
-		rLoc = 3559;
+		rLoc = 3932;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 2544;
@@ -3057,7 +3069,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 101";
 		rLen = 0;
-		rLoc = 3559;
+		rLoc = 3932;
 		rType = 0;
 		vrLen = 1359;
 		vrLoc = 2595;
@@ -3067,7 +3079,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 97";
 		rLen = 0;
-		rLoc = 3559;
+		rLoc = 3932;
 		rType = 0;
 		vrLen = 1629;
 		vrLoc = 2267;
@@ -3077,7 +3089,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3559;
+		rLoc = 3932;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 2314;
@@ -3097,7 +3109,7 @@
 		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
 		name = "CoreResourceTestCase.h: 35";
 		rLen = 0;
-		rLoc = 923;
+		rLoc = 1086;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 0;
@@ -3107,7 +3119,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 88";
 		rLen = 0;
-		rLoc = 3536;
+		rLoc = 3909;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 2314;
@@ -3117,7 +3129,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 93";
 		rLen = 0;
-		rLoc = 3770;
+		rLoc = 4143;
 		rType = 0;
 		vrLen = 1582;
 		vrLoc = 1932;
@@ -3127,7 +3139,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1563;
 		vrLoc = 2314;
@@ -3137,7 +3149,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1539;
 		vrLoc = 2376;
@@ -3147,7 +3159,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 104";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 2376;
@@ -3157,7 +3169,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 102";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1673;
 		vrLoc = 2486;
@@ -3178,7 +3190,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 100;
+		rLoc = 110;
 		rType = 1;
 	};
 	B580134611534ED600DA5921 /* PBXTextBookmark */ = {
@@ -3186,7 +3198,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 91";
 		rLen = 0;
-		rLoc = 3555;
+		rLoc = 3928;
 		rType = 0;
 		vrLen = 471;
 		vrLoc = 3244;
@@ -3196,7 +3208,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 109";
 		rLen = 0;
-		rLoc = 3820;
+		rLoc = 4193;
 		rType = 0;
 		vrLen = 280;
 		vrLoc = 3255;
@@ -3226,7 +3238,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 91";
 		rLen = 0;
-		rLoc = 3698;
+		rLoc = 4071;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 2486;
@@ -3236,7 +3248,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 91";
 		rLen = 0;
-		rLoc = 3689;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 2486;
@@ -3246,7 +3258,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1727;
 		vrLoc = 2544;
@@ -3256,7 +3268,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 2209;
@@ -3266,7 +3278,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 100";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1507;
 		vrLoc = 2264;
@@ -3276,7 +3288,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 91";
 		rLen = 0;
-		rLoc = 3555;
+		rLoc = 3928;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 2997;
@@ -3286,7 +3298,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 97";
 		rLen = 0;
-		rLoc = 3820;
+		rLoc = 4193;
 		rType = 0;
 		vrLen = 315;
 		vrLoc = 3185;
@@ -3296,7 +3308,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 97";
 		rLen = 0;
-		rLoc = 3794;
+		rLoc = 4167;
 		rType = 0;
 		vrLen = 1669;
 		vrLoc = 1932;
@@ -3306,7 +3318,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 93";
 		rLen = 0;
-		rLoc = 3761;
+		rLoc = 4134;
 		rType = 0;
 		vrLen = 1353;
 		vrLoc = 0;
@@ -3356,7 +3368,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 102";
 		rLen = 0;
-		rLoc = 4021;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 3119;
@@ -3366,7 +3378,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 91";
 		rLen = 0;
-		rLoc = 3555;
+		rLoc = 3928;
 		rType = 0;
 		vrLen = 353;
 		vrLoc = 3248;
@@ -3376,7 +3388,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 97";
 		rLen = 0;
-		rLoc = 3820;
+		rLoc = 4193;
 		rType = 0;
 		vrLen = 273;
 		vrLoc = 3247;
@@ -3404,7 +3416,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 38;
+		rLoc = 46;
 		rType = 1;
 	};
 	B58013801153522A00DA5921 /* PBXTextBookmark */ = {
@@ -3442,7 +3454,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 39";
 		rLen = 0;
-		rLoc = 966;
+		rLoc = 1278;
 		rType = 0;
 		vrLen = 1768;
 		vrLoc = 543;
@@ -3452,7 +3464,7 @@
 		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
 		name = "CoreResourceTestCase.h: 26";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 830;
 		rType = 0;
 		vrLen = 929;
 		vrLoc = 0;
@@ -3462,7 +3474,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 97";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3772;
 		rType = 0;
 		vrLen = 1961;
 		vrLoc = 1963;
@@ -3472,7 +3484,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 79";
 		rLen = 0;
-		rLoc = 3093;
+		rLoc = 3126;
 		rType = 0;
 		vrLen = 2286;
 		vrLoc = 991;
@@ -3502,7 +3514,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 51";
 		rLen = 0;
-		rLoc = 1694;
+		rLoc = 2031;
 		rType = 0;
 		vrLen = 1773;
 		vrLoc = 545;
@@ -3512,7 +3524,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 77";
 		rLen = 0;
-		rLoc = 2974;
+		rLoc = 2996;
 		rType = 0;
 		vrLen = 1990;
 		vrLoc = 2005;
@@ -3522,7 +3534,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 74";
 		rLen = 0;
-		rLoc = 2730;
+		rLoc = 2752;
 		rType = 0;
 		vrLen = 1990;
 		vrLoc = 2005;
@@ -3532,7 +3544,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 74";
 		rLen = 0;
-		rLoc = 2730;
+		rLoc = 2752;
 		rType = 0;
 		vrLen = 1990;
 		vrLoc = 2005;
@@ -3612,7 +3624,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 65";
 		rLen = 0;
-		rLoc = 2196;
+		rLoc = 2569;
 		rType = 0;
 		vrLen = 1974;
 		vrLoc = 1383;
@@ -3692,7 +3704,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 65";
 		rLen = 0;
-		rLoc = 2196;
+		rLoc = 2569;
 		rType = 0;
 		vrLen = 1973;
 		vrLoc = 1383;
@@ -3702,7 +3714,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 95";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1706;
 		vrLoc = 2041;
@@ -3712,7 +3724,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 95";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1704;
 		vrLoc = 2041;
@@ -3722,7 +3734,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 94";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1669;
 		vrLoc = 2041;
@@ -3732,7 +3744,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 94";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1669;
 		vrLoc = 2041;
@@ -3742,7 +3754,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 94";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1705;
 		vrLoc = 1947;
@@ -3802,7 +3814,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 94";
 		rLen = 0;
-		rLoc = 3554;
+		rLoc = 3927;
 		rType = 0;
 		vrLen = 1675;
 		vrLoc = 1977;
@@ -3812,7 +3824,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 67";
 		rLen = 0;
-		rLoc = 2447;
+		rLoc = 2820;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 1947;
@@ -3822,7 +3834,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 67";
 		rLen = 0;
-		rLoc = 2427;
+		rLoc = 2800;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 1947;
@@ -3862,7 +3874,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 72";
 		rLen = 0;
-		rLoc = 2636;
+		rLoc = 2647;
 		rType = 0;
 		vrLen = 1971;
 		vrLoc = 1689;
@@ -3932,7 +3944,7 @@
 		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
 		name = "CoreResourceSerializationTests.m: 72";
 		rLen = 0;
-		rLoc = 2636;
+		rLoc = 2647;
 		rType = 0;
 		vrLen = 1971;
 		vrLoc = 1689;
@@ -4082,7 +4094,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 67";
 		rLen = 0;
-		rLoc = 2427;
+		rLoc = 2800;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 1947;
@@ -4092,7 +4104,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 61";
 		rLen = 0;
-		rLoc = 2063;
+		rLoc = 2436;
 		rType = 0;
 		vrLen = 1771;
 		vrLoc = 711;
@@ -4102,7 +4114,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 61";
 		rLen = 0;
-		rLoc = 2063;
+		rLoc = 2436;
 		rType = 0;
 		vrLen = 1771;
 		vrLoc = 711;
@@ -4702,7 +4714,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 61";
 		rLen = 0;
-		rLoc = 2063;
+		rLoc = 2436;
 		rType = 0;
 		vrLen = 1745;
 		vrLoc = 737;
@@ -4712,7 +4724,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 4257;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 2125;
@@ -4742,7 +4754,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 107";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 4257;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 2125;
@@ -4872,10 +4884,130 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 101";
 		rLen = 0;
-		rLoc = 3674;
+		rLoc = 4047;
 		rType = 0;
 		vrLen = 1591;
 		vrLoc = 2302;
+	};
+	B580142D11535F3100DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */;
+		name = "MiscBenchmarks.m: 27";
+		rLen = 0;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 364;
+	};
+	B580142E11535F3100DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */;
+		name = "CoreResourceSerializationTests.m: 66";
+		rLen = 0;
+		rLoc = 2323;
+		rType = 0;
+		vrLen = 1946;
+		vrLoc = 2456;
+	};
+	B580142F11535F3100DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 46";
+		rLen = 0;
+		rLoc = 1374;
+		rType = 0;
+		vrLen = 1676;
+		vrLoc = 835;
+	};
+	B580143011535F3100DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B568535B11010A6F00A4C816 /* TestHelpers.m */;
+		name = "TestHelpers.m: 2";
+		rLen = 0;
+		rLoc = 7;
+		rType = 0;
+		vrLen = 775;
+		vrLoc = 0;
+	};
+	B580143111535F3100DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
+		name = "CoreResourceTestCase.h: 27";
+		rLen = 0;
+		rLoc = 830;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 0;
+	};
+	B580143211535F3D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
+		name = "CoreResourceTestCase.h: 27";
+		rLen = 0;
+		rLoc = 830;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 0;
+	};
+	B580143511535F7400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */;
+		name = "CoreResourceTestCase.h: 26";
+		rLen = 0;
+		rLoc = 649;
+		rType = 0;
+		vrLen = 1092;
+		vrLoc = 0;
+	};
+	B580143611535F7400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 46";
+		rLen = 0;
+		rLoc = 1374;
+		rType = 0;
+		vrLen = 1676;
+		vrLoc = 835;
+	};
+	B580143711535F7400DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 42";
+		rLen = 0;
+		rLoc = 1118;
+		rType = 0;
+		vrLen = 1639;
+		vrLoc = 731;
+	};
+	B580143A11535F9D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 42";
+		rLen = 0;
+		rLoc = 1118;
+		rType = 0;
+		vrLen = 1698;
+		vrLoc = 733;
+	};
+	B580143B11535F9D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */;
+		name = "MiscBenchmarks.m: 27";
+		rLen = 0;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 364;
+	};
+	B580143C11535F9D00DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */;
+		name = "MiscBenchmarks.m: 24";
+		rLen = 0;
+		rLoc = 441;
+		rType = 0;
+		vrLen = 947;
+		vrLoc = 364;
 	};
 	B5A66149110DF95400100C9E /* Song.h */ = {
 		uiCtxt = {
@@ -4949,9 +5081,9 @@
 	};
 	B5A9C39C1142AF950007B71C /* CoreResourceSerializationTests.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1164, 4769}}";
-			sepNavSelRange = "{2636, 0}";
-			sepNavVisRange = "{1689, 1971}";
+			sepNavIntBoundsRect = "{{0, 0}, {1164, 4712}}";
+			sepNavSelRange = "{2323, 0}";
+			sepNavVisRange = "{2456, 1946}";
 		};
 	};
 	B5A9C39D1142AF950007B71C /* CoreResourceUpdateTests.m */ = {
@@ -5076,7 +5208,7 @@
 		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
 		name = "CoreResourceTestCase.m: 94";
 		rLen = 0;
-		rLoc = 3536;
+		rLoc = 3909;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 2267;
@@ -5495,8 +5627,8 @@
 	B5E78AC61149AD1A006C73CE /* MiscBenchmarks.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1330}}";
-			sepNavSelRange = "{139, 0}";
-			sepNavVisRange = "{3, 907}";
+			sepNavSelRange = "{441, 0}";
+			sepNavVisRange = "{364, 947}";
 		};
 	};
 	B5EED67A113E2009004DAE9C /* ASIHTTPRequest.h */ = {

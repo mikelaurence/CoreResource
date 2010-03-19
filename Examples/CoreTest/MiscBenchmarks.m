@@ -21,7 +21,7 @@
 
 @implementation MiscBenchmarks
 
-#define ITERATE for (int i = 0; i < 1000000; i++)
+#define ITERATE for (int i = 0; i < 600000; i++)
 
 - (void) setUp {
     [super setUp];
