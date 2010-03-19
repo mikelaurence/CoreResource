@@ -8,7 +8,6 @@
 
 #import "CoreManager.h"
 #import "Reachability.h"
-#import "Artist.h"
 
 @implementation CoreManager
 

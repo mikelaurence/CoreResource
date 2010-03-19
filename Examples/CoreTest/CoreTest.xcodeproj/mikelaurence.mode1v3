@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B58014C41153697600DA5921</string>
+										<string>B55BE55B11536CA20059E974</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -391,7 +391,6 @@
 											<string>B58011AA11532C6D00DA5921</string>
 											<string>B58011AB11532C6D00DA5921</string>
 											<string>B58012BE1153436600DA5921</string>
-											<string>B580134A11534EEC00DA5921</string>
 											<string>B5801390115352FB00DA5921</string>
 											<string>B58013B4115355A400DA5921</string>
 											<string>B58013D01153576700DA5921</string>
@@ -405,9 +404,10 @@
 											<string>B58014931153661400DA5921</string>
 											<string>B58014A51153674C00DA5921</string>
 											<string>B58014B7115368B400DA5921</string>
-											<string>B58014BA115368DF00DA5921</string>
 											<string>B58014BF1153691D00DA5921</string>
-											<string>B58014C01153691D00DA5921</string>
+											<string>B58014DE115369E700DA5921</string>
+											<string>B55BE55911536CA20059E974</string>
+											<string>B55BE55A11536CA20059E974</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -419,14 +419,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1194, 864}}</string>
+								<string>{{0, 0}, {1194, 863}}</string>
 								<key>RubberWindowFrame</key>
 								<string>28 60 1533 963 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>864pt</string>
+							<string>863pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -439,14 +439,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 869}, {1194, 53}}</string>
+								<string>{{0, 868}, {1194, 54}}</string>
 								<key>RubberWindowFrame</key>
 								<string>28 60 1533 963 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>53pt</string>
+							<string>54pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -465,9 +465,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B580118F115323D800DA5921</string>
+				<string>B55BE55C11536CA20059E974</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B5801190115323D800DA5921</string>
+				<string>B55BE55D11536CA20059E974</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -605,12 +605,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B580124911533DED00DA5921</string>
-		<string>B580124A11533DED00DA5921</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/CoreTest/CoreTest.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -635,7 +630,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResourceReadTests.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -652,8 +647,6 @@
 							<string>350pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -693,7 +686,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B5BAC03F10FFE02400D57FCA</string>
-				<string>B5801191115323D800DA5921</string>
+				<string>B55BE55E11536CA20059E974</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

@@ -9,7 +9,7 @@
 #import "CoreDeserializer.h"
 #import "CoreResult.h"
 #import "NSObject+Core.h"
-#import "Artist.h"
+#import "SBJSON.h"
 
 @implementation CoreDeserializer
 

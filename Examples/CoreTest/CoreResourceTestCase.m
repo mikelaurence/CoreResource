@@ -110,6 +110,7 @@ static int dbInc = 1;
     coreManager.logLevel = 2;
     coreManager.useBundleRequests = YES;
     coreManager.bundleRequestDelay = 0.01;
+    [CoreManager setMain:coreManager];
 }
 
 - (void) tearDown {
