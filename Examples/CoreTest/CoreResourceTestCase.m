@@ -115,7 +115,6 @@ static int dbInc = 1;
 - (void) tearDown {
     [coreManager release];
     coreManager = nil;
-    [NSThread sleepForTimeInterval:0.1];
 }
 
 

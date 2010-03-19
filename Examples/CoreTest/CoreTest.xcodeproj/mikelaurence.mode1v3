@@ -280,7 +280,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
+									<integer>7</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResourceReadTests.m</string>
+								<string>CoreResourceTestCase.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreResourceReadTests.m</string>
+										<string>CoreResourceTestCase.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B580149E115366E700DA5921</string>
+										<string>B58014B21153685900DA5921</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -395,7 +395,6 @@
 											<string>B5801390115352FB00DA5921</string>
 											<string>B58013B4115355A400DA5921</string>
 											<string>B58013D01153576700DA5921</string>
-											<string>B58013FF11535BEF00DA5921</string>
 											<string>B580141D11535D6300DA5921</string>
 											<string>B580142E11535F3100DA5921</string>
 											<string>B580143011535F3100DA5921</string>
@@ -406,8 +405,9 @@
 											<string>B58014701153636300DA5921</string>
 											<string>B58014711153636300DA5921</string>
 											<string>B58014931153661400DA5921</string>
-											<string>B580149C115366E700DA5921</string>
-											<string>B580149D115366E700DA5921</string>
+											<string>B58014A51153674C00DA5921</string>
+											<string>B58014B11153685900DA5921</string>
+											<string>B58014AE1153680700DA5921</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -706,7 +706,7 @@
 			<key>WindowToolGUID</key>
 			<string>B5BAC03F10FFE02400D57FCA</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -830,7 +830,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
