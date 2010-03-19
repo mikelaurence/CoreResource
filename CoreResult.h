@@ -13,13 +13,18 @@
 
 @interface CoreResult : NSObject <NSFastEnumeration> {
     id source;
-    NSArray* resources;
-    NSError* error;
+    NSArray *resources;
+    NSArray *resourceIds;
+    NSError *error;
+    
+    NSManagedObjectContext *context;
 }
 
 @property (nonatomic, retain) id source;
 @property (nonatomic, retain) NSArray* resources;
 @property (nonatomic, retain) NSError* error;
+
+@property (nonatomic, retain) NSManagedObjectContext *context;
 
 - (id) initWithResources:(id)resources;
 - (id) initWithSource:(id)source andResources:(id)resources;

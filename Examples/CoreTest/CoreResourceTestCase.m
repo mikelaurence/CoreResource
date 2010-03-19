@@ -91,12 +91,13 @@
     self.delegatesCalled = [NSMutableDictionary dictionary];
 
     coreManager = [[CoreManager alloc] init];
+    coreManager.logLevel = 2;
     coreManager.useBundleRequests = YES;
 }
 
 - (void) setUp {
-    for (Artist* artist in [self allLocalArtists])
-        [[artist managedObjectContext] deleteObject:artist];
+    for (Artist* artist in [Artist findAllLocal])
+        [artist destroyLocal];
 }
 
 - (void) tearDownClass {

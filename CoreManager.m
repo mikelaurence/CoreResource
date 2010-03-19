@@ -123,12 +123,22 @@ static CoreManager* _main;
     }
 }
 
+- (NSManagedObjectContext*)newContext {
+    NSManagedObjectContext* context = [[NSManagedObjectContext alloc] init];
+    [context setPersistentStoreCoordinator:persistentStoreCoordinator];
+    return [context autorelease];
+}
+
 
 - (void) mergeContext:(NSNotification*)notification {
     NSAssert([NSThread mainThread], @"Must be on the main thread!");
-    NSLog(@"=======> PRE MERGED CONTEXT %@: ART: %i", managedObjectContext, [[Artist findAllLocal] resourceCount]);
+    NSLog(@"=======> PRE MERGED CONTEXT %@: ART: %i", managedObjectContext, [Artist countLocal]);
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-    NSLog(@"=======> MERGED CONTEXT %@: ART: %i", managedObjectContext, [[Artist findAllLocal] resourceCount]);
+    NSLog(@"=======> MERGED CONTEXT %@: ART: %i", managedObjectContext, [Artist countLocal]);
+    NSLog(@"\n\nContents: \n\n");
+    for (Artist* a in [Artist findAll]) {
+        NSLog(@"%@: %@", a.name, a);
+    }
 }
 
 

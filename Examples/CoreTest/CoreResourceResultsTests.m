@@ -23,4 +23,12 @@
 - (void) testCoreResultsControllerWithRequestAndSectionKey { GHFail(nil); }
 */
 
+- (void) testFastEnumeration {
+    for (Artist* artist in [Artist findAll])
+        GHAssertTrue([artist isKindOfClass:[Artist class]], nil);
+        
+    for (Artist* artist in [Artist find:$I(-1)])
+        GHFail(@"No objects should be iterated over in [Artist find:-1]");
+}
+
 @end

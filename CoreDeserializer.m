@@ -39,8 +39,7 @@ static NSArray* allowedFormats;
             coreManager = [resourceClass performSelector:@selector(coreManager)];
 
         // Create "scratchpad" object context; we will merge this context into the main context once deserialization is complete
-        managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [managedObjectContext setPersistentStoreCoordinator:[coreManager persistentStoreCoordinator]];
+        managedObjectContext = [coreManager newContext];
         [[NSNotificationCenter defaultCenter] addObserver:self 
             selector:@selector(contextDidSave:) 
             name:NSManagedObjectContextDidSaveNotification 
@@ -70,6 +69,7 @@ static NSArray* allowedFormats;
     When the context saves, send a message to our Core Manager to merge in the updated data
 */
 - (void) contextDidSave:(NSNotification*)notification {
+    NSLog(@"contextDidSave");
     [coreManager performSelectorOnMainThread:@selector(mergeContext:) 
         withObject:notification 
         waitUntilDone:NO];
@@ -83,6 +83,8 @@ static NSArray* allowedFormats;
         CoreResult *result = error == nil ?
             [[CoreResult alloc] initWithSource:source andResources:resources] :
             [[CoreResult alloc] initWithError:error];
+            
+        NSLog(@"Deserialized into CoreResult with source %@, resource count %i", source, [resources count]);
                           
         // Perform on main thread, since UI updates are very likely in delegate calls
         [target performSelector:action withObject:result];

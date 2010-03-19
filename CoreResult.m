@@ -7,6 +7,9 @@
 //
 
 #import "CoreResult.h"
+#import "CoreUtils.h"
+#import "CoreManager.h"
+#import "NSArray+Core.h"
 
 
 @implementation CoreResult
@@ -14,6 +17,7 @@
 @synthesize source;
 @synthesize resources;
 @synthesize error;
+@synthesize context;
 
 - (id) initWithResources:(id)theResources {
     return [self initWithSource:nil andResources:theResources];
@@ -22,8 +26,10 @@
 - (id) initWithSource:(id)theSource andResources:(id)theResources {
     if (self = [super init]) {
         self.source = theSource;
-        self.resources = [theResources isKindOfClass:[NSArray class]] ? 
-            theResources : [NSArray arrayWithObject:theResources];
+        if (YES)
+            resourceIds = [[ToArray(theResources) arrayMappedBySelector:@selector(objectID)] retain];
+        else
+            self.resources = theResources;
     }
     NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
     return self;
@@ -36,7 +42,17 @@
 }
 
 - (CoreResource*) resource {
-    return resources != nil && [resources count] > 0 ? [resources objectAtIndex:0] : nil;
+    return [self resources] != nil && [self resourceCount] > 0 ? [[self resources] objectAtIndex:0] : nil;
+}
+
+- (NSArray*) resources {
+    if (resources == nil && resourceIds != nil) {
+        self.resources = [NSMutableArray arrayWithCapacity:[resourceIds count]];
+        for (NSManagedObjectID *objId in resourceIds)
+            [(NSMutableArray*)resources addObject:[[self context] objectWithID:objId]];
+    }
+        
+    return resources;
 }
 
 - (BOOL) hasAnyResources {
@@ -44,7 +60,13 @@
 }
 
 - (int) resourceCount {
-    return resources != nil ? [resources count] : 0;
+    return [self resources] != nil ? [[self resources] count] : 0;
+}
+
+- (NSManagedObjectContext*) context {
+    if (context == nil)
+        self.context = [[CoreManager main] managedObjectContext];
+    return context;
 }
 
 
@@ -64,6 +86,7 @@
 - (void) dealloc {
     [source release];
     [resources release];
+    [resourceIds release];
     [error release];
     [super dealloc];
 }

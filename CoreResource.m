@@ -294,12 +294,11 @@
         NSMutableArray *resources = [NSMutableArray arrayWithCapacity:[parameters count]];
         for (id item in parameters)
             [resources addObject:[self create:item withOptions:options]];
-
+            
         return resources;
     }
     else {
         // Get managed object context from options or just use default
-        NSLog(@"options: %@", options);
         NSManagedObjectContext* context = [options objectForKey:@"context"];
         if (context == nil)
             context = [self managedObjectContext];
@@ -307,7 +306,7 @@
         // Insert new managed object into context
         CoreResource *resource = [[self alloc] initWithEntity:[self entityDescription] 
             insertIntoManagedObjectContext:context];
-            
+        NSLog(@"will update %@", parameters);
         // Update new object with properties
         [resource update:parameters withOptions:options];
         
@@ -321,7 +320,7 @@
         
         // Log creation
         if ([[self class] coreManager].logLevel > 1) {
-            NSLog(@"Created new %@", self, [resource valueForKey:[self localIdField]]);
+            NSLog(@"Created new %@ [#%@]", self, [resource valueForKey:[self localIdField]]);
             if ([[self class] coreManager].logLevel > 4)
                 NSLog(@"=> %@", resource);
         }
@@ -329,7 +328,7 @@
         // Call didCreate for user-specified create hooks
         [resource didCreate];
         [resource release]; // Newly inserted objects are retained by the context, so no autorelease necessary
-        
+        NSLog(@"RES: %@", resource);
         return resource;
     }
 }
@@ -443,25 +442,25 @@
 
                 // Get relationship options
                 NSDictionary* relationshipOptions = [options objectForKey:relationshipClass];
+                
+                // Get relationship setter
+                SEL relationshipSetter = NSSelectorFromString($S(@"setPrimitive%@", [[relationshipDescription name] capitalizedString]));
 
 
                 // ===== Get related resources from value ===== //
                                 
-                // If the value is a dictionary, use it to create or update an resource
-                if ([value isKindOfClass:[NSDictionary class]])
+                // If the value is a dictionary or array, use it to create or update an resource                
+                if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSArray class]]) {
                     newRelatedResources = [relationshipClass createOrUpdate:value withOptions:options];
-                
-                // If an array, create an array of resources from the contents
-                else if ([value isKindOfClass:[NSArray class]]) {
-                    newRelatedResources = [NSMutableSet setWithCapacity:[value count]];
-                    for (id item in value)
-                        [newRelatedResources addObject:[relationshipClass createOrUpdate:item withOptions:options]];
+                    if ([newRelatedResources isKindOfClass:[NSArray class]])
+                        newRelatedResources = [NSMutableSet setWithArray:newRelatedResources];
                 }
+                
                 // Otherwise, if the value is a resource itself, use it directly
                 else if ([value isKindOfClass:relationshipClass])
                     newRelatedResources = value;
                 
-                
+                NSLog(@"RELATED RES %@: %@", [newRelatedResources class], newRelatedResources);
                 // ===== Apply related resources to self ===== //
                 
                 NSString *rule = [relationshipOptions objectForKey:@"rule"];
@@ -481,8 +480,11 @@
                     }
                     
                     // Default action is to replace the set with no further reprecussions (old resources will still persist)
-                    else
-                        [self setValue:newRelatedResources forKey:field];
+                    else {
+                        NSLog(@"SIMPLE");
+                        [self performSelector:relationshipSetter withObject:newRelatedResources];
+                        NSLog(@"SIMPLE: %@", [self valueForKey:field]);
+                    }
                 }
                 
                 // Singular relationships
@@ -688,6 +690,8 @@
     // Generate (or get templated) fetch request
     NSFetchRequest* fetch = [self fetchRequest:parameters];
     NSError* error = nil;
+    
+    NSLog(@"Count: %i in context %@", [context countForFetchRequest:fetch error:&error], context);
     
     // Perform count
     return [context countForFetchRequest:fetch error:&error];

@@ -71,7 +71,14 @@
 
 #pragma mark -
 #pragma mark Core Data
-- (void)save;
+- (void) save;
+
+/**
+    Creates and returns a new NSManagedObjectContext pointing to the main persistent store
+*/
+- (NSManagedObjectContext*) newContext;
+
+- (void) mergeContext:(NSNotification*)notification;
 
 @end
 
