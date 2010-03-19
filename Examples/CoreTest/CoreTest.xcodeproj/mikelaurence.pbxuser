@@ -101,14 +101,16 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 290679945;
-			PBXWorkspaceStateSaveDate = 290679945;
+			PBXPerProjectTemplateStateSaveDate = 290718696;
+			PBXWorkspaceStateSaveDate = 290718696;
 		};
 		perUserProjectItems = {
 			B52381A11148549900AB02EB = B52381A11148549900AB02EB /* PBXTextBookmark */;
-			B55BE55911536CA20059E974 /* PBXTextBookmark */ = B55BE55911536CA20059E974 /* PBXTextBookmark */;
-			B55BE55A11536CA20059E974 /* PBXTextBookmark */ = B55BE55A11536CA20059E974 /* PBXTextBookmark */;
-			B55BE55B11536CA20059E974 /* PBXTextBookmark */ = B55BE55B11536CA20059E974 /* PBXTextBookmark */;
+			B55BE55911536CA20059E974 = B55BE55911536CA20059E974 /* PBXTextBookmark */;
+			B55BE55A11536CA20059E974 = B55BE55A11536CA20059E974 /* PBXTextBookmark */;
+			B55BE55B11536CA20059E974 = B55BE55B11536CA20059E974 /* PBXTextBookmark */;
+			B55D1F88115403F2009C8B4A /* PBXTextBookmark */ = B55D1F88115403F2009C8B4A /* PBXTextBookmark */;
+			B55D1F8C11540406009C8B4A /* PBXTextBookmark */ = B55D1F8C11540406009C8B4A /* PBXTextBookmark */;
 			B55D27041151530D004F83F6 = B55D27041151530D004F83F6 /* PBXTextBookmark */;
 			B55D272D11515553004F83F6 = B55D272D11515553004F83F6 /* PBXTextBookmark */;
 			B55D272F115155AC004F83F6 = B55D272F115155AC004F83F6 /* PBXTextBookmark */;
@@ -251,6 +253,26 @@
 		rType = 0;
 		vrLen = 1800;
 		vrLoc = 2464;
+	};
+	B55D1F88115403F2009C8B4A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 113";
+		rLen = 0;
+		rLoc = 4186;
+		rType = 0;
+		vrLen = 1801;
+		vrLoc = 2463;
+	};
+	B55D1F8C11540406009C8B4A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */;
+		name = "CoreResourceTestCase.m: 83";
+		rLen = 0;
+		rLoc = 2859;
+		rType = 0;
+		vrLen = 1801;
+		vrLoc = 2463;
 	};
 	B55D26EB11514F25004F83F6 /* TestScript.sh */ = {
 		uiCtxt = {
@@ -544,8 +566,8 @@
 	B56418A311064CBB00D1B038 /* CoreResourceTestCase.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1236, 2318}}";
-			sepNavSelRange = "{4186, 0}";
-			sepNavVisRange = "{2464, 1800}";
+			sepNavSelRange = "{2859, 0}";
+			sepNavVisRange = "{2463, 1801}";
 		};
 	};
 	B56418A511064CFA00D1B038 /* CoreResourceTestCase.h */ = {

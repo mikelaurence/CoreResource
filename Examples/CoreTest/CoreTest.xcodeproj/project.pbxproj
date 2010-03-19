@@ -315,8 +315,7 @@
 				B560DF841150088B00BE843A /* NSStringAdditions.h */,
 				B560DF851150088B00BE843A /* NSStringAdditions.m */,
 			);
-			name = KissXML;
-			path = kissxml;
+			path = KissXML;
 			sourceTree = "<group>";
 		};
 		B568503D1100D03C00A4C816 /* Tests */ = {
