@@ -83,6 +83,7 @@ static NSArray* allowedFormats;
         CoreResult *result = error == nil ?
             [[CoreResult alloc] initWithSource:source andResources:resources] :
             [[CoreResult alloc] initWithError:error];
+        [result faultResourcesWithContext:[resourceClass performSelector:@selector(managedObjectContext)]];
             
         NSLog(@"Deserialized into CoreResult with source %@, resource count %i", source, [resources count]);
                           

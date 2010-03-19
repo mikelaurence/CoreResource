@@ -298,6 +298,7 @@
         return resources;
     }
     else {
+        NSLog(@"\n\nOPTIONS (%@)\n\n%@\n\n", self, options);
         // Get managed object context from options or just use default
         NSManagedObjectContext* context = [options objectForKey:@"context"];
         if (context == nil)
@@ -306,7 +307,7 @@
         // Insert new managed object into context
         CoreResource *resource = [[self alloc] initWithEntity:[self entityDescription] 
             insertIntoManagedObjectContext:context];
-        NSLog(@"will update %@", parameters);
+
         // Update new object with properties
         [resource update:parameters withOptions:options];
         
@@ -328,7 +329,7 @@
         // Call didCreate for user-specified create hooks
         [resource didCreate];
         [resource release]; // Newly inserted objects are retained by the context, so no autorelease necessary
-        NSLog(@"RES: %@", resource);
+
         return resource;
     }
 }
@@ -357,6 +358,7 @@
         
         // If there is an ID, attempt to find existing record
         if (resourceId != nil) {
+            NSLog(@"FIND %@ in context %@", self, [options objectForKey:@"context"]);
             CoreResult* findResult = [self findLocal:resourceId inContext:[options objectForKey:@"context"]];
 
             // If there is a result, update it (if necessary) instead of creating it
@@ -426,7 +428,6 @@
             localField = [[self class] localNameForRemoteField:field];
         
         NSPropertyDescription *propertyDescription = [[self class] propertyDescriptionForField:localField inModel:[self class]];
-        //NSLog(@"Property description for %@.%@ is %@", [self class], field, propertyDescription);
         
         if (propertyDescription != nil) {
             id value = [dict objectForKey:field];
@@ -443,9 +444,6 @@
                 // Get relationship options
                 NSDictionary* relationshipOptions = [options objectForKey:relationshipClass];
                 
-                // Get relationship setter
-                SEL relationshipSetter = NSSelectorFromString($S(@"setPrimitive%@", [[relationshipDescription name] capitalizedString]));
-
 
                 // ===== Get related resources from value ===== //
                                 
@@ -467,6 +465,11 @@
                 
                 // To-many relationships
                 if ([relationshipDescription isToMany]) {
+                
+                    NSLog(@"==============");
+                    NSLog(@"MY CONTEXT: %@", [self managedObjectContext]);
+                    for (NSManagedObject* obj in newRelatedResources)
+                        NSLog(@"RELATED CONTEXT: %@", [obj managedObjectContext]);
                     
                     // If rule is to add, append new objects to existing
                     if ([rule isEqualToString:@"append"])
@@ -481,8 +484,13 @@
                     
                     // Default action is to replace the set with no further reprecussions (old resources will still persist)
                     else {
-                        NSLog(@"SIMPLE");
-                        [self performSelector:relationshipSetter withObject:newRelatedResources];
+                        NSLog(@"SIMPLE: %@", field);
+                        @try {
+                        [self setValue:newRelatedResources forKey:field];
+                        }
+                        @catch (NSException *exception) {
+                            NSLog(@"EXCEPTION: Caught %@: %@", [exception name], [exception reason]);
+                        }
                         NSLog(@"SIMPLE: %@", [self valueForKey:field]);
                     }
                 }
@@ -574,7 +582,7 @@
 
 + (CoreResult*) findLocal:(id)resourceId inContext:(NSManagedObjectContext*)context {
     return [self findAllLocal:$D(resourceId, [self localIdField], $S(@"find%@", NSStringFromClass(self)), @"$template")
-        inContext:context != nil ? context : [self managedObjectContext]];
+        inContext:context];
 }
 
 + (CoreResult*) findAllLocal {
@@ -594,7 +602,10 @@
     NSError* error = nil;
     
     // Perform fetch
+    NSLog(@"FETCH IN CONTEXT %@", context);
     NSArray* resources = [context executeFetchRequest:fetch error:&error];
+    for (NSManagedObject* obj in resources)
+        NSLog(@"RESULT CONTEXT %@", [obj managedObjectContext]);
 
     CoreResult* result = [[[CoreResult alloc] initWithResources:resources] autorelease];
     if (error != nil)

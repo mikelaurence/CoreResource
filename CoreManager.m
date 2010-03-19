@@ -135,7 +135,7 @@ static CoreManager* _main;
     NSLog(@"=======> PRE MERGED CONTEXT %@: ART: %i", managedObjectContext, [Artist countLocal]);
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
     NSLog(@"=======> MERGED CONTEXT %@: ART: %i", managedObjectContext, [Artist countLocal]);
-    NSLog(@"\n\nContents: \n\n");
+    NSLog(@"\n\nCONTEXT Contents: \n\n");
     for (Artist* a in [Artist findAll]) {
         NSLog(@"%@: %@", a.name, a);
     }

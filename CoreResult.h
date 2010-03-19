@@ -17,14 +17,14 @@
     NSArray *resourceIds;
     NSError *error;
     
-    NSManagedObjectContext *context;
+    NSManagedObjectContext *faultContext;
 }
 
 @property (nonatomic, retain) id source;
 @property (nonatomic, retain) NSArray* resources;
 @property (nonatomic, retain) NSError* error;
 
-@property (nonatomic, retain) NSManagedObjectContext *context;
+@property (nonatomic, retain) NSManagedObjectContext *faultContext;
 
 - (id) initWithResources:(id)resources;
 - (id) initWithSource:(id)source andResources:(id)resources;
@@ -38,5 +38,8 @@
 
 - (BOOL) hasAnyResources;
 - (int) resourceCount;
+
+- (void) faultResourcesWithContext:(NSManagedObjectContext*)context;
+
 
 @end

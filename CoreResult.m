@@ -17,7 +17,7 @@
 @synthesize source;
 @synthesize resources;
 @synthesize error;
-@synthesize context;
+@synthesize faultContext;
 
 - (id) initWithResources:(id)theResources {
     return [self initWithSource:nil andResources:theResources];
@@ -26,10 +26,7 @@
 - (id) initWithSource:(id)theSource andResources:(id)theResources {
     if (self = [super init]) {
         self.source = theSource;
-        if (YES)
-            resourceIds = [[ToArray(theResources) arrayMappedBySelector:@selector(objectID)] retain];
-        else
-            self.resources = theResources;
+        self.resources = theResources;
     }
     NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
     return self;
@@ -41,15 +38,24 @@
     return self;
 }
 
+- (void) faultResourcesWithContext:(NSManagedObjectContext*)context {
+    self.faultContext = context;
+    
+    // Set resourceIds array and release resources; when the resources are next requested, they 
+    // will be re-fetched from the fault context
+    resourceIds = [[ToArray(resources) arrayMappedBySelector:@selector(objectID)] retain];
+    self.resources = nil;
+}
+
 - (CoreResource*) resource {
     return [self resources] != nil && [self resourceCount] > 0 ? [[self resources] objectAtIndex:0] : nil;
 }
 
 - (NSArray*) resources {
-    if (resources == nil && resourceIds != nil) {
+    if (resources == nil && resourceIds != nil && faultContext != nil) {
         self.resources = [NSMutableArray arrayWithCapacity:[resourceIds count]];
         for (NSManagedObjectID *objId in resourceIds)
-            [(NSMutableArray*)resources addObject:[[self context] objectWithID:objId]];
+            [(NSMutableArray*)resources addObject:[faultContext objectWithID:objId]];
     }
         
     return resources;
@@ -61,12 +67,6 @@
 
 - (int) resourceCount {
     return [self resources] != nil ? [[self resources] count] : 0;
-}
-
-- (NSManagedObjectContext*) context {
-    if (context == nil)
-        self.context = [[CoreManager main] managedObjectContext];
-    return context;
 }
 
 
