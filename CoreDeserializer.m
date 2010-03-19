@@ -179,7 +179,7 @@ static NSArray* allowedFormats;
     [format release];
     [coreManager release];
     [managedObjectContext release];
-    [error release];
+    //[error release];
     [resources release];
     [target release];
     [super dealloc];

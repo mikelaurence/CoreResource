@@ -23,6 +23,7 @@
 - (NSDictionary*) artistData:(int)index;
 - (void) loadAllArtists;
 - (Artist*) loadArtist:(int)index;
+- (Artist*) loadArtist:(int)index inContext:(NSManagedObjectContext*)context;
 - (NSArray*) allLocalArtists;
 - (void) validateFirstArtist:(Artist*)artist;
 - (void) validateSecondArtist:(Artist*)artist;
@@ -32,5 +33,6 @@
 #pragma mark -
 #pragma mark Sorting
 NSInteger ascendingSort(id obj1, id obj2, void *key);
+
 
 @end

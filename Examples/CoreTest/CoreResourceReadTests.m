@@ -18,7 +18,7 @@
     [super setUp];
 }
 
-- (BOOL)shouldRunOnMainThread { return NO; }
+- (BOOL)shouldRunOnMainThread { return YES; }
 
 #pragma mark -
 #pragma mark Read
@@ -145,7 +145,6 @@
 
 - (void) testFindAllRemote {
     [Artist findAllRemote];
-    [NSThread sleepForTimeInterval:0.1];
 
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
     [self validateFirstArtist:[[self allLocalArtists] objectAtIndex:0]];

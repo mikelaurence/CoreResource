@@ -63,7 +63,7 @@
 
 - (void) testDeserializationContextWorkflow {
 
-    [Artist create:[self artistData:0]]; // Create in default context
+    [self loadArtist:0]; // Create in default context
     GHAssertEquals((NSInteger) [Artist countLocal], 1, nil); // Default context should have Artist A
 
     // Create test context
@@ -71,43 +71,29 @@
     testContext = [[coreManager newContext] retain];
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 1, nil); // Test context should be the same as the default
     
-    NSLog(@"Merge policies: %@ %@", [coreManager.managedObjectContext mergePolicy], [testContext mergePolicy]);
-    
-    [Artist create:[self artistData:1]]; // Create in default context
+    [self loadArtist:1]; // Create in default context
     GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Default context should now have A & B
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 1, nil); // Test context should only have A
     
-    [Artist create:[self artistData:2] withOptions:$D(testContext, @"context")]; // Create in test context
+    [self loadArtist:2 inContext:testContext]; // Create in test context
     GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Default context should still only A & B
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Test context should now have A & C
     
     // Register for save notification
-    /*
     [[NSNotificationCenter defaultCenter] addObserver:self 
         selector:@selector(contextDidSave:) 
         name:NSManagedObjectContextDidSaveNotification 
         object:testContext];
-        */
         
     // Save test context
     NSError *error = nil;
-    NSLog(@"Artists in main context: %@", [[[Artist findAllLocal] resources] arrayMappedBySelector:@selector(name)]);
-    NSLog(@"Artists in test context: %@", [[[Artist findAllLocal:nil inContext:testContext] resources] arrayMappedBySelector:@selector(name)]);
     [testContext save:&error];
-    
-    NSLog(@"Artists in main context: %@", [[[Artist findAllLocal] resources] arrayMappedBySelector:@selector(name)]);
-    NSLog(@"Artists in test context: %@", [[[Artist findAllLocal:nil inContext:testContext] resources] arrayMappedBySelector:@selector(name)]);
 }
 
 - (void) contextDidSave:(NSNotification*)notification {
-    NSLog(@"Artists in main context: %@", [[[Artist findAllLocal] resources] arrayMappedBySelector:@selector(name)]);
-    NSLog(@"Artists in test context: %@", [[[Artist findAllLocal:nil inContext:testContext] resources] arrayMappedBySelector:@selector(name)]);
-
-    GHAssertEquals((NSInteger) [Artist countLocal], 2, nil); // Default context should still only have A & B b/c we haven't merged yet
-    GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Test context shouldn't have changed
-    
     // Merge test context into old
     [coreManager mergeContext:notification];
+
     GHAssertEquals((NSInteger) [Artist countLocal], 3, nil); // Default context should now have all three: A, B, & C
     GHAssertEquals((NSInteger) [Artist countLocal:nil inContext:testContext], 2, nil); // Test context should still only have A & C
     

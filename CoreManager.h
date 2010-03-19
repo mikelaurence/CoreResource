@@ -57,7 +57,8 @@
 + (CoreManager*) main;
 + (void) setMain: (CoreManager*)newMain;
 
-- (NSString *)applicationDocumentsDirectory;
+- (id) initWithOptions:(NSDictionary*)options;
+- (NSString*)applicationDocumentsDirectory;
 
 #pragma mark -
 #pragma mark Networking

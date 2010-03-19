@@ -33,7 +33,11 @@
 }
 
 - (Artist*) loadArtist:(int)index {
-    Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:[coreManager managedObjectContext]];
+    return [self loadArtist:index inContext:[coreManager managedObjectContext]];
+}
+
+- (Artist*) loadArtist:(int)index inContext:(NSManagedObjectContext*)context {
+    Artist* artist = [NSEntityDescription insertNewObjectForEntityForName:@"Artist" inManagedObjectContext:context];
     NSDictionary* dict = [self artistData:index];
     artist.resourceId = [dict objectForKey:@"id"];
     artist.name = [dict objectForKey:@"name"];
@@ -45,7 +49,7 @@
     NSMutableSet* songs = [NSMutableSet set];
     if (songsArray) {
         for (NSDictionary* dict in songsArray) {
-            Song* song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:[coreManager managedObjectContext]];
+            Song* song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:context];
             song.resourceId = [dict objectForKey:@"id"];
             song.name = [dict objectForKey:@"name"];
             [songs addObject:song];
@@ -87,22 +91,13 @@
 #pragma mark -
 #pragma mark GHUnit Configuration
 
-- (void) setUpClass {
-    self.delegatesCalled = [NSMutableDictionary dictionary];
-
-    coreManager = [[CoreManager alloc] init];
+- (void) setUp {
+    coreManager = [[CoreManager alloc] initWithOptions:$D($S(@"db-%i.sqlite", [NSDate timeIntervalSinceReferenceDate]), @"dbName")];
     coreManager.logLevel = 2;
     coreManager.useBundleRequests = YES;
 }
 
-- (void) setUp {
-    for (Artist* artist in [Artist findAllLocal])
-        [artist destroyLocal];
-    for (Song* song in [Song findAllLocal])
-        [song destroyLocal];
-}
-
-- (void) tearDownClass {
+- (void) tearDown {
     [coreManager release];
     coreManager = nil;
 }

@@ -29,6 +29,10 @@ static CoreManager* _main;
 #pragma mark Configuration
 
 - (id) init {
+    return [self initWithOptions:nil];
+}
+
+- (id) initWithOptions:(NSDictionary*)options {
     if (self = [super init]) {
         if (_main == nil)
             _main = self;
@@ -54,7 +58,9 @@ static CoreManager* _main;
         managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
         
         // Create persistent store coordinator
-        NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"application.sqlite"]];        
+        NSString *dbName = [options objectForKey:@"dbName"];
+        NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] 
+            stringByAppendingPathComponent: dbName != nil ? dbName : @"coreresource.sqlite"]];
         NSError *error = nil;
         persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
         if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {

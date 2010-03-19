@@ -33,8 +33,9 @@
 }
 
 - (id) initWithError:(NSError*)theError {
-    if (self = [super init])
+    if (self = [super init]) {
         error = [theError retain];
+    }
     return self;
 }
 
