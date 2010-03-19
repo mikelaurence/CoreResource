@@ -280,7 +280,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
+									<integer>12</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreResourceSerializationTests.m</string>
+								<string>CoreResourceReadTests.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreResourceSerializationTests.m</string>
+										<string>CoreResourceReadTests.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B580138D1153526300DA5921</string>
+										<string>B58013D5115357A900DA5921</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -384,8 +384,6 @@
 											<string>B55D286B11517FA5004F83F6</string>
 											<string>B55D286C11517FA5004F83F6</string>
 											<string>B55D287611517FC7004F83F6</string>
-											<string>B55D28C211518FED004F83F6</string>
-											<string>B5B2607A115293D6005399C5</string>
 											<string>B5B261841152F02F005399C5</string>
 											<string>B5B261851152F02F005399C5</string>
 											<string>B5B261C51152F787005399C5</string>
@@ -395,19 +393,21 @@
 											<string>B58011A911532C6D00DA5921</string>
 											<string>B58011AA11532C6D00DA5921</string>
 											<string>B58011AB11532C6D00DA5921</string>
-											<string>B58011BC11532FBF00DA5921</string>
 											<string>B580122611533B8300DA5921</string>
 											<string>B58012BE1153436600DA5921</string>
-											<string>B58012D71153447300DA5921</string>
-											<string>B58012D91153447300DA5921</string>
-											<string>B58012E81153458700DA5921</string>
 											<string>B580134A11534EEC00DA5921</string>
 											<string>B580134B11534EEC00DA5921</string>
-											<string>B58013731153515F00DA5921</string>
-											<string>B58013821153522B00DA5921</string>
 											<string>B58013841153522B00DA5921</string>
-											<string>B580138B1153526300DA5921</string>
-											<string>B580138C1153526300DA5921</string>
+											<string>B5801390115352FB00DA5921</string>
+											<string>B58013B4115355A400DA5921</string>
+											<string>B58013BB115355F500DA5921</string>
+											<string>B58013BC115355F500DA5921</string>
+											<string>B58013C5115356DC00DA5921</string>
+											<string>B58013CB1153575900DA5921</string>
+											<string>B58013CF1153576700DA5921</string>
+											<string>B58013D01153576700DA5921</string>
+											<string>B58013D3115357A300DA5921</string>
+											<string>B58013CC1153575900DA5921</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -607,10 +607,10 @@
 	<array>
 		<string>B580124911533DED00DA5921</string>
 		<string>B580124A11533DED00DA5921</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>B5BAC03F10FFE02400D57FCA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/CoreTest/CoreTest.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -954,7 +954,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1325, 604}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1838 274 1325 645 1680 -30 1920 1080 </string>
+								<string>1778 273 1325 645 1680 -30 1920 1080 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -983,11 +983,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>1838 274 1325 645 1680 -30 1920 1080 </string>
+			<string>1778 273 1325 645 1680 -30 1920 1080 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

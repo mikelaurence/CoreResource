@@ -75,7 +75,7 @@
 - (void) testFindAllWithAllLocalHits { 
     // Pre-fetch all artists
     [self loadAllArtists];
-    
+
     CoreResult* result = [Artist findAll];
     GHAssertEquals((NSInteger) [result resourceCount], 3, nil);
     
@@ -145,6 +145,7 @@
 
 - (void) testFindAllRemote {
     [Artist findAllRemote];
+    [NSThread sleepForTimeInterval:0.1];
 
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 3, nil);
     [self validateFirstArtist:[[self allLocalArtists] objectAtIndex:0]];

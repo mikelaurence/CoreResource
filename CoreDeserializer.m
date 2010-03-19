@@ -165,7 +165,7 @@ static NSArray* allowedFormats;
 - (id) resourcesFromString:(NSString*)string { return nil; }
 
 - (NSArray*) resourcesFromCollection:(id)collection {
-    return [resourceClass performSelector:@selector(create:withOptions:)
+    return [resourceClass performSelector:@selector(createOrUpdate:withOptions:)
         withObject:collection withObject:$D(managedObjectContext, @"context", $B(NO), @"timestamp")];
 }
 

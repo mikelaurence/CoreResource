@@ -57,6 +57,9 @@
         artist.songs = songs;
     }
     
+    NSError *error = nil;
+    [context save:&error];
+    
     return artist;
 }
 
@@ -64,6 +67,7 @@
     NSError* error = nil;
     NSArray* artists = [[Artist managedObjectContext] executeFetchRequest:[Artist fetchRequestWithSort:@"resourceId ASC" andPredicate:nil] error:&error];
     GHAssertNULL(error, @"There should be no errors in the allLocalArtists convenience method");
+    NSLog(@"%i local artists", [artists count]);
     return artists != nil ? artists : [NSArray array];
 }
 

@@ -28,7 +28,7 @@
         source = [theSource retain];
         resources = [theResources retain];
     }
-    NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
+    //NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
     return self;
 }
 
@@ -36,6 +36,7 @@
     if (self = [super init]) {
         error = [theError retain];
     }
+    NSLog(@"CoreResult with error: %@", error);
     return self;
 }
 

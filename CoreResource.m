@@ -298,7 +298,6 @@
         return resources;
     }
     else {
-        NSLog(@"\n\nOPTIONS (%@)\n\n%@\n\n", self, options);
         // Get managed object context from options or just use default
         NSManagedObjectContext* context = [options objectForKey:@"context"];
         if (context == nil)
@@ -321,7 +320,7 @@
         
         // Log creation
         if ([[self class] coreManager].logLevel > 1) {
-            NSLog(@"Created new %@ [#%@]", self, [resource valueForKey:[self localIdField]]);
+            NSLog(@"Created new %@ [#%@] in context %@", self, [resource valueForKey:[self localIdField]], context);
             if ([[self class] coreManager].logLevel > 4)
                 NSLog(@"=> %@", resource);
         }
@@ -358,8 +357,8 @@
         
         // If there is an ID, attempt to find existing record
         if (resourceId != nil) {
-            NSLog(@"FIND %@ in context %@", self, [options objectForKey:@"context"]);
             CoreResult* findResult = [self findLocal:resourceId inContext:[options objectForKey:@"context"]];
+            NSLog(@"FIND %@ [#%@] in context %@ (FOUND %i)", self, resourceId, [options objectForKey:@"context"], [findResult resourceCount]);
 
             // If there is a result, update it (if necessary) instead of creating it
             if ([findResult resourceCount] == 1) {
