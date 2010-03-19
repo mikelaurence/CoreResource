@@ -138,13 +138,8 @@ static CoreManager* _main;
 
 - (void) mergeContext:(NSNotification*)notification {
     NSAssert([NSThread mainThread], @"Must be on the main thread!");
-    NSLog(@"=======> PRE MERGED CONTEXT %@: ART: %i", managedObjectContext, [Artist countLocal]);
     [managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-    NSLog(@"=======> MERGED CONTEXT %@: ART: %i", managedObjectContext, [Artist countLocal]);
-    NSLog(@"\n\nCONTEXT Contents: \n\n");
-    for (Artist* a in [Artist findAll]) {
-        NSLog(@"%@: %@", a.name, a);
-    }
+    NSLog(@"\n\nMerged context, now has contents:\n\n %@ \n\n", [[Artist findAllLocal] resources]);
 }
 
 

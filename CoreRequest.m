@@ -20,9 +20,10 @@
     self.bundleDataResult = [NSString stringWithContentsOfFile:
             [[NSBundle mainBundle] pathForResource:bundleDataPath ofType:@"json"] 
         encoding:NSUTF8StringEncoding error:&parseError];
-                
+
     if (parseError == nil) {
         if (didFinishSelector && ![self isCancelled] && [delegate respondsToSelector:didFinishSelector]) {
+            NSLog(@"FINISH %@ %@ %@ %@", bundleDataPath, delegate, NSStringFromSelector(didFinishSelector), self.bundleDataResult);
             if ([CoreManager main].bundleRequestDelay == 0)
                 [delegate performSelector:didFinishSelector withObject:self];
             else {

@@ -80,8 +80,6 @@ static NSArray* allowedFormats;
             [[CoreResult alloc] initWithSource:source andResources:resources] :
             [[CoreResult alloc] initWithError:error];
         [result faultResourcesWithContext:[resourceClass performSelector:@selector(managedObjectContext)]];
-            
-        NSLog(@"Deserialized into CoreResult with source %@, resource count %i", source, [resources count]);
                           
         // Perform on main thread, since UI updates are very likely in delegate calls
         [target performSelector:action withObject:result];

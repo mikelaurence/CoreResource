@@ -26,7 +26,7 @@
 - (id) initWithSource:(id)theSource andResources:(id)theResources {
     if (self = [super init]) {
         source = [theSource retain];
-        resources = [theResources retain];
+        resources = [ToArray(theResources) retain];
     }
     //NSLog(@"CoreResult: source: %@, theResources: %i, self.resources: %i", source, [theResources count], [self.resources count]);
     return self;

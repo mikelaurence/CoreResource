@@ -659,9 +659,8 @@
     deserializer.action = request.coreSelector;
     [[[self coreManager] deserialzationQueue] addOperation:deserializer];
     [deserializer release];
-    NSLog(@"===> done with findRemoteDidFinish (queue: %@, operations: %@)", 
-        [[self coreManager] deserialzationQueue], [[[self coreManager] deserialzationQueue] operations] );
-    //[[[self coreManager] deserialzationQueue] waitUntilAllOperationsAreFinished];
+    //NSLog(@"===> done with findRemoteDidFinish (queue: %@, operations: %@)", 
+    //    [[self coreManager] deserialzationQueue], [[[self coreManager] deserialzationQueue] operations] );
 }
 
 + (void) findRemoteDidFail:(CoreRequest*)request {
