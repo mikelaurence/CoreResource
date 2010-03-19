@@ -14,7 +14,7 @@
 @implementation CoreResourceReadTests
 
 
-- (BOOL)shouldRunOnMainThread { return YES; }
+- (BOOL)shouldRunOnMainThread { return NO; }
 
 #pragma mark -
 #pragma mark Read
