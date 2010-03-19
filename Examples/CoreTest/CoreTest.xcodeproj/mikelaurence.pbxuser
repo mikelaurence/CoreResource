@@ -453,6 +453,8 @@
 			B580140B11535C4700DA5921 /* PBXTextBookmark */ = B580140B11535C4700DA5921 /* PBXTextBookmark */;
 			B580140C11535C4700DA5921 /* PBXTextBookmark */ = B580140C11535C4700DA5921 /* PBXTextBookmark */;
 			B580140D11535C5100DA5921 /* PBXTextBookmark */ = B580140D11535C5100DA5921 /* PBXTextBookmark */;
+			B580140E11535CA700DA5921 /* PBXTextBookmark */ = B580140E11535CA700DA5921 /* PBXTextBookmark */;
+			B580140F11535CB900DA5921 /* PBXTextBookmark */ = B580140F11535CB900DA5921 /* PBXTextBookmark */;
 			B5A9C3A61142AF9F0007B71C = B5A9C3A61142AF9F0007B71C /* PBXTextBookmark */;
 			B5B2606F1152934C005399C5 = B5B2606F1152934C005399C5 /* PBXTextBookmark */;
 			B5B2607A115293D6005399C5 = B5B2607A115293D6005399C5 /* PBXTextBookmark */;
@@ -1884,7 +1886,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 159";
 		rLen = 0;
-		rLoc = 5888;
+		rLoc = 5929;
 		rType = 0;
 		vrLen = 1826;
 		vrLoc = 4489;
@@ -1894,7 +1896,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 160";
 		rLen = 0;
-		rLoc = 6094;
+		rLoc = 6135;
 		rType = 0;
 		vrLen = 1830;
 		vrLoc = 4531;
@@ -1954,7 +1956,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 156";
 		rLen = 0;
-		rLoc = 5695;
+		rLoc = 5736;
 		rType = 0;
 		vrLen = 1683;
 		vrLoc = 1176;
@@ -1964,7 +1966,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 164";
 		rLen = 0;
-		rLoc = 6094;
+		rLoc = 6135;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 4602;
@@ -1994,7 +1996,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 164";
 		rLen = 0;
-		rLoc = 6094;
+		rLoc = 6135;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 4602;
@@ -2371,7 +2373,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 164";
 		rLen = 0;
-		rLoc = 6094;
+		rLoc = 6135;
 		rType = 0;
 		vrLen = 1816;
 		vrLoc = 4680;
@@ -2451,7 +2453,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 117";
 		rLen = 0;
-		rLoc = 4023;
+		rLoc = 4064;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 3228;
@@ -2461,7 +2463,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 112";
 		rLen = 0;
-		rLoc = 3920;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1685;
 		vrLoc = 3293;
@@ -2471,7 +2473,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 122";
 		rLen = 0;
-		rLoc = 4440;
+		rLoc = 4481;
 		rType = 0;
 		vrLen = 1751;
 		vrLoc = 3545;
@@ -2481,7 +2483,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 125";
 		rLen = 0;
-		rLoc = 4468;
+		rLoc = 4509;
 		rType = 0;
 		vrLen = 1751;
 		vrLoc = 3545;
@@ -2491,7 +2493,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 112";
 		rLen = 0;
-		rLoc = 3920;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1751;
 		vrLoc = 3545;
@@ -2501,7 +2503,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 127";
 		rLen = 0;
-		rLoc = 4561;
+		rLoc = 4602;
 		rType = 0;
 		vrLen = 1657;
 		vrLoc = 3642;
@@ -3315,7 +3317,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 147";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1776;
 		vrLoc = 4676;
@@ -3325,7 +3327,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 161";
 		rLen = 0;
-		rLoc = 5995;
+		rLoc = 6036;
 		rType = 0;
 		vrLen = 1781;
 		vrLoc = 4676;
@@ -3521,7 +3523,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 147";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1781;
 		vrLoc = 4676;
@@ -3601,7 +3603,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 150";
 		rLen = 0;
-		rLoc = 5556;
+		rLoc = 5597;
 		rType = 0;
 		vrLen = 1781;
 		vrLoc = 4676;
@@ -3611,7 +3613,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 148";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 4105;
@@ -3621,7 +3623,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 148";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 4105;
@@ -3651,7 +3653,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 148";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 4105;
@@ -3661,7 +3663,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 148";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 4105;
@@ -3731,7 +3733,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 148";
 		rLen = 0;
-		rLoc = 5434;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 4105;
@@ -3741,7 +3743,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 83";
 		rLen = 0;
-		rLoc = 2827;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 1603;
 		vrLoc = 1695;
@@ -3751,7 +3753,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 83";
 		rLen = 0;
-		rLoc = 2827;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 1599;
 		vrLoc = 1695;
@@ -3761,7 +3763,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 84";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2935;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 1869;
@@ -3771,7 +3773,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 84";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2935;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 1869;
@@ -3921,7 +3923,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 79";
 		rLen = 0;
-		rLoc = 2669;
+		rLoc = 2710;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 1735;
@@ -3931,7 +3933,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 79";
 		rLen = 0;
-		rLoc = 2668;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1642;
 		vrLoc = 1735;
@@ -3941,7 +3943,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 79";
 		rLen = 0;
-		rLoc = 2668;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1642;
 		vrLoc = 1735;
@@ -4051,7 +4053,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 77";
 		rLen = 0;
-		rLoc = 2668;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 1869;
@@ -4131,7 +4133,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 83";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2935;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 1869;
@@ -4141,7 +4143,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 83";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2935;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 1869;
@@ -4151,7 +4153,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 56";
 		rLen = 0;
-		rLoc = 1909;
+		rLoc = 1950;
 		rType = 0;
 		vrLen = 1731;
 		vrLoc = 842;
@@ -4161,7 +4163,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 50";
 		rLen = 0;
-		rLoc = 1597;
+		rLoc = 1638;
 		rType = 0;
 		vrLen = 1731;
 		vrLoc = 842;
@@ -4241,7 +4243,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 49";
 		rLen = 0;
-		rLoc = 1474;
+		rLoc = 1515;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 842;
@@ -4251,7 +4253,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 51";
 		rLen = 0;
-		rLoc = 1602;
+		rLoc = 1643;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 840;
@@ -4261,7 +4263,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 44";
 		rLen = 0;
-		rLoc = 1239;
+		rLoc = 1280;
 		rType = 0;
 		vrLen = 1743;
 		vrLoc = 840;
@@ -4271,7 +4273,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 44";
 		rLen = 0;
-		rLoc = 1239;
+		rLoc = 1280;
 		rType = 0;
 		vrLen = 1741;
 		vrLoc = 840;
@@ -4281,7 +4283,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 45";
 		rLen = 0;
-		rLoc = 1351;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 840;
@@ -4291,7 +4293,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 45";
 		rLen = 0;
-		rLoc = 1351;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 840;
@@ -4381,7 +4383,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 45";
 		rLen = 0;
-		rLoc = 1351;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 840;
@@ -4391,7 +4393,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 45";
 		rLen = 0;
-		rLoc = 1351;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 840;
@@ -4401,7 +4403,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 45";
 		rLen = 0;
-		rLoc = 1351;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 840;
@@ -4411,7 +4413,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 49";
 		rLen = 0;
-		rLoc = 1470;
+		rLoc = 1511;
 		rType = 0;
 		vrLen = 1783;
 		vrLoc = 840;
@@ -4421,7 +4423,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 51";
 		rLen = 0;
-		rLoc = 1597;
+		rLoc = 1638;
 		rType = 0;
 		vrLen = 1783;
 		vrLoc = 840;
@@ -4621,7 +4623,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 51";
 		rLen = 0;
-		rLoc = 1597;
+		rLoc = 1638;
 		rType = 0;
 		vrLen = 1783;
 		vrLoc = 840;
@@ -4631,7 +4633,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 52";
 		rLen = 0;
-		rLoc = 1602;
+		rLoc = 1643;
 		rType = 0;
 		vrLen = 1777;
 		vrLoc = 840;
@@ -4641,10 +4643,30 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 49";
 		rLen = 0;
-		rLoc = 1470;
+		rLoc = 1511;
 		rType = 0;
 		vrLen = 1731;
 		vrLoc = 840;
+	};
+	B580140E11535CA700DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
+		name = "CoreResourceReadTests.m: 28";
+		rLen = 0;
+		rLoc = 680;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 0;
+	};
+	B580140F11535CB900DA5921 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
+		name = "CoreResourceReadTests.m: 28";
+		rLen = 0;
+		rLoc = 680;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 0;
 	};
 	B5A66149110DF95400100C9E /* Song.h */ = {
 		uiCtxt = {
@@ -4704,9 +4726,9 @@
 	};
 	B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1284, 3477}}";
-			sepNavSelRange = "{1470, 0}";
-			sepNavVisRange = "{840, 1731}";
+			sepNavIntBoundsRect = "{{0, 0}, {1284, 3534}}";
+			sepNavSelRange = "{680, 0}";
+			sepNavVisRange = "{0, 1218}";
 		};
 	};
 	B5A9C39B1142AF950007B71C /* CoreResourceResultsTests.m */ = {
@@ -4835,7 +4857,7 @@
 		fRef = B5A9C39A1142AF950007B71C /* CoreResourceReadTests.m */;
 		name = "CoreResourceReadTests.m: 95";
 		rLen = 0;
-		rLoc = 3324;
+		rLoc = 3365;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 2528;

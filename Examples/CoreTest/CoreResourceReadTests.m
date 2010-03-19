@@ -25,6 +25,7 @@
 
 - (void) testFindWithoutLocalHit {
     GHAssertFalse([[Artist find:[NSNumber numberWithInt:0]] hasAnyResources], @"Find should not immediately return an object if the object doesn't yet exist");
+    [NSThread sleepForTimeInterval:0.1];
     
     // Verify existance of artist after find call
     GHAssertEquals((NSInteger) [[self allLocalArtists] count], 1, nil);
