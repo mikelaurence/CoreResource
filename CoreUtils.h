@@ -21,7 +21,7 @@
 
 #pragma mark -
 #pragma mark Misc macros
-#define ToArray(object) ([object isKindOfClass:[NSArray class]] ? object : [NSArray arrayWithObject:object])
+#define ToArray(object) (object != nil ? ([object isKindOfClass:[NSArray class]] ? object : [NSArray arrayWithObject:object]) : [NSArray array])
 #define Log(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__, [NSString stringWithFormat:format, ## __VA_ARGS__]);
 #define StartTimer NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
 #define EndTimer(msg) NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; Log([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
