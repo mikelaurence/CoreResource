@@ -208,7 +208,7 @@ static NSArray* allowedFormats;
 - (id) resourcesFromJSONData:(id)jsonData {
     // Convert raw JSON to resource data parsable by CoreResource create/update methods
     id resourceData = [self resourceDataFromJSONData:jsonData];
-    NSLog(@"RESOURCE DATA: %@", resourceData);
+
     // Create/update resources
     return [self resourcesFromData:resourceData];
 }        
