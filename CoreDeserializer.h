@@ -68,13 +68,14 @@
     Generates resources from CoreResource-formatted data collections
     (basically just hands off generation to the root resource class, with a few specific options)
 */
-- (NSArray*) resourcesFromCollection:(id)collection;
+- (NSArray*) resourcesFromData:(id)data;
 
 @end
 
 @interface CoreJSONDeserializer : CoreDeserializer 
 - (id) resourcesFromJSONData:(id)jsonData;
-- (id) resourceCollectionFromJSONData:(id)jsonData;
+- (id) resourceDataFromJSONData:(id)jsonData;
+- (id) resourceDataFromJSONDictionary:(NSDictionary*)dict;
 @end
 
 #ifdef DDXMLDocument

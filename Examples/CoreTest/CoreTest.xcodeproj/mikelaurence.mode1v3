@@ -307,7 +307,7 @@
 							<real>317</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>28 60 1533 963 0 0 1680 1028 </string>
+						<string>27 61 1533 963 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -337,7 +337,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B581FF60115828CA00D782DC</string>
+										<string>B581FF64115828FE00D782DC</string>
 										<key>history</key>
 										<array>
 											<string>B56851741100D26100A4C816</string>
@@ -425,7 +425,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1194, 859}}</string>
 								<key>RubberWindowFrame</key>
-								<string>28 60 1533 963 0 0 1680 1028 </string>
+								<string>27 61 1533 963 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -445,7 +445,7 @@
 								<key>Frame</key>
 								<string>{{0, 864}, {1194, 58}}</string>
 								<key>RubberWindowFrame</key>
-								<string>28 60 1533 963 0 0 1680 1028 </string>
+								<string>27 61 1533 963 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -613,7 +613,7 @@
 		<string>/Users/mikelaurence/Projects/CoreResource/Examples/CoreTest/CoreTest.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>28 60 1533 963 0 0 1680 1028 </string>
+	<string>27 61 1533 963 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

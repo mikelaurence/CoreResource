@@ -23,4 +23,10 @@
     return defaultValue;
 }
 
+- (BOOL) isCollection {
+    return [self isKindOfClass:[NSDictionary class]] ||
+        [self isKindOfClass:[NSArray class]] ||
+        [self isKindOfClass:[NSSet class]];
+}
+
 @end

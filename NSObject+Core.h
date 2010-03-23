@@ -12,5 +12,6 @@
 
 - (id) get:(SEL)selector;
 - (id) get:(SEL)selector orDefault:(id)defaultValue;
+- (BOOL) isCollection;
 
 @end
