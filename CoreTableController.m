@@ -6,6 +6,8 @@
 //  Copyright Mike Laurence 2009. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "CoreTableController.h"
 #import "NSString+InflectionSupport.h"
 
@@ -183,6 +185,7 @@ static float defaultTableReloadDelay = 0.25;
     [super dealloc];
 }
 
-
 @end
+
+#endif
 

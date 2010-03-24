@@ -10,6 +10,7 @@
 #import "CoreResult.h"
 #import "NSObject+Core.h"
 #import "SBJSON.h"
+#import "CoreUtils.h"
 
 @implementation CoreDeserializer
 

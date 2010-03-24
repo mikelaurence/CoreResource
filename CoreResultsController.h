@@ -6,6 +6,8 @@
 //  Copyright Mike Laurence 2010. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "CoreRequest.h"
 
 @class CoreResource;
@@ -30,3 +32,4 @@
 
 @end
 
+#endif

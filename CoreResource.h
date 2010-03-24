@@ -144,7 +144,10 @@ typedef enum _Action {
 + (NSFetchRequest*) fetchRequestWithSort:(id)sorting andPredicate:(NSPredicate*)predicate;
 + (NSPredicate*) predicateWithParameters:(id)parameters;
 + (NSPredicate*) variablePredicateWithParameters:(id)parameters;
+
+#if TARGET_OS_IPHONE
 + (CoreResultsController*) coreResultsControllerWithSort:(id)sorting andSectionKey:(NSString*)sectionKey;
 + (CoreResultsController*) coreResultsControllerWithRequest:(NSFetchRequest*)fetchRequest andSectionKey:(NSString*)sectionKey;
+#endif
 
 @end

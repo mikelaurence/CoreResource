@@ -7,7 +7,10 @@
 //
 
 #import "CoreManager.h"
+
+#if TARGET_OS_IPHONE
 #import "Reachability.h"
+#endif
 
 @implementation CoreManager
 
@@ -92,12 +95,14 @@ static CoreManager* _main;
     [self alertWithTitle:@"Error" andMessage:[error localizedDescription]];
 }
 
+#if TARGET_OS_IPHONE
 + (void) alertWithTitle:(NSString*)title andMessage:(NSString*)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
         message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
 }
+#endif
 
 + (void) logCoreDataError:(NSError *)error {
     NSLog(@"Failed to save to data store: %@", [error localizedDescription]);

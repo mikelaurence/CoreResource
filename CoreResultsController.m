@@ -6,6 +6,8 @@
 //  Copyright Mike Laurence 2010. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "CoreResultsController.h"
 #import "CoreUtils.h"
 #import "NSString+InflectionSupport.h"
@@ -90,3 +92,5 @@
 }
 
 @end
+
+#endif

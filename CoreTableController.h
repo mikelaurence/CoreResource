@@ -6,6 +6,8 @@
 //  Copyright Mike Laurence 2009. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "CoreResultsController.h"
 #import "CoreResource.h"
 
@@ -46,3 +48,5 @@
 - (CoreResultsController*) coreResultsControllerWithSectionKeyPath:(NSString*)keyPath;
 
 @end
+
+#endif

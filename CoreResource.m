@@ -780,6 +780,7 @@
     return parameters != nil ? [[self variablePredicateWithParameters:parameters] predicateWithSubstitutionVariables:parameters] : nil;
 }
 
+#if TARGET_OS_IPHONE
 + (CoreResultsController*) coreResultsControllerWithSort:(id)sorting andSectionKey:(NSString*)sectionKey {
     NSFetchRequest *fetchRequest = [self fetchRequestWithSort:sorting andPredicate:nil];
     return [self coreResultsControllerWithRequest:fetchRequest andSectionKey:sectionKey];
@@ -793,6 +794,7 @@
     coreResultsController.entityClass = self;
     return coreResultsController;
 }
+#endif
 
 @end
 
