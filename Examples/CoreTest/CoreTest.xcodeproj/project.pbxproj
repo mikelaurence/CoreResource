@@ -44,6 +44,7 @@
 		B57DD0121144F1F70063915D /* NSSet+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0051144F1F70063915D /* NSSet+Core.m */; };
 		B57DD0131144F1F70063915D /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0071144F1F70063915D /* NSString+InflectionSupport.m */; };
 		B57DD0141144F1F70063915D /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B57DD0081144F1F70063915D /* readme.md */; };
+		B5A40AEF115958B9003738E8 /* NSDictionary+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A40AEE115958B9003738E8 /* NSDictionary+Core.m */; };
 		B5A6614B110DF95400100C9E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6614A110DF95400100C9E /* Song.m */; };
 		B5A6615C110DF9CD00100C9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6615B110DF9CD00100C9E /* User.m */; };
 		B5A9C39E1142AF950007B71C /* CoreResourceConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9C3961142AF950007B71C /* CoreResourceConfigurationTests.m */; };
@@ -141,6 +142,8 @@
 		B57DD0061144F1F70063915D /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
 		B57DD0071144F1F70063915D /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
 		B57DD0081144F1F70063915D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		B5A40AED115958B9003738E8 /* NSDictionary+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Core.h"; sourceTree = "<group>"; };
+		B5A40AEE115958B9003738E8 /* NSDictionary+Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Core.m"; sourceTree = "<group>"; };
 		B5A66149110DF95400100C9E /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		B5A6614A110DF95400100C9E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		B5A6615A110DF9CD00100C9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				B5727E4011495C320067D774 /* NSArray+Core.m */,
 				B57DD0001144F1F70063915D /* NSMutableArray+Core.h */,
 				B57DD0011144F1F70063915D /* NSMutableArray+Core.m */,
+				B5A40AED115958B9003738E8 /* NSDictionary+Core.h */,
+				B5A40AEE115958B9003738E8 /* NSDictionary+Core.m */,
 				B57DD0021144F1F70063915D /* NSObject+Core.h */,
 				B57DD0031144F1F70063915D /* NSObject+Core.m */,
 				B57DD0041144F1F70063915D /* NSSet+Core.h */,
@@ -624,6 +629,7 @@
 				B5727E5311495D8D0067D774 /* NSArrayCategoryTests.m in Sources */,
 				B5E78AC71149AD1A006C73CE /* MiscBenchmarks.m in Sources */,
 				B5712B55114A0AD00005F0B5 /* CoreDeserializer.m in Sources */,
+				B5A40AEF115958B9003738E8 /* NSDictionary+Core.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

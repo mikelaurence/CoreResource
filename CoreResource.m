@@ -299,9 +299,11 @@
     }
     else {
         // Get managed object context from options or just use default
-        NSManagedObjectContext* context = [options objectForKey:@"context"];
+        id context = [options objectForKey:@"context"];
         if (context == nil)
             context = [self managedObjectContext];
+        else if ([context isEqual:[NSNull null]])
+            context = nil;
 
         // Insert new managed object into context
         CoreResource *resource = [[self alloc] initWithEntity:[self entityDescription] 
@@ -327,9 +329,8 @@
         
         // Call didCreate for user-specified create hooks
         [resource didCreate];
-        [resource release]; // Newly inserted objects are retained by the context, so no autorelease necessary
 
-        return resource;
+        return [resource autorelease];
     }
 }
 
