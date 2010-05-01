@@ -10,7 +10,7 @@
 #import "CoreTableController.h"
 
 
-@interface TicketsController : CoreTableController {
+@interface TicketsController : CoreTableController <UISplitViewControllerDelegate> {
 }
 
 - (IBAction) refresh;

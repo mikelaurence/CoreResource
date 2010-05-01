@@ -45,7 +45,7 @@ static float defaultFontSize = 15.0;
 
 
 #pragma mark -
-#pragma mark Table View Methods
+#pragma mark UITableView Data Source & Delegate
 
 - (UITableViewCell*) tableView:(UITableView *)tableView resultCellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -81,22 +81,36 @@ static float defaultFontSize = 15.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if (!self.splitViewController)
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 	// Get resource at this index path
 	Ticket *ticket = (Ticket*)[self resourceAtIndexPath:indexPath];
 	
-	// Create a TicketController for viewing the details of an individual ticket
-    TicketController *ticketController = [[[TicketController alloc] initWithNibName:nil bundle:nil] autorelease];
+	// Set up TicketController for viewing the details of an individual ticket
+	TicketController *ticketController = nil;
+	if (self.splitViewController)
+		ticketController = [self.splitViewController.viewControllers objectAtIndex:1];
+	else
+		ticketController = [[[TicketController alloc] initWithNibName:nil bundle:nil] autorelease];
     ticketController.ticket = ticket;
     ticketController.title = [NSString stringWithFormat:@"Ticket #%@", ticket.number];
 	
-	// Show the controller (iPhone => navigation stack, iPad => splitView's second view)
+	// Show the controller (iPhone => navigation stack, iPad => update splitView's second view)
 	if (self.splitViewController)
-		self.splitViewController.viewControllers = $A(self, ticketController);
+		[[ticketController tableView] reloadData];
 	else
 		[self.navigationController pushViewController:ticketController animated:YES];
 }
+
+
+#pragma mark -
+#pragma mark UIViewController
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	return YES;
+}
+
 
 
 @end

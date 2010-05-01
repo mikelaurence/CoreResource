@@ -13,7 +13,9 @@
 @implementation TicketController
 
 @synthesize ticket;
+
 static UIFont *boldFont;
+static float defaultFontSize = 15.0;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -24,10 +26,14 @@ static UIFont *boldFont;
 
 
 #pragma mark -
-#pragma mark Table View Methods
+#pragma mark Table View Data Source & Delegate
+
+- (UITableView*) tableView {
+	return (UITableView*) self.view;
+}
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return ticket ? 4 : 1;
 }
 
 - (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
@@ -38,9 +44,8 @@ static UIFont *boldFont;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+	
     // Default fonts
-    static float defaultFontSize = 15.0;
     if (boldFont == nil)
         boldFont = [[UIFont boldSystemFontOfSize:defaultFontSize] retain];
 
@@ -54,41 +59,96 @@ static UIFont *boldFont;
     
     [cell reset];
     
-    // Add different UI elements based on cell row
-    switch (indexPath.row) {
-    case 0:
-        // Title label
-        [cell addLabelWithText:ticket.title andFont:[boldFont fontWithSize:defaultFontSize * 1.1]];
-        break;
-    case 1:
-        // Priority label
-        [cell addLabelWithText:@"Priority:"];
-        UILabel *priorityLabel = [cell addLabelWithText:[ticket.priority stringValue] andFont:boldFont onNewLine:NO];
-        priorityLabel.textColor = [UIColor orangeColor];
-        break;
-    case 2:
-        // User labels
-        [cell addLabelWithText:@"Created by:"];
-        [cell addLabelWithText:ticket.creatorName andFont:boldFont onNewLine:NO];
-        [cell addLabelWithText:@"Created at:"];
-        [cell addLabelWithText:[dateFormatter stringFromDate:ticket.createdAt] andFont:boldFont onNewLine:NO];
-        [cell addLabelWithText:@"Assigned to:"];
-        [cell addLabelWithText:ticket.assignedUserName andFont:boldFont onNewLine:NO];
-        break;
-    case 3:
-        // Body
-        [cell addLabelWithText:@"Body:" andFont:boldFont];
-        [cell addLabelWithText:ticket.latestBody andFont:[UIFont systemFontOfSize:defaultFontSize * 0.9]];
-        break;
-    }
+	if (ticket) {
+		
+		// Add different UI elements based on cell row
+		switch (indexPath.row) {
+		case 0:
+			// Title label
+			[cell addLabelWithText:ticket.title andFont:[boldFont fontWithSize:defaultFontSize * 1.1]];
+			break;
+		case 1:
+			// Priority label
+			[cell addLabelWithText:@"Priority:"];
+			UILabel *priorityLabel = [cell addLabelWithText:[ticket.priority stringValue] andFont:boldFont onNewLine:NO];
+			priorityLabel.textColor = [UIColor orangeColor];
+			break;
+		case 2:
+			// User labels
+			[cell addLabelWithText:@"Created by:"];
+			[cell addLabelWithText:ticket.creatorName andFont:boldFont onNewLine:NO];
+			[cell addLabelWithText:@"Created at:"];
+			[cell addLabelWithText:[dateFormatter stringFromDate:ticket.createdAt] andFont:boldFont onNewLine:NO];
+			[cell addLabelWithText:@"Assigned to:"];
+			[cell addLabelWithText:ticket.assignedUserName andFont:boldFont onNewLine:NO];
+			break;
+		case 3:
+			// Body
+			[cell addLabelWithText:@"Body:" andFont:boldFont];
+			[cell addLabelWithText:ticket.latestBody andFont:[UIFont systemFontOfSize:defaultFontSize * 0.9]];
+			break;
+		}
+	}
+	else {
+		UILabel *label = [cell addLabelWithText:@"No ticket selected."];
+		label.textColor = [UIColor grayColor];
+	}
 
     [cell prepare];
     return cell;
 }
 
 
+#pragma mark -
+#pragma mark UISplitViewControllerDelegate
+
+//the master view controller will be hidden
+- (void)splitViewController:(UISplitViewController*)svc
+	 willHideViewController:(UIViewController *)aViewController
+		  withBarButtonItem:(UIBarButtonItem*)barButtonItem
+	   forPopoverController:(UIPopoverController*)pc {
+	
+	// Create toolbar with "show tickets" button
+	if (toolbar == nil) {
+		barButtonItem.title = @"Tickets";
+		toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+		[toolbar setItems:[NSArray arrayWithObject:barButtonItem] animated:YES];
+	}
+	
+	// Add the toolbar to ticket detail view
+	[self.splitViewController.view addSubview:toolbar];
+	
+	// Add inset to top of table view so the toolbar doesn't overlap rows
+	[self tableView].contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
+}
+
+- (void)splitViewController:(UISplitViewController*)svc
+	 willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)button {
+
+	// Remove toolbar
+	[toolbar removeFromSuperview];
+	
+	// Remove inset
+	[self tableView].contentInset = UIEdgeInsetsZero;
+}
+
+
+
+#pragma mark -
+#pragma mark UIViewController
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	return YES;
+}
+
+
+
+#pragma mark -
+#pragma mark Lifecycle end
 
 - (void) dealloc {
+	[toolbar release];
     [dateFormatter release];
     [ticket release];
     [super dealloc];

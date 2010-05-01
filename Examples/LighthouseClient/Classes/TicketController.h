@@ -13,8 +13,11 @@
 @interface TicketController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     Ticket *ticket;
     NSDateFormatter *dateFormatter;
+	UIToolbar *toolbar;
 }
 
 @property (nonatomic, retain) Ticket *ticket;
+
+- (UITableView*) tableView;
 
 @end
