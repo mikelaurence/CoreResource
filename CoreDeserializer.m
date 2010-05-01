@@ -209,7 +209,7 @@ static NSArray* allowedFormats;
 - (id) resourcesFromJSONData:(id)jsonData {
     // Convert raw JSON to resource data parsable by CoreResource create/update methods
     id resourceData = [self resourceDataFromJSONData:jsonData];
-
+	//NSLog(@"DATA\n%@", resourceData);
     // Create/update resources
     return [self resourcesFromData:resourceData];
 }        
@@ -242,22 +242,28 @@ static NSArray* allowedFormats;
         }
     }
     
-    You can override #resourceDictionaryFromJSONDictionary to perform any
+    You can override #resourceDataFromJSONDictionary to perform any
     custom collapsing; by default, it will collapse dictionaries that have 
     exactly one key whose value is itself a dictionary.
 */
 - (id) resourceDataFromJSONData:(id)jsonData {
-
     if ([jsonData isKindOfClass:[NSArray class]]) {
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:[jsonData count]];
-        for (id child in jsonData)
-            [array addObject:[self resourceDataFromJSONData:child]];
-        return jsonData;
+        return [self resourceDataFromJSONArray:jsonData];
     }
     else if ([jsonData isKindOfClass:[NSDictionary class]]) {
         return [self resourceDataFromJSONDictionary:jsonData];
     }
     return nil;
+}
+
+- (id) resourceDataFromJSONArray:(NSArray*)array {
+	NSMutableArray *processedArray = [NSMutableArray arrayWithCapacity:[array count]];
+	for (id child in array) {
+		id childData = [self resourceDataFromJSONData:child];
+		if (childData != nil)
+			[processedArray addObject:childData];
+	}
+	return processedArray;
 }
 
 /**
@@ -266,31 +272,44 @@ static NSArray* allowedFormats;
     itself a collection.
 */
 - (id) resourceDataFromJSONDictionary:(NSDictionary*)dict {
-    id rootData = dict;
-    if ([dict count] == 1) {
+	
+	id rootData = dict;
+	
+	// Recurse through roots until we reach a non-collapsible point
+    while ([rootData count] == 1) {
         id value = [[dict allValues] objectAtIndex:0];
         
         // If single value is a collection, set as root collection
         if ([value isCollection])
             rootData = value;
+		
+		// Break cycle if value is something other than a dictionary
+		if (![value isKindOfClass:[NSDictionary class]])
+			break;
     }
     
+	if ([rootData isKindOfClass:[NSArray class]]) {
+        return [self resourceDataFromJSONArray:rootData];
+    }
+	
     // If root value is a dictionary, perform additional processing
     if ([rootData isKindOfClass:[NSDictionary class]]) {
         
         // Make root dictionary mutable if not already so
         if (![rootData isKindOfClass:[NSMutableDictionary class]])
             rootData = [rootData mutableCopy];
-            
+
         // Process nested collections
         for (id key in rootData) {
             id value = [rootData objectForKey:key];
             if ([key isCollection])
                 [rootData setValue:[self resourceDataFromJSONData:value] forKey:key];
         }
+		
+		return rootData;
     }
-    
-    return rootData;
+	
+	return nil;
 }
 
 @end

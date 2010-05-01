@@ -75,6 +75,7 @@
 @interface CoreJSONDeserializer : CoreDeserializer 
 - (id) resourcesFromJSONData:(id)jsonData;
 - (id) resourceDataFromJSONData:(id)jsonData;
+- (id) resourceDataFromJSONArray:(NSArray*)array;
 - (id) resourceDataFromJSONDictionary:(NSDictionary*)dict;
 @end
 
