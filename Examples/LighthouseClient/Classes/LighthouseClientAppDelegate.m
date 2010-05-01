@@ -7,6 +7,7 @@
 //
 
 #import "LighthouseClientAppDelegate.h"
+#import "Ticket.h"
 
 
 @implementation LighthouseClientAppDelegate
@@ -16,7 +17,7 @@
 @synthesize mainViewController;
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {    
     
     // Initialize Core Manager
     self.coreManager = [[[CoreManager alloc] init] autorelease];
@@ -28,6 +29,9 @@
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:mainViewController.view];
     [window makeKeyAndVisible];
+	
+	// Send off request to get tickets
+	[Ticket findAllRemote];
 
 	return YES;
 }
@@ -37,6 +41,9 @@
 }
 
 
+
+#pragma mark -
+#pragma mark Lifecycle End
 
 - (void)dealloc {
     [coreManager release];

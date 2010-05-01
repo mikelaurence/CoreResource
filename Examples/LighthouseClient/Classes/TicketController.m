@@ -19,7 +19,17 @@ static float defaultFontSize = 15.0;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    dateFormatter = [[NSDateFormatter alloc] init];
+
+	/*
+	if (self.splitViewController) {
+		CGRect frame = self.view.frame;
+		frame.size.width = self.splitViewController.view.bounds.size.width - 
+			((UIViewController*)[self.splitViewController.viewControllers objectAtIndex:0]).view.bounds.size.width;
+		self.view.frame = frame;
+	}
+	*/
+    
+	dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
 }
@@ -37,10 +47,8 @@ static float defaultFontSize = 15.0;
 }
 
 - (CGFloat) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
-    UITableViewCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return [cell respondsToSelector:@selector(height)] ? 
-        [[cell performSelector:@selector(height)] floatValue] : 
-        tableView.rowHeight;
+    DynamicCell* cell = (DynamicCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [[cell height] floatValue];
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -53,6 +61,8 @@ static float defaultFontSize = 15.0;
     DynamicCell *cell = (DynamicCell*)[tableView dequeueReusableCellWithIdentifier:@"TicketCell"];
     if (cell == nil) {
         cell = [DynamicCell cellWithReuseIdentifier:@"TicketCell"];
+		if (self.splitViewController)
+			cell.frame = CGRectMake(0, 0, 1024 - 320, 44); // Hack to get splitView cells the proper width
         cell.defaultFont = [UIFont systemFontOfSize:defaultFontSize];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     }
@@ -90,8 +100,9 @@ static float defaultFontSize = 15.0;
 		}
 	}
 	else {
-		UILabel *label = [cell addLabelWithText:@"No ticket selected."];
-		label.textColor = [UIColor grayColor];
+		[cell setPadding:50.0];
+		UILabel *label = [cell addLabelWithText:@"No ticket selected." andFont:[UIFont boldSystemFontOfSize:40.0]];
+		label.textColor = [UIColor lightGrayColor];
 	}
 
     [cell prepare];

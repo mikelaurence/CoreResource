@@ -13,7 +13,6 @@
 
 @implementation TicketsController
 
-static BOOL firstTimeViewing = YES;
 static float defaultFontSize = 15.0;
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -22,12 +21,7 @@ static float defaultFontSize = 15.0;
 	// Use results controller to fetch local data. The table will automatically be reloaded if the underlying data changes
 	// (e.g., via an influx of remote data.)
     [[self coreResultsController] fetch:$D(@"priority ASC", @"$sort", $B(FALSE), @"closed")];
-    
-	// If this is the first time viewing the controller, send off a remote request
-    if (firstTimeViewing) {
-        firstTimeViewing = NO;
-        [self refresh];
-    }
+	[[self tableView] reloadData];
 }
 
 - (IBAction) refresh {
