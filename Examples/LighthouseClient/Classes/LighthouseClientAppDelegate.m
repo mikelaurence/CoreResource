@@ -13,7 +13,7 @@
 
 @synthesize coreManager;
 @synthesize window;
-@synthesize tabBarController;
+@synthesize mainViewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -26,11 +26,8 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     
     // Add the tab bar controller's current view as a subview of the window
-    [window addSubview:tabBarController.view];
+    [window addSubview:mainViewController.view];
     [window makeKeyAndVisible];
-
-    NSLog(@"Dict...");
-    NSLog(@"DICT: %@", $D(@"Key", @"Value", @"Key", @"Value"));
 
 	return YES;
 }
@@ -43,7 +40,7 @@
 
 - (void)dealloc {
     [coreManager release];
-    [tabBarController release];
+    [mainViewController release];
     [window release];
     [super dealloc];
 }

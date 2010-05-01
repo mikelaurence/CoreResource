@@ -14,12 +14,12 @@
     CoreManager *coreManager;
     
     UIWindow *window;
-    UITabBarController *tabBarController;
+	UIViewController *mainViewController;
 }
 
 @property (nonatomic, retain) CoreManager *coreManager;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet UIViewController *mainViewController;
 
 @end

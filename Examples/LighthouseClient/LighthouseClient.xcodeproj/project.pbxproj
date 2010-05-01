@@ -15,6 +15,7 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		B55088E2118BDE6400503E87 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55088E1118BDE6400503E87 /* MainWindow-iPad.xib */; };
 		B5712BA7114A187A0005F0B5 /* CoreDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */; };
 		B5727E9F11495F550067D774 /* NSArray+Core.m in Sources */ = {isa = PBXBuildFile; fileRef = B5727E9E11495F550067D774 /* NSArray+Core.m */; };
 		B57DD0491144F29A0063915D /* CoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B57DD0331144F29A0063915D /* CoreManager.m */; };
@@ -73,6 +74,7 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LighthouseClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LighthouseClient-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B55088E1118BDE6400503E87 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		B5712BA5114A187A0005F0B5 /* CoreDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDeserializer.m; path = ../../CoreDeserializer.m; sourceTree = SOURCE_ROOT; };
 		B5712BA6114A187A0005F0B5 /* CoreDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDeserializer.h; path = ../../CoreDeserializer.h; sourceTree = SOURCE_ROOT; };
 		B5727E9D11495F550067D774 /* NSArray+Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Core.h"; path = "../../NSArray+Core.h"; sourceTree = SOURCE_ROOT; };
@@ -201,6 +203,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
+				B55088E0118BDE6400503E87 /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -240,6 +243,14 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B55088E0118BDE6400503E87 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				B55088E1118BDE6400503E87 /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		B5A9C4E01142C2E10007B71C /* Libraries */ = {
@@ -434,6 +445,7 @@
 				B5A9C6F41142E6CF0007B71C /* icon-tickets.png in Resources */,
 				B5A9C7171142EA4D0007B71C /* Icon.png in Resources */,
 				B57DD0541144F29A0063915D /* readme.md in Resources */,
+				B55088E2118BDE6400503E87 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -497,7 +510,8 @@
 				INFOPLIST_FILE = "LighthouseClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = LighthouseClient;
-				SDKROOT = iphoneos3.1;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -505,13 +519,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LighthouseClient_Prefix.pch;
 				INFOPLIST_FILE = "LighthouseClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = LighthouseClient;
-				SDKROOT = iphoneos3.1;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
